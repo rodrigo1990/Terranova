@@ -12,5 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Admin/login');
 });
+
+
+Route::post('/admin/login', 'UserController@login');
+Route::get('/admin/users', 'UserController@users');
+Route::get('/admin/createProyecto', 'ProyectoController@createProyecto');
+
+//Route::get('/admin/index', 'FrontController@index');
+
+Route::get('/admin/index', function () {
+    return view('Admin/login');
+});
+
+
