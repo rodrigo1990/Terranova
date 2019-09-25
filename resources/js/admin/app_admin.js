@@ -7,3 +7,6 @@ require('./scripts/login');
 
 require('./scripts/logout');
 
+
+require('./scripts/tinymce');
+
