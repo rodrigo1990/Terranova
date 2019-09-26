@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 
 Route::post('/admin/login', 'UserController@login');
+Route::post('/admin/upload', 'UserController@upload');
 Route::get('/admin/users', 'UserController@users');
 Route::get('/admin/createProyecto', 'ProyectoController@createProyecto');
 

@@ -11,7 +11,7 @@
 			<label for="descripcion">Descripción</label>
 			<textarea  name="descripcion" id="" cols="30" rows="10"></textarea>
 			<br><br>
-		<div class="row">
+	<!--  	<div class="row">
 			<ul class="flex" id="file-input-cont">
 
 				<li id="li-file-input-1" class="li-file-input">
@@ -49,7 +49,13 @@
 				<a onclick="agregarImagenes()" class="small-btn blue float-right margin-right-15"><i class="fas fa-plus"></i></a>
 				
 			</div>
-		</div>
+		</div>-->
+		<div class="container-drop" >
+            <div class='content-drop'>
+            <form action="/admin/upload" class="dropzone" id="myAwesomeDropzone" enctype="multipart/form-data"> 
+            </form>  
+            </div> 
+        </div>
 		</div>
 		
 
@@ -58,6 +64,42 @@
 
 	@section('scripts')
 		<script src="/js/app_admin.js"></script>
+		<script src="/js/dropzone.js"></script>
+		<script>
+			
+				  $.ajax({
+				  	headers: {
+   					 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  					},
+	                    type: 'post',
+	                    url: '/admin/upload',
+	                    dataType:"json",
+	                    sucess: function(reponse){
+	                        console.log(reponse);
+	                    }
+	                });
+				
+		</script>
+		<script type='text/javascript'>
+	        Dropzone.autoDiscover = false;
+	        $(".dropzone").dropzone({
+	            addRemoveLinks: true,
+	            removedfile: function(file) {
+	                var name = file.name;    
+	                
+	                $.ajax({
+	                    type: 'POST',
+	                    url: 'upload.php',
+	                    data: {name: name,request: 2},
+	                    sucess: function(data){
+	                        console.log('success: ' + data);
+	                    }
+	                });
+	                var _ref;
+	                return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
+	            }
+	        });
+        </script>
 		<script>
 			tinymce.init({selector: "textarea",  // change this value according to your HTML
 			  plugins: "link",

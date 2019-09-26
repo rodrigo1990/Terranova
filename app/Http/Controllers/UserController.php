@@ -30,5 +30,10 @@ class UserController extends Controller
 
 		return User::all();
 
+	}
+
+
+	public function upload(Request $request){
+		return 'request';
 	}    
 }

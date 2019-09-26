@@ -647,3 +647,24 @@ input[type=text]:placeholder, input[type=password]:placeholder {
   color:red;
   font-family: RobotoBold;
 }
+
+
+
+
+.container-drop{
+    margin: 0 auto;
+    width: 50%;
+}
+
+.content-drop{
+    padding: 5px;
+    margin: 0 auto;
+}
+.content-drop span{
+    width: 250px;
+}
+
+.dz-message{
+    text-align: center;
+    font-size: 28px;
+}
