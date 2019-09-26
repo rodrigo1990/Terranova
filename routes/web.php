@@ -15,11 +15,18 @@ Route::get('/', function () {
     return view('Admin/login');
 });
 
+Route::get('/admin/viewCreateProyecto', 'FrontController@viewCreateProyecto');
+Route::get('/admin/viewListProyectos', 'FrontController@viewListProyectos');
+Route::get('/admin/viewUpdateProyecto/{id}', 'FrontController@viewUpdateProyecto');
 
 Route::post('/admin/login', 'UserController@login');
-Route::post('/admin/upload', 'UserController@upload');
 Route::get('/admin/users', 'UserController@users');
-Route::get('/admin/createProyecto', 'ProyectoController@createProyecto');
+
+
+Route::post('/admin/createProyecto', 'ProyectoController@createProyecto');
+Route::get('/admin/destroyProyecto/{id}', 'ProyectoController@destroyProyecto');
+Route::get('/admin/updateProyecto/{id}', 'ProyectoController@viewUpdateProyecto');
+Route::post('/admin/destroyImg/', 'ProyectoController@destroyImg');
 
 //Route::get('/admin/index', 'FrontController@index');
 

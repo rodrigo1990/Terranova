@@ -29863,7 +29863,6 @@ __webpack_require__(/*! ./scripts/tinymce */ "./resources/js/admin/scripts/tinym
 /***/ (function(module, exports) {
 
 window.login = function () {
-  alert("123");
   var username = $("#username").val();
   var password = $("#password").val();
   $.ajax({

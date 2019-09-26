@@ -32,20 +32,27 @@
 			<i class="fas fa-power-off"></i>
 		</a>
 	</div>
-<div class=" side-bar col-lg-3 col-md-3 col-sm-3"  >
+<div class=" side-bar col-lg-2 col-md-2 col-sm-2"  >
   <img class="logo margin-left-5 text-left float-left" src="<?php echo asset("storage/img/logo.png")?>" id="icon" alt="User Icon" style="width:150px" />
-	<div class="div-btn">
-		<h1>
-			<a class="side-bar-btn" href="/admin/createProyecto" target="iframe">Proyectos</a>
-		</h1>
-	</div>
-	<div class="div-btn">
-		<h1>
-			<a class="side-bar-btn" href="/admin/getEstablecimientos" target="iframe">Actualizar/eliminar Establecimiento</a>
-		</h1>
-	</div>
+	<ul>
+		<li>
+			<a href="/admin/viewCreateProyecto" target="iframe">
+				Proyectos
+			</a>
+		</li>
+		<li>
+			<a href="">
+				Testimonios
+			</a>
+		</li>
+		<li>
+			<a href="">
+				Novedades
+			</a>
+		</li>
+	</ul>
 </div>
-<div class="pageContent float-left col-lg-9 col-md-9 col-sm-9" >
+<div class="pageContent float-left col-lg-10 col-md-10 col-sm-10" >
 	  <iframe src="" id="iframe" class="float-left" name="iframe" target="iframe" frameborder="0"></iframe>
 </div>
 </div>

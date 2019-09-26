@@ -11,7 +11,7 @@ class Img extends Model
 
 
 
-    public function Img(){
+    public function proyectos(){
     	return $this->belongsTo('App\Proyecto');
     }
 }

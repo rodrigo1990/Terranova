@@ -5,7 +5,7 @@
 			<div class="row">
 				<ul class="flex">
 					<li><a href="/admin/viewListProyectos"><h4>TODOS LOS PROYECTOS</h4></a></li>
-					<li><a href="admin/viewCreateProyecto"><h4>ALTA DE PROYECTOS</h4></a></li>
+					<li><a href="/admin/viewCreateProyecto"><h4>ALTA DE PROYECTOS</h4></a></li>
 				</ul>
 			</div>
 		</div>
@@ -14,45 +14,40 @@
 			@csrf
 			<div class="container">
 					<label for="titulo">Titulo</label>
-					<input type="text" class="form-control" name="titulo">
+					<input type="text" class="form-control" name="titulo" value="{{$proyecto->titulo}}">
 					<br>
 					<br>
 					<label for="estado">Estado del proyecto</label>
 					<select name="estado" class="form-control" id="">
-						<option value="1">PRÓXIMOS DESARROLLOS</option>
-						<option value="2">PROYECTOS EN DESARROLLO</option>
-						<option value="3">PROYECTOS TERMINADOS</option>
+						@if($proyecto->estado == 1)
+							<option value="1" selected>PRÓXIMOS DESARROLLOS</option>
+							<option value="2">PROYECTOS EN DESARROLLO</option>
+							<option value="3">PROYECTOS TERMINADOS</option>
+						@elseif($proyecto->estado == 2)
+							<option value="1" >PRÓXIMOS DESARROLLOS</option>
+							<option value="2" selected>PROYECTOS EN DESARROLLO</option>
+							<option value="3">PROYECTOS TERMINADOS</option>
+						@else
+							<option value="1" >PRÓXIMOS DESARROLLOS</option>
+							<option value="2" >PROYECTOS EN DESARROLLO</option>
+							<option value="3"selected>PROYECTOS TERMINADOS</option>
+						@endif
 					</select>
 					<br>
 					<br>
 					<label for="descripcion">Descripción</label>
-					<textarea  name="descripcion" id="" cols="30" rows="10"></textarea>
+					<textarea  name="descripcion" id="" cols="30" rows="10">{{$proyecto->descripcion}}</textarea>
 					<br><br>
 		 		<div class="row">
 					<ul class="flex" id="file-input-cont">
-
-						<li id="li-file-input-1" class="li-file-input">
-							<a onclick="resetInputFile('1')" class="text-center center-block">Eliminar</a>
-							<span  class="btn btn-primary btn-file border-btn blue float-right" >
-		                        SLIDE 1 
-		                     	<input name="img[1]" type="file" id="file-input-1">
-		                     </span>
-		                     <div id="file-result-1" class="text-center">
-		                            <span id="file-img-1"></span>
-		                    	</div>
-						</li>
 						
-						<li id="li-file-input-2" class="li-file-input">
-							<a onclick="resetInputFile('2')" class="text-center center-block">Eliminar</a>
-							<span  class="btn btn-primary btn-file border-btn blue float-right" >
-		                        SLIDE 2
-		                      <input name="img[2]" type="file" id="file-input-2">
-		                    </span>
-		                     <div id="file-result-2" class="text-center">
-		                          <span id="file-img-2"></span>
-		                    	</div>
-					
+						@foreach($proyecto->img as $img)
+						<li id="img-exist-{{$img->id}}" class="flex">
+							<a onclick="deleteImg('{{$img->id}}')" class="text-center center-block">Eliminar</a>
+							<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="img-bkground"></div>
+							
 						</li>
+						@endforeach
 
 					</ul>
 				</div>
@@ -111,6 +106,25 @@
 			  plugins: "link",
 			  menubar: "insert edit align",
 			  language:'es'});
+		</script>
+		<script>
+			function deleteImg(id){
+				$.ajax({
+                    headers:{
+                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                data:{id:id},
+                url:'/admin/destroyImg',
+                type:'post',
+                dataType:"json",
+                success:function(response){
+                    if(response == true){
+	                    $("#img-exist-"+id+"").fadeOut(function(){
+	                    	$("#img-exist-"+id+"").remove();
+	                    });
+                    }
+                }
+                });
+			}
 		</script>
 		<script>
 

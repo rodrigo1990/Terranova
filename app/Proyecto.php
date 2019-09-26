@@ -11,7 +11,7 @@ class Proyecto extends Model
 
 
 
-    public function Img(){
+    public function img(){
     	return $this->hasMany('App\Img');
     }
 }

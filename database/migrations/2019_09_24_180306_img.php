@@ -15,7 +15,8 @@ class Img extends Migration
     {
         Schema::create('img', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('ruta');
+            $table->string('ruta',200);
+            $table->string('nombre',200);
             $table->unsignedBigInteger('proyecto_id');
 
 

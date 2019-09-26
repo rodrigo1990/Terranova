@@ -1,6 +1,5 @@
 		
 window.login = function(){
-	alert("123");
 			var username = $("#username").val();
 			var password = $("#password").val();
 
