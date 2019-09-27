@@ -63,7 +63,27 @@
 					</div>
 				<br><br>
 		 		<div class="row">
-		 			<h2>SLIDER</h2>
+		 			<h2>SLIDES EXISTENTES</h2>
+					<ul class="flex" id="file-input-cont">
+						
+						@foreach($proyecto->img as $img)
+
+							@if($img->tipo == 'SLIDE')
+							
+								<li id="img-exist-{{$img->id}}" class="flex">
+									<a onclick="deleteImg('{{$img->id}}')" class="text-center center-block">Eliminar</a>
+									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="img-bkground"></div>
+									
+								</li>
+							
+							@endif
+
+						@endforeach
+
+					</ul>
+				</div>
+				<div class="row">
+		 			<h2>INSERTAR SLIDES</h2>
 					<ul class="flex" id="file-input-cont">
 						
 						@foreach($proyecto->img as $img)

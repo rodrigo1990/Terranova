@@ -153,7 +153,7 @@
 				if(count>2){
 					$("#remove-esp-btn").fadeIn();
 				}
-				$("#file-input-cont").append('<li id="li-file-input-'+count+'" class="li-file-input"> <a  class="text-center center-block">Eliminar</a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE '+count+' <input name="img['+count+']" type="file" id="file-input-'+count+'" /> </span> <div id="file-result-'+count+'" class="text-center"> <span id="file-img-'+count+'"></span> </div> </li>');
+				$("#file-input-cont").append('<li id="li-file-input-'+count+'" class="li-file-input"> <a  class="text-center center-block">Eliminar</a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE '+count+' <input name="img['+count+']" type="file" id="file-input-'+count+'" class="added" /> </span> <div id="file-result-'+count+'" class="text-center"> <span id="file-img-'+count+'"></span> </div> </li>');
 
 			}
 
@@ -161,6 +161,58 @@
 
 		<script>
 			$('input[type="file"]').on('change', function(){
+
+			//	alert('asdaosd');
+
+			var id = ($(this).attr('id')=='presentacion') ? 'presentacion' : $(this).attr('id').match(/\d+/);
+
+			alert(id);
+
+            
+             var file = $(this).val();
+
+             var name = file.replace(/^.*[\\\/]/, '');
+
+             console.log(name);
+            
+
+            var file_size = $(this)[0].files[0].size;
+
+           
+
+            format = file.split('.').pop();
+
+            if(format == "jpg" || format == "png"){
+
+            if(file_size>2097152) {
+
+                alert("El archivo NO puede ser superior a 2MB");
+
+            }else{
+
+            	if(id=='presentacion'){
+
+	                $("#file-img-presentacion").html(name);
+
+	                $("#file-result-presentacion").fadeIn();
+ 
+                }else{
+
+                	$("#file-img-"+id+"").html(name);
+
+	                $("#file-result-"+id+"").fadeIn();
+                }
+
+            }
+
+        }else{
+            alert("El archivo debe ser .jpg o .png");
+        }
+        });
+		</script>
+
+		<script>
+			$(document).on('change','input.added', function(){
 
 			//	alert('asdaosd');
 
