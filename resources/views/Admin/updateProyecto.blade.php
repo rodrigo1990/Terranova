@@ -19,6 +19,7 @@
 					<br>
 					<label for="estado">Estado del proyecto</label>
 					<select name="estado" class="form-control" id="">
+
 						@if($proyecto->estado == 1)
 							<option value="1" selected>PRÓXIMOS DESARROLLOS</option>
 							<option value="2">PROYECTOS EN DESARROLLO</option>
@@ -32,21 +33,51 @@
 							<option value="2" >PROYECTOS EN DESARROLLO</option>
 							<option value="3"selected>PROYECTOS TERMINADOS</option>
 						@endif
+
 					</select>
 					<br>
 					<br>
 					<label for="descripcion">Descripción</label>
 					<textarea  name="descripcion" id="" cols="30" rows="10">{{$proyecto->descripcion}}</textarea>
 					<br><br>
+					<div class="row">
+						<h2>PRESENTACIÓN</h2>
+						
+						<ul class="flex">
+							
+						
+						@foreach($proyecto->img as $img)
+							@if($img->tipo=='PRESENTACION')
+								<li id="img-exist-{{$img->id}}" class="flex">
+									<a onclick="deleteImg('{{$img->id}}')" class="text-center center-block">Eliminar</a>
+									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="img-bkground"></div>
+									
+								</li>	
+							@endif
+						@endforeach
+
+
+
+						</ul>
+					
+					</div>
+				<br><br>
 		 		<div class="row">
+		 			<h2>SLIDER</h2>
 					<ul class="flex" id="file-input-cont">
 						
 						@foreach($proyecto->img as $img)
-						<li id="img-exist-{{$img->id}}" class="flex">
-							<a onclick="deleteImg('{{$img->id}}')" class="text-center center-block">Eliminar</a>
-							<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="img-bkground"></div>
+
+							@if($img->tipo == 'SLIDE')
 							
-						</li>
+								<li id="img-exist-{{$img->id}}" class="flex">
+									<a onclick="deleteImg('{{$img->id}}')" class="text-center center-block">Eliminar</a>
+									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="img-bkground"></div>
+									
+								</li>
+							
+							@endif
+
 						@endforeach
 
 					</ul>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Img extends Migration
+class ImgProyecto extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class Img extends Migration
      */
     public function up()
     {
-        Schema::create('img', function (Blueprint $table) {
+        Schema::create('img_proyecto', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('ruta',200);
             $table->string('nombre',200);
             $table->unsignedBigInteger('proyecto_id');
+            $table->string('tipo',100);
 
 
              $table->foreign('proyecto_id')->references('id')->on('proyectos');
@@ -32,6 +33,6 @@ class Img extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('img');
+        Schema::dropIfExists('img_proyecto');
     }
 }

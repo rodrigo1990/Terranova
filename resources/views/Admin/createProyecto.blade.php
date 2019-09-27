@@ -28,7 +28,22 @@
 					<label for="descripcion">Descripción</label>
 					<textarea  name="descripcion" id="" cols="30" rows="10"></textarea>
 					<br><br>
+					<div class="row">
+						<h2>IMAGEN DE PRESENTACIÓN</h2>
+
+						<div class="img-presentacion-input-cont center-block">
+							<span  class="btn btn-primary btn-file border-btn blue float-right" >
+		                        IMAGEN DE PRESENTACIÓN 
+		                     	<input name="img_presentacion" type="file" id="presentacion">
+		                     </span>
+		                     <div id="file-result-presentacion" class="text-center">
+	                            <span id="file-img-presentacion"></span>
+            					</div>
+						</div>
+					</div>
+					<br><br>
 		 		<div class="row">
+		 			<h2>SLIDER</h2>
 					<ul class="flex" id="file-input-cont">
 
 						<li id="li-file-input-1" class="li-file-input">
@@ -149,7 +164,9 @@
 
 			//	alert('asdaosd');
 
-			var id = $(this).attr('id').match(/\d+/);
+			var id = ($(this).attr('id')=='presentacion') ? 'presentacion' : $(this).attr('id').match(/\d+/);
+
+			alert(id);
 
             
              var file = $(this).val();
@@ -173,15 +190,18 @@
 
             }else{
 
-                $("#file-img-"+id+"").html(name);
+            	if(id=='presentacion'){
 
-             //   alert("#file-img-"+id+"");
+	                $("#file-img-presentacion").html(name);
 
-               //  alert("#file-result-"+id+"");
-
-                $("#file-result-"+id+"").fadeIn();
+	                $("#file-result-presentacion").fadeIn();
  
+                }else{
 
+                	$("#file-img-"+id+"").html(name);
+
+	                $("#file-result-"+id+"").fadeIn();
+                }
 
             }
 

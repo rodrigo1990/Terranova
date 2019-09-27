@@ -668,3 +668,55 @@ input[type=text]:placeholder, input[type=password]:placeholder {
     text-align: center;
     font-size: 28px;
 }
+
+
+
+.side-bar{
+  padding:0 !important;
+}
+
+.side-bar ul{
+  margin-top:40px;
+  padding:0;
+}
+
+
+.side-bar ul li{
+      list-style: none;
+    /* padding: 0px 10px 0px 10px; */
+    padding-bottom: 247px;
+    font-size: 25px;
+    text-align: center;
+    border-bottom: 2px solid #d6d6d6;
+    position: relative;
+}
+
+
+.side-bar ul li:hover{
+    background:black;
+}
+  
+
+  .side-bar ul li a{
+     position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: fit-content;
+}
+  
+
+.img-presentacion-input-cont{
+  width: fit-content;
+}
+
+
+.img-bkground{
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-attachment: local;
+    background-size: inherit;
+}
