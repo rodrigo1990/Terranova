@@ -19,6 +19,16 @@ Route::get('/admin/viewCreateProyecto', 'FrontController@viewCreateProyecto');
 Route::get('/admin/viewListProyectos', 'FrontController@viewListProyectos');
 Route::get('/admin/viewUpdateProyecto/{id}', 'FrontController@viewUpdateProyecto');
 
+Route::get('/admin/viewCreateTestimonio', 'FrontController@viewCreateTestimonio');
+Route::get('/admin/viewListTestimonios', 'FrontController@viewListTestimonios');
+Route::get('/admin/viewUpdateTestimonio/{id}', 'FrontController@viewUpdateTestimonio');
+
+Route::get('/admin/viewCreateNovedad', 'FrontController@viewCreateNovedad');
+Route::get('/admin/viewListNovedades', 'FrontController@viewListNovedades');
+Route::get('/admin/viewUpdateNovedad/{id}', 'FrontController@viewUpdateNovedad');
+
+
+
 Route::post('/admin/login', 'UserController@login');
 Route::get('/admin/users', 'UserController@users');
 
@@ -27,6 +37,26 @@ Route::post('/admin/createProyecto', 'ProyectoController@createProyecto');
 Route::get('/admin/destroyProyecto/{id}', 'ProyectoController@destroyProyecto');
 Route::get('/admin/updateProyecto/{id}', 'ProyectoController@viewUpdateProyecto');
 Route::post('/admin/destroyImg/', 'ProyectoController@destroyImg');
+
+
+
+
+Route::post('/admin/createTestimonio', 'TestimonioController@createTestimonio');
+Route::get('/admin/destroyTestimonio/{id}', 'TestimonioController@destroyTestimonio');
+Route::post('/admin/updateTestimonio', 'TestimonioController@updateTestimonio');
+Route::post('/admin/destroyImg/', 'TestimonioController@destroyImg');
+
+
+Route::post('/admin/createNovedad', 'NovedadController@createNovedad');
+Route::get('/admin/destroyNovedad/{id}', 'NovedadController@destroyNovedad');
+Route::post('/admin/updateNovedad', 'NovedadController@updateNovedad');
+Route::post('/admin/destroyImg/', 'NovedadController@destroyImg');
+
+
+
+
+
+
 
 //Route::get('/admin/index', 'FrontController@index');
 

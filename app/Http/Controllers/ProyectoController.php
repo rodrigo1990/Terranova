@@ -63,12 +63,12 @@ class ProyectoController extends Controller
 		 	
 		 	}
 
-		 	return view('admin.createProyecto',['msg' => 'true']);
+		 	return view('admin.proyecto.createProyecto',['msg' => 'true']);
 
 
 	 	} catch (Exception $e) {
 			$msg = "Ha habido un problema: ".$e."";
-	 		return view('admin.createProyecto',['msg' => $msg]);
+	 		return view('admin.proyecto.createProyecto',['msg' => $msg]);
 
 	 	}
 
@@ -92,12 +92,12 @@ class ProyectoController extends Controller
 	 		Proyecto::find($request->id)->delete();
 
 			
-		 	return view('admin.listProyecto',['msg' => 'true']);
+		 	return view('admin.proyecto.listProyecto',['msg' => 'true']);
 
 
 	 	} catch (Exception $e) {
 			$msg = "Ha habido un problema: ".$e."";
-	 		return view('admin.listProyecto',['msg' => $msg]);
+	 		return view('admin.proyecto.listProyecto',['msg' => $msg]);
 
 	 	}
 

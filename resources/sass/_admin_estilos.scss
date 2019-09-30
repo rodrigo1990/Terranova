@@ -1,4 +1,31 @@
 
+$green:#05ab05;
+
+$dark-green:#048804;
+
+
+@mixin transitions{
+       -webkit-transition: all 0.10s ease-in-out;
+  -moz-transition: all 0.10s ease-in-out;
+  -ms-transition: all 0.10s ease-in-out;
+  -o-transition: all 0.10s ease-in-out;
+  transition: all 0.10s ease-in-out;
+}
+
+
+.bk-green{
+  background: $green !important;
+  border:none !important;
+}
+
+
+.bk-green:hover{
+  background: $dark-green !important;
+  border:none !important;
+  @include transitions;
+}
+
+
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
@@ -64,9 +91,16 @@ a{
   cursor:pointer;
 }
 
- ul.flex li, #especialidadesExistentes ul.flex li {
+ ul.flex li {
         float: left;
     list-style: none;
+}
+
+ a h3{
+    margin:0;
+}
+
+ul#file-input-cont li{
     margin-left: 15px;
     margin-top: 15px;
 }
@@ -719,4 +753,8 @@ input[type=text]:placeholder, input[type=password]:placeholder {
     background-position: center;
     background-attachment: local;
     background-size: inherit;
+}
+
+button>h3{
+  margin:0;
 }

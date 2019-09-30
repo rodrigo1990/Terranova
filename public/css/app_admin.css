@@ -1,3 +1,14 @@
+.bk-green {
+  background: #05ab05 !important;
+  border: none !important;
+}
+
+.bk-green:hover {
+  background: #048804 !important;
+  border: none !important;
+  transition: all 0.1s ease-in-out;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
@@ -66,10 +77,16 @@ a {
   cursor: pointer;
 }
 
-ul.flex li,
-#especialidadesExistentes ul.flex li {
+ul.flex li {
   float: left;
   list-style: none;
+}
+
+a h3 {
+  margin: 0;
+}
+
+ul#file-input-cont li {
   margin-left: 15px;
   margin-top: 15px;
 }
@@ -680,6 +697,10 @@ input[type=password]:placeholder {
   background-position: center;
   background-attachment: local;
   background-size: inherit;
+}
+
+button > h3 {
+  margin: 0;
 }
 
 /*

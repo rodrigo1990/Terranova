@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Testimonios extends Migration
+class Novedad extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class Testimonios extends Migration
      */
     public function up()
     {
-        Schema::create('testimonios', function (Blueprint $table) {
+         Schema::create('novedades', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('link_youtube',200); 
-            $table->string('titulo',200); 
+            $table->text('descripcion'); 
+            $table->string('titulo',200);
+             
         });
     }
 

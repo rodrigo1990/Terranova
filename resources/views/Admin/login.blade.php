@@ -36,17 +36,17 @@
   <img class="logo margin-left-5 text-left float-left" src="<?php echo asset("storage/img/logo.png")?>" id="icon" alt="User Icon" style="width:150px" />
 	<ul>
 		<li>
-			<a href="/admin/viewCreateProyecto" target="iframe">
+			<a href="/admin/viewListProyectos" target="iframe">
 				Proyectos
 			</a>
 		</li>
 		<li>
-			<a href="">
+			<a href="/admin/viewListTestimonios" target="iframe">
 				Testimonios
 			</a>
 		</li>
 		<li>
-			<a href="">
+			<a href="/admin/viewListNovedades" target="iframe">
 				Novedades
 			</a>
 		</li>

@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Proyecto extends Model
+class Novedad extends Model
 {
-     protected $table='proyectos';
+ 	protected $table='novedades';
     public $timestamps = false;
 
 
 
     public function img(){
-    	return $this->hasMany('App\Img');
+    	return $this->hasMany('App\ImgNovedad');
     }
 }

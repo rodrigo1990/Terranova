@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Testimonios extends Migration
+class ImgNovedad extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class Testimonios extends Migration
      */
     public function up()
     {
-        Schema::create('testimonios', function (Blueprint $table) {
+        Schema::create('img_novedad', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('link_youtube',200); 
-            $table->string('titulo',200); 
+            $table->string('ruta',200);
+            $table->string('nombre',200);
+            $table->unsignedBigInteger('novedad_id');
+
+             $table->foreign('novedad_id')->references('id')->on('novedades');
+         
         });
     }
 
@@ -27,6 +31,6 @@ class Testimonios extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('testimonios');
+        Schema::dropIfExists('img_novedad');
     }
 }

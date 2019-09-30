@@ -1,15 +1,8 @@
 @extends('Admin.layouts.main')
 	@section('main')
 		<h1>PROYECTOS</h1>
-		<div class="container">
-			<div class="row">
-				<ul class="flex">
-					<li><a href="/admin/viewListProyectos"><h4>TODOS LOS PROYECTOS</h4></a></li>
-					<li><a href="/admin/viewCreateProyecto"><h4>ALTA DE PROYECTOS</h4></a></li>
-				</ul>
-			</div>
-		</div>
-		<br><br><br><br>
+		
+		<br><br>
 		<form action="/admin/createProyecto" method="POST" enctype="multipart/form-data">
 			@csrf
 			<div class="container">
@@ -82,26 +75,7 @@
 
 					</ul>
 				</div>
-				<div class="row">
-		 			<h2>INSERTAR SLIDES</h2>
-					<ul class="flex" id="file-input-cont">
-						
-						@foreach($proyecto->img as $img)
-
-							@if($img->tipo == 'SLIDE')
-							
-								<li id="img-exist-{{$img->id}}" class="flex">
-									<a onclick="deleteImg('{{$img->id}}')" class="text-center center-block">Eliminar</a>
-									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="img-bkground"></div>
-									
-								</li>
-							
-							@endif
-
-						@endforeach
-
-					</ul>
-				</div>
+		
 				<div class="row">
 					<div class="col-lg-6 col-md-6 col-sm-6"></div>
 					<div class="col-lg-6 col-md-6 col-sm-6">
@@ -114,18 +88,16 @@
 					</div>
 				</div>
 				<br><br>
-				<button class="float-right">ENVIAR</button>
+				<button class="btn btn-primary btn-file border-btn bk-green float-right"><h3>ENVIAR</h3></button>
+
 			</div>
 
 
 		</form>
-		<!-- <div class="container-drop" >
-            <div class='content-drop'>
-            <form action="/admin/upload" class="dropzone" id="myAwesomeDropzone" enctype="multipart/form-data"> 
-            </form>  
-            </div> 
-        </div> -->
+
 		</div>
+
+		<br><br>
 		
 
 	@stop

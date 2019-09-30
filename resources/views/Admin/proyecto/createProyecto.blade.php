@@ -1,15 +1,8 @@
 @extends('Admin.layouts.main')
 	@section('main')
 		<h1>PROYECTOS</h1>
-		<div class="container">
-			<div class="row">
-				<ul class="flex">
-					<li><a href="/admin/viewListProyectos"><h4>TODOS LOS PROYECTOS</h4></a></li>
-					<li><a href="admin/viewCreateProyecto"><h4>ALTA DE PROYECTOS</h4></a></li>
-				</ul>
-			</div>
-		</div>
-		<br><br><br><br>
+		
+		<br><br>
 		<form action="/admin/createProyecto" method="POST" enctype="multipart/form-data">
 			@csrf
 			<div class="container">
@@ -83,7 +76,8 @@
 					</div>
 				</div>
 				<br><br>
-				<button class="float-right">ENVIAR</button>
+				<button class="btn btn-primary btn-file border-btn bk-green float-right"><h3>ENVIAR</h3></button>
+
 			</div>
 
 
@@ -95,6 +89,8 @@
             </div> 
         </div> -->
 		</div>
+
+		<br><br>
 		
 
 	@stop
