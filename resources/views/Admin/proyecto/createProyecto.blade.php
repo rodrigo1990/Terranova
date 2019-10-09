@@ -1,5 +1,6 @@
 @extends('Admin.layouts.main')
 	@section('main')
+	<section id="proyectos">
 		<h1>PROYECTOS</h1>
 		
 		<br><br>
@@ -40,25 +41,31 @@
 					<ul class="flex" id="file-input-cont">
 
 						<li id="li-file-input-1" class="li-file-input">
-							<a onclick="resetInputFile('1')" class="text-center center-block">Eliminar</a>
-							<span  class="btn btn-primary btn-file border-btn blue float-right" >
-		                        SLIDE 1 
-		                     	<input name="img[1]" type="file" id="file-input-1">
-		                     </span>
-		                     <div id="file-result-1" class="text-center">
-		                            <span id="file-img-1"></span>
-		                    	</div>
+							
+	                    	<div class="preview" id="preview-1">
+	                    	
+								<span  class="btn btn-primary btn-file border-btn blue float-right" >
+			                        SLIDE 1 
+			                     	<input name="img[1]" type="file" id="file-input-1">
+			                     </span>
+			                     <div id="file-result-1" class="file-result text-center">
+			                            <span id="file-img-1"></span>
+		                    		</div>
+	                    	</div>
 						</li>
 						
 						<li id="li-file-input-2" class="li-file-input">
-							<a onclick="resetInputFile('2')" class="text-center center-block">Eliminar</a>
-							<span  class="btn btn-primary btn-file border-btn blue float-right" >
-		                        SLIDE 2
-		                      <input name="img[2]" type="file" id="file-input-2">
-		                    </span>
-		                     <div id="file-result-2" class="text-center">
-		                          <span id="file-img-2"></span>
-		                    	</div>
+							
+	                    	<div class="preview" id="preview-2">
+	                    	
+								<span  class="btn btn-primary btn-file border-btn blue float-right" >
+			                        SLIDE 2
+			                      <input name="img[2]" type="file" id="file-input-2">
+			                    </span>
+			                     <div id="file-result-2" class="file-result text-center">
+			                          <span id="file-img-2"></span>
+		                    		</div>
+	                    	</div>
 					
 						</li>
 
@@ -82,21 +89,19 @@
 
 
 		</form>
-		<!-- <div class="container-drop" >
-            <div class='content-drop'>
-            <form action="/admin/upload" class="dropzone" id="myAwesomeDropzone" enctype="multipart/form-data"> 
-            </form>  
-            </div> 
-        </div> -->
 		</div>
 
 		<br><br>
+	</section>
 		
 
 	@stop
 	
 
 	@section('scripts')
+		<script>
+			window.count=2;
+		</script>
 		<script src="/js/app_admin.js"></script>
 		<script src="/js/dropzone.js"></script>
 		<script>
@@ -123,154 +128,13 @@
 			  menubar: "insert edit align",
 			  language:'es'});
 		</script>
-		<script>
 
-			window.count=2;
-			function eliminarImagenes(){
-				console.log('#li-file-input-'+count+'');
-			
-				$('#li-file-input-'+count+'').hide(function(){
-					$('#li-file-input-'+count+'').remove();
-
-					count--;
-
-					if(count==2){
-						$("#remove-esp-btn").hide();
-					}
-				});
-
-			
-			}
-
-			function agregarImagenes(){
-				count++;
-				console.log(count);
-				console.log('<li id="li-file-input-'+count+'');
-				if(count>2){
-					$("#remove-esp-btn").fadeIn();
-				}
-				$("#file-input-cont").append('<li id="li-file-input-'+count+'" class="li-file-input"> <a  class="text-center center-block">Eliminar</a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE '+count+' <input name="img['+count+']" type="file" id="file-input-'+count+'" class="added" /> </span> <div id="file-result-'+count+'" class="text-center"> <span id="file-img-'+count+'"></span> </div> </li>');
-
-			}
-
-		</script>
-
-		<script>
-			$('input[type="file"]').on('change', function(){
-
-			//	alert('asdaosd');
-
-			var id = ($(this).attr('id')=='presentacion') ? 'presentacion' : $(this).attr('id').match(/\d+/);
-
-			alert(id);
-
-            
-             var file = $(this).val();
-
-             var name = file.replace(/^.*[\\\/]/, '');
-
-             console.log(name);
-            
-
-            var file_size = $(this)[0].files[0].size;
-
-           
-
-            format = file.split('.').pop();
-
-            if(format == "jpg" || format == "png"){
-
-            if(file_size>2097152) {
-
-                alert("El archivo NO puede ser superior a 2MB");
-
-            }else{
-
-            	if(id=='presentacion'){
-
-	                $("#file-img-presentacion").html(name);
-
-	                $("#file-result-presentacion").fadeIn();
- 
-                }else{
-
-                	$("#file-img-"+id+"").html(name);
-
-	                $("#file-result-"+id+"").fadeIn();
-                }
-
-            }
-
-        }else{
-            alert("El archivo debe ser .jpg o .png");
-        }
-        });
-		</script>
-
-		<script>
-			$(document).on('change','input.added', function(){
-
-			//	alert('asdaosd');
-
-			var id = ($(this).attr('id')=='presentacion') ? 'presentacion' : $(this).attr('id').match(/\d+/);
-
-			alert(id);
-
-            
-             var file = $(this).val();
-
-             var name = file.replace(/^.*[\\\/]/, '');
-
-             console.log(name);
-            
-
-            var file_size = $(this)[0].files[0].size;
-
-           
-
-            format = file.split('.').pop();
-
-            if(format == "jpg" || format == "png"){
-
-            if(file_size>2097152) {
-
-                alert("El archivo NO puede ser superior a 2MB");
-
-            }else{
-
-            	if(id=='presentacion'){
-
-	                $("#file-img-presentacion").html(name);
-
-	                $("#file-result-presentacion").fadeIn();
- 
-                }else{
-
-                	$("#file-img-"+id+"").html(name);
-
-	                $("#file-result-"+id+"").fadeIn();
-                }
-
-            }
-
-        }else{
-            alert("El archivo debe ser .jpg o .png");
-        }
-        });
-		</script>
+	
 
 
-		<script>
-			function resetInputFile(id){
 
 
-				$("#file-input-"+id+"").val('');
-
-
-				 $("#file-img-"+id+"").html('');
-
-			}
-		</script>
+	
 
 
 	@stop

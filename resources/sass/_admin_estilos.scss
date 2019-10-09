@@ -100,9 +100,10 @@ a{
     margin:0;
 }
 
-ul#file-input-cont li{
-    margin-left: 15px;
+ul#file-input-cont li,ul#file-input-cont li{
+    margin-left: 36px;
     margin-top: 15px;
+    margin-bottom: 37px;
 }
 
 #especialidades ul.flex li select,#especialidadesExistentes ul.flex li select{
@@ -757,4 +758,38 @@ input[type=text]:placeholder, input[type=password]:placeholder {
 
 button>h3{
   margin:0;
+}
+
+
+
+#proyectos,#testimonios{
+  .li-file-input,.img-exist{
+   span{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .removeBtn{
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 14px;
+    }
+  }
+
+  .li-file-input .file-result span{
+    bottom: -20px;
+    top: 151px;
+  }
+
+  .preview{
+     height: 150px;
+    width: 150px;
+    background-position: center !important;
+    position: relative;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+
+}
 }

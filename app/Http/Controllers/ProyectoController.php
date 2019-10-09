@@ -75,6 +75,80 @@ class ProyectoController extends Controller
 	 }
 
 
+
+	 public function updateProyecto(Request $request){
+
+	 	try {
+	 		//PROYECTO
+	 		$proyecto = Proyecto::find($request->id);
+
+		 	$proyecto->descripcion = $request->descripcion;
+
+		 	$proyecto->titulo = $request->titulo;
+
+		 	$proyecto->estado = $request->estado;
+
+		 	$proyecto->save();
+
+		 	if($request->img_presentacion){
+
+	 			$img = new Img();
+
+			 	$name = rand(0,99999999);
+
+			 	$format = $request->img_presentacion->extension();
+
+			 	$img->ruta = "".$name.".".$format."";
+
+			 	$img->nombre = $request->img_presentacion->getClientOriginalName(); 
+
+			 	$path = $request->img_presentacion->storeAs('proyectos/',$img->ruta,'public');
+
+
+			 	$img->tipo = 'PRESENTACION';
+
+			 	$proyecto->img()->save($img);	
+
+		 	}
+		 	//IMG SLIDER
+		 	if($request->img){
+ 			 	if(count($request->img)>0){
+ 			 		$f = array_key_first($request->img);
+ 			 		$l = array_key_last($request->img);
+ 	 			 	for($i=$f;$i<=$l;$i++){
+ 	 	
+ 	 				 	$img = new Img();
+ 	 	
+ 	 				 	$name = rand(0,99999999);
+ 	 	
+ 	 				 	$format = $request->img[$i]->extension();
+ 	 	
+ 	 				 	$img->ruta = "".$name.".".$format."";
+ 	 	
+ 	 				 	$img->nombre = $request->img[$i]->getClientOriginalName(); 
+ 	 	
+ 	 				 	$path = $request->img[$i]->storeAs('proyectos/',$img->ruta,'public');
+ 	 	
+ 	 				 	$img->tipo = 'SLIDE';
+ 	 	
+ 	 				 	$proyecto->img()->save($img);	
+ 	 			 	
+ 	 			 	}
+ 			 	}
+		 	}
+		 	return view('admin.proyecto.createProyecto',['msg' => 'true']);
+
+
+	 	} catch (Exception $e) {
+			$msg = "Ha habido un problema: ".$e."";
+	 		return view('admin.proyecto.createProyecto',['msg' => $msg]);
+
+	 	}
+
+	 }
+
+
+
 	 public function destroyProyecto(Request $request){
 
 	 	try {

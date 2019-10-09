@@ -26,13 +26,13 @@ class TestimonioController extends Controller
 
 	 		$name = rand(0,99999999);
 
-		 	$format = $request->imgPresentacion->extension();
+		 	$format = $request->img_presentacion->extension();
 
 		 	$img->ruta = "".$name.".".$format."";
 
-		 	$img->nombre = $request->imgPresentacion->getClientOriginalName(); 
+		 	$img->nombre = $request->img_presentacion->getClientOriginalName(); 
 
-		 	$path = $request->imgPresentacion->storeAs('testimonios/',$img->ruta,'public');
+		 	$path = $request->img_presentacion->storeAs('testimonios/',$img->ruta,'public');
 
 
 		 	$testimonio->img()->save($img);
@@ -89,26 +89,25 @@ class TestimonioController extends Controller
 
 			$testimonio->save();
 
-
-
-
-			$img = ImgTestimonio::where('testimonio_id',$request->id)->get();
-
-			Storage::disk('public')->delete("testimonios/".$img[0]->ruta."");
-
-			$name = rand(0,99999999);
-
-		 	$format = $request->imgPresentacion->extension();
-
-		 	$img[0]->ruta = "".$name.".".$format."";
-
-		 	$img[0]->nombre = $request->imgPresentacion->getClientOriginalName(); 
-
-		 	$path = $request->imgPresentacion->storeAs('testimonios/',$img[0]->ruta,'public');
-
-		 	$img[0]->save();
-
-
+			if($request->img_presentacion){
+			
+					$img = ImgTestimonio::where('testimonio_id',$request->id)->get();
+		
+					Storage::disk('public')->delete("testimonios/".$img[0]->ruta."");
+		
+					$name = rand(0,99999999);
+		
+				 	$format = $request->img_presentacion->extension();
+		
+				 	$img[0]->ruta = "".$name.".".$format."";
+		
+				 	$img[0]->nombre = $request->img_presentacion->getClientOriginalName(); 
+		
+				 	$path = $request->img_presentacion->storeAs('testimonios/',$img[0]->ruta,'public');
+		
+				 	$img[0]->save();
+			
+			}
 			
 
 
@@ -125,6 +124,31 @@ class TestimonioController extends Controller
 	 	}
 	 }
 
+
+
+	 public function destroyImg(Request $request){
+
+	 	try {
+
+
+	 		$img = ImgTestimonio::find($request->id);
+
+	 		
+ 			Storage::disk('public')->delete("testimonios/".$img->ruta."");
+	 		
+
+
+	 		ImgTestimonio::find($request->id)->delete();
+
+			
+		 	return 'true';
+
+
+	 	} catch (Exception $e) {
+			return $e;
+	 	}
+
+	 }
 
 
 	

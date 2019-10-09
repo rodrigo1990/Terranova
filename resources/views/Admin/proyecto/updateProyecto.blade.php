@@ -1,11 +1,13 @@
 @extends('Admin.layouts.main')
 	@section('main')
+	<section id="proyectos">
 		<h1>PROYECTOS</h1>
 		
 		<br><br>
-		<form action="/admin/createProyecto" method="POST" enctype="multipart/form-data">
+		<form action="/admin/updateProyecto" method="POST" enctype="multipart/form-data">
 			@csrf
 			<div class="container">
+				<input type="hidden" name="id" value="{{$proyecto->id}}">
 					<label for="titulo">Titulo</label>
 					<input type="text" class="form-control" name="titulo" value="{{$proyecto->titulo}}">
 					<br>
@@ -41,9 +43,9 @@
 						
 						@foreach($proyecto->img as $img)
 							@if($img->tipo=='PRESENTACION')
-								<li id="img-exist-{{$img->id}}" class="flex">
-									<a onclick="deleteImg('{{$img->id}}')" class="text-center center-block">Eliminar</a>
-									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="img-bkground"></div>
+								<li id="img-exist-{{$img->id}}" class="img-exist">
+									<a onclick="deleteImg('{{$img->id}}','presentacion')" class=" removeBtn text-center center-block"><i class="fas fa-times-circle"></i></a>
+									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="preview"></div>
 									
 								</li>	
 							@endif
@@ -52,6 +54,10 @@
 
 
 						</ul>
+
+						<div id="newImgPresentacion">
+							
+						</div>
 					
 					</div>
 				<br><br>
@@ -63,9 +69,9 @@
 
 							@if($img->tipo == 'SLIDE')
 							
-								<li id="img-exist-{{$img->id}}" class="flex">
-									<a onclick="deleteImg('{{$img->id}}')" class="text-center center-block">Eliminar</a>
-									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="img-bkground"></div>
+								<li id="img-exist-{{$img->id}}" class="img-exist">
+									<a onclick="deleteImg('{{$img->id}}')" class="removeBtn text-center center-block"><i class="fas fa-times-circle"></i></a>
+									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="preview"></div>
 									
 								</li>
 							
@@ -98,12 +104,19 @@
 		</div>
 
 		<br><br>
+</section>
 		
 
 	@stop
 	
 
 	@section('scripts')
+	<script>
+
+			window.count=2;
+
+			
+		</script>
 		<script src="/js/app_admin.js"></script>
 		<script src="/js/dropzone.js"></script>
 		<script>
@@ -130,116 +143,7 @@
 			  menubar: "insert edit align",
 			  language:'es'});
 		</script>
-		<script>
-			function deleteImg(id){
-				$.ajax({
-                    headers:{
-                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                data:{id:id},
-                url:'/admin/destroyImg',
-                type:'post',
-                dataType:"json",
-                success:function(response){
-                    if(response == true){
-	                    $("#img-exist-"+id+"").fadeOut(function(){
-	                    	$("#img-exist-"+id+"").remove();
-	                    });
-                    }
-                }
-                });
-			}
-		</script>
-		<script>
-
-			window.count=2;
-			function eliminarImagenes(){
-				console.log('#li-file-input-'+count+'');
-			
-				$('#li-file-input-'+count+'').hide(function(){
-					$('#li-file-input-'+count+'').remove();
-
-					count--;
-
-					if(count==2){
-						$("#remove-esp-btn").hide();
-					}
-				});
-
-			
-			}
-
-			function agregarImagenes(){
-				count++;
-				console.log(count);
-				console.log('<li id="li-file-input-'+count+'');
-				if(count>2){
-					$("#remove-esp-btn").fadeIn();
-				}
-				$("#file-input-cont").append('<li id="li-file-input-'+count+'" class="li-file-input"> <a  class="text-center center-block">Eliminar</a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE '+count+' <input name="img['+count+']" type="file" id="file-input-'+count+'" /> </span> <div id="file-result-'+count+'" class="text-center"> <span id="file-img-'+count+'"></span> </div> </li>');
-
-			}
-
-		</script>
-
-		<script>
-			$('input[type="file"]').on('change', function(){
-
-			//	alert('asdaosd');
-
-			var id = $(this).attr('id').match(/\d+/);
-
-            
-             var file = $(this).val();
-
-             var name = file.replace(/^.*[\\\/]/, '');
-
-             console.log(name);
-            
-
-            var file_size = $(this)[0].files[0].size;
-
-           
-
-            format = file.split('.').pop();
-
-            if(format == "jpg" || format == "png"){
-
-            if(file_size>2097152) {
-
-                alert("El archivo NO puede ser superior a 2MB");
-
-            }else{
-
-                $("#file-img-"+id+"").html(name);
-
-             //   alert("#file-img-"+id+"");
-
-               //  alert("#file-result-"+id+"");
-
-                $("#file-result-"+id+"").fadeIn();
- 
-
-
-            }
-
-        }else{
-            alert("El archivo debe ser .jpg o .png");
-        }
-        });
-		</script>
-
-
-		<script>
-			function resetInputFile(id){
-
-
-				$("#file-input-"+id+"").val('');
-
-
-				 $("#file-img-"+id+"").html('');
-
-			}
-		</script>
+	
 
 
 	@stop

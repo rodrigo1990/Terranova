@@ -1,5 +1,6 @@
 @extends('Admin.layouts.main')
 	@section('main')
+	<section id="testimonios">
 		<h1>TESTIMONIOS</h1>
 		
 		<br><br>
@@ -19,15 +20,25 @@
 					<div class="row">
 						<h2>IMAGEN DE PRESENTACIÓN</h2>
 
-						<div class="img-presentacion-input-cont center-block">
-							<span  class="btn btn-primary btn-file border-btn blue float-right" >
-		                        IMAGEN DE PRESENTACIÓN 
-		                     	<input name="imgPresentacion" type="file" id="presentacion">
-		                     </span>
-		                     <div id="file-result-presentacion" class="text-center">
-	                            <span id="file-img-presentacion">{{$testimonio->img[0]->nombre}}</span>
-            					</div>
-						</div>
+						<ul class="flex">
+							
+						
+						
+								<li id="img-exist-{{$testimonio->img[0]->id}}" class="img-exist">
+									<a onclick="deleteImg('{{$testimonio->img[0]->id}}','presentacion','testimonio')" class=" removeBtn text-center center-block"><i class="fas fa-times-circle"></i></a>
+									<div style="background:url(<?php echo asset('storage/img/testimonios/'.$testimonio->img[0]->ruta.'') ?>)" class="preview"></div>
+									
+								</li>	
+
+
+								<div id="newImgPresentacion"></div>
+					
+
+
+
+						</ul>
+
+				
 					</div>
 				
 					
@@ -39,6 +50,8 @@
 
 		</form>
 		</div>
+
+		</section>
 		
 
 	@stop

@@ -29853,6 +29853,191 @@ __webpack_require__(/*! ./scripts/logout */ "./resources/js/admin/scripts/logout
 
 __webpack_require__(/*! ./scripts/tinymce */ "./resources/js/admin/scripts/tinymce.js");
 
+__webpack_require__(/*! ./scripts/agregarImagenes */ "./resources/js/admin/scripts/agregarImagenes.js");
+
+__webpack_require__(/*! ./scripts/deleteImg */ "./resources/js/admin/scripts/deleteImg.js");
+
+__webpack_require__(/*! ./scripts/eliminarImagenes */ "./resources/js/admin/scripts/eliminarImagenes.js");
+
+__webpack_require__(/*! ./scripts/inputDinamicFileInput */ "./resources/js/admin/scripts/inputDinamicFileInput.js");
+
+__webpack_require__(/*! ./scripts/inputFileChange */ "./resources/js/admin/scripts/inputFileChange.js");
+
+__webpack_require__(/*! ./scripts/readURL */ "./resources/js/admin/scripts/readURL.js");
+
+__webpack_require__(/*! ./scripts/resetInputFile */ "./resources/js/admin/scripts/resetInputFile.js");
+
+/***/ }),
+
+/***/ "./resources/js/admin/scripts/agregarImagenes.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/admin/scripts/agregarImagenes.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.agregarImagenes = function () {
+  count++;
+  console.log(count);
+  console.log('<li id="li-file-input-' + count + '');
+
+  if (count > 2) {
+    $("#remove-esp-btn").fadeIn();
+  }
+
+  $("#file-input-cont").append('<li id="li-file-input-' + count + '" class="li-file-input"> <div class="preview" id="preview-' + count + '"> <a onclick="resetInputFile(' + count + ')" class="removeBtn text-center center-block"> <i class="fas fa-times-circle"></i> </a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE ' + count + '<input name="img[' + count + ']" type="file" id="file-input-' + count + '" class="added"> </span> <div id="file-result-' + count + '" class="file-result text-center"> <span id="file-img-' + count + '"></span> </div> </div> </li>');
+};
+
+/***/ }),
+
+/***/ "./resources/js/admin/scripts/deleteImg.js":
+/*!*************************************************!*\
+  !*** ./resources/js/admin/scripts/deleteImg.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.deleteImg = function (id, tipo, seccion) {
+  var url;
+
+  switch (seccion) {
+    case 'testimonio':
+      url = '/admin/destroyImgTestimonio';
+      break;
+
+    case 'proyecto':
+      url = '/admin/destroyImgProyecto';
+      break;
+  }
+
+  var c = confirm('¿Desea eliminar esta imagen?');
+
+  if (c == true) {
+    $.ajax({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      data: {
+        id: id
+      },
+      url: url,
+      type: 'post',
+      dataType: "json",
+      success: function success(response) {
+        if (response == true) {
+          $("#img-exist-" + id + "").fadeOut(function () {
+            $("#img-exist-" + id + "").remove();
+
+            if (tipo == 'presentacion') {
+              $("#newImgPresentacion").hide();
+              $("#newImgPresentacion").html('<div class="img-presentacion-input-cont center-block"> <span  class="btn btn-primary btn-file border-btn blue float-right" > IMAGEN DE PRESENTACIÓN <input name="img_presentacion" type="file" id="presentacion" class="added"> </span> <div id="file-result-presentacion" class="text-center"> <span id="file-img-presentacion"></span> </div>');
+            }
+
+            $("#newImgPresentacion").fadeIn();
+          });
+        }
+      }
+    });
+  }
+};
+
+/***/ }),
+
+/***/ "./resources/js/admin/scripts/eliminarImagenes.js":
+/*!********************************************************!*\
+  !*** ./resources/js/admin/scripts/eliminarImagenes.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.eliminarImagenes = function () {
+  console.log('#li-file-input-' + count + '');
+  $('#li-file-input-' + count + '').hide(function () {
+    $('#li-file-input-' + count + '').remove();
+    count--;
+
+    if (count == 2) {
+      $("#remove-esp-btn").hide();
+    }
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/admin/scripts/inputDinamicFileInput.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/admin/scripts/inputDinamicFileInput.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).on('change', 'input.added', function () {
+  //	alert('asdaosd');
+  var id = $(this).attr('id') == 'presentacion' ? 'presentacion' : $(this).attr('id').match(/\d+/);
+  alert(id);
+  var file = $(this).val();
+  var name = file.replace(/^.*[\\\/]/, '');
+  console.log(name);
+  var file_size = $(this)[0].files[0].size;
+  format = file.split('.').pop();
+
+  if (format == "jpg" || format == "png") {
+    if (file_size > 2097152) {
+      alert("El archivo NO puede ser superior a 2MB");
+    } else {
+      if (id == 'presentacion') {
+        $("#file-img-presentacion").html(name);
+        $("#file-result-presentacion").fadeIn();
+        readURL(this, "#preview-" + id);
+      } else {
+        $("#file-img-" + id + "").html(name);
+        $("#file-result-" + id + "").fadeIn();
+        readURL(this, "#preview-" + id);
+      }
+    }
+  } else {
+    alert("El archivo debe ser .jpg o .png");
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/scripts/inputFileChange.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/admin/scripts/inputFileChange.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$('input[type="file"]').on('change', function () {
+  //  alert('asdaosd');
+  var id = $(this).attr('id') == 'presentacion' ? 'presentacion' : $(this).attr('id').match(/\d+/);
+  alert(id);
+  var file = $(this).val();
+  var name = file.replace(/^.*[\\\/]/, '');
+  console.log(name);
+  var file_size = $(this)[0].files[0].size;
+  format = file.split('.').pop();
+
+  if (format == "jpg" || format == "png") {
+    if (file_size > 2097152) {
+      alert("El archivo NO puede ser superior a 2MB");
+    } else {
+      if (id == 'presentacion') {
+        $("#file-img-presentacion").html(name);
+        $("#file-result-presentacion").fadeIn();
+        readURL(this, "#preview-" + id);
+      } else {
+        $("#file-img-" + id + "").html(name);
+        $("#file-result-" + id + "").fadeIn();
+        readURL(this, "#preview-" + id);
+      }
+    }
+  } else {
+    alert("El archivo debe ser .jpg o .png");
+  }
+});
+
 /***/ }),
 
 /***/ "./resources/js/admin/scripts/login.js":
@@ -29916,6 +30101,41 @@ function logout() {
 
   }); //ajax
 }
+
+/***/ }),
+
+/***/ "./resources/js/admin/scripts/readURL.js":
+/*!***********************************************!*\
+  !*** ./resources/js/admin/scripts/readURL.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.readURL = function (input, id) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $(id).css('background', 'url(' + e.target.result + ')');
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+};
+
+/***/ }),
+
+/***/ "./resources/js/admin/scripts/resetInputFile.js":
+/*!******************************************************!*\
+  !*** ./resources/js/admin/scripts/resetInputFile.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.resetInputFile = function () {
+  $("#file-input-" + id + "").val('');
+  $("#file-img-" + id + "").html('');
+};
 
 /***/ }),
 

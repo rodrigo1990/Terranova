@@ -36,7 +36,8 @@ Route::get('/admin/users', 'UserController@users');
 Route::post('/admin/createProyecto', 'ProyectoController@createProyecto');
 Route::get('/admin/destroyProyecto/{id}', 'ProyectoController@destroyProyecto');
 Route::get('/admin/updateProyecto/{id}', 'ProyectoController@viewUpdateProyecto');
-Route::post('/admin/destroyImg/', 'ProyectoController@destroyImg');
+Route::post('/admin/destroyImgProyecto/', 'ProyectoController@destroyImg');
+Route::post('/admin/updateProyecto/', 'ProyectoController@updateProyecto');
 
 
 
@@ -44,13 +45,13 @@ Route::post('/admin/destroyImg/', 'ProyectoController@destroyImg');
 Route::post('/admin/createTestimonio', 'TestimonioController@createTestimonio');
 Route::get('/admin/destroyTestimonio/{id}', 'TestimonioController@destroyTestimonio');
 Route::post('/admin/updateTestimonio', 'TestimonioController@updateTestimonio');
-Route::post('/admin/destroyImg/', 'TestimonioController@destroyImg');
+Route::post('/admin/destroyImgTestimonio/', 'TestimonioController@destroyImg');
 
 
 Route::post('/admin/createNovedad', 'NovedadController@createNovedad');
 Route::get('/admin/destroyNovedad/{id}', 'NovedadController@destroyNovedad');
 Route::post('/admin/updateNovedad', 'NovedadController@updateNovedad');
-Route::post('/admin/destroyImg/', 'NovedadController@destroyImg');
+Route::post('/admin/destroyImgNovedad/', 'NovedadController@destroyImg');
 
 
 

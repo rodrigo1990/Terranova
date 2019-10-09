@@ -86,9 +86,11 @@ a h3 {
   margin: 0;
 }
 
+ul#file-input-cont li,
 ul#file-input-cont li {
-  margin-left: 15px;
+  margin-left: 36px;
   margin-top: 15px;
+  margin-bottom: 37px;
 }
 
 #especialidades ul.flex li select,
@@ -701,6 +703,41 @@ input[type=password]:placeholder {
 
 button > h3 {
   margin: 0;
+}
+
+#proyectos .li-file-input span,
+#proyectos .img-exist span,
+#testimonios .li-file-input span,
+#testimonios .img-exist span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#proyectos .li-file-input .removeBtn,
+#proyectos .img-exist .removeBtn,
+#testimonios .li-file-input .removeBtn,
+#testimonios .img-exist .removeBtn {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 14px;
+}
+
+#proyectos .li-file-input .file-result span,
+#testimonios .li-file-input .file-result span {
+  bottom: -20px;
+  top: 151px;
+}
+
+#proyectos .preview,
+#testimonios .preview {
+  height: 150px;
+  width: 150px;
+  background-position: center !important;
+  position: relative;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
 /*

@@ -89,25 +89,25 @@ class NovedadController extends Controller
 			$novedad->save();
 
 
-
-
-			$img = ImgNovedad::where('novedad_id',$request->id)->get();
-
-			Storage::disk('public')->delete("novedades/".$img[0]->ruta."");
-
-			$name = rand(0,99999999);
-
-		 	$format = $request->imgPresentacion->extension();
-
-		 	$img[0]->ruta = "".$name.".".$format."";
-
-		 	$img[0]->nombre = $request->imgPresentacion->getClientOriginalName(); 
-
-		 	$path = $request->imgPresentacion->storeAs('novedades/',$img[0]->ruta,'public');
-
-		 	$img[0]->save();
-
-
+			if($request->imgPresentacion){
+			
+					$img = ImgNovedad::where('novedad_id',$request->id)->get();
+		
+					Storage::disk('public')->delete("novedades/".$img[0]->ruta."");
+		
+					$name = rand(0,99999999);
+		
+				 	$format = $request->imgPresentacion->extension();
+		
+				 	$img[0]->ruta = "".$name.".".$format."";
+		
+				 	$img[0]->nombre = $request->imgPresentacion->getClientOriginalName(); 
+		
+				 	$path = $request->imgPresentacion->storeAs('novedades/',$img[0]->ruta,'public');
+		
+				 	$img[0]->save();
+			
+			}
 			
 
 
