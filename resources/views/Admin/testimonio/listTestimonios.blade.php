@@ -1,4 +1,4 @@
-@extends('Admin.layouts.main')
+@extends('Admin.layouts.iframe')
 	@section('main')
 		<h1>TESTIMONIOS</h1>
 		<br><br>
@@ -47,23 +47,7 @@
 	@section('scripts')
 		<script src="/js/app_admin.js"></script>
 		<script src="/js/dropzone.js"></script>
-		<script>
-			$(window).ready(function(){
-				
-				@if(isset($msg))
-
-					var msg = <?php echo $msg ?>;
-
-					if(msg==true){
-						alert('¡Producto eliminado con exito!');
-					}else{
-						alert(msg);
-					}
-
-				@endif
-
-			});
-		</script>
+		@include('Admin.inc.showOperationMessage')
 		
 
 

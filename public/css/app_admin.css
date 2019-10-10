@@ -9,6 +9,10 @@
   transition: all 0.1s ease-in-out;
 }
 
+body.main {
+  overflow-y: hidden;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
@@ -657,14 +661,13 @@ input[type=password]:placeholder {
 }
 
 .side-bar ul {
-  margin-top: 40px;
   padding: 0;
 }
 
 .side-bar ul li {
   list-style: none;
   /* padding: 0px 10px 0px 10px; */
-  padding-bottom: 247px;
+  padding-bottom: 69px;
   font-size: 25px;
   text-align: center;
   border-bottom: 2px solid #d6d6d6;
@@ -705,6 +708,11 @@ button > h3 {
   margin: 0;
 }
 
+#proyectos #presentacion .flex li,
+#testimonios #presentacion .flex li {
+  width: 300px;
+}
+
 #proyectos .li-file-input span,
 #proyectos .img-exist span,
 #testimonios .li-file-input span,
@@ -721,7 +729,7 @@ button > h3 {
 #testimonios .img-exist .removeBtn {
   display: flex;
   justify-content: flex-end;
-  margin-right: 14px;
+  margin-right: 2px;
 }
 
 #proyectos .li-file-input .file-result span,
@@ -733,7 +741,7 @@ button > h3 {
 #proyectos .preview,
 #testimonios .preview {
   height: 150px;
-  width: 150px;
+  width: 100%;
   background-position: center !important;
   position: relative;
   background-repeat: no-repeat !important;

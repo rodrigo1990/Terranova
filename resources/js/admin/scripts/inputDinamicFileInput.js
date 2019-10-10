@@ -1,11 +1,6 @@
 	$(document).on('change','input.added', function(){
 
-			//	alert('asdaosd');
-
 			var id = ($(this).attr('id')=='presentacion') ? 'presentacion' : $(this).attr('id').match(/\d+/);
-
-			alert(id);
-
             
              var file = $(this).val();
 

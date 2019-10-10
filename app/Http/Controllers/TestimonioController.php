@@ -38,7 +38,8 @@ class TestimonioController extends Controller
 		 	$testimonio->img()->save($img);
 
 
-		 	return "Testimonio cargado con exito";
+
+		 	return redirect('/admin/viewListTestimonios/"create"');
 
 
 	 	} catch (Exception $e) {
@@ -64,7 +65,7 @@ class TestimonioController extends Controller
 	 		Testimonio::find($request->id)->delete();
 
 			
-		 	return view('admin.testimonio.listTestimonios',['msg' => 'true']);
+		 	return redirect('/admin/viewListTestimonios/"destroy"');
 
 
 	 	} catch (Exception $e) {
@@ -114,7 +115,7 @@ class TestimonioController extends Controller
 
 
 	 		
-		 	return view('admin.testimonio.listTestimonios',['msg' => 'true']);
+		 	return redirect('/admin/viewListTestimonios/"update"');
 
 
 	 	} catch (Exception $e) {

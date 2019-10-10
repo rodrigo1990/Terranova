@@ -1,11 +1,6 @@
-    $('input[type="file"]').on('change', function(){
-
-            //  alert('asdaosd');
+    $('input[type=file]').on('change', function(){
 
             var id = ($(this).attr('id')=='presentacion') ? 'presentacion' : $(this).attr('id').match(/\d+/);
-
-            alert(id);
-
             
              var file = $(this).val();
 
@@ -21,9 +16,7 @@
             format = file.split('.').pop();
 
             if(format == "jpg" || format == "png"){
-
             if(file_size>2097152) {
-
                 alert("El archivo NO puede ser superior a 2MB");
 
             }else{

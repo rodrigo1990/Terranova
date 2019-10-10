@@ -16,15 +16,15 @@ Route::get('/', function () {
 });
 
 Route::get('/admin/viewCreateProyecto', 'FrontController@viewCreateProyecto');
-Route::get('/admin/viewListProyectos', 'FrontController@viewListProyectos');
+Route::get('/admin/viewListProyectos/{msg}', 'FrontController@viewListProyectos');
 Route::get('/admin/viewUpdateProyecto/{id}', 'FrontController@viewUpdateProyecto');
 
 Route::get('/admin/viewCreateTestimonio', 'FrontController@viewCreateTestimonio');
-Route::get('/admin/viewListTestimonios', 'FrontController@viewListTestimonios');
+Route::get('/admin/viewListTestimonios/{msg}', 'FrontController@viewListTestimonios');
 Route::get('/admin/viewUpdateTestimonio/{id}', 'FrontController@viewUpdateTestimonio');
 
 Route::get('/admin/viewCreateNovedad', 'FrontController@viewCreateNovedad');
-Route::get('/admin/viewListNovedades', 'FrontController@viewListNovedades');
+Route::get('/admin/viewListNovedades/{msg}', 'FrontController@viewListNovedades');
 Route::get('/admin/viewUpdateNovedad/{id}', 'FrontController@viewUpdateNovedad');
 
 

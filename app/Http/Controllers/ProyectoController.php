@@ -63,7 +63,7 @@ class ProyectoController extends Controller
 		 	
 		 	}
 
-		 	return view('admin.proyecto.createProyecto',['msg' => 'true']);
+		 	return redirect('/admin/viewListProyectos/"create"');
 
 
 	 	} catch (Exception $e) {
@@ -136,7 +136,7 @@ class ProyectoController extends Controller
  	 			 	}
  			 	}
 		 	}
-		 	return view('admin.proyecto.createProyecto',['msg' => 'true']);
+		 	return redirect('/admin/viewListProyectos/"update"');
 
 
 	 	} catch (Exception $e) {
@@ -166,7 +166,7 @@ class ProyectoController extends Controller
 	 		Proyecto::find($request->id)->delete();
 
 			
-		 	return view('admin.proyecto.listProyecto',['msg' => 'true']);
+		 	return redirect('/admin/viewListProyectos/"destroy"');
 
 
 	 	} catch (Exception $e) {

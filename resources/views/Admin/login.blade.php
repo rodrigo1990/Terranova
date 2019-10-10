@@ -33,20 +33,20 @@
 		</a>
 	</div>
 <div class=" side-bar col-lg-2 col-md-2 col-sm-2"  >
-  <img class="logo margin-left-5 text-left float-left" src="<?php echo asset("storage/img/logo.png")?>" id="icon" alt="User Icon" style="width:150px" />
+  <img class="logo margin-left-5 center-block" src="<?php echo asset("storage/img/logo.png")?>" id="icon" alt="User Icon" style="width:180px" />
 	<ul>
 		<li>
-			<a href="/admin/viewListProyectos" target="iframe">
+			<a href="/admin/viewListProyectos/null" target="iframe">
 				Proyectos
 			</a>
 		</li>
 		<li>
-			<a href="/admin/viewListTestimonios" target="iframe">
+			<a href="/admin/viewListTestimonios/null" target="iframe">
 				Testimonios
 			</a>
 		</li>
 		<li>
-			<a href="/admin/viewListNovedades" target="iframe">
+			<a href="/admin/viewListNovedades/null" target="iframe">
 				Novedades
 			</a>
 		</li>

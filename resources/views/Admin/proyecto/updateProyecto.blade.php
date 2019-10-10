@@ -1,4 +1,4 @@
-@extends('Admin.layouts.main')
+@extends('Admin.layouts.iframe')
 	@section('main')
 	<section id="proyectos">
 		<h1>PROYECTOS</h1>
@@ -35,7 +35,7 @@
 					<label for="descripcion">Descripción</label>
 					<textarea  name="descripcion" id="" cols="30" rows="10">{{$proyecto->descripcion}}</textarea>
 					<br><br>
-					<div class="row">
+					<div id="presentacion" class="row">
 						<h2>PRESENTACIÓN</h2>
 						
 						<ul class="flex">
@@ -44,8 +44,10 @@
 						@foreach($proyecto->img as $img)
 							@if($img->tipo=='PRESENTACION')
 								<li id="img-exist-{{$img->id}}" class="img-exist">
-									<a onclick="deleteImg('{{$img->id}}','presentacion')" class=" removeBtn text-center center-block"><i class="fas fa-times-circle"></i></a>
-									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="preview"></div>
+									
+									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="preview">
+										<a onclick="deleteImg('{{$img->id}}','presentacion','proyecto')" class=" removeBtn text-center center-block"><i class="fas fa-times-circle"></i></a>
+									</div>
 									
 								</li>	
 							@endif
@@ -70,8 +72,10 @@
 							@if($img->tipo == 'SLIDE')
 							
 								<li id="img-exist-{{$img->id}}" class="img-exist">
-									<a onclick="deleteImg('{{$img->id}}')" class="removeBtn text-center center-block"><i class="fas fa-times-circle"></i></a>
-									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="preview"></div>
+									
+									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="preview">
+										<a onclick="deleteImg('{{$img->id}}','slide','proyecto')" class="removeBtn text-center center-block"><i class="fas fa-times-circle"></i></a>
+									</div>
 									
 								</li>
 							
@@ -118,25 +122,7 @@
 			
 		</script>
 		<script src="/js/app_admin.js"></script>
-		<script src="/js/dropzone.js"></script>
-		<script>
-			$(window).ready(function(){
-				
-				@if(isset($msg))
-
-					var msg = <?php echo $msg ?>;
-
-					if(msg==true){
-						alert('¡Producto subido con exito!');
-					}else{
-						alert(msg);
-					}
-
-				@endif
-
-			});
-		</script>
-		
+		<script src="/js/dropzone.js"></script>	
 		<script>
 			tinymce.init({selector: "textarea",  // change this value according to your HTML
 			  plugins: "link",

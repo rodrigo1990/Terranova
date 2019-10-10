@@ -25,6 +25,9 @@ $dark-green:#048804;
   @include transitions;
 }
 
+body.main{
+  overflow-y: hidden;
+}
 
 body {
   font-family: "Poppins", sans-serif;
@@ -711,7 +714,6 @@ input[type=text]:placeholder, input[type=password]:placeholder {
 }
 
 .side-bar ul{
-  margin-top:40px;
   padding:0;
 }
 
@@ -719,7 +721,7 @@ input[type=text]:placeholder, input[type=password]:placeholder {
 .side-bar ul li{
       list-style: none;
     /* padding: 0px 10px 0px 10px; */
-    padding-bottom: 247px;
+    padding-bottom: 69px;
     font-size: 25px;
     text-align: center;
     border-bottom: 2px solid #d6d6d6;
@@ -763,6 +765,11 @@ button>h3{
 
 
 #proyectos,#testimonios{
+  #presentacion{
+    .flex li{
+      width: 300px;
+    }
+  }
   .li-file-input,.img-exist{
    span{
       position: absolute;
@@ -774,7 +781,7 @@ button>h3{
     .removeBtn{
         display: flex;
         justify-content: flex-end;
-        margin-right: 14px;
+        margin-right: 2px;
     }
   }
 
@@ -785,7 +792,7 @@ button>h3{
 
   .preview{
      height: 150px;
-    width: 150px;
+    width: 100%;
     background-position: center !important;
     position: relative;
     background-repeat: no-repeat !important;

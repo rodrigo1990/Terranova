@@ -38,7 +38,8 @@ class NovedadController extends Controller
 		 	$novedad->img()->save($img);
 
 
-		 	return "Testimonio cargado con exito";
+
+		 	return redirect('/admin/viewListNovedades/"create"');
 
 
 	 	} catch (Exception $e) {
@@ -63,7 +64,7 @@ class NovedadController extends Controller
 	 		Novedad::find($request->id)->delete();
 
 			
-		 	return view('admin.novedad.listNovedades',['msg' => 'true']);
+		 	return redirect('/admin/viewListNovedades/"destoy"');
 
 
 	 	} catch (Exception $e) {
@@ -114,7 +115,7 @@ class NovedadController extends Controller
 
 
 	 		
-		 	return view('admin.novedad.listNovedades',['msg' => 'true']);
+		 	return redirect('/admin/viewListNovedades/"update"');
 
 
 	 	} catch (Exception $e) {

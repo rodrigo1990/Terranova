@@ -1,4 +1,4 @@
-@extends('Admin.layouts.main')
+@extends('Admin.layouts.iframe')
 	@section('main')
 	<section id="proyectos">
 		<h1>PROYECTOS</h1>
@@ -22,7 +22,7 @@
 					<label for="descripcion">Descripción</label>
 					<textarea  name="descripcion" id="" cols="30" rows="10"></textarea>
 					<br><br>
-					<div class="row">
+					<div  id="presentacion" class="row">
 						<h2>IMAGEN DE PRESENTACIÓN</h2>
 
 						<div class="img-presentacion-input-cont center-block">
@@ -102,26 +102,7 @@
 		<script>
 			window.count=2;
 		</script>
-		<script src="/js/app_admin.js"></script>
-		<script src="/js/dropzone.js"></script>
-		<script>
-			$(window).ready(function(){
-				
-				@if(isset($msg))
-
-					var msg = <?php echo $msg ?>;
-
-					if(msg==true){
-						alert('¡Producto subido con exito!');
-					}else{
-						alert(msg);
-					}
-
-				@endif
-
-			});
-		</script>
-		
+		<script src="/js/dropzone.js"></script>	
 		<script>
 			tinymce.init({selector: "textarea",  // change this value according to your HTML
 			  plugins: "link",
@@ -130,7 +111,6 @@
 		</script>
 
 	
-
 
 
 

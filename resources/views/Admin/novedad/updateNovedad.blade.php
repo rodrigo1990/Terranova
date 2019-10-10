@@ -1,4 +1,4 @@
-@extends('Admin.layouts.main')
+@extends('Admin.layouts.iframe')
 	@section('main')
 		<h1>NOVEDADES</h1>
 		
@@ -52,26 +52,7 @@
 			  plugins: "link",
 			  menubar: "insert edit align",
 			  language:'es'});
-		</script>
-		<script>
-			$(window).ready(function(){
-				
-				@if(isset($msg))
-
-					var msg = <?php echo $msg ?>;
-
-					if(msg==true){
-						alert('¡Producto subido con exito!');
-					}else{
-						alert(msg);
-					}
-
-				@endif
-
-			});
-		</script>
-
-	
+		</script>	
 		<script>
 			$('input[type="file"]').on('change', function(){
 

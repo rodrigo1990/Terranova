@@ -1,5 +1,5 @@
 window.deleteImg = function(id,tipo,seccion){
-    
+    alert("asd");
     var url;
 
     switch(seccion){

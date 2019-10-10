@@ -1,4 +1,4 @@
-@extends('Admin.layouts.main')
+@extends('Admin.layouts.iframe')
 	@section('main')
 		<h1>NOVEDADES</h1>
 		<br><br>
@@ -34,7 +34,7 @@
 
 				<div class="col-lg-2 col-md-2 col-sm-2">
 					<ul class="flex text-center">
-						<li><a href="/admin/viewCreateTestimonio" class="btn btn-primary btn-file border-btn bk-green "><h3>ALTA DE <br> NOVEDADES</h3></a></li>
+						<li><a href="/admin/viewCreateNovedad" class="btn btn-primary btn-file border-btn bk-green "><h3>ALTA DE <br> NOVEDADES</h3></a></li>
 					</ul>
 				</div>
 			</div>
@@ -48,23 +48,7 @@
 	@section('scripts')
 		<script src="/js/app_admin.js"></script>
 		<script src="/js/dropzone.js"></script>
-		<script>
-			$(window).ready(function(){
-				
-				@if(isset($msg))
-
-					var msg = <?php echo $msg ?>;
-
-					if(msg==true){
-						alert('¡Producto eliminado con exito!');
-					}else{
-						alert(msg);
-					}
-
-				@endif
-
-			});
-		</script>
+		@include('Admin.inc.showOperationMessage')
 		
 
 

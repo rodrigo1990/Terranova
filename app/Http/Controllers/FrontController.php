@@ -25,9 +25,10 @@ class FrontController extends Controller
     }
 
 
-    public function viewListProyectos(){
+    public function viewListProyectos(Request $request){
+        $msg = $request->msg;
     	$proyectos = Proyecto::all();
-    	return view('admin.proyecto.listProyecto',['proyectos'=>$proyectos]);
+    	return view('admin.proyecto.listProyecto',compact('proyectos','msg'));
     }
 
 
@@ -42,9 +43,10 @@ class FrontController extends Controller
     }
 
 
-    public function viewListTestimonios(){
+    public function viewListTestimonios(Request $request){
         $testimonios = Testimonio::all();
-        return view('admin.testimonio.listTestimonios',['testimonios'=>$testimonios]);
+        $msg = $request->msg;
+        return view('admin.testimonio.listTestimonios',compact('testimonios','msg'));
     }
 
 
@@ -61,9 +63,10 @@ class FrontController extends Controller
     }
 
 
-    public function viewListNovedades(){
+    public function viewListNovedades(Request $request){
         $novedades = Novedad::all();
-        return view('admin.novedad.listNovedades',['novedades'=>$novedades]);
+        $msg = $request->msg;
+        return view('admin.novedad.listNovedades',compact('novedades','msg'));
     }
 
 
