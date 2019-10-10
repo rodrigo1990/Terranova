@@ -43,12 +43,13 @@
 						
 						@foreach($proyecto->img as $img)
 							@if($img->tipo=='PRESENTACION')
-								<li id="img-exist-{{$img->id}}" class="img-exist">
-									
+								<li id="img-exist-{{$img->id}}" class="img-exist">		
 									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="preview">
 										<a onclick="deleteImg('{{$img->id}}','presentacion','proyecto')" class=" removeBtn text-center center-block"><i class="fas fa-times-circle"></i></a>
-									</div>
-									
+										<div id="file-result-presentacion" class="text-center">
+			                            <span id="file-img-presentacion">{{$img->nombre}}</span>
+		            					</div>
+									</div>				
 								</li>	
 							@endif
 						@endforeach
@@ -75,6 +76,9 @@
 									
 									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="preview">
 										<a onclick="deleteImg('{{$img->id}}','slide','proyecto')" class="removeBtn text-center center-block"><i class="fas fa-times-circle"></i></a>
+										<div id="file-result-presentacion" class="text-center">
+			                            <span id="file-img-presentacion">{{$img->nombre}}</span>
+		            					</div>
 									</div>
 									
 								</li>
@@ -121,8 +125,6 @@
 
 			
 		</script>
-		<script src="/js/app_admin.js"></script>
-		<script src="/js/dropzone.js"></script>	
 		<script>
 			tinymce.init({selector: "textarea",  // change this value according to your HTML
 			  plugins: "link",

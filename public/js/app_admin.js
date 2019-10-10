@@ -29885,7 +29885,7 @@ window.agregarImagenes = function () {
     $("#remove-esp-btn").fadeIn();
   }
 
-  $("#file-input-cont").append('<li id="li-file-input-' + count + '" class="li-file-input"> <div class="preview" id="preview-' + count + '"> <a onclick="resetInputFile(' + count + ')" class="removeBtn text-center center-block"> <i class="fas fa-times-circle"></i> </a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE ' + count + '<input name="img[' + count + ']" type="file" id="file-input-' + count + '" class="added"> </span> <div id="file-result-' + count + '" class="file-result text-center"> <span id="file-img-' + count + '"></span> </div> </div> </li>');
+  $("#file-input-cont").append('<li id="li-file-input-' + count + '" class="li-file-input"> <div class="preview" id="preview-' + count + '"> <a onclick="eliminarImagenes()" class="removeBtn text-center center-block"> <i class="fas fa-times-circle"></i> </a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE ' + count + '<input name="img[' + count + ']" type="file" id="file-input-' + count + '" class="added"> </span> <div id="file-result-' + count + '" class="file-result text-center"> <span id="file-img-' + count + '"></span> </div> </div> </li>');
 };
 
 /***/ }),
@@ -29898,7 +29898,6 @@ window.agregarImagenes = function () {
 /***/ (function(module, exports) {
 
 window.deleteImg = function (id, tipo, seccion) {
-  alert("asd");
   var url;
 
   switch (seccion) {
@@ -29908,6 +29907,10 @@ window.deleteImg = function (id, tipo, seccion) {
 
     case 'proyecto':
       url = '/admin/destroyImgProyecto';
+      break;
+
+    case 'novedad':
+      url = '/admin/destroyImgNovedad';
       break;
   }
 
@@ -29931,7 +29934,7 @@ window.deleteImg = function (id, tipo, seccion) {
 
             if (tipo == 'presentacion') {
               $("#newImgPresentacion").hide();
-              $("#newImgPresentacion").html('<div class="img-presentacion-input-cont center-block"> <span  class="btn btn-primary btn-file border-btn blue float-right" > IMAGEN DE PRESENTACIÓN <input name="img_presentacion" type="file" id="presentacion" class="added"> </span> <div id="file-result-presentacion" class="text-center"> <span id="file-img-presentacion"></span> </div>');
+              $("#newImgPresentacion").html('<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion"> <span  class="btn btn-primary btn-file border-btn blue float-right" > IMAGEN DE PRESENTACIÓN <input name="img_presentacion" type="file" id="presentacion" class="added"> </span> <div id="file-result-presentacion" class="text-center"> <span id="file-img-presentacion"></span> </div> </div>');
             }
 
             $("#newImgPresentacion").fadeIn();
@@ -30023,7 +30026,7 @@ $('input[type=file]').on('change', function () {
       if (id == 'presentacion') {
         $("#file-img-presentacion").html(name);
         $("#file-result-presentacion").fadeIn();
-        readURL(this, "#preview-" + id);
+        readURL(this, "#preview-presentacion");
       } else {
         $("#file-img-" + id + "").html(name);
         $("#file-result-" + id + "").fadeIn();
@@ -30129,7 +30132,7 @@ window.readURL = function (input, id) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-window.resetInputFile = function () {
+window.resetInputFile = function (id) {
   $("#file-input-" + id + "").val('');
   $("#file-img-" + id + "").html('');
 };

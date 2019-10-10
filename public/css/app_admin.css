@@ -709,14 +709,20 @@ button > h3 {
 }
 
 #proyectos #presentacion .flex li,
-#testimonios #presentacion .flex li {
+#testimonios #presentacion .flex li,
+#novedades #presentacion .flex li {
   width: 300px;
 }
 
 #proyectos .li-file-input span,
 #proyectos .img-exist span,
+#proyectos #preview-presentacion span,
 #testimonios .li-file-input span,
-#testimonios .img-exist span {
+#testimonios .img-exist span,
+#testimonios #preview-presentacion span,
+#novedades .li-file-input span,
+#novedades .img-exist span,
+#novedades #preview-presentacion span {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -725,27 +731,42 @@ button > h3 {
 
 #proyectos .li-file-input .removeBtn,
 #proyectos .img-exist .removeBtn,
+#proyectos #preview-presentacion .removeBtn,
 #testimonios .li-file-input .removeBtn,
-#testimonios .img-exist .removeBtn {
+#testimonios .img-exist .removeBtn,
+#testimonios #preview-presentacion .removeBtn,
+#novedades .li-file-input .removeBtn,
+#novedades .img-exist .removeBtn,
+#novedades #preview-presentacion .removeBtn {
   display: flex;
   justify-content: flex-end;
   margin-right: 2px;
 }
 
 #proyectos .li-file-input .file-result span,
-#testimonios .li-file-input .file-result span {
+#proyectos #file-result-presentacion span,
+#testimonios .li-file-input .file-result span,
+#testimonios #file-result-presentacion span,
+#novedades .li-file-input .file-result span,
+#novedades #file-result-presentacion span {
   bottom: -20px;
   top: 151px;
 }
 
 #proyectos .preview,
-#testimonios .preview {
+#testimonios .preview,
+#novedades .preview {
   height: 150px;
+  min-width: 200px;
   width: 100%;
   background-position: center !important;
   position: relative;
   background-repeat: no-repeat !important;
   background-size: cover !important;
+}
+
+#preview-presentacion {
+  width: 219px !important;
 }
 
 /*

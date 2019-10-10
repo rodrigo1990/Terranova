@@ -46,8 +46,6 @@
 	
 
 	@section('scripts')
-		<script src="/js/app_admin.js"></script>
-		<script src="/js/dropzone.js"></script>
 		@include('Admin.inc.showOperationMessage')
 		
 

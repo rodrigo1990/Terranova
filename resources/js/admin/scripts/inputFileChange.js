@@ -27,7 +27,7 @@
 
                     $("#file-result-presentacion").fadeIn();
 
-                    readURL(this,"#preview-"+id);
+                    readURL(this,"#preview-presentacion");
  
                 }else{
 

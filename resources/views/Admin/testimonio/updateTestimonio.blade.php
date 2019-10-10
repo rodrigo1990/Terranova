@@ -22,18 +22,23 @@
 
 						<ul class="flex">
 							
-						
+						@if($testimonio->img[0])
 						
 								<li id="img-exist-{{$testimonio->img[0]->id}}" class="img-exist">
-									<a onclick="deleteImg('{{$testimonio->img[0]->id}}','presentacion','testimonio')" class=" removeBtn text-center center-block"><i class="fas fa-times-circle"></i></a>
-									<div style="background:url(<?php echo asset('storage/img/testimonios/'.$testimonio->img[0]->ruta.'') ?>)" class="preview"></div>
+									
+									<div style="background:url(<?php echo asset('storage/img/testimonios/'.$testimonio->img[0]->ruta.'') ?>)" class="preview" id="preview-presentacion">
+										<a onclick="deleteImg('{{$testimonio->img[0]->id}}','presentacion','testimonio')" class=" removeBtn text-center center-block"><i class="fas fa-times-circle"></i></a>
+										<div id="file-result-presentacion" class="text-center">
+				                            <span id="file-img-presentacion">{{$testimonio->img[0]->nombre}}</span>
+			            					</div>
+									</div>
 									
 								</li>	
-
+						@else
 
 								<div id="newImgPresentacion"></div>
 					
-
+						@endif
 
 
 						</ul>
@@ -56,8 +61,3 @@
 
 	@stop
 	
-
-	@section('scripts')
-		<script src="/js/app_admin.js"></script>
-		<script src="/js/dropzone.js"></script>
-	@stop

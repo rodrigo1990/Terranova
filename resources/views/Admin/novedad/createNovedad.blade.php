@@ -1,5 +1,6 @@
 @extends('Admin.layouts.iframe')
 	@section('main')
+	<section id="novedades">
 		<h1>NOVEDADES</h1>
 		
 		<br><br>
@@ -18,7 +19,7 @@
 					<div class="row">
 						<h2>IMAGEN DE PRESENTACIÓN</h2>
 
-						<div class="img-presentacion-input-cont center-block">
+						<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion">
 							<span  class="btn btn-primary btn-file border-btn blue float-right" >
 		                        IMAGEN DE PRESENTACIÓN 
 		                     	<input name="imgPresentacion" type="file" id="presentacion">
@@ -38,14 +39,13 @@
 
 		</form>
 		</div>
+	</section>
 		
 
 	@stop
 	
 
 	@section('scripts')
-		<script src="/js/app_admin.js"></script>
-		<script src="/js/dropzone.js"></script>
 		<script>
 			tinymce.init({selector: "textarea",  // change this value according to your HTML
 			  plugins: "link",

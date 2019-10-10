@@ -90,23 +90,22 @@ class NovedadController extends Controller
 			$novedad->save();
 
 
-			if($request->imgPresentacion){
+			if($request->img_presentacion){
 			
-					$img = ImgNovedad::where('novedad_id',$request->id)->get();
-		
-					Storage::disk('public')->delete("novedades/".$img[0]->ruta."");
-		
-					$name = rand(0,99999999);
-		
-				 	$format = $request->imgPresentacion->extension();
-		
-				 	$img[0]->ruta = "".$name.".".$format."";
-		
-				 	$img[0]->nombre = $request->imgPresentacion->getClientOriginalName(); 
-		
-				 	$path = $request->imgPresentacion->storeAs('novedades/',$img[0]->ruta,'public');
-		
-				 	$img[0]->save();
+					
+				$img = new ImgNovedad();
+
+			 	$name = rand(0,99999999);
+
+			 	$format = $request->img_presentacion->extension();
+
+			 	$img->ruta = "".$name.".".$format."";
+
+			 	$img->nombre = $request->img_presentacion->getClientOriginalName(); 
+
+			 	$path = $request->img_presentacion->storeAs('novedades/',$img->ruta,'public');
+
+			 	$novedad->img()->save($img);	
 			
 			}
 			
@@ -123,6 +122,31 @@ class NovedadController extends Controller
 	 		return view('admin.novedad.listNovedades',['msg' => $msg]);
 
 	 	}
+	 }
+
+
+	  public function destroyImg(Request $request){
+
+	 	try {
+
+
+	 		$img = ImgNovedad::find($request->id);
+
+	 		
+ 			Storage::disk('public')->delete("novedades/".$img->ruta."");
+	 		
+
+
+	 		ImgNovedad::find($request->id)->delete();
+
+			
+		 	return 'true';
+
+
+	 	} catch (Exception $e) {
+			return $e;
+	 	}
+
 	 }
 
 }

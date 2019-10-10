@@ -1,4 +1,4 @@
-window.resetInputFile = function(){
+window.resetInputFile = function(id){
 
 
 				$("#file-input-"+id+"").val('');

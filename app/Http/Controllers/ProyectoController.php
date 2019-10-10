@@ -23,24 +23,27 @@ class ProyectoController extends Controller
 
 		 	$proyecto->save();
 
-		 	//IMAGEN PRESENTACION
-		 	$img_presentacion = new Img();
+		 	if($request->img_presentacion){
 
-		 	$name = rand(0,99999999);
-
-		 	$format = $request->img_presentacion->extension();
-
-		 	$img_presentacion->ruta = "".$name.".".$format."";
-
-		 	$img_presentacion->nombre = $request->img_presentacion->getClientOriginalName(); 
-
-		 	$path = $request->img_presentacion->storeAs('proyectos/',$img_presentacion->ruta,'public');
-
-
-		 	$img_presentacion->tipo='PRESENTACION';
-
-		 	$proyecto->img()->save($img_presentacion);	
-
+ 			 	//IMAGEN PRESENTACION
+ 			 	$img_presentacion = new Img();
+ 	
+ 			 	$name = rand(0,99999999);
+ 	
+ 			 	$format = $request->img_presentacion->extension();
+ 	
+ 			 	$img_presentacion->ruta = "".$name.".".$format."";
+ 	
+ 			 	$img_presentacion->nombre = $request->img_presentacion->getClientOriginalName(); 
+ 	
+ 			 	$path = $request->img_presentacion->storeAs('proyectos/',$img_presentacion->ruta,'public');
+ 	
+ 	
+ 			 	$img_presentacion->tipo='PRESENTACION';
+ 	
+ 			 	$proyecto->img()->save($img_presentacion);
+ 			 		
+		 	}
 		 	//IMG SLIDER
 		 	for($i=1;$i<=count($request->img);$i++){
 

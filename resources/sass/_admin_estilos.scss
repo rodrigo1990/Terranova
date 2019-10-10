@@ -764,13 +764,13 @@ button>h3{
 
 
 
-#proyectos,#testimonios{
+#proyectos,#testimonios,#novedades{
   #presentacion{
     .flex li{
       width: 300px;
     }
   }
-  .li-file-input,.img-exist{
+  .li-file-input,.img-exist,#preview-presentacion{
    span{
       position: absolute;
       bottom: 0;
@@ -785,13 +785,14 @@ button>h3{
     }
   }
 
-  .li-file-input .file-result span{
+  .li-file-input .file-result span,#file-result-presentacion span{
     bottom: -20px;
     top: 151px;
   }
 
   .preview{
      height: 150px;
+     min-width: 200px;
     width: 100%;
     background-position: center !important;
     position: relative;
@@ -799,4 +800,9 @@ button>h3{
     background-size: cover !important;
 
 }
+}
+
+
+#preview-presentacion{
+  width:219px !important;
 }

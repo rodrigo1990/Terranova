@@ -92,21 +92,19 @@ class TestimonioController extends Controller
 
 			if($request->img_presentacion){
 			
-					$img = ImgTestimonio::where('testimonio_id',$request->id)->get();
-		
-					Storage::disk('public')->delete("testimonios/".$img[0]->ruta."");
-		
-					$name = rand(0,99999999);
-		
-				 	$format = $request->img_presentacion->extension();
-		
-				 	$img[0]->ruta = "".$name.".".$format."";
-		
-				 	$img[0]->nombre = $request->img_presentacion->getClientOriginalName(); 
-		
-				 	$path = $request->img_presentacion->storeAs('testimonios/',$img[0]->ruta,'public');
-		
-				 	$img[0]->save();
+				$img = new ImgTestimonio();
+
+			 	$name = rand(0,99999999);
+
+			 	$format = $request->img_presentacion->extension();
+
+			 	$img->ruta = "".$name.".".$format."";
+
+			 	$img->nombre = $request->img_presentacion->getClientOriginalName(); 
+
+			 	$path = $request->img_presentacion->storeAs('testimonios/',$img->ruta,'public');
+
+			 	$testimonio->img()->save($img);	
 			
 			}
 			

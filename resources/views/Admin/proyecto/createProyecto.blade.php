@@ -25,7 +25,7 @@
 					<div  id="presentacion" class="row">
 						<h2>IMAGEN DE PRESENTACIÓN</h2>
 
-						<div class="img-presentacion-input-cont center-block">
+						<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion">
 							<span  class="btn btn-primary btn-file border-btn blue float-right" >
 		                        IMAGEN DE PRESENTACIÓN 
 		                     	<input name="img_presentacion" type="file" id="presentacion">
@@ -102,7 +102,6 @@
 		<script>
 			window.count=2;
 		</script>
-		<script src="/js/dropzone.js"></script>	
 		<script>
 			tinymce.init({selector: "textarea",  // change this value according to your HTML
 			  plugins: "link",
