@@ -40,7 +40,7 @@
 		 			<h2>SLIDER</h2>
 					<ul class="flex" id="file-input-cont">
 
-						<li id="li-file-input-1" class="li-file-input">
+						<li id="item_1" class="li-file-input">
 							
 	                    	<div class="preview" id="preview-1">
 	                    	
@@ -54,7 +54,7 @@
 	                    	</div>
 						</li>
 						
-						<li id="li-file-input-2" class="li-file-input">
+						<li id="item_2" class="li-file-input">
 							
 	                    	<div class="preview" id="preview-2">
 	                    	
@@ -99,15 +99,40 @@
 	
 
 	@section('scripts')
-		<script>
-			window.count=2;
-		</script>
-		<script>
-			tinymce.init({selector: "textarea",  // change this value according to your HTML
-			  plugins: "link",
-			  menubar: "insert edit align",
-			  language:'es'});
-		</script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+	<script>
+		window.count=2;
+	</script>
+	<script>
+		tinymce.init({selector: "textarea",  // change this value according to your HTML
+		  plugins: "link",
+		  menubar: "insert edit align",
+		  language:'es'});
+	</script>
+	
+	<script>
+	  $( function() {
+	    $( "#file-input-cont" ).sortable({
+	    	update: function( event, ui ) {
+	    		
+	    		//console.log(ui.item.index());
+
+	    		$( "#file-input-cont li" ).each(function(index){
+
+	    			$(this).attr('id','item_'+index);
+
+	    			$(this).find('input').attr('name','img['+index+']');
+
+	    		});
+
+	    	}
+	    });
+	    $( "#file-input-cont" ).disableSelection();
+	  } );
+  	</script>
+		
+
 
 	
 

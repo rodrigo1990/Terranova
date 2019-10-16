@@ -29885,7 +29885,7 @@ window.agregarImagenes = function () {
     $("#remove-esp-btn").fadeIn();
   }
 
-  $("#file-input-cont").append('<li id="li-file-input-' + count + '" class="li-file-input"> <div class="preview" id="preview-' + count + '"> <a onclick="eliminarImagenes()" class="removeBtn text-center center-block"> <i class="fas fa-times-circle"></i> </a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE ' + count + '<input name="img[' + count + ']" type="file" id="file-input-' + count + '" class="added"> </span> <div id="file-result-' + count + '" class="file-result text-center"> <span id="file-img-' + count + '"></span> </div> </div> </li>');
+  $("#file-input-cont").append('<li id="item_' + count + '" class="li-file-input"> <div class="preview" id="preview-' + count + '"> <a onclick="eliminarImagenes()" class="removeBtn text-center center-block"> <i class="fas fa-times-circle"></i> </a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE ' + count + '<input name="img[' + count + ']" type="file" id="file-input-' + count + '" class="added"> </span> <div id="file-result-' + count + '" class="file-result text-center"> <span id="file-img-' + count + '"></span> </div> </div> </li>');
 };
 
 /***/ }),
@@ -29955,13 +29955,13 @@ window.deleteImg = function (id, tipo, seccion) {
 /***/ (function(module, exports) {
 
 window.eliminarImagenes = function () {
-  console.log('#li-file-input-' + count + '');
-  $('#li-file-input-' + count + '').hide(function () {
-    $('#li-file-input-' + count + '').remove();
+  console.log('#item_' + count + '');
+  $('#item_' + count + '').hide(function () {
+    $('#item_' + count + '').remove();
     count--;
 
     if (count == 2) {
-      $("#remove-esp-btn").hide();
+      $("#item_").hide();
     }
   });
 };

@@ -19,6 +19,7 @@ class ImgProyecto extends Migration
             $table->string('nombre',200);
             $table->unsignedBigInteger('proyecto_id');
             $table->string('tipo',100);
+            $table->integer('order')->nullable();
 
 
              $table->foreign('proyecto_id')->references('id')->on('proyectos');

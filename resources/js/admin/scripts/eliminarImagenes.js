@@ -1,13 +1,13 @@
 window.eliminarImagenes = function(){
-	console.log('#li-file-input-'+count+'');
+	console.log('#item_'+count+'');
 			
-	$('#li-file-input-'+count+'').hide(function(){
-		$('#li-file-input-'+count+'').remove();
+	$('#item_'+count+'').hide(function(){
+		$('#item_'+count+'').remove();
 
 		count--;
 
 		if(count==2){
-			$("#remove-esp-btn").hide();
+			$("#item_").hide();
 		}
 	});
 }

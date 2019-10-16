@@ -119,18 +119,27 @@
 	
 
 	@section('scripts')
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
+			window.count=2;	
+	</script>
+	<script>
+		tinymce.init({selector: "textarea",  // change this value according to your HTML
+		  plugins: "link",
+		  menubar: "insert edit align",
+		  language:'es'});
+	</script>
+	<script>
+	  $( function() {
+	    $( "#file-input-cont" ).sortable({
+	    	update: function( event, ui ) {
+	    		console.log(ui.item.index());
+	    	}
+	    });
+	    $( "#file-input-cont" ).disableSelection();
+	  } );
+  	</script>
 
-			window.count=2;
-
-			
-		</script>
-		<script>
-			tinymce.init({selector: "textarea",  // change this value according to your HTML
-			  plugins: "link",
-			  menubar: "insert edit align",
-			  language:'es'});
-		</script>
 	
 
 

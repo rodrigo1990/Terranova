@@ -45,7 +45,7 @@ class ProyectoController extends Controller
  			 		
 		 	}
 		 	//IMG SLIDER
-		 	for($i=1;$i<=count($request->img);$i++){
+		 	for($i=0;$i<=count($request->img)-1;$i++){
 
 			 	$img = new Img();
 
@@ -59,6 +59,7 @@ class ProyectoController extends Controller
 
 			 	$path = $request->img[$i]->storeAs('proyectos/',$img->ruta,'public');
 
+			 	$img->order = $i;
 
 			 	$img->tipo = 'SLIDE';
 
