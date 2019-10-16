@@ -72,7 +72,7 @@
 
 							@if($img->tipo == 'SLIDE')
 							
-								<li id="img-exist-{{$img->id}}" class="img-exist">
+								<li id="{{$img->ruta}}_{{$img->id}}" class="img-exist">
 									
 									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="preview">
 										<a onclick="deleteImg('{{$img->id}}','slide','proyecto')" class="removeBtn text-center center-block"><i class="fas fa-times-circle"></i></a>
@@ -133,7 +133,25 @@
 	  $( function() {
 	    $( "#file-input-cont" ).sortable({
 	    	update: function( event, ui ) {
-	    		console.log(ui.item.index());
+	    		
+	    		//console.log(ui.item.index());
+
+	    		$( "#file-input-cont li" ).each(function(index){
+
+	    			var id = $(this).attr('id');
+
+	    			id  = id.split("_");
+
+	    			console.log(id[0]);
+
+	    			$(this).attr('id',id[0]+'_'+index);
+
+	    			//$(this).find('input').attr('name','img['+index+']');
+
+	    		});
+
+	    		console.log($( "#file-input-cont" ).sortable( "serialize"));
+
 	    	}
 	    });
 	    $( "#file-input-cont" ).disableSelection();

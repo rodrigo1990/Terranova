@@ -46,7 +46,7 @@
 	                    	
 								<span  class="btn btn-primary btn-file border-btn blue float-right" >
 			                        SLIDE 1 
-			                     	<input name="img[1]" type="file" id="file-input-1">
+			                     	<input name="img[0]" type="file" id="file-input-1">
 			                     </span>
 			                     <div id="file-result-1" class="file-result text-center">
 			                            <span id="file-img-1"></span>
@@ -60,7 +60,7 @@
 	                    	
 								<span  class="btn btn-primary btn-file border-btn blue float-right" >
 			                        SLIDE 2
-			                      <input name="img[2]" type="file" id="file-input-2">
+			                      <input name="img[1]" type="file" id="file-input-2">
 			                    </span>
 			                     <div id="file-result-2" class="file-result text-center">
 			                          <span id="file-img-2"></span>
