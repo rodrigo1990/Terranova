@@ -13,6 +13,9 @@ use App\ImgTestimonio;
 use App\Novedad;
 use App\ImgNovedad;
 
+use Illuminate\Support\Facades\DB;
+
+
 class FrontController extends Controller
 {
     public function index(){
@@ -34,8 +37,11 @@ class FrontController extends Controller
 
 
      public function viewUpdateProyecto(Request $request){
-     	$proyecto = Proyecto::with('img')->find($request->id);
-    	return view('admin.proyecto.updateProyecto',['proyecto'=>$proyecto]);
+
+     	$proyecto = Proyecto::find($request->id);
+        $imagenes = Img::where('proyecto_id',$request->id)->orderBy('order','asc')->get(); 
+
+    	return view('admin.proyecto.updateProyecto', compact('proyecto','imagenes'));
     }
 
      public function viewCreateTestimonio(){

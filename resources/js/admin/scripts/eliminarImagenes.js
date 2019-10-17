@@ -1,8 +1,8 @@
 window.eliminarImagenes = function(){
-	console.log('#item_'+count+'');
+	console.log('#item_'+(count+1)+'');
 			
-	$('#item_'+count+'').hide(function(){
-		$('#item_'+count+'').remove();
+	$('#item_'+(count+1)+'').hide(function(){
+		$('#item_'+(count+1)+'').remove();
 
 		count--;
 

@@ -114,6 +114,25 @@ class ProyectoController extends Controller
 			 	$proyecto->img()->save($img);	
 
 		 	}
+
+
+		 	//ACTUALIZAR ORDEN EN SLIDES
+			$f = min(array_keys($request->orderSlide));
+			$l = max(array_keys($request->orderSlide));
+			 	for($i=$f;$i<=$l;$i++){
+
+				 	$img = Img::find($i);
+
+				 	$img->order = $request->orderSlide[$i];
+
+				 	$proyecto->img()->save($img);	
+			 	
+			 	}
+
+
+
+
+
 		 	//IMG SLIDER
 		 	if($request->img){
  			 	if(count($request->img)>0){
@@ -140,6 +159,9 @@ class ProyectoController extends Controller
  	 			 	}
  			 	}
 		 	}
+
+
+
 		 	return redirect('/admin/viewListProyectos/"update"');
 
 
@@ -148,6 +170,12 @@ class ProyectoController extends Controller
 	 		return view('admin.proyecto.createProyecto',['msg' => $msg]);
 
 	 	}
+
+	 	
+
+
+	 
+
 
 	 }
 

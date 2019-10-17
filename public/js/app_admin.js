@@ -29876,7 +29876,7 @@ __webpack_require__(/*! ./scripts/resetInputFile */ "./resources/js/admin/script
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-window.agregarImagenes = function () {
+window.agregarImagenes = function (operacion) {
   count++;
   console.log(count);
   console.log('<li id="li-file-input-' + count + '');
@@ -29885,7 +29885,7 @@ window.agregarImagenes = function () {
     $("#remove-esp-btn").fadeIn();
   }
 
-  $("#file-input-cont").append('<li id="item_' + count + '" class="li-file-input"> <div class="preview" id="preview-' + count + '"> <a onclick="eliminarImagenes()" class="removeBtn text-center center-block"> <i class="fas fa-times-circle"></i> </a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE ' + count + '<input name="img[' + count + ']" type="file" id="file-input-' + count + '" class="added"> </span> <div id="file-result-' + count + '" class="file-result text-center"> <span id="file-img-' + count + '"></span> </div> </div> </li>');
+  if (operacion == 'create') $("#file-input-cont").append('<li id="item_' + (count + 1) + '" class="li-file-input"> <div class="preview" id="preview-' + (count + 1) + '"> <a onclick="eliminarImagenes()" class="removeBtn text-center center-block"> <i class="fas fa-times-circle"></i> </a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE ' + (count + 1) + '<input name="img[' + count + ']" type="file" id="file-input-' + (count + 1) + '" class="added"> </span> <div id="file-result-' + (count + 1) + '" class="file-result text-center"> <span id="file-img-' + (count + 1) + '"></span> </div> </div> </li>');else $("#file-input-cont").append('<li id="item_' + (count + 1) + '" class="li-file-input"> <div class="preview" id="preview-' + (count + 1) + '"> <a onclick="eliminarImagenes()" class="removeBtn text-center center-block"> <i class="fas fa-times-circle"></i> </a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE ' + (count + 1) + '<input name="img[' + (count + 1) + ']" type="file" id="file-input-' + (count + 1) + '" class="added"> </span> <div id="file-result-' + (count + 1) + '" class="file-result text-center"> <span id="file-img-' + (count + 1) + '"></span> </div> </div> </li>');
 };
 
 /***/ }),
@@ -29898,25 +29898,26 @@ window.agregarImagenes = function () {
 /***/ (function(module, exports) {
 
 window.deleteImg = function (id, tipo, seccion) {
+  var operacion = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
   var url;
-
-  switch (seccion) {
-    case 'testimonio':
-      url = '/admin/destroyImgTestimonio';
-      break;
-
-    case 'proyecto':
-      url = '/admin/destroyImgProyecto';
-      break;
-
-    case 'novedad':
-      url = '/admin/destroyImgNovedad';
-      break;
-  }
-
   var c = confirm('¿Desea eliminar esta imagen?');
 
   if (c == true) {
+    switch (seccion) {
+      case 'testimonio':
+        url = '/admin/destroyImgTestimonio';
+        break;
+
+      case 'proyecto':
+        url = '/admin/destroyImgProyecto';
+        if (operacion == 'update') $("#orderSlides #" + id).remove();
+        break;
+
+      case 'novedad':
+        url = '/admin/destroyImgNovedad';
+        break;
+    }
+
     $.ajax({
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -29955,9 +29956,9 @@ window.deleteImg = function (id, tipo, seccion) {
 /***/ (function(module, exports) {
 
 window.eliminarImagenes = function () {
-  console.log('#item_' + count + '');
-  $('#item_' + count + '').hide(function () {
-    $('#item_' + count + '').remove();
+  console.log('#item_' + (count + 1) + '');
+  $('#item_' + (count + 1) + '').hide(function () {
+    $('#item_' + (count + 1) + '').remove();
     count--;
 
     if (count == 2) {

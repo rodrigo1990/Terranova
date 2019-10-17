@@ -78,7 +78,7 @@
 						<a style="display:none" id="remove-esp-btn" onclick="eliminarImagenes()" class="small-btn red float-right"><i class="fas fa-minus"></i></a>
 
 
-						<a onclick="agregarImagenes()" class="small-btn blue float-right margin-right-15"><i class="fas fa-plus"></i></a>
+						<a onclick="agregarImagenes('create')" class="small-btn blue float-right margin-right-15"><i class="fas fa-plus"></i></a>
 						
 					</div>
 				</div>
@@ -102,7 +102,7 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 	<script>
-		window.count=2;
+		window.count=1;
 	</script>
 	<script>
 		tinymce.init({selector: "textarea",  // change this value according to your HTML

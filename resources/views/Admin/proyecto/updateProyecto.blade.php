@@ -41,7 +41,7 @@
 						<ul class="flex">
 							
 						
-						@foreach($proyecto->img as $img)
+						@foreach($imagenes as $img)
 							@if($img->tipo=='PRESENTACION')
 								<li id="img-exist-{{$img->id}}" class="img-exist">		
 									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="preview">
@@ -68,14 +68,14 @@
 		 			<h2>SLIDES EXISTENTES</h2>
 					<ul class="flex" id="file-input-cont">
 						
-						@foreach($proyecto->img as $img)
+						@foreach($imagenes as $img)
 
 							@if($img->tipo == 'SLIDE')
 							
-								<li id="{{$img->ruta}}_{{$img->id}}" class="img-exist">
+								<li id="img-exist-{{$img->id}}" class="img-exist">
 									
 									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="preview">
-										<a onclick="deleteImg('{{$img->id}}','slide','proyecto')" class="removeBtn text-center center-block"><i class="fas fa-times-circle"></i></a>
+										<a onclick="deleteImg('{{$img->id}}','slide','proyecto','update')" class="removeBtn text-center center-block"><i class="fas fa-times-circle"></i></a>
 										<div id="file-result-presentacion" class="text-center">
 			                            <span id="file-img-presentacion">{{$img->nombre}}</span>
 		            					</div>
@@ -88,6 +88,22 @@
 						@endforeach
 
 					</ul>
+
+					<ul id="orderSlides" style="display:none;">
+						<?php $count = 0 ?>
+						@foreach($imagenes as $img)
+
+							@if($img->tipo == 'SLIDE')
+							<?php $count++ ?>
+								<li id="{{$img->id}}">
+									<input type="hidden" name="orderSlide[{{$img->id}}]" value="{{$img->order}}" >
+								</li>
+							
+							@endif
+
+						@endforeach						
+
+					</ul>
 				</div>
 		
 				<div class="row">
@@ -97,7 +113,7 @@
 						<a style="display:none" id="remove-esp-btn" onclick="eliminarImagenes()" class="small-btn red float-right"><i class="fas fa-minus"></i></a>
 
 
-						<a onclick="agregarImagenes()" class="small-btn blue float-right margin-right-15"><i class="fas fa-plus"></i></a>
+						<a onclick="agregarImagenes('update')" class="small-btn blue float-right margin-right-15"><i class="fas fa-plus"></i></a>
 						
 					</div>
 				</div>
@@ -121,7 +137,9 @@
 	@section('scripts')
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
-			window.count=2;	
+			window.count={{$count}};
+			count -= 1;
+			console.log("count"+count);	
 	</script>
 	<script>
 		tinymce.init({selector: "textarea",  // change this value according to your HTML
@@ -134,25 +152,31 @@
 	    $( "#file-input-cont" ).sortable({
 	    	update: function( event, ui ) {
 	    		
-	    		//console.log(ui.item.index());
+	    		var id = ui.item[0].id.split('-');
+
+	    		id = id[2];
+
+
+	    		$("#orderSlides #"+id+" input").val(ui.item.index());
+
 
 	    		$( "#file-input-cont li" ).each(function(index){
 
-	    			var id = $(this).attr('id');
+	    			id = $(this).attr('id').split('-');
 
-	    			id  = id.split("_");
+	    			id = id[2];
 
-	    			console.log(id[0]);
+	    			console.log(id+"="+index);
 
-	    			$(this).attr('id',id[0]+'_'+index);
-
-	    			//$(this).find('input').attr('name','img['+index+']');
+	    			$("#orderSlides #"+id+" input").val(index);
 
 	    		});
 
-	    		console.log($( "#file-input-cont" ).sortable( "serialize"));
+
+	    		
 
 	    	}
+
 	    });
 	    $( "#file-input-cont" ).disableSelection();
 	  } );
