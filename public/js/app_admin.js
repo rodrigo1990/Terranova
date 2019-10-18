@@ -29857,9 +29857,8 @@ __webpack_require__(/*! ./scripts/agregarImagenes */ "./resources/js/admin/scrip
 
 __webpack_require__(/*! ./scripts/deleteImg */ "./resources/js/admin/scripts/deleteImg.js");
 
-__webpack_require__(/*! ./scripts/eliminarImagenes */ "./resources/js/admin/scripts/eliminarImagenes.js");
+__webpack_require__(/*! ./scripts/eliminarImagenes */ "./resources/js/admin/scripts/eliminarImagenes.js"); //require('./scripts/inputDinamicFileInput');
 
-__webpack_require__(/*! ./scripts/inputDinamicFileInput */ "./resources/js/admin/scripts/inputDinamicFileInput.js");
 
 __webpack_require__(/*! ./scripts/inputFileChange */ "./resources/js/admin/scripts/inputFileChange.js");
 
@@ -29969,42 +29968,6 @@ window.eliminarImagenes = function () {
 
 /***/ }),
 
-/***/ "./resources/js/admin/scripts/inputDinamicFileInput.js":
-/*!*************************************************************!*\
-  !*** ./resources/js/admin/scripts/inputDinamicFileInput.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-$(document).on('change', 'input.added', function () {
-  var id = $(this).attr('id') == 'presentacion' ? 'presentacion' : $(this).attr('id').match(/\d+/);
-  var file = $(this).val();
-  var name = file.replace(/^.*[\\\/]/, '');
-  console.log(name);
-  var file_size = $(this)[0].files[0].size;
-  format = file.split('.').pop();
-
-  if (format == "jpg" || format == "png") {
-    if (file_size > 2097152) {
-      alert("El archivo NO puede ser superior a 2MB");
-    } else {
-      if (id == 'presentacion') {
-        $("#file-img-presentacion").html(name);
-        $("#file-result-presentacion").fadeIn();
-        readURL(this, "#preview-" + id);
-      } else {
-        $("#file-img-" + id + "").html(name);
-        $("#file-result-" + id + "").fadeIn();
-        readURL(this, "#preview-" + id);
-      }
-    }
-  } else {
-    alert("El archivo debe ser .jpg o .png");
-  }
-});
-
-/***/ }),
-
 /***/ "./resources/js/admin/scripts/inputFileChange.js":
 /*!*******************************************************!*\
   !*** ./resources/js/admin/scripts/inputFileChange.js ***!
@@ -30012,7 +29975,7 @@ $(document).on('change', 'input.added', function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$('input[type=file]').on('change', function () {
+$(document).on('change', 'input', function () {
   var id = $(this).attr('id') == 'presentacion' ? 'presentacion' : $(this).attr('id').match(/\d+/);
   var file = $(this).val();
   var name = file.replace(/^.*[\\\/]/, '');
@@ -30027,7 +29990,7 @@ $('input[type=file]').on('change', function () {
       if (id == 'presentacion') {
         $("#file-img-presentacion").html(name);
         $("#file-result-presentacion").fadeIn();
-        readURL(this, "#preview-presentacion");
+        readURL(this, "#preview-" + id);
       } else {
         $("#file-img-" + id + "").html(name);
         $("#file-result-" + id + "").fadeIn();

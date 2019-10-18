@@ -121,11 +121,14 @@ class ProyectoController extends Controller
 			$l = max(array_keys($request->orderSlide));
 			 	for($i=$f;$i<=$l;$i++){
 
-				 	$img = Img::find($i);
-
-				 	$img->order = $request->orderSlide[$i];
-
-				 	$proyecto->img()->save($img);	
+			 		if(isset($request->orderSlide[$i])){
+			 		
+					 	$img = Img::find($i);
+	
+					 	$img->order = $request->orderSlide[$i];
+	
+					 	$proyecto->img()->save($img);
+					}	
 			 	
 			 	}
 
@@ -139,22 +142,28 @@ class ProyectoController extends Controller
  			 		$f = array_key_first($request->img);
  			 		$l = array_key_last($request->img);
  	 			 	for($i=$f;$i<=$l;$i++){
- 	 	
- 	 				 	$img = new Img();
- 	 	
- 	 				 	$name = rand(0,99999999);
- 	 	
- 	 				 	$format = $request->img[$i]->extension();
- 	 	
- 	 				 	$img->ruta = "".$name.".".$format."";
- 	 	
- 	 				 	$img->nombre = $request->img[$i]->getClientOriginalName(); 
- 	 	
- 	 				 	$path = $request->img[$i]->storeAs('proyectos/',$img->ruta,'public');
- 	 	
- 	 				 	$img->tipo = 'SLIDE';
- 	 	
- 	 				 	$proyecto->img()->save($img);	
+ 	 					
+ 	 			 		if(isset($request->img[$i])){
+
+	 	 				 	$img = new Img();
+	 	 	
+	 	 				 	$name = rand(0,99999999);
+	 	 	
+	 	 				 	$format = $request->img[$i]->extension();
+	 	 	
+	 	 				 	$img->ruta = "".$name.".".$format."";
+	 	 	
+	 	 				 	$img->nombre = $request->img[$i]->getClientOriginalName(); 
+	 	 	
+	 	 				 	$path = $request->img[$i]->storeAs('proyectos/',$img->ruta,'public');
+	 	 	
+	 	 				 	$img->tipo = 'SLIDE';
+
+	 	 				 	$img->order = $i;
+	 	 	
+	 	 				 	$proyecto->img()->save($img);
+
+ 	 				 	}
  	 			 	
  	 			 	}
  			 	}
@@ -171,8 +180,10 @@ class ProyectoController extends Controller
 
 	 	}
 
+	 	$f = min(array_keys($request->orderSlide));
+		$l = max(array_keys($request->orderSlide));
 	 	
-
+		$a = array($f,$l);
 
 	 
 

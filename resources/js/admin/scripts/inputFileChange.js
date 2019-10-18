@@ -1,6 +1,6 @@
-    $('input[type=file]').on('change', function(){
+	$(document).on('change','input', function(){
 
-            var id = ($(this).attr('id')=='presentacion') ? 'presentacion' : $(this).attr('id').match(/\d+/);
+			var id = ($(this).attr('id')=='presentacion') ? 'presentacion' : $(this).attr('id').match(/\d+/);
             
              var file = $(this).val();
 
@@ -16,26 +16,30 @@
             format = file.split('.').pop();
 
             if(format == "jpg" || format == "png"){
+
             if(file_size>2097152) {
+
                 alert("El archivo NO puede ser superior a 2MB");
 
             }else{
 
-                if(id=='presentacion'){
+            	if(id=='presentacion'){
 
-                    $("#file-img-presentacion").html(name);
+	                $("#file-img-presentacion").html(name);
 
-                    $("#file-result-presentacion").fadeIn();
+	                $("#file-result-presentacion").fadeIn();
 
-                    readURL(this,"#preview-presentacion");
+	                readURL(this,"#preview-"+id);
  
                 }else{
 
-                    $("#file-img-"+id+"").html(name);
 
-                    $("#file-result-"+id+"").fadeIn();
 
-                    readURL(this,"#preview-"+id);
+                	$("#file-img-"+id+"").html(name);
+
+	                $("#file-result-"+id+"").fadeIn();
+
+	                readURL(this,"#preview-"+id);
                 }
 
             }
