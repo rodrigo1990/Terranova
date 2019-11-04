@@ -29853,6 +29853,8 @@ __webpack_require__(/*! ./scripts/logout */ "./resources/js/admin/scripts/logout
 
 __webpack_require__(/*! ./scripts/tinymce */ "./resources/js/admin/scripts/tinymce.js");
 
+__webpack_require__(/*! ./scripts/tinymceImplement */ "./resources/js/admin/scripts/tinymceImplement.js");
+
 __webpack_require__(/*! ./scripts/agregarImagenes */ "./resources/js/admin/scripts/agregarImagenes.js");
 
 __webpack_require__(/*! ./scripts/deleteImg */ "./resources/js/admin/scripts/deleteImg.js");
@@ -29865,6 +29867,10 @@ __webpack_require__(/*! ./scripts/inputFileChange */ "./resources/js/admin/scrip
 __webpack_require__(/*! ./scripts/readURL */ "./resources/js/admin/scripts/readURL.js");
 
 __webpack_require__(/*! ./scripts/resetInputFile */ "./resources/js/admin/scripts/resetInputFile.js");
+
+__webpack_require__(/*! ./scripts/updateSortable_CreateProject */ "./resources/js/admin/scripts/updateSortable_CreateProject.js");
+
+__webpack_require__(/*! ./scripts/updateSortable_UpdateProject */ "./resources/js/admin/scripts/updateSortable_UpdateProject.js");
 
 /***/ }),
 
@@ -29975,7 +29981,7 @@ window.eliminarImagenes = function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$(document).on('change', 'input', function () {
+$(document).on('change', 'input[type=file]', function () {
   var id = $(this).attr('id') == 'presentacion' ? 'presentacion' : $(this).attr('id').match(/\d+/);
   var file = $(this).val();
   var name = file.replace(/^.*[\\\/]/, '');
@@ -48023,6 +48029,76 @@ tinymce.baseURL = "https://cdn.tiny.cloud/1/4du36rgs2w5s3lyfrmifk85266w9h8vcodmj
   };
 }()();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../../../../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+
+/***/ }),
+
+/***/ "./resources/js/admin/scripts/tinymceImplement.js":
+/*!********************************************************!*\
+  !*** ./resources/js/admin/scripts/tinymceImplement.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+tinymce.init({
+  selector: "textarea",
+  // change this value according to your HTML
+  plugins: "link",
+  menubar: "insert edit align",
+  language: 'es'
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/scripts/updateSortable_CreateProject.js":
+/*!********************************************************************!*\
+  !*** ./resources/js/admin/scripts/updateSortable_CreateProject.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  $("#file-input-cont").sortable({
+    update: function update(event, ui) {
+      //console.log(ui.item.index());
+      $("#file-input-cont li").each(function (index) {
+        $(this).attr('id', 'item_' + index);
+        $(this).find('input').attr('name', 'img[' + index + ']');
+      });
+    }
+  });
+  $("#file-input-cont").disableSelection();
+});
+
+/***/ }),
+
+/***/ "./resources/js/admin/scripts/updateSortable_UpdateProject.js":
+/*!********************************************************************!*\
+  !*** ./resources/js/admin/scripts/updateSortable_UpdateProject.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  $("#file-input-cont").sortable({
+    update: function update(event, ui) {
+      var id = ui.item[0].id.split('-');
+      id = id[2];
+      $("#orderSlides #" + id + " input").val(ui.item.index());
+      $("#file-input-cont li").each(function (index, item) {
+        if (item.className.indexOf('img-exist') >= 0) {
+          id = $(this).attr('id').split('-');
+          id = id[2]; //console.log(id+"="+index);
+
+          $("#orderSlides #" + id + " input").val(index);
+        } else {
+          $(this).attr('id', 'item_' + index);
+          $(this).find('input').attr('name', 'img[' + index + ']');
+        }
+      });
+    }
+  });
+  $("#file-input-cont").disableSelection();
+});
 
 /***/ }),
 

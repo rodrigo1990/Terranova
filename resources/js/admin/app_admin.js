@@ -7,6 +7,8 @@ require('./scripts/logout');
 
 require('./scripts/tinymce');
 
+require('./scripts/tinymceImplement');
+
 
 require('./scripts/agregarImagenes');
 require('./scripts/deleteImg');
@@ -16,5 +18,8 @@ require('./scripts/inputFileChange');
 require('./scripts/readURL');
 require('./scripts/resetInputFile');
 
+
+require('./scripts/updateSortable_CreateProject');
+require('./scripts/updateSortable_UpdateProject');
 
 

@@ -9,6 +9,9 @@
 			<div class="container">
 					<label for="titulo">Titulo</label>
 					<input type="text" class="form-control" name="titulo">
+					<p class="error" id="tituloError">
+						Ingrese un titulo
+					</p>
 					<br>
 					<br>
 					<label for="estado">Estado del proyecto</label>
@@ -21,6 +24,9 @@
 					<br>
 					<label for="descripcion">Descripción</label>
 					<textarea  name="descripcion" id="" cols="30" rows="10"></textarea>
+					<p class="error" id="descripcionError">
+						Ingrese una descripción
+					</p>
 					<br><br>
 					<div  id="presentacion" class="row">
 						<h2>IMAGEN DE PRESENTACIÓN</h2>
@@ -33,7 +39,12 @@
 		                     <div id="file-result-presentacion" class="text-center">
 	                            <span id="file-img-presentacion"></span>
             					</div>
+
+            			
 						</div>
+						<p class="error text-center" id="imgPresentacion-error">
+        					Ingrese una imagen
+        				</p>
 					</div>
 					<br><br>
 		 		<div class="row">
@@ -52,6 +63,11 @@
 			                            <span id="file-img-1"></span>
 		                    		</div>
 	                    	</div>
+
+	                    	<p class="error text-center" id="imgSlide1-error">
+        					Ingrese una imagen
+        					</p>
+
 						</li>
 						
 						<li id="item_2" class="li-file-input">
@@ -66,6 +82,10 @@
 			                          <span id="file-img-2"></span>
 		                    		</div>
 	                    	</div>
+
+	                    	<p class="error text-center" id="imgSlide2-error">
+        					Ingrese una imagen
+        					</p>
 					
 						</li>
 
@@ -83,7 +103,7 @@
 					</div>
 				</div>
 				<br><br>
-				<button class="btn btn-primary btn-file border-btn bk-green float-right"><h3>ENVIAR</h3></button>
+				<a onclick="createProjectValidate()" class="btn btn-primary btn-file border-btn bk-green float-right"><h3>ENVIAR</h3></a>
 
 			</div>
 
@@ -100,37 +120,99 @@
 
 	@section('scripts')
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+	<!-- CUENTA ITEMS AGREGADO E ELIMINADOS EN SUS RESPECTOS ARCHIVOS -->
 	<script>
 		window.count=1;
 	</script>
 	<script>
-		tinymce.init({selector: "textarea",  // change this value according to your HTML
-		  plugins: "link",
-		  menubar: "insert edit align",
-		  language:'es'});
+		function createProjectValidate(){
+
+			tinyMCE.triggerSave();
+
+			var titulo = $("input[name=titulo]").val();
+			var descripcion = $("#descripcion").val();
+			var imgPresentacion = $("input[name=img_presentacion]").val();
+			var imgSlide1 = $("input#file-input-1").val();
+			var imgSlide2 = $("input#file-input-2").val();
+
+			var tituloValidated = false;
+			var descripcionValidated = false;
+			var imgPresentacionValidated = false;
+			var imgSlide1Validated = false;
+			var imgSlide2Validated = false;
+
+
+			if(titulo.length == 0){
+				$("#tituloError").fadeIn();
+			}else{
+				$("#tituloError").fadeOut();
+				tituloValidated=true;
+			}
+
+
+			if(descripcion.length == 0){
+				$("#descripcionError").fadeIn();
+			}else{
+				$("#descripcionError").fadeOut();
+				descripcionValidated=true;
+			}
+
+
+			if(imgPresentacion.length == 0){
+				$("#imgPresentacion-error").fadeIn();
+			}else{
+				$("#imgPresentacion-error").fadeOut();
+				imgPresentacionValidated=true;
+			}
+
+			if(imgSlide1.length == 0){
+				$("#imgSlide1-error").fadeIn();
+			}else{
+				$("#imgSlide1-error").fadeOut();
+				imgSlide1Validated=true;
+			}
+
+			if(imgSlide2.length == 0){
+				$("#imgSlide2-error").fadeIn();
+			}else{
+				$("#imgSlide2-error").fadeOut();
+				imgSlide2Validated=true;
+			}
+
+			var k = $('.li-file-input').not('.li-file-input.ui-sortable-handle').length;
+			var y = 0;
+			var state = 0;
+			//BORRO LAS INPUT FILE QUE NO TIENEN IMAGENES CARGADAS
+			$( ".li-file-input" ).not('.li-file-input.ui-sortable-handle').each(function(index,item){
+				y++;
+				if($(this).find('input.added').val() == ''){
+					$(this).hide(function(){
+						$(this).remove();
+					});
+				}
+
+				if(y == k){
+					state=1 
+					console.log(state);
+				}
+			});//each
+
+			//REEMPLAZO TODAS LAS CLAVES DEL ARRAY SEGUN SU INDICE
+			if(state == 1){
+				$( ".li-file-input" ).each(function(index,item){
+					$(this).find('input.added').attr('name','img['+index+']');
+	    			console.log('eu');		
+				});
+			}
+
+			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true){
+			//	$('form').submit();
+
+			alert('enviado ! ');
+			}
+
+		}
 	</script>
-	
-	<script>
-	  $( function() {
-	    $( "#file-input-cont" ).sortable({
-	    	update: function( event, ui ) {
-	    		
-	    		//console.log(ui.item.index());
-
-	    		$( "#file-input-cont li" ).each(function(index){
-
-	    			$(this).attr('id','item_'+index);
-
-	    			$(this).find('input').attr('name','img['+index+']');
-
-	    		});
-
-	    	}
-	    });
-	    $( "#file-input-cont" ).disableSelection();
-	  } );
-  	</script>
 		
 
 

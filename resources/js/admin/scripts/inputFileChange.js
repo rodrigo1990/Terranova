@@ -1,4 +1,4 @@
-	$(document).on('change','input', function(){
+	$(document).on('change','input[type=file]', function(){
 
 			var id = ($(this).attr('id')=='presentacion') ? 'presentacion' : $(this).attr('id').match(/\d+/);
             
