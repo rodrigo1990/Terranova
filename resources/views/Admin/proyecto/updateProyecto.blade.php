@@ -188,7 +188,7 @@
 				descripcionValidated=true;
 			}
 
-
+			if(imgPresentacion){
 				if(imgPresentacion.length == 0){
 					$("#imgPresentacion-error").fadeIn();
 					console.log('ERROR');
@@ -197,16 +197,24 @@
 					console.log('VALIDADO');
 					imgPresentacionValidated=true;
 				}
-			
+			}else{
+				imgPresentacionValidated = true;
+			}
 
-
+			if(imgSlide1){
+				
 				if(imgSlide1.length == 0){
 					$("#imgSlide1-error").fadeIn();
 				}else{
 					$("#imgSlide1-error").fadeOut();
 					imgSlide1Validated=true;
 				}
+
+			}else{
+				imgSlide1Validated = true;
+			}
 		
+			if(imgSlide2){
 
 				if(imgSlide2.length == 0){
 					$("#imgSlide2-error").fadeIn();
@@ -214,7 +222,23 @@
 					$("#imgSlide2-error").fadeOut();
 					imgSlide2Validated=true;
 				}
+
+			}else{
+				imgSlide2Validated = true;
+			}
+
+
+
+			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true){
 			
+				setTimeout(function(){
+					$('form').submit();
+				},1000);
+
+				
+
+
+			}
 		
 
 		}
