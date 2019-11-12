@@ -10,6 +10,9 @@
 				<input type="hidden" name="id" value="{{$proyecto->id}}">
 					<label for="titulo">Titulo</label>
 					<input type="text" class="form-control" name="titulo" value="{{$proyecto->titulo}}">
+					<p class="error" id="tituloError">
+						Ingrese un titulo
+					</p>
 					<br>
 					<br>
 					<label for="estado">Estado del proyecto</label>
@@ -34,6 +37,9 @@
 					<br>
 					<label for="descripcion">Descripción</label>
 					<textarea  name="descripcion" id="" cols="30" rows="10">{{$proyecto->descripcion}}</textarea>
+					<p class="error" id="descripcionError">
+						Ingrese una descripción
+					</p>
 					<br><br>
 					<div id="presentacion" class="row">
 						<h2>PRESENTACIÓN</h2>
@@ -63,6 +69,9 @@
 						</div>
 					
 					</div>
+					<p class="error text-center" id="imgPresentacion-error">
+    					Ingrese una imagen
+    				</p>
 				<br><br>
 		 		<div class="row">
 		 			<h2>SLIDES EXISTENTES</h2>
@@ -80,6 +89,8 @@
 			                            <span id="file-img-presentacion">{{$img->nombre}}</span>
 		            					</div>
 									</div>
+
+
 									
 								</li>
 							
@@ -90,7 +101,7 @@
 					</ul>
 
 					<ul id="orderSlides" style="display:none;">
-						<?php $count = 0 ?>
+						<?php $count = -1 ?>
 						@foreach($imagenes as $img)
 
 							@if($img->tipo == 'SLIDE')
@@ -118,7 +129,7 @@
 					</div>
 				</div>
 				<br><br>
-				<button class="btn btn-primary btn-file border-btn bk-green float-right"><h3>ENVIAR</h3></button>
+				<a onclick="createProjectValidate()" class="btn btn-primary btn-file border-btn bk-green float-right"><h3>ENVIAR</h3></a>
 
 			</div>
 
@@ -139,8 +150,74 @@
 	<!-- CUENTA LA CANTIDAD DE IMAGENES SLIDES CARGADAS, LE RESTA 1 PARA QUE LA PRIMERA SEA IGUAL A 0  -->
 	<script>
 			window.count={{$count}};
-			count -= 1;
 			console.log("count"+count);	
+	</script>
+	<script>
+		function createProjectValidate(){
+
+			tinyMCE.triggerSave();
+
+			var titulo = $("input[name=titulo]").val();
+			var descripcion = $("#descripcion").val();
+			var imgPresentacion = $("input[name=img_presentacion]").val();
+			var imgSlide1 = $("input#file-input-1").val();
+			var imgSlide2 = $("input#file-input-2").val();
+
+			var tituloValidated = false;
+			var descripcionValidated = false;
+			var imgPresentacionValidated = false;
+			var imgSlide1Validated = false;
+			var imgSlide2Validated = false;
+
+			console.log($(document).find(("input[name=img_presentacion]")));
+
+
+
+			if(titulo.length == 0){
+				$("#tituloError").fadeIn();
+			}else{
+				$("#tituloError").fadeOut();
+				tituloValidated=true;
+			}
+
+
+			if(descripcion.length == 0){
+				$("#descripcionError").fadeIn();
+			}else{
+				$("#descripcionError").fadeOut();
+				descripcionValidated=true;
+			}
+
+
+				if(imgPresentacion.length == 0){
+					$("#imgPresentacion-error").fadeIn();
+					console.log('ERROR');
+				}else{
+					$("#imgPresentacion-error").fadeOut();
+					console.log('VALIDADO');
+					imgPresentacionValidated=true;
+				}
+			
+
+
+				if(imgSlide1.length == 0){
+					$("#imgSlide1-error").fadeIn();
+				}else{
+					$("#imgSlide1-error").fadeOut();
+					imgSlide1Validated=true;
+				}
+		
+
+				if(imgSlide2.length == 0){
+					$("#imgSlide2-error").fadeIn();
+				}else{
+					$("#imgSlide2-error").fadeOut();
+					imgSlide2Validated=true;
+				}
+			
+		
+
+		}
 	</script>
 	
 

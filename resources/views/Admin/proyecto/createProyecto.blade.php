@@ -198,17 +198,25 @@
 			});//each
 
 			//REEMPLAZO TODAS LAS CLAVES DEL ARRAY SEGUN SU INDICE
-			if(state == 1){
-				$( ".li-file-input" ).each(function(index,item){
-					$(this).find('input.added').attr('name','img['+index+']');
-	    			console.log('eu');		
-				});
-			}
+			setTimeout(function(){
+				if(state == 1){
+					$( ".li-file-input" ).each(function(index,item){
+						var resp = $(this).find('.added').attr('name','img['+index+']');
+		    			console.log(resp);		
+					});
+				}
+			},1000);
+			
 
 			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true){
-			//	$('form').submit();
+			
+			setTimeout(function(){
+				$('form').submit();
+			},1000);
 
-			alert('enviado ! ');
+				
+
+
 			}
 
 		}
