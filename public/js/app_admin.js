@@ -29868,9 +29868,11 @@ __webpack_require__(/*! ./scripts/readURL */ "./resources/js/admin/scripts/readU
 
 __webpack_require__(/*! ./scripts/resetInputFile */ "./resources/js/admin/scripts/resetInputFile.js");
 
-__webpack_require__(/*! ./scripts/updateSortable_CreateProject */ "./resources/js/admin/scripts/updateSortable_CreateProject.js");
+if (document.getElementById('proyectos')) {
+  __webpack_require__(/*! ./scripts/updateSortable_CreateProject */ "./resources/js/admin/scripts/updateSortable_CreateProject.js");
 
-__webpack_require__(/*! ./scripts/updateSortable_UpdateProject */ "./resources/js/admin/scripts/updateSortable_UpdateProject.js");
+  __webpack_require__(/*! ./scripts/updateSortable_UpdateProject */ "./resources/js/admin/scripts/updateSortable_UpdateProject.js");
+}
 
 /***/ }),
 

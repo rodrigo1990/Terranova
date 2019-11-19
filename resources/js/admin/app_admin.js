@@ -19,7 +19,8 @@ require('./scripts/readURL');
 require('./scripts/resetInputFile');
 
 
+if(document.getElementById('proyectos')){
 require('./scripts/updateSortable_CreateProject');
 require('./scripts/updateSortable_UpdateProject');
-
+}
 
