@@ -115,22 +115,23 @@ class ProyectoController extends Controller
 
 		 	}
 
+		 	if($request->orderSlide){
+			 	//ACTUALIZAR ORDEN EN SLIDES
+				$f = min(array_keys($request->orderSlide));
+				$l = max(array_keys($request->orderSlide));
+				 	for($i=$f;$i<=$l;$i++){
 
-		 	//ACTUALIZAR ORDEN EN SLIDES
-			$f = min(array_keys($request->orderSlide));
-			$l = max(array_keys($request->orderSlide));
-			 	for($i=$f;$i<=$l;$i++){
-
-			 		if(isset($request->orderSlide[$i])){
-			 		
-					 	$img = Img::find($i);
-	
-					 	$img->order = $request->orderSlide[$i];
-	
-					 	$proyecto->img()->save($img);
-					}	
-			 	
-			 	}
+				 		if(isset($request->orderSlide[$i])){
+				 		
+						 	$img = Img::find($i);
+		
+						 	$img->order = $request->orderSlide[$i];
+		
+						 	$proyecto->img()->save($img);
+						}	
+				 	
+				 	}
+			 }
 
 
 

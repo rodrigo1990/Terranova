@@ -44,9 +44,9 @@ window.deleteImg = function(id,tipo,seccion,operacion=''){
 
                 if(seccion == 'proyecto' && operacion == 'update' && count == -1){
                     count++;
-                    $("#file-input-cont").append('<li id="item_'+(count)+'" class="li-file-input"> <div class="preview" id="preview-'+(count)+'">  <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE 1<input name="img['+(count)+']" type="file" id="file-input-1" class="added"> </span> <div id="file-result-'+(count)+'" class="file-result text-center"> <span id="file-img-'+(count)+'"></span> </div> </div><p class="error text-center" id="imgSlide1-error">Ingrese una imagen</p> </li>');     
+                    $("#file-input-cont").append('<li id="item_'+(count)+'" class="li-file-input"> <div class="preview" id="preview-'+(count)+'">  <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE 1<input name="img['+(count)+']" type="file" id="file-input-'+(count)+'" class="added"> </span> <div id="file-result-'+(count)+'" class="file-result text-center"> <span id="file-img-'+(count)+'"></span> </div> </div><p class="error text-center" id="imgSlide1-error">Ingrese una imagen</p> </li>');     
                     count++;
-                    $("#file-input-cont").append('<li id="item_'+(count)+'" class="li-file-input"> <div class="preview" id="preview-'+(count)+'">  <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE 2<input name="img['+(count)+']" type="file" id="file-input-2" class="added"> </span> <div id="file-result-'+(count)+'" class="file-result text-center"> <span id="file-img-'+(count)+'"></span> </div> </div><p class="error text-center" id="imgSlide2-error">Ingrese una imagen</p></li>');
+                    $("#file-input-cont").append('<li id="item_'+(count)+'" class="li-file-input"> <div class="preview" id="preview-'+(count)+'">  <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE 2<input name="img['+(count)+']" type="file" id="file-input-'+(count)+'" class="added"> </span> <div id="file-result-'+(count)+'" class="file-result text-center"> <span id="file-img-'+(count)+'"></span> </div> </div><p class="error text-center" id="imgSlide2-error">Ingrese una imagen</p></li>');
                 }
 
             }//if

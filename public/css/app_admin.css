@@ -635,6 +635,7 @@ input[type=password]:placeholder {
   margin: 10px 11px;
   color: red;
   font-family: RobotoBold;
+  width: 100%;
 }
 
 .container-drop {

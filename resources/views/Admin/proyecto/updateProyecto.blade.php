@@ -46,9 +46,10 @@
 						
 						<ul class="flex">
 							
-						
+						<?php $existeImgPresentacion = false; ?>
 						@foreach($imagenes as $img)
 							@if($img->tipo=='PRESENTACION')
+							<?php $existeImgPresentacion = true; ?>
 								<li id="img-exist-{{$img->id}}" class="img-exist">		
 									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="preview">
 										<a onclick="deleteImg('{{$img->id}}','presentacion','proyecto')" class=" removeBtn text-center center-block"><i class="fas fa-times-circle"></i></a>
@@ -59,6 +60,23 @@
 								</li>	
 							@endif
 						@endforeach
+
+						@if($existeImgPresentacion == false)
+							<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion">
+							<span  class="btn btn-primary btn-file border-btn blue float-right" >
+		                        IMAGEN DE PRESENTACIÓN 
+		                     	<input name="img_presentacion" type="file" id="presentacion">
+		                     </span>
+		                     <div id="file-result-presentacion" class="text-center">
+	                            <span id="file-img-presentacion"></span>
+            					</div>
+
+            			
+						</div>
+						<p class="error text-center" id="imgPresentacion-error">
+        					Ingrese una imagen
+        				</p>
+						@endif
 
 
 
@@ -76,11 +94,11 @@
 		 		<div class="row">
 		 			<h2>SLIDES EXISTENTES</h2>
 					<ul class="flex" id="file-input-cont">
-						
+						<?php $existeSlide = false; ?>
 						@foreach($imagenes as $img)
 
 							@if($img->tipo == 'SLIDE')
-							
+							<?php $existeSlide = true; ?>
 								<li id="img-exist-{{$img->id}}" class="img-exist">
 									
 									<div style="background:url(<?php echo asset('storage/img/proyectos/'.$img->ruta.'') ?>)" class="preview">
@@ -98,22 +116,68 @@
 
 						@endforeach
 
+
+						@if($existeSlide == false)
+							<li id="item_1" class="li-file-input">
+							
+	                    	<div class="preview" id="preview-1">
+	                    	
+								<span  class="btn btn-primary btn-file border-btn blue float-right" >
+			                        SLIDE 1 
+			                     	<input name="img[0]" type="file" id="file-input-1">
+			                     </span>
+			                     <div id="file-result-1" class="file-result text-center">
+			                            <span id="file-img-1"></span>
+		                    		</div>
+	                    	</div>
+
+	                    	<p class="error text-center" id="imgSlide1-error">
+        					Ingrese una imagen
+        					</p>
+
+						</li>
+						
+						<li id="item_2" class="li-file-input">
+							
+	                    	<div class="preview" id="preview-2">
+	                    	
+								<span  class="btn btn-primary btn-file border-btn blue float-right" >
+			                        SLIDE 2
+			                      <input name="img[1]" type="file" id="file-input-2">
+			                    </span>
+			                     <div id="file-result-2" class="file-result text-center">
+			                          <span id="file-img-2"></span>
+		                    		</div>
+	                    	</div>
+
+	                    	<p class="error text-center" id="imgSlide2-error">
+        					Ingrese una imagen
+        					</p>
+					
+						</li>
+
+						<?php $count = 1 ?>
+						@endif
+
 					</ul>
 
 					<ul id="orderSlides" style="display:none;">
-						<?php $count = -1 ?>
-						@foreach($imagenes as $img)
+						@if($existeSlide == true)
 
-							@if($img->tipo == 'SLIDE')
-							<?php $count++ ?>
-								<li id="{{$img->id}}">
-									<input type="hidden" name="orderSlide[{{$img->id}}]" value="{{$img->order}}" >
-								</li>
-							
-							@endif
+							<?php $count = -1 ?>
+							@foreach($imagenes as $img)
 
-						@endforeach						
+								@if($img->tipo == 'SLIDE')
+								<?php $count++ ?>
+									<li id="{{$img->id}}">
+										<input type="hidden" name="orderSlide[{{$img->id}}]" value="{{$img->order}}" >
+									</li>
+								
+								@endif
 
+							@endforeach	
+
+						@endif
 					</ul>
 				</div>
 		
@@ -188,7 +252,8 @@
 				descripcionValidated=true;
 			}
 
-			if(imgPresentacion){
+			if($("input[name=img_presentacion]").length){
+				alert('imgPresentacion');
 				if(imgPresentacion.length == 0){
 					$("#imgPresentacion-error").fadeIn();
 					console.log('ERROR');
@@ -201,7 +266,7 @@
 				imgPresentacionValidated = true;
 			}
 
-			if(imgSlide1){
+			if($("input#file-input-1").length){
 				
 				if(imgSlide1.length == 0){
 					$("#imgSlide1-error").fadeIn();
@@ -214,7 +279,7 @@
 				imgSlide1Validated = true;
 			}
 		
-			if(imgSlide2){
+			if($("input#file-input-2").length){
 
 				if(imgSlide2.length == 0){
 					$("#imgSlide2-error").fadeIn();
@@ -230,7 +295,7 @@
 
 
 			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true){
-			
+				//alert("enviado");
 				setTimeout(function(){
 					$('form').submit();
 				},1000);
