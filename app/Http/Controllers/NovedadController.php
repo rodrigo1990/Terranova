@@ -26,13 +26,13 @@ class NovedadController extends Controller
 
 	 		$name = rand(0,99999999);
 
-		 	$format = $request->imgPresentacion->extension();
+		 	$format = $request->img_presentacion->extension();
 
 		 	$img->ruta = "".$name.".".$format."";
 
-		 	$img->nombre = $request->imgPresentacion->getClientOriginalName(); 
+		 	$img->nombre = $request->img_presentacion->getClientOriginalName(); 
 
-		 	$path = $request->imgPresentacion->storeAs('novedades/',$img->ruta,'public');
+		 	$path = $request->img_presentacion->storeAs('novedades/',$img->ruta,'public');
 
 
 		 	$novedad->img()->save($img);

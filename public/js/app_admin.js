@@ -29874,6 +29874,10 @@ if (document.getElementById('proyectos')) {
   __webpack_require__(/*! ./scripts/updateSortable_UpdateProject */ "./resources/js/admin/scripts/updateSortable_UpdateProject.js");
 }
 
+if (document.getElementById('testimonios')) {
+  __webpack_require__(/*! ./scripts/validateYoutubeLink */ "./resources/js/admin/scripts/validateYoutubeLink.js");
+}
+
 /***/ }),
 
 /***/ "./resources/js/admin/scripts/agregarImagenes.js":
@@ -29944,7 +29948,7 @@ window.deleteImg = function (id, tipo, seccion) {
 
             if (tipo == 'presentacion') {
               $("#newImgPresentacion").hide();
-              $("#newImgPresentacion").html('<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion"> <span  class="btn btn-primary btn-file border-btn blue float-right" > IMAGEN DE PRESENTACIÓN <input name="img_presentacion" type="file" id="presentacion" class="added"> </span> <div id="file-result-presentacion" class="text-center"> <span id="file-img-presentacion"></span> </div> </div>');
+              $("#newImgPresentacion").html('<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion"> <span  class="btn btn-primary btn-file border-btn blue float-right" > IMAGEN DE PRESENTACIÓN <input name="img_presentacion" type="file" id="presentacion" class="added"> </span> <div id="file-result-presentacion" class="text-center"> <span id="file-img-presentacion"></span> </div> </div><p class="error text-center" id="imgPresentacion-error"> Ingrese una imagen </p>');
             }
 
             $("#newImgPresentacion").fadeIn();
@@ -30068,21 +30072,27 @@ window.login = function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function logout() {
+window.logout = function () {
   var id = 0;
   $.ajax({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     },
-    url: '/logout',
-    type: 'get',
+    url: '/admin/logout',
+    type: 'post',
     dataType: "json",
     success: function success(response) {
-      window.location.href = "/admin";
+      console.log(response);
+
+      if (response == true) {
+        $(".main").fadeOut(function () {
+          $("#login").fadeIn();
+        });
+      }
     } //success
 
   }); //ajax
-}
+};
 
 /***/ }),
 
@@ -48111,6 +48121,30 @@ $(function () {
   });
   $("#file-input-cont").disableSelection();
 });
+
+/***/ }),
+
+/***/ "./resources/js/admin/scripts/validateYoutubeLink.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/admin/scripts/validateYoutubeLink.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.validateYoutubeLink = function (linkYoutube) {
+  console.log(linkYoutube);
+
+  if (linkYoutube != undefined || linkYoutube != '') {
+    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
+    var match = linkYoutube.match(regExp);
+
+    if (match && match[2].length == 11) {
+      return match;
+    } else {
+      return false;
+    }
+  }
+};
 
 /***/ }),
 

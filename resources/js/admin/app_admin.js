@@ -24,3 +24,7 @@ require('./scripts/updateSortable_CreateProject');
 require('./scripts/updateSortable_UpdateProject');
 }
 
+
+if(document.getElementById('testimonios')){
+	require('./scripts/validateYoutubeLink');	
+}

@@ -38,8 +38,7 @@ window.deleteImg = function(id,tipo,seccion,operacion=''){
                     
                     if(tipo=='presentacion'){
                         $("#newImgPresentacion").hide();
-                        $("#newImgPresentacion").html('<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion"> <span  class="btn btn-primary btn-file border-btn blue float-right" > IMAGEN DE PRESENTACIÓN <input name="img_presentacion" type="file" id="presentacion" class="added"> </span> <div id="file-result-presentacion" class="text-center"> <span id="file-img-presentacion"></span> </div> </div>') }
-                        $("#newImgPresentacion").fadeIn();
+                        $("#newImgPresentacion").html('<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion"> <span  class="btn btn-primary btn-file border-btn blue float-right" > IMAGEN DE PRESENTACIÓN <input name="img_presentacion" type="file" id="presentacion" class="added"> </span> <div id="file-result-presentacion" class="text-center"> <span id="file-img-presentacion"></span> </div> </div><p class="error text-center" id="imgPresentacion-error"> Ingrese una imagen </p>') } $("#newImgPresentacion").fadeIn();
                 });
 
                 if(seccion == 'proyecto' && operacion == 'update' && count == -1){

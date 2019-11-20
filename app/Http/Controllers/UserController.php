@@ -11,19 +11,37 @@ Use View;
 class UserController extends Controller
 {
 
+	protected $sessionService;
+
+
+   function __construct(SessionService $sessionService){
+      $this->sessionService=$sessionService;
+    }
+
 	public function login(Request $request){
+
+
 
 		$exist = User::where('email',$request->username)
 				  		->where('password',md5($request->password))
     				  	->exists();
 
 
-    	if($exist==true)
-    		return "true";
-    	else
-    		return "false";
+    	if($exist==true){
 
-	}   
+    		$this->sessionService->storeSessionData($request);
+    		return "true";
+    	
+    	}else{
+    		return "false";
+    	}
+
+	}  
+
+
+	public function logout(){
+		return	$this->sessionService->deleteSessionData();
+	} 
 
 
 	public function users(){

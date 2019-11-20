@@ -30,6 +30,7 @@ Route::get('/admin/viewUpdateNovedad/{id}', 'FrontController@viewUpdateNovedad')
 
 
 Route::post('/admin/login', 'UserController@login');
+Route::post('/admin/logout', 'UserController@logout');
 Route::get('/admin/users', 'UserController@users');
 
 

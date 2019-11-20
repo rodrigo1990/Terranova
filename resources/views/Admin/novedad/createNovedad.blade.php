@@ -9,10 +9,16 @@
 			<div class="container">
 					<label for="titulo">Titulo</label>
 					<input type="text" class="form-control" name="titulo">
+					<p class="error" id="tituloError">
+						Ingrese un titulo
+					</p>
 					<br>
 					<br>
 					<label for="descripcion">Descripcion</label>
-					<textarea name="descripcion" id="" cols="30" rows="10"></textarea>
+					<textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+					<p class="error" id="descripcionError">
+						Ingrese una descripción
+					</p>
 					<br><br>
 					
 
@@ -22,17 +28,21 @@
 						<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion">
 							<span  class="btn btn-primary btn-file border-btn blue float-right" >
 		                        IMAGEN DE PRESENTACIÓN 
-		                     	<input name="imgPresentacion" type="file" id="presentacion">
+		                     	<input name="img_presentacion" type="file" id="presentacion">
 		                     </span>
 		                     <div id="file-result-presentacion" class="text-center">
 	                            <span id="file-img-presentacion"></span>
             					</div>
 						</div>
+
+						<p class="error text-center" id="imgPresentacion-error">
+        					Ingrese una imagen
+        				</p>
 					</div>
 				
 					
 				<br><br>
-				<button class="btn btn-primary btn-file border-btn bk-green float-right"><h3>ENVIAR</h3></button>
+				<a onClick="createNovedadValidate()" class="btn btn-primary btn-file border-btn bk-green float-right"><h3>ENVIAR</h3></a>
 
 			</div>
 
@@ -46,12 +56,63 @@
 	
 
 	@section('scripts')
+
 		<script>
-			tinymce.init({selector: "textarea",  // change this value according to your HTML
-			  plugins: "link",
-			  menubar: "insert edit align",
-			  language:'es'});
-		</script>
+		function createNovedadValidate(){
+
+			tinyMCE.triggerSave();
+
+			var titulo = $("input[name=titulo]").val();
+			var descripcion = $("#descripcion").val();
+			var imgPresentacion = $("input[name=img_presentacion]").val();
+
+
+			var tituloValidated = false;
+			var descripcionValidated = false;
+			var imgPresentacionValidated = false;
+		
+
+
+			if(titulo.length == 0){
+				$("#tituloError").fadeIn();
+			}else{
+				$("#tituloError").fadeOut();
+				tituloValidated=true;
+			}
+
+
+			if(descripcion.length == 0){
+				$("#descripcionError").fadeIn();
+			}else{
+				$("#descripcionError").fadeOut();
+				descripcionValidated=true;
+			}
+
+
+			if(imgPresentacion.length == 0){
+				$("#imgPresentacion-error").fadeIn();
+			}else{
+				$("#imgPresentacion-error").fadeOut();
+				imgPresentacionValidated=true;
+			}
+
+		
+
+			
+
+			if(tituloValidated==true&&descripcionValidated==true&&imgPresentacionValidated==true){
+			
+			setTimeout(function(){
+				$('form').submit();
+			},1000);
+
+				
+
+
+			}
+
+		}
+	</script>
 
 		
 	@stop
