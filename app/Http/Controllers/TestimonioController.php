@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Storage;
 
 class TestimonioController extends Controller
 {
+	public function pruebaString(Request $request){
+		$request->link = "https://www.youtube.com/watch?v=9g-YQJqZaJ4";
+		
+		return $request->link;
+	}
     public function createTestimonio(Request $request){
 
 	 	try {
@@ -17,7 +22,7 @@ class TestimonioController extends Controller
 
 	 		$testimonio->titulo = $request->titulo;
 
-	 		$testimonio->link_youtube = $request->linkYoutube;
+	 		$testimonio->link_youtube = $request->youTubeCode;
 
 	 		$testimonio->save();
 
@@ -86,7 +91,7 @@ class TestimonioController extends Controller
 
 			$testimonio->titulo = $request->titulo;
 
-			$testimonio->link_youtube = $request->linkYoutube;
+			$testimonio->link_youtube = $request->youTubeCode;
 
 			$testimonio->save();
 

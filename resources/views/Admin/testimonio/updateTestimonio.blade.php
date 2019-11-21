@@ -17,7 +17,8 @@
 					<br>
 					
 					<label for="link">Link</label>
-					<input type="text" class="form-control" name="linkYoutube" id="linkYoutube" value="{{$testimonio->link_youtube}}">
+					<input type="text" class="form-control" name="linkYoutube" id="linkYoutube" value="https://www.youtube.com/watch?v={{$testimonio->link_youtube}}">
+					<input type="hidden" class="form-control" name="youTubeCode">
 					<p class="error" id="linkYoutubeError">
 						Ingrese un link correcto
 					</p>
@@ -177,6 +178,8 @@
 		            $("#linkYoutubeError").fadeOut();
 				
 					linkYoutubeValidated = true;
+
+					$("input[name=youTubeCode]").val(match[2]);
 			        
 			         
 		    	}else{

@@ -42,7 +42,7 @@ Route::post('/admin/updateProyecto/', 'ProyectoController@updateProyecto');
 
 
 
-
+Route::get('/admin/pruebaString', 'TestimonioController@pruebaString');
 Route::post('/admin/createTestimonio', 'TestimonioController@createTestimonio');
 Route::get('/admin/destroyTestimonio/{id}', 'TestimonioController@destroyTestimonio');
 Route::post('/admin/updateTestimonio', 'TestimonioController@updateTestimonio');

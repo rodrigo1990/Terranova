@@ -17,6 +17,7 @@
 					
 					<label for="link">Link</label>
 					<input type="text" class="form-control" name="linkYoutube" id="linkYoutube">
+					<input type="hidden" class="form-control" name="youTubeCode">
 
 					<p class="error" id="linkYoutubeError">
 						Ingrese un link correcto
@@ -129,6 +130,8 @@
 	            $("#linkYoutubeError").fadeOut();
 			
 				linkYoutubeValidated = true;
+
+				$("input[name=youTubeCode]").val(match[2]);
 		        
 		         
 	    	}else{

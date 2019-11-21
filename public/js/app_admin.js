@@ -48139,6 +48139,7 @@ window.validateYoutubeLink = function (linkYoutube) {
     var match = linkYoutube.match(regExp);
 
     if (match && match[2].length == 11) {
+      console.log(match);
       return match;
     } else {
       return false;

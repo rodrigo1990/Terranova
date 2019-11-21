@@ -18,7 +18,7 @@
 							@foreach($testimonios as $testimonio)
 							<tr>
 								<td class="text-center">{{$testimonio->titulo}}</td>
-								<td class="text-center">{{$testimonio->link_youtube}}</td>
+								<td class="text-center">https://www.youtube.com/watch?v={{$testimonio->link_youtube}}</td>
 								<td class="text-center">
 									<a href="/admin/viewUpdateTestimonio/{{$testimonio->id}}">Actualizar</a>
 									<br>
