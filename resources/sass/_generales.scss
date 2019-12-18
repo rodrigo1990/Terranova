@@ -1,0 +1,28 @@
+body{
+	overflow-x:hidden;
+}
+
+.flex{
+	display:flex;
+}
+
+ul{
+	padding:0;
+}
+
+ul li{
+	list-style:none;
+}
+
+.one-line{
+	overflow: hidden;
+    white-space: nowrap;
+}
+
+.float-right{
+	float:right;
+}
+
+.float-left{
+	float:left;
+}

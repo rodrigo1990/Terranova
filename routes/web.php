@@ -11,9 +11,15 @@
 |
 */
 
+
+
 Route::get('/', function () {
-    return view('Admin/login');
+    return view('index');
 });
+
+
+/*ADMIN*/
+
 
 Route::get('/admin/viewCreateProyecto', 'FrontController@viewCreateProyecto');
 Route::get('/admin/viewListProyectos/{msg}', 'FrontController@viewListProyectos');
@@ -62,7 +68,7 @@ Route::post('/admin/destroyImgNovedad/', 'NovedadController@destroyImg');
 
 //Route::get('/admin/index', 'FrontController@index');
 
-Route::get('/admin/index', function () {
+Route::get('/panel/', function () {
     return view('Admin/login');
 });
 
