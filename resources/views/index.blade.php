@@ -9,6 +9,11 @@
 				
 			</div>
 		</div>
+		<div>
+			<div class="slide" id="slide-2">
+				
+			</div>
+		</div>
 
 		
 	</div>
