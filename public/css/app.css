@@ -1,13 +1,42 @@
-body {
-  overflow-x: hidden;
+html {
+  font-size: 36px !important;
 }
 
-.flex {
+body {
+  overflow-x: hidden !important;
+}
+
+a {
+  transition: background-color 0.5s ease-out;
+}
+
+a.btn {
+  color: white;
+  border: 3px solid #7d9f45;
+  font-size: 0.3em;
+  padding: 0.25em 0.8em;
+  border-radius: 5px;
+  font-size: 0.5rem;
+  color: #7d9f45;
+}
+
+a.btn:hover {
+  text-decoration: none !important;
+  background-color: #7d9f45;
+  color: white;
+}
+
+.flex,
+#buscador ul.flex li,
+#buscador #slider ul.slide li,
+#slider #buscador ul.slide li,
+#slider .slide {
   display: flex;
 }
 
 ul {
   padding: 0;
+  margin: 0 !important;
 }
 
 ul li {
@@ -27,13 +56,122 @@ ul li {
   float: left;
 }
 
-header .flex {
+h2.title {
+  font-size: 1rem;
+  color: #7d9f45;
+}
+
+.fixed-btn {
+  cursor: pointer;
+  position: fixed;
+  right: 3px;
+  top: 36%;
+  border: 2px solid #7d9f45;
+  color: white;
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 28px;
+  z-index: 1000;
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+
+.fixed-btn p {
+  margin-top: 5px;
+}
+
+.fixed-btn img.white {
+  display: none;
+}
+
+.fixed-btn img.red {
+  display: block;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.fixed-btn p {
+  font-size: 15px !important;
+}
+
+.fixed-btn:after {
+  pointer-events: none;
+  border-radius: 50%;
+  position: absolute;
+  content: "";
+  box-sizing: content-box;
+  z-index: -1;
+  background-color: #7d9f45;
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  transform-origin: 50% 50%;
+  -khtml-transform: scale(0);
+  transform: scale(0);
+  margin: -105px 0px 0 -75px;
+  width: 140px;
+  height: 140px;
+  transition: transform 0.25s;
+  border: 4px solid white;
+}
+
+.fixed-btn:hover:after {
+  webkit-transform: scale(0.9);
+  -khtml-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.fixed-btn:hover {
+  text-decoration: none;
+  color: white;
+  transform: scale(1.1);
+  transition: transform 0.5s, color 1s;
+}
+
+.fixed-btn:hover img.white {
+  display: block;
+}
+
+.fixed-btn:hover img.red {
+  display: none;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 850px) {
+  html {
+    font-size: 22px !important;
+  }
+}
+
+header {
+  padding: 10px 0 10px 0;
+  z-index: 2;
+  width: 100%;
+  background: white;
+}
+
+header .flex,
+header #buscador ul.flex li,
+#buscador ul.flex header li,
+header #buscador #slider ul.slide li,
+#buscador #slider ul.slide header li,
+header #slider #buscador ul.slide li,
+#slider #buscador ul.slide header li,
+header #slider .slide,
+#slider header .slide {
   flex-direction: row;
   justify-content: center;
   align-content: center;
 }
 
-header .flex > li {
+header .flex > li,
+header #buscador ul.flex li > li,
+#buscador ul.flex header li > li,
+header #buscador #slider ul.slide li > li,
+#buscador #slider ul.slide header li > li,
+header #slider #buscador ul.slide li > li,
+#slider #buscador ul.slide header li > li,
+header #slider .slide > li,
+#slider header .slide > li {
   flex-basis: 187px;
   overflow: hidden;
   white-space: nowrap;
@@ -43,15 +181,91 @@ header .flex > li {
   justify-content: center;
 }
 
-header .flex > li > a {
+header .flex > li > a,
+header #buscador ul.flex li > li > a,
+#buscador ul.flex header li > li > a,
+header #buscador #slider ul.slide li > li > a,
+#buscador #slider ul.slide header li > li > a,
+header #slider #buscador ul.slide li > li > a,
+#slider #buscador ul.slide header li > li > a,
+header #slider .slide > li > a,
+#slider header .slide > li > a {
   color: #724432;
+  font-size: 0.41rem;
 }
 
-header .flex > li .logo {
+header .flex > li .logo,
+header #buscador ul.flex li > li .logo,
+#buscador ul.flex header li > li .logo,
+header #buscador #slider ul.slide li > li .logo,
+#buscador #slider ul.slide header li > li .logo,
+header #slider #buscador ul.slide li > li .logo,
+#slider #buscador ul.slide header li > li .logo,
+header #slider .slide > li .logo,
+#slider header .slide > li .logo {
   width: 130px;
 }
 
-header .flex > li .flex > li {
+header .flex > li .flex > li,
+header #buscador ul.flex li > li .flex > li,
+#buscador ul.flex header li > li .flex > li,
+header #buscador #slider ul.slide li > li .flex > li,
+#buscador #slider ul.slide header li > li .flex > li,
+header #slider #buscador ul.slide li > li .flex > li,
+#slider #buscador ul.slide header li > li .flex > li,
+header .flex > li #buscador ul.flex li > li,
+#buscador ul.flex header .flex > li li > li,
+header #buscador ul.flex li > li li > li,
+#buscador ul.flex header li > li li > li,
+header #buscador #slider ul.slide li > li ul.flex li > li,
+#buscador #slider ul.slide header li > li ul.flex li > li,
+header #slider #buscador ul.slide li > li ul.flex li > li,
+#slider #buscador ul.slide header li > li ul.flex li > li,
+header .flex > li #buscador #slider ul.slide li > li,
+#buscador #slider ul.slide header .flex > li li > li,
+header #buscador ul.flex li > li #slider ul.slide li > li,
+#buscador ul.flex header li > li #slider ul.slide li > li,
+header #buscador #slider ul.slide li > li li > li,
+#buscador #slider ul.slide header li > li li > li,
+header .flex > li #slider #buscador ul.slide li > li,
+#slider #buscador ul.slide header .flex > li li > li,
+header #slider #buscador ul.flex li > li ul.slide li > li,
+#slider header #buscador ul.flex li > li ul.slide li > li,
+#slider #buscador ul.flex header li > li ul.slide li > li,
+header #slider #buscador ul.slide li > li li > li,
+#slider #buscador ul.slide header li > li li > li,
+header #slider .slide > li .flex > li,
+header #slider .slide > li #buscador ul.flex li > li,
+#buscador ul.flex header #slider .slide > li li > li,
+header #buscador #slider .slide > li ul.slide li > li,
+#buscador header #slider .slide > li ul.slide li > li,
+header #buscador #slider ul.slide .slide > li li > li,
+#buscador header #slider ul.slide .slide > li li > li,
+header #slider .slide > li #buscador ul.slide li > li,
+header #slider #buscador ul.slide .slide > li li > li,
+#slider header .slide > li .flex > li,
+#slider header .slide > li #buscador ul.flex li > li,
+#buscador ul.flex #slider header .slide > li li > li,
+#buscador #slider header .slide > li ul.slide li > li,
+#buscador #slider ul.slide header .slide > li li > li,
+#slider header .slide > li #buscador ul.slide li > li,
+#slider #buscador ul.slide header .slide > li li > li,
+header .flex > li #slider .slide > li,
+header #buscador ul.flex li > li #slider .slide > li,
+#buscador ul.flex header li > li #slider .slide > li,
+header #buscador #slider ul.slide li > li #slider .slide > li,
+#buscador #slider ul.slide header li > li #slider .slide > li,
+header #slider #buscador ul.slide li > li #slider .slide > li,
+#slider #buscador ul.slide header li > li #slider .slide > li,
+#slider header .flex > li .slide > li,
+#slider header #buscador ul.flex li > li .slide > li,
+#buscador ul.flex #slider header li > li .slide > li,
+#buscador #slider header ul.slide li > li .slide > li,
+#buscador #slider ul.slide header li > li .slide > li,
+#slider header #buscador ul.slide li > li .slide > li,
+#slider #buscador ul.slide header li > li .slide > li,
+header #slider .slide > li .slide > li,
+#slider header .slide > li .slide > li {
   flex-basis: 23px;
   flex-basis: 23px;
   margin-left: 6px;
@@ -59,17 +273,121 @@ header .flex > li .flex > li {
   width: 22px;
 }
 
-header .flex > li .flex > li a {
+header .flex > li .flex > li a,
+header #buscador ul.flex li > li .flex > li a,
+#buscador ul.flex header li > li .flex > li a,
+header #buscador #slider ul.slide li > li .flex > li a,
+#buscador #slider ul.slide header li > li .flex > li a,
+header #slider #buscador ul.slide li > li .flex > li a,
+#slider #buscador ul.slide header li > li .flex > li a,
+header .flex > li #buscador ul.flex li > li a,
+#buscador ul.flex header .flex > li li > li a,
+header #buscador ul.flex li > li li > li a,
+#buscador ul.flex header li > li li > li a,
+header .flex > li #buscador #slider ul.slide li > li a,
+#buscador #slider ul.slide header .flex > li li > li a,
+header #buscador #slider ul.slide li > li li > li a,
+#buscador #slider ul.slide header li > li li > li a,
+header .flex > li #slider #buscador ul.slide li > li a,
+#slider #buscador ul.slide header .flex > li li > li a,
+header #slider #buscador ul.slide li > li li > li a,
+#slider #buscador ul.slide header li > li li > li a,
+header #slider .slide > li .flex > li a,
+header #slider .slide > li #buscador ul.flex li > li a,
+#buscador ul.flex header #slider .slide > li li > li a,
+header #buscador #slider .slide > li ul.slide li > li a,
+#buscador header #slider .slide > li ul.slide li > li a,
+header #buscador #slider ul.slide .slide > li li > li a,
+#buscador header #slider ul.slide .slide > li li > li a,
+header #slider .slide > li #buscador ul.slide li > li a,
+header #slider #buscador ul.slide .slide > li li > li a,
+#slider header .slide > li .flex > li a,
+#slider header .slide > li #buscador ul.flex li > li a,
+#buscador ul.flex #slider header .slide > li li > li a,
+#buscador #slider header .slide > li ul.slide li > li a,
+#buscador #slider ul.slide header .slide > li li > li a,
+#slider header .slide > li #buscador ul.slide li > li a,
+#slider #buscador ul.slide header .slide > li li > li a,
+header .flex > li #slider .slide > li a,
+header #buscador ul.flex li > li #slider .slide > li a,
+#buscador ul.flex header li > li #slider .slide > li a,
+header #buscador #slider ul.slide li > li #slider .slide > li a,
+header #slider #buscador ul.slide li > li #slider .slide > li a,
+#slider header .flex > li .slide > li a,
+#slider header #buscador ul.flex li > li .slide > li a,
+#buscador ul.flex #slider header li > li .slide > li a,
+#buscador #slider header ul.slide li > li .slide > li a,
+#buscador #slider ul.slide header li > li .slide > li a,
+#slider header #buscador ul.slide li > li .slide > li a,
+#slider #buscador ul.slide header li > li .slide > li a,
+header #slider .slide > li .slide > li a,
+#slider header .slide > li .slide > li a {
   width: 70px;
 }
 
-header .flex > li .flex > li a i {
-  font-size: 20px;
-  color: #724432;
+header .flex > li .flex > li a i,
+header #buscador ul.flex li > li .flex > li a i,
+#buscador ul.flex header li > li .flex > li a i,
+header #buscador #slider ul.slide li > li .flex > li a i,
+#buscador #slider ul.slide header li > li .flex > li a i,
+header #slider #buscador ul.slide li > li .flex > li a i,
+#slider #buscador ul.slide header li > li .flex > li a i,
+header .flex > li #buscador ul.flex li > li a i,
+#buscador ul.flex header .flex > li li > li a i,
+header #buscador ul.flex li > li li > li a i,
+#buscador ul.flex header li > li li > li a i,
+header .flex > li #buscador #slider ul.slide li > li a i,
+#buscador #slider ul.slide header .flex > li li > li a i,
+header #buscador #slider ul.slide li > li li > li a i,
+#buscador #slider ul.slide header li > li li > li a i,
+header .flex > li #slider #buscador ul.slide li > li a i,
+#slider #buscador ul.slide header .flex > li li > li a i,
+header #slider #buscador ul.slide li > li li > li a i,
+#slider #buscador ul.slide header li > li li > li a i,
+header #slider .slide > li .flex > li a i,
+header #slider .slide > li #buscador ul.flex li > li a i,
+#buscador ul.flex header #slider .slide > li li > li a i,
+header #buscador #slider .slide > li ul.slide li > li a i,
+#buscador header #slider .slide > li ul.slide li > li a i,
+header #buscador #slider ul.slide .slide > li li > li a i,
+#buscador header #slider ul.slide .slide > li li > li a i,
+header #slider .slide > li #buscador ul.slide li > li a i,
+header #slider #buscador ul.slide .slide > li li > li a i,
+#slider header .slide > li .flex > li a i,
+#slider header .slide > li #buscador ul.flex li > li a i,
+#buscador ul.flex #slider header .slide > li li > li a i,
+#buscador #slider header .slide > li ul.slide li > li a i,
+#buscador #slider ul.slide header .slide > li li > li a i,
+#slider header .slide > li #buscador ul.slide li > li a i,
+#slider #buscador ul.slide header .slide > li li > li a i,
+header .flex > li #slider .slide > li a i,
+header #buscador ul.flex li > li #slider .slide > li a i,
+#buscador ul.flex header li > li #slider .slide > li a i,
+header #buscador #slider ul.slide li > li #slider .slide > li a i,
+header #slider #buscador ul.slide li > li #slider .slide > li a i,
+#slider header .flex > li .slide > li a i,
+#slider header #buscador ul.flex li > li .slide > li a i,
+#buscador ul.flex #slider header li > li .slide > li a i,
+#buscador #slider header ul.slide li > li .slide > li a i,
+#buscador #slider ul.slide header li > li .slide > li a i,
+#slider header #buscador ul.slide li > li .slide > li a i,
+#slider #buscador ul.slide header li > li .slide > li a i,
+header #slider .slide > li .slide > li a i,
+#slider header .slide > li .slide > li a i {
+  font-size: 0.62rem;
+  color: #7d9f45;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 850px) {
-  header .col-xs-12 .flex {
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
+  header .col-xs-12 .flex,
+  header .col-xs-12 #buscador ul.flex li,
+  #buscador ul.flex header .col-xs-12 li,
+  header .col-xs-12 #buscador #slider ul.slide li,
+  #buscador #slider ul.slide header .col-xs-12 li,
+  header .col-xs-12 #slider #buscador ul.slide li,
+  #slider #buscador ul.slide header .col-xs-12 li,
+  header .col-xs-12 #slider .slide,
+  #slider header .col-xs-12 .slide {
     justify-content: space-between;
   }
 
@@ -94,34 +412,357 @@ header .flex > li .flex > li a i {
   }
 }
 
-@media only screen and (min-width: 850px) and (max-width: 1024px) {
-  header .col-xs-12 .flex {
-    justify-content: space-between;
+/*@media only screen and (min-width: 850px) and (max-width: 1024px){
+
+	header{
+		.col-xs-12{
+			.flex{
+				justify-content: space-between;
+			}
+			ul{	
+				>li:nth-child(1){
+					margin-left:25px;
+				}
+				>li:nth-child(2){
+					margin-right:75px;
+					i{
+						font-size: 60px;
+					}
+				}
+				>li{
+					flex-basis:auto;	
+					.logo{
+						width: 200px;
+					}
+
+				}
+			}
+		}
+
+	}
+
+
+}*/
+
+/*
+ *  Owl Carousel - Core
+ */
+
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* position relative and z-index fix webkit rendering fonts issue */
+  position: relative;
+  z-index: 1;
+}
+
+.owl-carousel .owl-stage {
+  position: relative;
+  touch-action: manipulation;
+  -moz-backface-visibility: hidden;
+  /* fix firefox animation glitch */
+}
+
+.owl-carousel .owl-stage:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.owl-carousel .owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+  /* fix for flashing background */
+  -webkit-transform: translate3d(0px, 0px, 0px);
+}
+
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+}
+
+.owl-carousel .owl-item {
+  position: relative;
+  min-height: 1px;
+  float: left;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+.owl-carousel .owl-item img {
+  display: block;
+  width: 100%;
+}
+
+.owl-carousel .owl-nav.disabled,
+.owl-carousel .owl-dots.disabled {
+  display: none;
+}
+
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next,
+.owl-carousel .owl-dot {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel button.owl-dot {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0 !important;
+  font: inherit;
+}
+
+.owl-carousel.owl-loaded {
+  display: block;
+}
+
+.owl-carousel.owl-loading {
+  opacity: 0;
+  display: block;
+}
+
+.owl-carousel.owl-hidden {
+  opacity: 0;
+}
+
+.owl-carousel.owl-refresh .owl-item {
+  visibility: hidden;
+}
+
+.owl-carousel.owl-drag .owl-item {
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.owl-carousel.owl-grab {
+  cursor: move;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.owl-carousel.owl-rtl {
+  direction: rtl;
+}
+
+.owl-carousel.owl-rtl .owl-item {
+  float: right;
+}
+
+/* No Js */
+
+.no-js .owl-carousel {
+  display: block;
+}
+
+/*
+ *  Owl Carousel - Animate Plugin
+ */
+
+.owl-carousel .animated {
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.owl-carousel .owl-animated-in {
+  z-index: 0;
+}
+
+.owl-carousel .owl-animated-out {
+  z-index: 1;
+}
+
+.owl-carousel .fadeOut {
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
   }
 
-  header .col-xs-12 ul > li:nth-child(1) {
-    margin-left: 25px;
-  }
-
-  header .col-xs-12 ul > li:nth-child(2) {
-    margin-right: 75px;
-  }
-
-  header .col-xs-12 ul > li:nth-child(2) i {
-    font-size: 60px;
-  }
-
-  header .col-xs-12 ul > li {
-    flex-basis: auto;
-  }
-
-  header .col-xs-12 ul > li .logo {
-    width: 200px;
+  100% {
+    opacity: 0;
   }
 }
 
-/*@import '../OwlCarousel2-2.3.4/src/scss/owl.carousel';
-@import '../OwlCarousel2-2.3.4/src/scss/owl.theme.default';*/
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/*
+ * 	Owl Carousel - Auto Height Plugin
+ */
+
+.owl-height {
+  transition: height 500ms ease-in-out;
+}
+
+/*
+ * 	Owl Carousel - Lazy Load Plugin
+ */
+
+.owl-carousel .owl-item {
+  /**
+  	This is introduced due to a bug in IE11 where lazy loading combined with autoheight plugin causes a wrong
+  	calculation of the height of the owl-item that breaks page layouts
+   */
+}
+
+.owl-carousel .owl-item .owl-lazy {
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.owl-carousel .owl-item .owl-lazy[src^=""],
+.owl-carousel .owl-item .owl-lazy:not([src]) {
+  max-height: 0;
+}
+
+.owl-carousel .owl-item img.owl-lazy {
+  transform-style: preserve-3d;
+}
+
+/*
+ * 	Owl Carousel - Video Plugin
+ */
+
+.owl-carousel .owl-video-wrapper {
+  position: relative;
+  height: 100%;
+  background: #000;
+}
+
+.owl-carousel .owl-video-play-icon {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  background: url(/images/owl.video.play.png?4a37f8008959c75f619bf0a3a4e2d7a2) no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  transition: transform 100ms ease;
+}
+
+.owl-carousel .owl-video-play-icon:hover {
+  transform: scale(1.3, 1.3);
+}
+
+.owl-carousel .owl-video-playing .owl-video-tn,
+.owl-carousel .owl-video-playing .owl-video-play-icon {
+  display: none;
+}
+
+.owl-carousel .owl-video-tn {
+  opacity: 0;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity 400ms ease;
+}
+
+.owl-carousel .owl-video-frame {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+/*
+ * 	Default theme - Owl Carousel CSS File
+ */
+
+.owl-theme .owl-nav {
+  margin-top: 10px;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+  color: #FFF;
+  font-size: 14px;
+  margin: 5px;
+  padding: 4px 7px;
+  background: #D6D6D6;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+  background: #869791;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.owl-theme .owl-nav .disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 10px;
+}
+
+.owl-theme .owl-dots {
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.owl-theme .owl-dots .owl-dot {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  width: 10px;
+  height: 10px;
+  margin: 5px 7px;
+  background: #D6D6D6;
+  display: block;
+  -webkit-backface-visibility: visible;
+  transition: opacity 200ms ease;
+  border-radius: 30px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #869791;
+}
 
 /*---------------------------------------------*/
 
@@ -129,32 +770,78 @@ header .flex > li .flex > li a i {
 
 /*----------------------------------------------*/
 
-.slide {
+#slider .slide {
   position: relative;
   width: 100%;
   height: 100vh;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  align-content: center;
+  align-items: center;
 }
 
-#owl-1 #slide-1 {
-  background-image: url(/images/1.jpg?5993e8c0c3d87cb6609ff8288388e4a9);
+#slider .slide .slide__content {
+  font-size: 2rem !important;
+  line-height: 0;
 }
 
-#owl-1 #slide-2 {
-  background-image: url(/images/1.jpg?5993e8c0c3d87cb6609ff8288388e4a9);
+#slider .slide .slide__content h1 {
+  color: white;
+  font-size: 2rem !important;
+  margin-bottom: 0.45em;
 }
 
-.owl-carousel .owl-stage-outer {
+#slider .slide .slide__content a:hover {
+  background: #7d9f45;
+  color: white !important;
+}
+
+#slider .slide .slide__content a {
+  margin-top: 0.25em;
+  color: white;
+}
+
+#slider .slide .slide__content.right {
+  margin-left: auto;
+  margin-right: 10%;
+}
+
+#slider .slide .slide__content.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#slider .slide .slide__content.center a {
+  padding: 0.25em 2em;
+}
+
+#slider #owl-1 #slide-1 {
+  background-image: url(/images/1.jpg?f6ca6775b0b4893fd519ac1c5ef74513);
+  background: black;
+}
+
+#slider #owl-1 #slide-2 {
+  background-image: url(/images/1.jpg?f6ca6775b0b4893fd519ac1c5ef74513);
+  background: black;
+}
+
+#slider .owl-carousel .owl-stage-outer {
   z-index: -1 !important;
 }
 
-.owl-theme .owl-nav.disabled + .owl-dots {
-  margin-top: -47px !important;
+#slider .owl-theme .owl-nav.disabled + .owl-dots {
+  /* margin-top: -47px !important; */
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 28px;
+  z-index: 39;
 }
 
-.owl-theme .owl-dots .owl-dot span {
+#slider .owl-theme .owl-dots .owl-dot span {
   background: white !important;
   width: 10px;
   height: 10px;
@@ -164,7 +851,7 @@ header .flex > li .flex > li a i {
   transition: all 0.3s ease-in-out;
 }
 
-.owl-theme .owl-dots .owl-dot.active span {
+#slider .owl-theme .owl-dots .owl-dot.active span {
   background: white !important;
   border-color: white;
   -webkit-animation: opacity_animation 1s;
@@ -172,7 +859,317 @@ header .flex > li .flex > li a i {
   opacity: 1 !important;
 }
 
-.owl-theme .owl-dots .owl-dot {
+#slider .owl-theme .owl-dots .owl-dot {
   outline: none;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 850px) {
+  #slider .slide .slide__content.right {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+#franja-1 .row {
+  padding: 0;
+  margin: 0;
+  font-size: 1.2rem;
+  background-color: #7d9f45;
+  padding: 0.8em 0 0.8em 0;
+}
+
+#franja-1 .row h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: white;
+}
+
+#buscador {
+  padding: 35px 0 35px 0;
+  background: #eaeaea;
+}
+
+#buscador ul.flex,
+#buscador #slider ul.slide,
+#slider #buscador ul.slide {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#buscador ul.flex li,
+#buscador #slider ul.slide li,
+#slider #buscador ul.slide li {
+  flex-basis: 100%;
+  align-content: center;
+  align-items: center;
+}
+
+#buscador ul.flex li input,
+#buscador #slider ul.slide li input,
+#slider #buscador ul.slide li input {
+  max-width: 92%;
+}
+
+#buscador ul.flex li h3,
+#buscador #slider ul.slide li h3,
+#slider #buscador ul.slide li h3 {
+  font-size: 0.55rem;
+  margin: 0;
+}
+
+#home-icons {
+  padding: 90px 0 90px 0;
+}
+
+#home-icons ul {
+  justify-content: space-evenly;
+}
+
+#home-icons ul li {
+  flex-basis: 100%;
+}
+
+#nuestros-proyectos h2 {
+  margin-bottom: 40px;
+}
+
+#nuestros-proyectos .container > .flex,
+#nuestros-proyectos #slider .container > .slide,
+#slider #nuestros-proyectos .container > .slide,
+#nuestros-proyectos #buscador ul.flex .container > li,
+#buscador ul.flex #nuestros-proyectos .container > li,
+#nuestros-proyectos #buscador #slider ul.slide .container > li,
+#buscador #slider ul.slide #nuestros-proyectos .container > li,
+#nuestros-proyectos #slider #buscador ul.slide .container > li,
+#slider #buscador ul.slide #nuestros-proyectos .container > li {
+  width: 100%;
+}
+
+#nuestros-proyectos .container > .flex > li,
+#nuestros-proyectos #slider .container > .slide > li,
+#slider #nuestros-proyectos .container > .slide > li,
+#nuestros-proyectos #buscador ul.flex .container > li > li,
+#buscador ul.flex #nuestros-proyectos .container > li > li,
+#nuestros-proyectos #buscador #slider ul.slide .container > li > li,
+#buscador #slider ul.slide #nuestros-proyectos .container > li > li,
+#nuestros-proyectos #slider #buscador ul.slide .container > li > li,
+#slider #buscador ul.slide #nuestros-proyectos .container > li > li {
+  width: 50%;
+}
+
+#nuestros-proyectos .container > .flex > li:nth-child(1),
+#nuestros-proyectos #slider .container > .slide > li:nth-child(1),
+#slider #nuestros-proyectos .container > .slide > li:nth-child(1),
+#nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(1),
+#buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(1),
+#nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(1),
+#buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(1),
+#nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(1),
+#slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(1) {
+  background: green;
+  height: 400px;
+}
+
+#nuestros-proyectos .container > .flex > li:nth-child(2),
+#nuestros-proyectos #slider .container > .slide > li:nth-child(2),
+#slider #nuestros-proyectos .container > .slide > li:nth-child(2),
+#nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2),
+#buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2),
+#nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2),
+#buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2),
+#nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2),
+#slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) {
+  margin-left: 20px;
+}
+
+#nuestros-proyectos .container > .flex > li:nth-child(2) > .flex,
+#nuestros-proyectos #slider .container > .slide > li:nth-child(2) > .flex,
+#slider #nuestros-proyectos .container > .slide > li:nth-child(2) > .flex,
+#nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > .flex,
+#buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > .flex,
+#nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > .flex,
+#buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .flex,
+#nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > .flex,
+#slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .flex,
+#nuestros-proyectos #slider .container > .flex > li:nth-child(2) > .slide,
+#slider #nuestros-proyectos .container > .flex > li:nth-child(2) > .slide,
+#nuestros-proyectos #slider .container > .slide > li:nth-child(2) > .slide,
+#slider #nuestros-proyectos .container > .slide > li:nth-child(2) > .slide,
+#nuestros-proyectos #buscador ul.flex #slider .container > li > li:nth-child(2) > .slide,
+#slider #nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > .slide,
+#buscador ul.flex #nuestros-proyectos #slider .container > li > li:nth-child(2) > .slide,
+#slider #buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > .slide,
+#nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > .slide,
+#buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .slide,
+#nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > .slide,
+#slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .slide,
+#nuestros-proyectos #buscador ul.flex .container > .flex > li:nth-child(2) > li,
+#buscador ul.flex #nuestros-proyectos .container > .flex > li:nth-child(2) > li,
+#nuestros-proyectos #slider #buscador ul.flex .container > .slide > li:nth-child(2) > li,
+#buscador ul.flex #nuestros-proyectos #slider .container > .slide > li:nth-child(2) > li,
+#slider #nuestros-proyectos #buscador ul.flex .container > .slide > li:nth-child(2) > li,
+#buscador ul.flex #slider #nuestros-proyectos .container > .slide > li:nth-child(2) > li,
+#nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > li,
+#buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > li,
+#nuestros-proyectos #buscador #slider ul.slide .container > .flex > li:nth-child(2) > li,
+#buscador #slider ul.slide #nuestros-proyectos .container > .flex > li:nth-child(2) > li,
+#nuestros-proyectos #buscador #slider ul.slide .container > .slide > li:nth-child(2) > li,
+#buscador #nuestros-proyectos #slider ul.slide .container > .slide > li:nth-child(2) > li,
+#buscador #slider #nuestros-proyectos ul.slide .container > .slide > li:nth-child(2) > li,
+#buscador #slider ul.slide #nuestros-proyectos .container > .slide > li:nth-child(2) > li,
+#nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > li,
+#buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > li,
+#nuestros-proyectos #slider #buscador ul.slide .container > .flex > li:nth-child(2) > li,
+#slider #buscador ul.slide #nuestros-proyectos .container > .flex > li:nth-child(2) > li,
+#nuestros-proyectos #slider #buscador ul.slide .container > .slide > li:nth-child(2) > li,
+#slider #nuestros-proyectos #buscador ul.slide .container > .slide > li:nth-child(2) > li,
+#slider #buscador ul.slide #nuestros-proyectos .container > .slide > li:nth-child(2) > li,
+#nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > li,
+#slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > li {
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+#nuestros-proyectos .container > .flex > li:nth-child(2) > .flex > li,
+#nuestros-proyectos #slider .container > .slide > li:nth-child(2) > .flex > li,
+#slider #nuestros-proyectos .container > .slide > li:nth-child(2) > .flex > li,
+#nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > .flex > li,
+#buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > .flex > li,
+#nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > .flex > li,
+#buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .flex > li,
+#nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > .flex > li,
+#slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .flex > li,
+#nuestros-proyectos #slider .container > .flex > li:nth-child(2) > .slide > li,
+#slider #nuestros-proyectos .container > .flex > li:nth-child(2) > .slide > li,
+#nuestros-proyectos #slider .container > .slide > li:nth-child(2) > .slide > li,
+#slider #nuestros-proyectos .container > .slide > li:nth-child(2) > .slide > li,
+#nuestros-proyectos #buscador ul.flex #slider .container > li > li:nth-child(2) > .slide > li,
+#slider #nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > .slide > li,
+#buscador ul.flex #nuestros-proyectos #slider .container > li > li:nth-child(2) > .slide > li,
+#slider #buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > .slide > li,
+#nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > .slide > li,
+#buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .slide > li,
+#nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > .slide > li,
+#slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .slide > li,
+#nuestros-proyectos #buscador ul.flex .container > .flex > li:nth-child(2) > li > li,
+#buscador ul.flex #nuestros-proyectos .container > .flex > li:nth-child(2) > li > li,
+#nuestros-proyectos #slider #buscador ul.flex .container > .slide > li:nth-child(2) > li > li,
+#buscador ul.flex #nuestros-proyectos #slider .container > .slide > li:nth-child(2) > li > li,
+#slider #nuestros-proyectos #buscador ul.flex .container > .slide > li:nth-child(2) > li > li,
+#buscador ul.flex #slider #nuestros-proyectos .container > .slide > li:nth-child(2) > li > li,
+#nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > li > li,
+#buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > li > li,
+#nuestros-proyectos #buscador #slider ul.slide .container > .flex > li:nth-child(2) > li > li,
+#buscador #slider ul.slide #nuestros-proyectos .container > .flex > li:nth-child(2) > li > li,
+#nuestros-proyectos #buscador #slider ul.slide .container > .slide > li:nth-child(2) > li > li,
+#buscador #nuestros-proyectos #slider ul.slide .container > .slide > li:nth-child(2) > li > li,
+#buscador #slider #nuestros-proyectos ul.slide .container > .slide > li:nth-child(2) > li > li,
+#buscador #slider ul.slide #nuestros-proyectos .container > .slide > li:nth-child(2) > li > li,
+#nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > li > li,
+#buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > li > li,
+#nuestros-proyectos #slider #buscador ul.slide .container > .flex > li:nth-child(2) > li > li,
+#slider #buscador ul.slide #nuestros-proyectos .container > .flex > li:nth-child(2) > li > li,
+#nuestros-proyectos #slider #buscador ul.slide .container > .slide > li:nth-child(2) > li > li,
+#slider #nuestros-proyectos #buscador ul.slide .container > .slide > li:nth-child(2) > li > li,
+#slider #buscador ul.slide #nuestros-proyectos .container > .slide > li:nth-child(2) > li > li,
+#nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > li > li,
+#slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > li > li {
+  height: 190px;
+}
+
+#nuestros-proyectos .container > .flex > li:nth-child(2) > .flex > li:nth-child(1),
+#nuestros-proyectos #slider .container > .slide > li:nth-child(2) > .flex > li:nth-child(1),
+#slider #nuestros-proyectos .container > .slide > li:nth-child(2) > .flex > li:nth-child(1),
+#nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > .flex > li:nth-child(1),
+#buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > .flex > li:nth-child(1),
+#nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > .flex > li:nth-child(1),
+#buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .flex > li:nth-child(1),
+#nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > .flex > li:nth-child(1),
+#slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .flex > li:nth-child(1),
+#nuestros-proyectos #slider .container > .flex > li:nth-child(2) > .slide > li:nth-child(1),
+#slider #nuestros-proyectos .container > .flex > li:nth-child(2) > .slide > li:nth-child(1),
+#nuestros-proyectos #slider .container > .slide > li:nth-child(2) > .slide > li:nth-child(1),
+#slider #nuestros-proyectos .container > .slide > li:nth-child(2) > .slide > li:nth-child(1),
+#nuestros-proyectos #buscador ul.flex #slider .container > li > li:nth-child(2) > .slide > li:nth-child(1),
+#slider #nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > .slide > li:nth-child(1),
+#buscador ul.flex #nuestros-proyectos #slider .container > li > li:nth-child(2) > .slide > li:nth-child(1),
+#slider #buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > .slide > li:nth-child(1),
+#nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > .slide > li:nth-child(1),
+#buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .slide > li:nth-child(1),
+#nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > .slide > li:nth-child(1),
+#slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .slide > li:nth-child(1),
+#nuestros-proyectos #buscador ul.flex .container > .flex > li:nth-child(2) > li > li:nth-child(1),
+#buscador ul.flex #nuestros-proyectos .container > .flex > li:nth-child(2) > li > li:nth-child(1),
+#nuestros-proyectos #slider #buscador ul.flex .container > .slide > li:nth-child(2) > li > li:nth-child(1),
+#buscador ul.flex #nuestros-proyectos #slider .container > .slide > li:nth-child(2) > li > li:nth-child(1),
+#slider #nuestros-proyectos #buscador ul.flex .container > .slide > li:nth-child(2) > li > li:nth-child(1),
+#buscador ul.flex #slider #nuestros-proyectos .container > .slide > li:nth-child(2) > li > li:nth-child(1),
+#nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > li > li:nth-child(1),
+#buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > li > li:nth-child(1),
+#nuestros-proyectos #buscador #slider ul.slide .container > .flex > li:nth-child(2) > li > li:nth-child(1),
+#buscador #slider ul.slide #nuestros-proyectos .container > .flex > li:nth-child(2) > li > li:nth-child(1),
+#nuestros-proyectos #buscador #slider ul.slide .container > .slide > li:nth-child(2) > li > li:nth-child(1),
+#buscador #nuestros-proyectos #slider ul.slide .container > .slide > li:nth-child(2) > li > li:nth-child(1),
+#buscador #slider #nuestros-proyectos ul.slide .container > .slide > li:nth-child(2) > li > li:nth-child(1),
+#buscador #slider ul.slide #nuestros-proyectos .container > .slide > li:nth-child(2) > li > li:nth-child(1),
+#nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > li > li:nth-child(1),
+#buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > li > li:nth-child(1),
+#nuestros-proyectos #slider #buscador ul.slide .container > .flex > li:nth-child(2) > li > li:nth-child(1),
+#slider #buscador ul.slide #nuestros-proyectos .container > .flex > li:nth-child(2) > li > li:nth-child(1),
+#nuestros-proyectos #slider #buscador ul.slide .container > .slide > li:nth-child(2) > li > li:nth-child(1),
+#slider #nuestros-proyectos #buscador ul.slide .container > .slide > li:nth-child(2) > li > li:nth-child(1),
+#slider #buscador ul.slide #nuestros-proyectos .container > .slide > li:nth-child(2) > li > li:nth-child(1),
+#nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > li > li:nth-child(1),
+#slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > li > li:nth-child(1) {
+  background: red;
+}
+
+#nuestros-proyectos .container > .flex > li:nth-child(2) > .flex > li:nth-child(2),
+#nuestros-proyectos #slider .container > .slide > li:nth-child(2) > .flex > li:nth-child(2),
+#slider #nuestros-proyectos .container > .slide > li:nth-child(2) > .flex > li:nth-child(2),
+#nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > .flex > li:nth-child(2),
+#buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > .flex > li:nth-child(2),
+#nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > .flex > li:nth-child(2),
+#buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .flex > li:nth-child(2),
+#nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > .flex > li:nth-child(2),
+#slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .flex > li:nth-child(2),
+#nuestros-proyectos #slider .container > .flex > li:nth-child(2) > .slide > li:nth-child(2),
+#slider #nuestros-proyectos .container > .flex > li:nth-child(2) > .slide > li:nth-child(2),
+#nuestros-proyectos #slider .container > .slide > li:nth-child(2) > .slide > li:nth-child(2),
+#slider #nuestros-proyectos .container > .slide > li:nth-child(2) > .slide > li:nth-child(2),
+#nuestros-proyectos #buscador ul.flex #slider .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+#slider #nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+#buscador ul.flex #nuestros-proyectos #slider .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+#slider #buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+#nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+#buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+#nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+#slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+#nuestros-proyectos #buscador ul.flex .container > .flex > li:nth-child(2) > li > li:nth-child(2),
+#buscador ul.flex #nuestros-proyectos .container > .flex > li:nth-child(2) > li > li:nth-child(2),
+#nuestros-proyectos #slider #buscador ul.flex .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+#buscador ul.flex #nuestros-proyectos #slider .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+#slider #nuestros-proyectos #buscador ul.flex .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+#buscador ul.flex #slider #nuestros-proyectos .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+#nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > li > li:nth-child(2),
+#buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > li > li:nth-child(2),
+#nuestros-proyectos #buscador #slider ul.slide .container > .flex > li:nth-child(2) > li > li:nth-child(2),
+#buscador #slider ul.slide #nuestros-proyectos .container > .flex > li:nth-child(2) > li > li:nth-child(2),
+#nuestros-proyectos #buscador #slider ul.slide .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+#buscador #nuestros-proyectos #slider ul.slide .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+#buscador #slider #nuestros-proyectos ul.slide .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+#buscador #slider ul.slide #nuestros-proyectos .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+#nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > li > li:nth-child(2),
+#buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > li > li:nth-child(2),
+#nuestros-proyectos #slider #buscador ul.slide .container > .flex > li:nth-child(2) > li > li:nth-child(2),
+#slider #buscador ul.slide #nuestros-proyectos .container > .flex > li:nth-child(2) > li > li:nth-child(2),
+#nuestros-proyectos #slider #buscador ul.slide .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+#slider #nuestros-proyectos #buscador ul.slide .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+#slider #buscador ul.slide #nuestros-proyectos .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+#nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > li > li:nth-child(2),
+#slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > li > li:nth-child(2) {
+  margin-top: 20px;
+  background: blue;
 }
 

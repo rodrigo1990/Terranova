@@ -1,0 +1,45 @@
+#nuestros-proyectos{
+	h2{
+		margin-bottom: 40px;
+	}
+	.container{
+		>.flex{
+			width: 100%;
+			>li{
+				width: 50%;
+				@extend .flex;
+				align-items:center;
+				align-content:center;
+			}
+			>li:nth-child(1){
+				background:green;
+				height: 400px;
+				
+			}
+
+			>li:nth-child(2){
+				margin-left:20px;
+				>.flex{
+					flex-direction:column;
+					margin-left:10px;
+
+					>li{
+						height: 190px;
+						@extend .flex;
+						align-items:center;
+						align-content:center;
+					}
+					>li:nth-child(1){
+						background:red;
+					}
+
+					>li:nth-child(2){
+						margin-top:20px;
+						background:blue;
+					}
+				}
+			}
+		
+		}
+	}
+}

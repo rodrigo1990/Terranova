@@ -4,8 +4,6 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="<?php echo asset("/css/app.css") ?>">
-	<link rel="stylesheet" href="<?php echo asset("css/owl.carousel.min.css") ?>">
-	<link rel="stylesheet" href="<?php echo asset("css/owl.theme.default.css") ?>">
 	
 	<meta name="viewport" content="initial-scale=1">
 	<!-- Latest compiled and minified CSS -->
@@ -16,7 +14,11 @@
 <body class="">
 	@yield('main')
 
-
+	<div class="fixed-btn" onClick="scrollAnimate('formulario')">
+		<p>DEJANOS  <br> <b>TU CONSULTA</b></p>
+		<img src="<?php echo asset('/storage/img/icon-fixed-btn.svg') ?>" class="center-block white" alt="">
+		<img src="<?php echo asset('/storage/img/icon-fixed-btn-red.svg') ?>" class="center-block red" alt="">
+	</div>
 	<script src="/js/app.js"></script>
 
 	@yield('scripts')
