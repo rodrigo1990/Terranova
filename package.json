@@ -27,6 +27,6 @@
         "browser-list": "0.0.3",
         "browserlist": "^1.0.1",
         "browserslist": "^4.7.0",
-        "serialize-javascript": "^2.1.0"
+        "serialize-javascript": "^2.1.2"
     }
 }

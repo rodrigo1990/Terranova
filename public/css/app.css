@@ -59,6 +59,7 @@ ul li {
 h2.title {
   font-size: 1rem;
   color: #7d9f45;
+  margin-bottom: 1em;
 }
 
 .fixed-btn {
@@ -139,6 +140,10 @@ h2.title {
 @media only screen and (min-width: 320px) and (max-width: 850px) {
   html {
     font-size: 22px !important;
+  }
+
+  .fixed-btn {
+    display: none;
   }
 }
 
@@ -930,8 +935,60 @@ header #slider .slide > li .slide > li a i,
   flex-basis: 100%;
 }
 
-#nuestros-proyectos h2 {
-  margin-bottom: 40px;
+#home-icons ul li h4 {
+  font-size: 0.5rem;
+  color: #7d9f45;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 720px) {
+  #home-icons .flex,
+  #home-icons #slider .slide,
+  #slider #home-icons .slide,
+  #home-icons #buscador ul.flex li,
+  #buscador ul.flex #home-icons li,
+  #home-icons #buscador #slider ul.slide li,
+  #buscador #slider ul.slide #home-icons li,
+  #home-icons #slider #buscador ul.slide li,
+  #slider #buscador ul.slide #home-icons li {
+    flex-direction: column;
+  }
+
+  #home-icons .flex li,
+  #home-icons #slider .slide li,
+  #slider #home-icons .slide li,
+  #home-icons #buscador ul.flex li li,
+  #buscador ul.flex #home-icons li li,
+  #buscador #slider ul.slide #home-icons li li,
+  #slider #buscador ul.slide #home-icons li li {
+    margin-bottom: 50px;
+  }
+
+  #home-icons .flex li h4,
+  #home-icons #slider .slide li h4,
+  #slider #home-icons .slide li h4,
+  #buscador ul.flex #home-icons li li h4,
+  #buscador #slider ul.slide #home-icons li li h4,
+  #slider #buscador ul.slide #home-icons li li h4 {
+    color: #7d9f45;
+  }
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1024px) {
+  #home-icons .flex,
+  #home-icons #slider .slide,
+  #slider #home-icons .slide,
+  #home-icons #buscador ul.flex li,
+  #buscador ul.flex #home-icons li,
+  #home-icons #buscador #slider ul.slide li,
+  #buscador #slider ul.slide #home-icons li,
+  #home-icons #slider #buscador ul.slide li,
+  #slider #buscador ul.slide #home-icons li {
+    wrap: wrap;
+  }
+}
+
+#nuestros-proyectos {
+  margin-bottom: 100px;
 }
 
 #nuestros-proyectos .container > .flex,
@@ -956,6 +1013,11 @@ header #slider .slide > li .slide > li a i,
 #nuestros-proyectos #slider #buscador ul.slide .container > li > li,
 #slider #buscador ul.slide #nuestros-proyectos .container > li > li {
   width: 50%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
 }
 
 #nuestros-proyectos .container > .flex > li:nth-child(1),
@@ -1029,6 +1091,7 @@ header #slider .slide > li .slide > li a i,
 #slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > li {
   flex-direction: column;
   margin-left: 10px;
+  width: 100%;
 }
 
 #nuestros-proyectos .container > .flex > li:nth-child(2) > .flex > li,
@@ -1076,6 +1139,11 @@ header #slider .slide > li .slide > li a i,
 #nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > li > li,
 #slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > li > li {
   height: 190px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
 }
 
 #nuestros-proyectos .container > .flex > li:nth-child(2) > .flex > li:nth-child(1),
@@ -1171,5 +1239,172 @@ header #slider .slide > li .slide > li a i,
 #slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > li > li:nth-child(2) {
   margin-top: 20px;
   background: blue;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
+  #nuestros-proyectos .flex,
+  #nuestros-proyectos #slider .slide,
+  #slider #nuestros-proyectos .slide,
+  #nuestros-proyectos #buscador ul.flex li,
+  #buscador ul.flex #nuestros-proyectos li,
+  #nuestros-proyectos #buscador #slider ul.slide li,
+  #buscador #slider ul.slide #nuestros-proyectos li,
+  #nuestros-proyectos #slider #buscador ul.slide li,
+  #slider #buscador ul.slide #nuestros-proyectos li {
+    width: 100%;
+    flex-direction: column !important;
+  }
+
+  #nuestros-proyectos .flex li,
+  #nuestros-proyectos #slider .slide li,
+  #slider #nuestros-proyectos .slide li,
+  #nuestros-proyectos #buscador ul.flex li li,
+  #buscador ul.flex #nuestros-proyectos li li,
+  #buscador #slider ul.slide #nuestros-proyectos li li,
+  #slider #buscador ul.slide #nuestros-proyectos li li {
+    margin-bottom: 10px;
+    width: 100% !important;
+  }
+
+  #nuestros-proyectos .container > .flex > li:nth-child(1),
+  #nuestros-proyectos #slider .container > .slide > li:nth-child(1),
+  #slider #nuestros-proyectos .container > .slide > li:nth-child(1),
+  #nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(1),
+  #buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(1),
+  #nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(1),
+  #buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(1),
+  #nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(1),
+  #slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(1) {
+    height: 190px;
+  }
+
+  #nuestros-proyectos .container > .flex > li:nth-child(2),
+  #nuestros-proyectos #slider .container > .slide > li:nth-child(2),
+  #slider #nuestros-proyectos .container > .slide > li:nth-child(2),
+  #nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2),
+  #buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2),
+  #nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2),
+  #buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2),
+  #nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2),
+  #slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) {
+    margin-left: 0;
+  }
+
+  #nuestros-proyectos .container > .flex > li:nth-child(2) > .flex,
+  #nuestros-proyectos #slider .container > .slide > li:nth-child(2) > .flex,
+  #slider #nuestros-proyectos .container > .slide > li:nth-child(2) > .flex,
+  #nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > .flex,
+  #buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > .flex,
+  #nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > .flex,
+  #buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .flex,
+  #nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > .flex,
+  #slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .flex,
+  #nuestros-proyectos #slider .container > .flex > li:nth-child(2) > .slide,
+  #slider #nuestros-proyectos .container > .flex > li:nth-child(2) > .slide,
+  #nuestros-proyectos #slider .container > .slide > li:nth-child(2) > .slide,
+  #slider #nuestros-proyectos .container > .slide > li:nth-child(2) > .slide,
+  #nuestros-proyectos #buscador ul.flex #slider .container > li > li:nth-child(2) > .slide,
+  #slider #nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > .slide,
+  #buscador ul.flex #nuestros-proyectos #slider .container > li > li:nth-child(2) > .slide,
+  #slider #buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > .slide,
+  #nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > .slide,
+  #buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .slide,
+  #nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > .slide,
+  #slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .slide,
+  #nuestros-proyectos #buscador ul.flex .container > .flex > li:nth-child(2) > li,
+  #buscador ul.flex #nuestros-proyectos .container > .flex > li:nth-child(2) > li,
+  #nuestros-proyectos #slider #buscador ul.flex .container > .slide > li:nth-child(2) > li,
+  #buscador ul.flex #nuestros-proyectos #slider .container > .slide > li:nth-child(2) > li,
+  #slider #nuestros-proyectos #buscador ul.flex .container > .slide > li:nth-child(2) > li,
+  #buscador ul.flex #slider #nuestros-proyectos .container > .slide > li:nth-child(2) > li,
+  #nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > li,
+  #buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > li,
+  #nuestros-proyectos #buscador #slider ul.slide .container > .flex > li:nth-child(2) > li,
+  #buscador #slider ul.slide #nuestros-proyectos .container > .flex > li:nth-child(2) > li,
+  #nuestros-proyectos #buscador #slider ul.slide .container > .slide > li:nth-child(2) > li,
+  #buscador #nuestros-proyectos #slider ul.slide .container > .slide > li:nth-child(2) > li,
+  #buscador #slider #nuestros-proyectos ul.slide .container > .slide > li:nth-child(2) > li,
+  #buscador #slider ul.slide #nuestros-proyectos .container > .slide > li:nth-child(2) > li,
+  #nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > li,
+  #buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > li,
+  #nuestros-proyectos #slider #buscador ul.slide .container > .flex > li:nth-child(2) > li,
+  #slider #buscador ul.slide #nuestros-proyectos .container > .flex > li:nth-child(2) > li,
+  #nuestros-proyectos #slider #buscador ul.slide .container > .slide > li:nth-child(2) > li,
+  #slider #nuestros-proyectos #buscador ul.slide .container > .slide > li:nth-child(2) > li,
+  #slider #buscador ul.slide #nuestros-proyectos .container > .slide > li:nth-child(2) > li,
+  #nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > li,
+  #slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > li {
+    margin-left: 0;
+  }
+
+  #nuestros-proyectos .container > .flex > li:nth-child(2) > .flex > li:nth-child(2),
+  #nuestros-proyectos #slider .container > .slide > li:nth-child(2) > .flex > li:nth-child(2),
+  #slider #nuestros-proyectos .container > .slide > li:nth-child(2) > .flex > li:nth-child(2),
+  #nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > .flex > li:nth-child(2),
+  #buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > .flex > li:nth-child(2),
+  #nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > .flex > li:nth-child(2),
+  #buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .flex > li:nth-child(2),
+  #nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > .flex > li:nth-child(2),
+  #slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .flex > li:nth-child(2),
+  #nuestros-proyectos #slider .container > .flex > li:nth-child(2) > .slide > li:nth-child(2),
+  #slider #nuestros-proyectos .container > .flex > li:nth-child(2) > .slide > li:nth-child(2),
+  #nuestros-proyectos #slider .container > .slide > li:nth-child(2) > .slide > li:nth-child(2),
+  #slider #nuestros-proyectos .container > .slide > li:nth-child(2) > .slide > li:nth-child(2),
+  #nuestros-proyectos #buscador ul.flex #slider .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+  #slider #nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+  #buscador ul.flex #nuestros-proyectos #slider .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+  #slider #buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+  #nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+  #buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+  #nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+  #slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > .slide > li:nth-child(2),
+  #nuestros-proyectos #buscador ul.flex .container > .flex > li:nth-child(2) > li > li:nth-child(2),
+  #buscador ul.flex #nuestros-proyectos .container > .flex > li:nth-child(2) > li > li:nth-child(2),
+  #nuestros-proyectos #slider #buscador ul.flex .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+  #buscador ul.flex #nuestros-proyectos #slider .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+  #slider #nuestros-proyectos #buscador ul.flex .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+  #buscador ul.flex #slider #nuestros-proyectos .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+  #nuestros-proyectos #buscador ul.flex .container > li > li:nth-child(2) > li > li:nth-child(2),
+  #buscador ul.flex #nuestros-proyectos .container > li > li:nth-child(2) > li > li:nth-child(2),
+  #nuestros-proyectos #buscador #slider ul.slide .container > .flex > li:nth-child(2) > li > li:nth-child(2),
+  #buscador #slider ul.slide #nuestros-proyectos .container > .flex > li:nth-child(2) > li > li:nth-child(2),
+  #nuestros-proyectos #buscador #slider ul.slide .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+  #buscador #nuestros-proyectos #slider ul.slide .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+  #buscador #slider #nuestros-proyectos ul.slide .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+  #buscador #slider ul.slide #nuestros-proyectos .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+  #nuestros-proyectos #buscador #slider ul.slide .container > li > li:nth-child(2) > li > li:nth-child(2),
+  #buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > li > li:nth-child(2),
+  #nuestros-proyectos #slider #buscador ul.slide .container > .flex > li:nth-child(2) > li > li:nth-child(2),
+  #slider #buscador ul.slide #nuestros-proyectos .container > .flex > li:nth-child(2) > li > li:nth-child(2),
+  #nuestros-proyectos #slider #buscador ul.slide .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+  #slider #nuestros-proyectos #buscador ul.slide .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+  #slider #buscador ul.slide #nuestros-proyectos .container > .slide > li:nth-child(2) > li > li:nth-child(2),
+  #nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(2) > li > li:nth-child(2),
+  #slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(2) > li > li:nth-child(2) {
+    margin-top: 0;
+  }
+}
+
+#nosotros {
+  margin-bottom: 100px;
+}
+
+#nosotros a {
+  width: 40%;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
+  #nosotros a {
+    width: 100% !important;
+  }
+}
+
+#nuestras-oficinas {
+  margin-bottom: 100px;
+}
+
+#nuestras-oficinas #map {
+  height: 600px;
+  width: 100%;
 }
 

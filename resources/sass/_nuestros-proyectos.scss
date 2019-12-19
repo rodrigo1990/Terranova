@@ -1,15 +1,15 @@
 #nuestros-proyectos{
-	h2{
-		margin-bottom: 40px;
-	}
+	margin-bottom: $margin-bottom-inter-section;
 	.container{
 		>.flex{
 			width: 100%;
 			>li{
 				width: 50%;
-				@extend .flex;
-				align-items:center;
-				align-content:center;
+			    display: flex;
+			    align-items:center;
+			    align-content:center;
+			    justify-content:center;
+			    text-align: center;
 			}
 			>li:nth-child(1){
 				background:green;
@@ -22,12 +22,15 @@
 				>.flex{
 					flex-direction:column;
 					margin-left:10px;
-
+					width: 100%;
 					>li{
 						height: 190px;
-						@extend .flex;
-						align-items:center;
-						align-content:center;
+						display: flex;
+			    align-items:center;
+			    align-content:center;
+			    justify-content:center;
+			    text-align: center;
+
 					}
 					>li:nth-child(1){
 						background:red;
@@ -42,4 +45,44 @@
 		
 		}
 	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1024px){
+
+
+#nuestros-proyectos{
+	.flex{
+		width: 100%;
+		flex-direction:column !important;
+		li{
+			margin-bottom: 10px;
+			width: 100% !important;
+		}
+	}
+
+	.container{
+		>.flex{
+
+			>li:nth-child(1){
+				height: 190px;
+				
+			}
+			>li:nth-child(2){
+				margin-left:0;
+				>.flex{
+					
+					margin-left:0;
+					
+
+
+					>li:nth-child(2){
+						margin-top:0;
+					}
+				}
+			}
+		
+		}
+	}
+}
+
 }

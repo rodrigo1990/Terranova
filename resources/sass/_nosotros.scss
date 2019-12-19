@@ -1,0 +1,16 @@
+#nosotros{
+	margin-bottom: $margin-bottom-inter-section;
+
+	a{
+		width:40%
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1024px){
+	#nosotros{
+
+		a{
+			width:100% !important;
+		}
+	}		
+}
