@@ -1,15 +1,20 @@
 header{
+	position:fixed;
 		padding:10px 0 10px 0;
 	    z-index: 2;
     width: 100%;
-    background: white;
+    .nav{
+    	.close{
+    		display:none;
+    	}
+    }
 	.flex{
 		flex-direction:row;
 		justify-content:center;
 		align-content:center;
 		
 		>li{
-			flex-basis:187px;
+			flex-basis:183px;
 			overflow: hidden;
     		white-space: nowrap;
     		text-align: center;
@@ -19,10 +24,11 @@ header{
 
     		>a{
     			color:$secondary-color;
-    			font-size: 0.41rem;
+    			font-size: 0.36rem;
+				font-family: $font-medium;
     		} 		
 			.logo{
-				width: 130px;
+				width: 116px;
 			}
     		.flex{
     			>li{
@@ -35,8 +41,9 @@ header{
     				a {
     					width: 70px;
 
+
     					i{
-    						font-size: 0.62rem;
+    						font-size: 0.50rem;
     						color:$primary-color;
     					}
     				}
@@ -47,7 +54,28 @@ header{
 }
 
 
-@media only screen and (min-width: 320px) and (max-width: 1024px){
+
+.addBkground {
+  background: rgba(243, 243, 243, 1);
+  box-shadow: -5px 10px 30px -24px rgba(0, 0, 0, 0.75);
+}
+
+ .removeBkground {
+    -webkit-animation: removeBkground 0.5s;
+    animation: removeBkground 0.5s forwards;
+}
+
+@keyframes removeBkground {
+  0% {
+    background: rgba(243, 243, 243, 0.8);
+  }
+  100% {
+     background: rgba(243, 243, 243, 0.2);
+  }
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 1200px){
 
 	header{
 	
@@ -72,6 +100,79 @@ header{
 					}
 		    		
 				}
+			}
+		}
+
+
+		.nav{
+			z-index: 1;
+			position:fixed;
+			background:white;
+			width:75vw;
+			height:100vh;
+			margin:0;
+			top:0 !important;
+			bottom:0 !important;
+			right:0 !important;
+			padding:0;
+			display: flex !important;
+			opacity: 0;
+			transform: translate3d(2000px, 0, 0);
+
+			
+			.close{
+				display:block;
+			    position: absolute;
+			    top: 8px;
+			    right: 11px;
+			}
+
+			>ul.flex{
+				align-items:center;
+				align-content:center;
+				justify-content:center;
+				flex-direction:column;
+				width: 90%;
+				margin-left:1em !important;
+				li{
+					height: 15% !important;
+					margin-right: auto;
+					a{
+					    font-size: 114%;
+					}
+				}
+				>li:nth-child(5){
+					display:none;
+				}
+				>li:not(:nth-child(8)){
+					border-bottom: 1px solid #ccc6c6;
+				}
+				>li{
+					flex-basis:auto;
+					height: auto;
+					width: 100%;
+					justify-content:left;
+				    
+
+					>ul.flex{
+						flex-direction:row;
+						>li:nth-child(1){
+							margin-left: 0;
+						}
+						>li{
+							flex-basis:auto;
+							height: auto;
+
+							>a{
+								>i{
+									font-size: 0.8rem;
+								}
+							}
+						}
+					}
+				}
+
+				
 			}
 		}
 		

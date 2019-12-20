@@ -1,15 +1,17 @@
 $("#abrirMenu").click(function(){
 
-		$("#xsMenu").removeClass('animated bounceOutRight');
-		$("#xsMenu").addClass('animated bounceInRight');
-		$("#xsMenu").show();
+		$("header .nav").removeClass('animated bounceOutRight');
+		$("header .nav").addClass('animated bounceInRight');
+		$("header .nav").css('opacity', 'unset');
+		$("header .nav").css('transform', 'unset');
+		$("header .nav").show();
 
 
 });
 
 $("#cerrarMenu").click(function(){
-		$("#xsMenu").removeClass('animated bounceInRight');
-		$("#xsMenu").addClass("animated bounceOutRight");
+		$("header .nav").removeClass('animated bounceInRight');
+		$("header .nav").addClass("animated bounceOutRight");
 
 
 });

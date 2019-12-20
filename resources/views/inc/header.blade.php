@@ -1,7 +1,10 @@
 <header>
 	<div class="row">
-		<div class="col-lg-12 hidden-md hidden-sm hidden-xs">
+		<div class="nav col-lg-12 hidden-md hidden-sm hidden-xs">
 			<ul class="flex">
+				<a id="cerrarMenu" class="close">
+					<i class="fas fa-times"></i>
+				</a>
 				<li>
 					<a href="">
 						NOSOTROS
@@ -35,17 +38,17 @@
 				<li>
 					<ul class="rrss flex">
 						<li>
-							<a href="" target="_blank">
+							<a href="" target="_blank" class="btn-icon">
 								<i class="fab fa-facebook-f"></i>
 							</a>
 						</li>
 						<li>
-							<a href="" target="_blank">
+							<a href="" target="_blank" class="btn-icon">
 								<i class="fab fa-instagram"></i>
 							</a>
 						</li>
 						<li>
-							<a href="" target="_blank">
+							<a href="" target="_blank" class="btn-icon">
 								<i class="fab fa-youtube"></i>
 							</a>
 						</li>
@@ -61,7 +64,7 @@
 					</a>
 				</li>
 				<li class="float-right">
-					<a href="">
+					<a id="abrirMenu">
 						<i class="fa fa-bars" id="abrirMenu-xs"></i>
 					</a>
 				</li>

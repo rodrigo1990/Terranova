@@ -2,14 +2,36 @@
 	.row{
 		padding:0;
 		margin:0;
-		$relative-font: 1.2rem;
+		$relative-font: 1rem;
 		font-size: $relative-font;
 		background-color:$primary-color;
 		padding:0.8em 0 0.8em 0;
 		h1{
 			margin:0;
+			font-family: 'Montserrat-Regular' !important;
 			font-size: $relative-font;
 			color:$third-color;
+
+			b{
+				font-family: 'Montserrat-Bold' !important;
+			}
 		}
 	}
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 720px){
+
+
+	#franja-1{
+		.row{
+		
+			$relative-font: 0.8rem;
+			font-size: $relative-font;
+			h1{
+				font-size: $relative-font;
+			}
+		}
+	}
+
 }

@@ -31017,6 +31017,10 @@ window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jqu
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./scripts/header-functions */ "./resources/js/scripts/header-functions.js");
+
+__webpack_require__(/*! ./scripts/manejoDeMenus */ "./resources/js/scripts/manejoDeMenus.js");
+
 if (document.getElementById('owl-1') || document.getElementById('owl-2')) {
   __webpack_require__(/*! ../OwlCarousel2-2.3.4/dist/owl.carousel.min */ "./resources/OwlCarousel2-2.3.4/dist/owl.carousel.min.js");
 
@@ -31054,6 +31058,62 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/scripts/header-functions.js":
+/*!**************************************************!*\
+  !*** ./resources/js/scripts/header-functions.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(window).scroll(function (event) {
+  var scroll = $(window).scrollTop();
+
+  if (scroll == 0) {
+    $("header").removeClass("animated slideInDown");
+    $("header").removeClass("addBkground");
+    $("header").addClass("removeBkground");
+    $("header #abrirMenu").fadeOut();
+    /*$(".xs-row").removeClass("addBkground");
+      $("header").addClass("removeBkground");
+      $(".xs-row").addClass("removeBkground");
+          $("header .logo").attr('src','img/logo-white.png');*/
+  } else {
+    $("header #logo-btn img").attr('src', 'img/logo-blue.svg');
+    $("header").removeClass("removeBkground"); //$(".xs-row").removeClass("removeBkground");
+
+    $("header").addClass("animated slideInDown");
+    $("header").addClass("addBkground");
+    $("header #abrirMenu").fadeIn(); //$("header .logo").attr('src','img/logo.png');
+  } // Do something
+
+});
+
+/***/ }),
+
+/***/ "./resources/js/scripts/manejoDeMenus.js":
+/*!***********************************************!*\
+  !*** ./resources/js/scripts/manejoDeMenus.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$("#abrirMenu").click(function () {
+  $("header .nav").removeClass('animated bounceOutRight');
+  $("header .nav").addClass('animated bounceInRight');
+  $("header .nav").css('opacity', 'unset');
+  $("header .nav").css('transform', 'unset');
+  $("header .nav").show();
+});
+$("#cerrarMenu").click(function () {
+  $("header .nav").removeClass('animated bounceInRight');
+  $("header .nav").addClass("animated bounceOutRight");
+});
+$("#xsMenu  li a").click(function () {
+  $("#xsMenu").addClass("animated bounceOutRight");
+});
 
 /***/ }),
 

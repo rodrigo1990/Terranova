@@ -6,11 +6,28 @@ body{
 	overflow-x:hidden !important;
 }
 
-a{
-	-webkit-transition: background-color 0.50s ease-out;
-  -moz-transition: background-color 0.50s ease-out;
-  -o-transition: background-color 0.50s ease-out;
-  transition: background-color 0.50s ease-out;
+h1,h2,h3,h4{
+  font-family: $font-regular !important;
+
+  b{
+    font-family: $font-bold !important;
+  }
+}
+
+
+a,a i,input,select{
+	-webkit-transition: all 0.50s ease-out;
+  -moz-transition: all 0.50s ease-out;
+  -o-transition: all 0.50s ease-out;
+  transition: all 0.50s ease-out;
+}
+
+p{
+  font-family: $font-regular;
+
+  b{
+    font-family: $font-bold;
+  }
 }
 
 a.btn{
@@ -21,6 +38,8 @@ a.btn{
       border-radius:5px;
       font-size: 0.5rem;
       color:$primary-color;
+
+      font-family: $font-regular;
 }
 
 a.btn:hover{
@@ -29,7 +48,9 @@ a.btn:hover{
   color:$third-color;
 }
 
-
+a:hover i{
+  color:$gray !important;
+}
 
 .flex{
 	display:flex;
@@ -57,11 +78,15 @@ ul li{
 	float:left;
 }
 
+.primary-color{
+  color:$primary-color;
+}
 
 h2.title{
   font-size: 1rem;
   color:$primary-color;
   margin-bottom:1em;
+  font-family: $font-black;
 }
 
 
@@ -151,17 +176,52 @@ h2.title{
 }
 
 
+select,input {
+  background-color: transparent !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid $gray !important;
+    border-radius: 0px !important;
+    padding-left: 0 !important;
+    outline: 0;
+    box-shadow: inset 0 0px 0px rgba(0,0,0,.075);
+    font-family: $font-regular !important;
+    font-size: 17px !important;
+    webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+select:focus,input:focus {
+    border-bottom: 1px solid $primary-color !important;
+}
+
 
 
 
 @media only screen and (min-width: 320px) and (max-width: 850px){
 
 html{
-  font-size: 22px !important;
+  font-size: 28px !important;
 }
 
 .fixed-btn{
   display:none;
 }
 
+
+a.btn{
+     display:block;
+     margin:auto;
+     width: 100%;
+}
+
+
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1023px){
+body{
+  text-align: center;
+}  
 }

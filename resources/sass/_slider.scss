@@ -16,9 +16,10 @@
       
 
       .slide__content{
-        $relative-font: 2rem;
+        $relative-font: 1.4rem;
         font-size: $relative-font !important;
         line-height: 0;
+        max-width: 90%;
         h1{
           color:$third-color;
           font-size: $relative-font !important;
@@ -53,13 +54,13 @@
 
   #owl-1 #slide-1{
     background-image:url(../img/slider/1.jpg);
-    background:black;
+   // background:black;
   }
 
 
   #owl-1 #slide-2{
     background-image:url(../img/slider/1.jpg);
-    background:black;
+    //background:black;
   }
 
 
@@ -110,6 +111,11 @@
 
  #slider{
   .slide{
+    .slide__content{
+      a{
+        width: 100%;
+      }
+    }
       .slide__content.right{
         margin-left:auto;
         margin-right:auto;

@@ -5,6 +5,7 @@ $(window).scroll(function (event) {
     	$("header").removeClass("animated slideInDown");
         $("header").removeClass("addBkground");
         $("header").addClass("removeBkground");
+        $("header #abrirMenu").fadeOut();
 
         /*$(".xs-row").removeClass("addBkground");
 
@@ -26,6 +27,8 @@ $(window).scroll(function (event) {
         $("header").addClass("animated slideInDown");
 
         $("header").addClass("addBkground");
+
+        $("header #abrirMenu").fadeIn();
 
         //$("header .logo").attr('src','img/logo.png');
         

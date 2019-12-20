@@ -2,6 +2,10 @@ window.$ = window.jQuery = require('jquery');
 
 require('./bootstrap');
 
+require('./scripts/header-functions');
+
+require('./scripts/manejoDeMenus');
+
 
 
 if(document.getElementById('owl-1') || document.getElementById('owl-2')){

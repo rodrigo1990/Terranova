@@ -25,9 +25,10 @@
 	</section>
 	<section id="franja-1">
 		<div class="row">
-			<h1 class="text-center"><b>
-				84 CUOTAS SOLO CON TU DNI
-			</b></h1>
+			<h1 class="text-center">
+
+				84 CUOTAS  <b>SOLO  CON TU DNI</b>
+			</h1>
 		</div>
 	</section>
 
@@ -38,13 +39,28 @@
 					<h3>¿En que zona buscas?</h3>
 				</li>
 				<li>
-					<input type="text" class="form-control">
+					<select name="" id="" class="form-control">
+						<option value="">informacion</option>
+						<option value="">informacion</option>
+						<option value="">informacion</option>
+						<option value="">informacion</option>
+					</select>
 				</li>
 				<li>
-					<input type="text" class="form-control">
+					<select name="" id="" class="form-control">
+						<option value="">informacion</option>
+						<option value="">informacion</option>
+						<option value="">informacion</option>
+						<option value="">informacion</option>
+					</select>
 				</li>
 				<li>
-					<input type="text" class="form-control">
+					<select name="" id="" class="form-control">
+						<option value="">informacion</option>
+						<option value="">informacion</option>
+						<option value="">informacion</option>
+						<option value="">informacion</option>
+					</select>
 				</li>
 				<li>
 					<a class="btn" href="">BUSCAR</a>
@@ -81,7 +97,7 @@
 	</section>
 
 	<section id="nuestros-proyectos">
-		<h2 class="title green text-center"><b>NUESTROS PROYECTOS</b></h2>
+		<h2 class="title primary-color green text-center"><b>NUESTROS PROYECTOS</b></h2>
 		<div class="container">
 			<ul class="flex">
 				<li>
@@ -119,7 +135,7 @@
 
 	<section id="nosotros">
 		<div class="container">
-			<h2 class="title green text-center"><b>NOSOTROS</b></h2>
+			<h2 class="title primary-color green text-center"><b>NOSOTROS</b></h2>
 			<p class="text-center">
 				Somos una Desarrolladora Inmobiliaria formada por los mejores profesionales del rubro con 25 años de experiencia, que nos reunimos para  trabajar en el desarrollo de lotes convencionales, barrios parques y barrios privados con la infraestructura necesaria para que nuestros clientes puedan cumplir su sueño de tener su propio terreno.
 			</p>
@@ -141,22 +157,95 @@
 	</section>
 
 	<section id="nuestras-oficinas">
-		<h2 class="title green text-center"><b>NUESTRAS OFICINAS</b></h2>
+		<h2 class="title primary-color green text-center"><b>NUESTRAS OFICINAS</b></h2>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-xs-12">
+				<div class="col-md-6 col-sm-12 col-xs-12">
 					
 					<div id="map"></div>
 
 				</div>
-				<div class="col-sm-6 col-xs-12">
+				<div class="col-md-6 col-sm-12 col-xs-12">
 					
+					<h3 class="primary-color"><b>OFICINAS DE VENTA</b></h3>
+					<p><b>Horario de atención: Lunes a Sábados de 10 a 19 HS.</b></p>
+					
+					<br>
 
+					<ul>
+
+						<li><p class="primary-color">OFICINA PILAR</p></li>
+
+						<li>Dirección: Tratado del Pilar 259 P.B (Pilar).</li>
+
+						<li>Teléfono: 5275-6360 - Opción 1.</li>
+
+					</ul>
+					
+					<br>
+
+					<ul>
+
+						<li><p class="primary-color">OFICINA TRISTÁN SUAREZ </p></li>
+
+						<li>Dirección: Juan Galvez y 12 de Octubre – Tristán Suarez.</li>
+
+						<li>Teléfono:5275-6360 – Opción 1.</li>
+
+						<li>Whatssap: 11 6 577 – 6361.</li>
+
+						<li>E-mail: comercial7@terranova-sa.com.ar</li>
+
+					</ul>
+					<br>
+					<h3 class="primary-color"><b>OFICINAS ADMINISTRATIVAS</b></h3>
+					<ul>
+
+						<li><p class="primary-color">ZONA NORTE</p></li>
+
+						<li>Dirección: Edificio Paralelo 50 – Of. 222 – Colectora Panamericana Km 49.5 .</li>
+
+						<li>Teléfono: 011 5275-6360</li>
+
+						<li>E-mail: comercial@terranova-sa.com.ar</li>
+
+					</ul>
+					<br>
+					<ul>
+
+						<li><p class="primary-color">ZONA SUR</p></li>
+
+						<li>Dirección: Macías 627 – Planta Alta, Adrogué.</li>
+
+						<li>Teléfono: 5275-6360 opción 3 o linea directa 4214-3271</li>
+
+
+					</ul>
 
 				</div>
 			</div>
 		</div>
 	</section>
+	<section id="contacto">
+		<div class="container">
+		
+			<h1 class="title primary-color text-center"><b>CONTACTANOS</b></h1>
+			<br>
+			
+			<form action="">
+				<input type="text" class="form-control" placeholder="Nombre y apellido">
+				<input type="text" class="form-control" placeholder="E-Mail">
+				<input type="text" class="form-control" placeholder="Teléfono">
+				<input type="text" class="form-control" placeholder="Consulta">
+				<br>
+				<a class="btn float-right">ENVIAR</a>
+			</form>
+		
+		</div>
+		
+	</section>
+
+	@include('inc.footer')
 @stop
 @section('scripts')
 <script>
