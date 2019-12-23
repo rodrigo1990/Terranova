@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>TERRANOVA S.A</title>
 	<link rel="stylesheet" href="<?php echo asset("/css/app.css") ?>">
 	
 	<meta name="viewport" content="initial-scale=1">
