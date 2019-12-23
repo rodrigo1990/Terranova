@@ -26,6 +26,11 @@ header{
     			color:$secondary-color;
     			font-size: 0.36rem;
 				font-family: $font-medium;
+				text-decoration: none;
+    		}
+
+    		>a:hover{
+    			color:$gray;
     		} 		
 			.logo{
 				width: 116px;
@@ -145,7 +150,7 @@ header{
 					display:none;
 				}
 				>li:not(:nth-child(8)){
-					border-bottom: 1px solid #ccc6c6;
+					border-bottom: 2px solid #ccc6c6;
 				}
 				>li{
 					flex-basis:auto;

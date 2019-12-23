@@ -1,6 +1,8 @@
 #nuestras-oficinas{
 	margin-bottom: $margin-bottom-inter-section;
-
+	.primary-color:not(h3):not(h2){
+		margin-bottom: 0px;
+	}
 	#map{
 		height: 600px;
 		width: 100%;

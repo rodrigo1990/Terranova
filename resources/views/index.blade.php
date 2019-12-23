@@ -137,12 +137,14 @@
 		<div class="container">
 			<h2 class="title primary-color green text-center"><b>NOSOTROS</b></h2>
 			<p class="text-center">
-				Somos una Desarrolladora Inmobiliaria formada por los mejores profesionales del rubro con 25 años de experiencia, que nos reunimos para  trabajar en el desarrollo de lotes convencionales, barrios parques y barrios privados con la infraestructura necesaria para que nuestros clientes puedan cumplir su sueño de tener su propio terreno.
+				Somos una <b>Desarrolladora Inmobiliaria</b> formada por los mejores profesionales del rubro con <b>25 años de experiencia</b>, que nos reunimos para  trabajar en el desarrollo de <b>lotes convencionales, barrios parques y barrios privados</b> con la infraestructura necesaria para que nuestros clientes puedan cumplir su sueño de tener su propio terreno.
 			</p>
 			<br>
-			<p class="text-center"><span>
-				Más de 1500 familias disfrutan hoy de ser dueños de su propio terreno, muchos de los cuales hoy ya tienen su vivienda terminada y su escritura pública correspondiente.
-			</span></p>
+			<p class="text-center">
+				<span>
+				Más de 1500 familias disfrutan hoy de ser dueños de su propio terreno, muchos de los cuales hoy ya 	tienen su vivienda terminada y su escritura pública correspondiente.
+				</span>
+			</p>
 			
 			<br>
 
@@ -229,7 +231,7 @@
 	<section id="contacto">
 		<div class="container">
 		
-			<h1 class="title primary-color text-center"><b>CONTACTANOS</b></h1>
+			<h2 class="title primary-color text-center"><b>CONTACTANOS</b></h2>
 			<br>
 			
 			<form action="">
@@ -250,9 +252,15 @@
 @section('scripts')
 <script>
 	$(document).ready(function(){
-		window.centerGlobal = {lat: -34.562154, lng: -58.492396};
+		window.centerGlobal = {lat: -34.657852, lng: -58.618505};  
+
+
+
+
+
 		window.locations=[];
 		window.markers=[];
+		window.infoWindows=[];
 		window.map;
 		window.noDefaultLocations = [
 						{
@@ -262,6 +270,21 @@
 						    ]   
 						  }
 						];
+	locations.push(['<b>OFICINA PILAR</b><br><br> <b>Dirección:</b> Tratado del Pilar 259 P.B (Pilar). <br> <b>Teléfono:</b> 5275-6360 - Opción 1.',-34.450953,-58.906781]);
+
+	 locations.push(['<b>OFICINA TRISTÁN SUAREZ</b><br><br> <b>Dirección:</b> Juan Galvez y 12 de Octubre – Tristán Suarez.<br> <b>Teléfono:</b> 5275-6360 – Opción 1. <br><b>Whatsap:</b> 11 6 577 – 6361.<br> <b>E-mail:</b> comercial7@terranova-sa.com.ar',-34.878781, -58.555884]);
+
+
+	locations.push(['<b>ZONA NORTE</b><br><br> <b>Dirección:</b> Edificio Paralelo 50 – Of. 222 – Colectora Panamericana Km 49.5 .<br> <b>Teléfono:</b> 011 5275-6360 <br> <b>E-mail:</b> comercial@terranova-sa.com.ar ',-34.471802, -58.677443]);
+
+	 locations.push(['<b>ZONA SUR</b><br><br> <b>Dirección:</b> Macías 627 – Planta Alta, Adrogué.<br> <b>Teléfono:</b> 5275-6360 opción 3 o linea directa 4214-3271 <br>',-34.797333, -58.391084]);
+
+	
+	
+
+ 
+
+
 
 	initMap();
 
@@ -273,7 +296,7 @@
 	function initMap() {
  		map = new google.maps.Map(document.getElementById('map'), {
 	      center: centerGlobal,
-	      zoom: 16
+	      zoom: 9
 	    });
 
 	    map.setOptions({styles:noDefaultLocations});
@@ -282,8 +305,17 @@
 	  }
 
 
+	       function cerrarInfowInfowindows(){
+
+	      	for (var i=0; i<infoWindows.length; i++) {
+
+				infoWindows[i].close();
+				
+			}
+
+	      	}
+
 	   function agregarLocaciones(locations){
-			var infowindow =  new google.maps.InfoWindow({});
 			var marker,count;
 
 			/*map.setZoom(5);
@@ -295,10 +327,27 @@
 			    marker = new google.maps.Marker({
 			      position: new google.maps.LatLng(locations[count][1], locations[count][2]),
 			      map: map,
-			      icon: "<?php echo asset("img/logo-mas-claro.png")?>",
+			      icon: "<?php echo asset("/storage/img/maps_logo.png")?>",
 			      title: locations[count][0]
 			    });
 
+
+				var infowindow =  new google.maps.InfoWindow({});
+	
+				google.maps.event.addListener(marker, 'click', (function (marker, count) {
+
+				      return function () {
+				      	
+				        infowindow.setContent(locations[count][0]);
+				        cerrarInfowInfowindows();
+				        infowindow.open(map, marker);
+
+				        
+				      }
+				
+			    })(marker, count));
+
+				infoWindows.push(infowindow);
 
 				markers.push(marker);
 			  	
