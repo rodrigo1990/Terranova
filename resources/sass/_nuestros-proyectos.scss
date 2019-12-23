@@ -13,10 +13,11 @@
 
 			    h3{
 			    	margin-top: 0;
+			    	color:$third-color;
 			    }
 			}
 			>li:nth-child(1){
-				background:green;
+				background:$gray;
 				height: 400px;
 				
 			}
@@ -37,12 +38,12 @@
 
 					}
 					>li:nth-child(1){
-						background:red;
+						background:$gray;
 					}
 
 					>li:nth-child(2){
 						margin-top:20px;
-						background:blue;
+						background:$gray;
 					}
 				}
 			}
