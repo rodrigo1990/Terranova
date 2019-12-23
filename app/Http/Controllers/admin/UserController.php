@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
 use App\Services\SessionService;
 use Illuminate\Http\Request;
 use App\User;
+use  App\Http\Controllers\admin\Controller;
 Use View;
 
 

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Testimonio;
 use App\ImgTestimonio;
 use Illuminate\Support\Facades\Storage;
+use  App\Http\Controllers\admin\Controller;
 
 class TestimonioController extends Controller
 {

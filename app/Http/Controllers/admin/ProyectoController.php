@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Proyecto;
 use App\Img;
 use Illuminate\Support\Facades\Storage;
+use  App\Http\Controllers\admin\Controller;
 
 class ProyectoController extends Controller
 {

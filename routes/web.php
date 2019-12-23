@@ -17,48 +17,49 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/testimonios', 'FrontController@testimonios');
 
 /*ADMIN*/
 
 
-Route::get('/admin/viewCreateProyecto', 'FrontController@viewCreateProyecto');
-Route::get('/admin/viewListProyectos/{msg}', 'FrontController@viewListProyectos');
-Route::get('/admin/viewUpdateProyecto/{id}', 'FrontController@viewUpdateProyecto');
+Route::get('/admin/viewCreateProyecto', 'admin\FrontController@viewCreateProyecto');
+Route::get('/admin/viewListProyectos/{msg}', 'admin\FrontController@viewListProyectos');
+Route::get('/admin/viewUpdateProyecto/{id}', 'admin\FrontController@viewUpdateProyecto');
 
-Route::get('/admin/viewCreateTestimonio', 'FrontController@viewCreateTestimonio');
-Route::get('/admin/viewListTestimonios/{msg}', 'FrontController@viewListTestimonios');
-Route::get('/admin/viewUpdateTestimonio/{id}', 'FrontController@viewUpdateTestimonio');
+Route::get('/admin/viewCreateTestimonio', 'admin\FrontController@viewCreateTestimonio');
+Route::get('/admin/viewListTestimonios/{msg}', 'admin\FrontController@viewListTestimonios');
+Route::get('/admin/viewUpdateTestimonio/{id}', 'admin\FrontController@viewUpdateTestimonio');
 
-Route::get('/admin/viewCreateNovedad', 'FrontController@viewCreateNovedad');
-Route::get('/admin/viewListNovedades/{msg}', 'FrontController@viewListNovedades');
-Route::get('/admin/viewUpdateNovedad/{id}', 'FrontController@viewUpdateNovedad');
-
-
-
-Route::post('/admin/login', 'UserController@login');
-Route::post('/admin/logout', 'UserController@logout');
-Route::get('/admin/users', 'UserController@users');
-
-
-Route::post('/admin/createProyecto', 'ProyectoController@createProyecto');
-Route::get('/admin/destroyProyecto/{id}', 'ProyectoController@destroyProyecto');
-Route::get('/admin/updateProyecto/{id}', 'ProyectoController@viewUpdateProyecto');
-Route::post('/admin/destroyImgProyecto/', 'ProyectoController@destroyImg');
-Route::post('/admin/updateProyecto/', 'ProyectoController@updateProyecto');
+Route::get('/admin/viewCreateNovedad', 'admin\FrontController@viewCreateNovedad');
+Route::get('/admin/viewListNovedades/{msg}', 'admin\FrontController@viewListNovedades');
+Route::get('/admin/viewUpdateNovedad/{id}', 'admin\FrontController@viewUpdateNovedad');
 
 
 
-Route::get('/admin/pruebaString', 'TestimonioController@pruebaString');
-Route::post('/admin/createTestimonio', 'TestimonioController@createTestimonio');
-Route::get('/admin/destroyTestimonio/{id}', 'TestimonioController@destroyTestimonio');
-Route::post('/admin/updateTestimonio', 'TestimonioController@updateTestimonio');
-Route::post('/admin/destroyImgTestimonio/', 'TestimonioController@destroyImg');
+Route::post('/admin/login', 'admin\UserController@login');
+Route::post('/admin/logout', 'admin\UserController@logout');
+Route::get('/admin/users', 'admin\UserController@users');
 
 
-Route::post('/admin/createNovedad', 'NovedadController@createNovedad');
-Route::get('/admin/destroyNovedad/{id}', 'NovedadController@destroyNovedad');
-Route::post('/admin/updateNovedad', 'NovedadController@updateNovedad');
-Route::post('/admin/destroyImgNovedad/', 'NovedadController@destroyImg');
+Route::post('/admin/createProyecto', 'admin\ProyectoController@createProyecto');
+Route::get('/admin/destroyProyecto/{id}', 'admin\ProyectoController@destroyProyecto');
+Route::get('/admin/updateProyecto/{id}', 'admin\ProyectoController@viewUpdateProyecto');
+Route::post('/admin/destroyImgProyecto/', 'admin\ProyectoController@destroyImg');
+Route::post('/admin/updateProyecto/', 'admin\ProyectoController@updateProyecto');
+
+
+
+Route::get('/admin/pruebaString', 'admin\TestimonioController@pruebaString');
+Route::post('/admin/createTestimonio', 'admin\TestimonioController@createTestimonio');
+Route::get('/admin/destroyTestimonio/{id}', 'admin\TestimonioController@destroyTestimonio');
+Route::post('/admin/updateTestimonio', 'admin\TestimonioController@updateTestimonio');
+Route::post('/admin/destroyImgTestimonio/', 'admin\TestimonioController@destroyImg');
+
+
+Route::post('/admin/createNovedad', 'admin\NovedadController@createNovedad');
+Route::get('/admin/destroyNovedad/{id}', 'admin\NovedadController@destroyNovedad');
+Route::post('/admin/updateNovedad', 'admin\NovedadController@updateNovedad');
+Route::post('/admin/destroyImgNovedad/', 'admin\NovedadController@destroyImg');
 
 
 

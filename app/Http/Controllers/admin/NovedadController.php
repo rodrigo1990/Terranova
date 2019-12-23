@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Novedad;
 use App\ImgNovedad;
 use Illuminate\Support\Facades\Storage;
+use  App\Http\Controllers\admin\Controller;
 
 class NovedadController extends Controller
 {
