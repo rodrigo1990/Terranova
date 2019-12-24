@@ -1,0 +1,62 @@
+#testimonios{
+	margin-bottom:$margin-bottom-inter-section + 50;
+	ul.flex{
+		flex-direction:row;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+
+		>li:hover{
+			border-color:$primary-color;
+			transition: all 0.50s ease-out;
+		}
+
+		>li{
+			flex-basis: 250px;
+			margin-bottom:$margin-bottom-inter-section - 60;;
+		    border: 1px solid #efefef;
+		    padding: 1em 2em;
+		    border-radius: 9px;
+
+			>div{
+				>div{
+					display: flex;
+				    align-items: center;
+				    flex-wrap: wrap;
+				    height: 90px;
+				}
+
+				>img{
+					border-radius:4px;
+				}				
+			}
+
+
+			a.btn{
+				border:1px solid $red-color;
+				padding: 0.5em 0.6em;
+				width: 100%;
+				margin-top: 5px;
+				color:$red-color;
+			}
+
+			a.btn:hover{
+				background:$red-color;
+				color:$third-color;
+
+				
+			}
+
+			a.btn:hover i{
+					color:$third-color !important;
+				}
+		}
+	}
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px){
+
+
+
+
+}

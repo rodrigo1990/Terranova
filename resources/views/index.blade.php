@@ -97,7 +97,7 @@
 	</section>
 
 	<section id="nuestros-proyectos">
-		<h2 class="title primary-color green text-center"><b>NUESTROS PROYECTOS</b></h2>
+		<h2 class="title primary-color  text-center"><b>NUESTROS PROYECTOS</b></h2>
 		<div class="container">
 			<ul class="flex">
 				<li>
@@ -135,7 +135,7 @@
 
 	<section id="nosotros">
 		<div class="container">
-			<h2 class="title primary-color green text-center"><b>NOSOTROS</b></h2>
+			<h2 class="title primary-color  text-center"><b>NOSOTROS</b></h2>
 			<p class="text-center">
 				Somos una <b>Desarrolladora Inmobiliaria</b> formada por los mejores profesionales del rubro con <b>25 años de experiencia</b>, que nos reunimos para  trabajar en el desarrollo de <b>lotes convencionales, barrios parques y barrios privados</b> con la infraestructura necesaria para que nuestros clientes puedan cumplir su sueño de tener su propio terreno.
 			</p>
@@ -159,7 +159,7 @@
 	</section>
 
 	<section id="nuestras-oficinas">
-		<h2 class="title primary-color green text-center"><b>NUESTRAS OFICINAS</b></h2>
+		<h2 class="title primary-color  text-center"><b>NUESTRAS OFICINAS</b></h2>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-12 col-xs-12">

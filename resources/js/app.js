@@ -13,3 +13,9 @@ if(document.getElementById('owl-1') || document.getElementById('owl-2')){
 
 	require('./scripts/slider');
 }
+
+
+
+if(document.getElementById('testimonios')){
+	require('../youtube-video/js/grt-youtube-popup');
+}
