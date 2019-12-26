@@ -1,0 +1,56 @@
+#preguntasFrecuentes{
+	margin-bottom: 214px;
+	
+	.panel-heading{
+		padding:2.25em 1em;
+
+		h4.panel-title{
+			color:$primary-color;
+			font-family: $font-bold;
+			font-size: 0.60rem;
+			line-height: 0;
+
+			span.change_char{
+				float:right;
+				font-size: 1rem;
+				line-height: 0;
+			}
+		}
+
+
+	}
+
+	.panel-body{
+			font-family: $font-regular;
+		}
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 768px){
+
+	#preguntasFrecuentes{
+		width: 81%;
+	    margin-left: auto;
+	    margin-right: auto;
+		.container{
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.panel-heading{
+			h4.panel-title{
+				line-height: 1.5;
+
+				span.change_char{
+					display: none;
+				}
+
+				
+			}
+
+
+		}
+
+		
+	}
+
+}

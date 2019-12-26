@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/testimonios', 'FrontController@testimonios');
+Route::get('/preguntas-frecuentes', 'FrontController@preguntasFrecuentes');
 
 /*ADMIN*/
 

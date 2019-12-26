@@ -17,5 +17,11 @@ if(document.getElementById('owl-1') || document.getElementById('owl-2')){
 
 
 if(document.getElementById('testimonios')){
+	require('./scripts/pagination');
 	require('../youtube-video/js/grt-youtube-popup');
+	
+	require('./scripts/paginationImplementar');
+
+	
+	
 }

@@ -28,7 +28,12 @@ class FrontController extends Controller
     }
 
     public function testimonios(){
-        return view('testimonios');
+        return view('testimonios',['testimonios' => json_encode(Testimonio::all())]);
+    }
+
+
+  public function preguntasFrecuentes(){
+        return view('preguntas_frecuentes');
     }
 
 

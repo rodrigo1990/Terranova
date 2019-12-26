@@ -16,7 +16,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="">
+					<a href="testimonios" target="_blank">
 						TESTIMONIOS
 					</a>
 				</li>
@@ -26,7 +26,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="">
+					<a href="preguntas-frecuentes" target="_blank">
 						PREGUNTAS FRECUENTES
 					</a>
 				</li>

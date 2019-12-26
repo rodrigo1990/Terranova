@@ -2,7 +2,7 @@
 	margin-bottom:$margin-bottom-inter-section + 50;
 	ul.flex{
 		flex-direction:row;
-		justify-content: space-evenly;
+		justify-content: center;
 		flex-wrap: wrap;
 
 		>li:hover{
@@ -16,6 +16,7 @@
 		    border: 1px solid #efefef;
 		    padding: 1em 2em;
 		    border-radius: 9px;
+		    margin: 10px;
 
 			>div{
 				>div{
@@ -23,6 +24,7 @@
 				    align-items: center;
 				    flex-wrap: wrap;
 				    height: 90px;
+				    margin:auto;
 				}
 
 				>img{
