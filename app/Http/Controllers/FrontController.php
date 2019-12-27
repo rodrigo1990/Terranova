@@ -32,8 +32,13 @@ class FrontController extends Controller
     }
 
 
-  public function preguntasFrecuentes(){
+    public function preguntasFrecuentes(){
         return view('preguntas_frecuentes');
+    }
+
+
+    public function buscador(Request $request){
+        return view('buscador',['testimonios' =>Testimonio::limit(6)->offset(6)->get()]);
     }
 
 

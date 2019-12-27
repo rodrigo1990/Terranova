@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::get('/testimonios', 'FrontController@testimonios');
 Route::get('/preguntas-frecuentes', 'FrontController@preguntasFrecuentes');
+Route::get('/buscador', 'FrontController@buscador');
 
 /*ADMIN*/
 

@@ -45,8 +45,8 @@
 	
 
 	@section('scripts')
-		<script src="/js/app_admin.js"></script>
-		<script src="/js/dropzone.js"></script>
+		<script src="<?php echo asset("/js/app_admin.js") ?>"></script>
+		<script src="<?php echo asset("/js/dropzone.js") ?>"></script>
 		@include('Admin.inc.showOperationMessage')
 
 		

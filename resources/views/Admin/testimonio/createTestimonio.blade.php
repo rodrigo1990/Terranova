@@ -26,7 +26,7 @@
 					<iframe id="videoObject" type="text/html" frameborder="0"  allowfullscreen></iframe>
 					<br><br>
 
-					<div class="row">
+					<!--  <div class="row">
 						<h2>IMAGEN DE PRESENTACIÓN</h2>
 
 						<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion">
@@ -48,7 +48,7 @@
 						<p class="error text-center" id="imgPresentacion-error">
         					Ingrese una imagen
         				</p>
-					</div>
+					</div>-->
 				
 					
 				<br><br>
@@ -141,15 +141,15 @@
 
 
 
-	    	if(imgPresentacion.length == 0){
+	    	/*if(imgPresentacion.length == 0){
 				$("#imgPresentacion-error").fadeIn();
 			}else{
 				$("#imgPresentacion-error").fadeOut();
 				imgPresentacionValidated=true;
-			}
+			}*/
 	
 
-			if(tituloValidated==true&&linkYoutubeValidated==true&&imgPresentacionValidated==true){
+			if(tituloValidated==true&&linkYoutubeValidated==true/*&&imgPresentacionValidated==true*/){
 			
 			setTimeout(function(){
 				$('form').submit();

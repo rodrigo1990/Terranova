@@ -6,6 +6,8 @@ require('./scripts/header-functions');
 
 require('./scripts/manejoDeMenus');
 
+require('./scripts/preloader');
+
 
 
 if(document.getElementById('owl-1') || document.getElementById('owl-2')){

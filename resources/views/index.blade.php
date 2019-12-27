@@ -248,6 +248,7 @@
 	</section>
 
 	@include('inc.footer')
+
 @stop
 @section('scripts')
 <script>

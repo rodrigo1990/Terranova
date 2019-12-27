@@ -31021,6 +31021,8 @@ __webpack_require__(/*! ./scripts/header-functions */ "./resources/js/scripts/he
 
 __webpack_require__(/*! ./scripts/manejoDeMenus */ "./resources/js/scripts/manejoDeMenus.js");
 
+__webpack_require__(/*! ./scripts/preloader */ "./resources/js/scripts/preloader.js");
+
 if (document.getElementById('owl-1') || document.getElementById('owl-2')) {
   __webpack_require__(/*! ../OwlCarousel2-2.3.4/dist/owl.carousel.min */ "./resources/OwlCarousel2-2.3.4/dist/owl.carousel.min.js");
 
@@ -32132,6 +32134,26 @@ $(function () {
       window.console && console.log('beforePageOnClick...');
     });
   })('demo');
+});
+
+/***/ }),
+
+/***/ "./resources/js/scripts/preloader.js":
+/*!*******************************************!*\
+  !*** ./resources/js/scripts/preloader.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(window).on('load', function () {
+  // makes sure the whole site is loaded 
+  $('#preloaderBkground').fadeOut(); // will first fade out the loading animation 
+
+  $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+
+  $('body').delay(350).css({
+    'overflow-y': 'visible'
+  });
 });
 
 /***/ }),

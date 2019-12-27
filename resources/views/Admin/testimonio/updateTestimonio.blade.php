@@ -29,7 +29,7 @@
 
 					<br><br>
 
-					<div class="row">
+					<!--  <div class="row">
 						<h2>IMAGEN DE PRESENTACIÓN</h2>
 
 						<ul class="flex">
@@ -73,7 +73,7 @@
 						</ul>
 
 				
-					</div>
+					</div>-->
 				
 					
 				<br><br>
@@ -189,7 +189,7 @@
 		    	}
 
 
-		    	if($("input[name=img_presentacion]").length){
+		    	/*if($("input[name=img_presentacion]").length){
 
 			    	if(imgPresentacion.length == 0){
 			    		console.log('false');
@@ -202,10 +202,10 @@
 
 				}else{
 					imgPresentacionValidated=true;
-				}				
+				}*/				
 		
 
-				if(tituloValidated==true&&linkYoutubeValidated==true&&imgPresentacionValidated==true){
+				if(tituloValidated==true&&linkYoutubeValidated==true/*&&imgPresentacionValidated==true*/){
 				
 				setTimeout(function(){
 					$('form').submit();

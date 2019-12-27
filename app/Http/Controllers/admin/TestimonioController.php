@@ -28,7 +28,7 @@ class TestimonioController extends Controller
 	 		$testimonio->save();
 
 
-	 		$img = new ImgTestimonio();
+	 		/*$img = new ImgTestimonio();
 
 	 		$name = rand(0,99999999);
 
@@ -41,7 +41,7 @@ class TestimonioController extends Controller
 		 	$path = $request->img_presentacion->storeAs('testimonios/',$img->ruta,'public');
 
 
-		 	$testimonio->img()->save($img);
+		 	$testimonio->img()->save($img);*/
 
 
 
@@ -60,13 +60,13 @@ class TestimonioController extends Controller
 		try {
 
 
-	 		$img = ImgTestimonio::where('testimonio_id',$request->id)->get();
+	 		/*$img = ImgTestimonio::where('testimonio_id',$request->id)->get();
 
  			Storage::disk('public')->delete("testimonios/".$img[0]->ruta."");
 	 		
 
 
-	 		ImgTestimonio::where('testimonio_id',$request->id)->delete();
+	 		ImgTestimonio::where('testimonio_id',$request->id)->delete();*/
 
 	 		Testimonio::find($request->id)->delete();
 
@@ -96,7 +96,7 @@ class TestimonioController extends Controller
 
 			$testimonio->save();
 
-			if($request->img_presentacion){
+			/*if($request->img_presentacion){
 			
 				$img = new ImgTestimonio();
 
@@ -112,7 +112,7 @@ class TestimonioController extends Controller
 
 			 	$testimonio->img()->save($img);	
 			
-			}
+			}*/
 			
 
 

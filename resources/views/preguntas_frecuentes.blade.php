@@ -25,7 +25,7 @@
                 </div>
                 <div id="faq19" class="panel-collapse collapse">
                   <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis lacus a elit maximus viverra. Praesent sed augue vitae diam aliquet rutrum. Nam eu dolor dictum, scelerisque augue sit amet, aliquet augue. Praesent in ullamcorper nulla, eget luctus nibh. Ut nibh diam, eleifend hendrerit nibh ac, pulvinar blandit sem. Proin vel risus tellus. Proin euismod pulvinar diam et venenatis. Fusce porttitor felis eu lorem interdum hendrerit. Sed sapien massa, molestie in eleifend imperdiet, posuere eu massa. Aliquam eu enim blandit, vulputate justo ac, pellentesque est.
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis lacus a elit maximus viverra. Praesent sed augue vitae diam aliquet rutrum. Nam eu dolor dictum, scelerisque augue sit amet, aliquet augue. Praesent in ullamcorper nulla, eget luctus nibh. Ut nibh diam, eleifend hendrerit nibh ac, pulvinar blandit sem. Proin vel risus tellus. Proin euismod pulvinar diam et venenatis. Fusce porttitor felis eu lorem interdum hendrerit. Sed sapien massa, molestie in eleifend imperdiet, posuere eu massa. Aliquam eu enim blandit, vulputate justo ac, pellentesque est.</p>
                   </div>
                 </div>
               </div>
@@ -42,7 +42,9 @@
                 </div>
                 <div id="faq20" class="panel-collapse collapse">
                   <div class="panel-body">
+                    <p>
                     Quisque at risus id lacus tincidunt malesuada quis sit amet libero. Nullam consectetur varius massa nec mollis. Fusce feugiat accumsan nulla non convallis. Quisque mattis mollis quam in ullamcorper. Vestibulum sem velit, facilisis quis condimentum eget, blandit in orci. Phasellus id mauris lorem. Integer elementum aliquam libero, ac vulputate quam dapibus at.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -59,7 +61,9 @@
                 </div>
                 <div id="faq21" class="panel-collapse collapse">
                   <div class="panel-body">
+                    <p>
                     In massa diam, consectetur ac neque eget, ullamcorper cursus libero. Maecenas ac ultricies felis. Sed scelerisque augue sapien, sit amet iaculis justo ullamcorper quis. Proin tellus nulla, dapibus id condimentum ac, mollis non est. Ut non leo nisl. Aliquam lobortis arcu tellus, in tristique dui tristique eget. Vivamus condimentum pretium aliquet. Duis consequat feugiat finibus.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -76,7 +80,9 @@
                 </div>
                 <div id="faq22" class="panel-collapse collapse">
                   <div class="panel-body">
+                    <p>
                     Suspendisse eget urna gravida, semper enim ut, placerat ligula. Nunc vulputate laoreet odio, ut posuere magna suscipit eu. Vivamus efficitur massa nisi, nec hendrerit ante condimentum non. Duis eu arcu non diam elementum cursus ac eget augue. Phasellus ex ex, maximus sed quam sed, pretium consequat nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -93,7 +99,9 @@
                 </div>
                 <div id="faq23" class="panel-collapse collapse">
                   <div class="panel-body">
+                    <p>
                     In massa diam, consectetur ac neque eget, ullamcorper cursus libero. Maecenas ac ultricies felis. Sed scelerisque augue sapien, sit amet iaculis justo ullamcorper quis. Proin tellus nulla, dapibus id condimentum ac, mollis non est. Ut non leo nisl. Aliquam lobortis arcu tellus, in tristique dui tristique eget. Vivamus condimentum pretium aliquet. Duis consequat feugiat finibus.
+                    </p>
                   </div>
                 </div>
               </div>

@@ -1,0 +1,55 @@
+
+//variables
+$baseColor : #e74c3c;
+$fontColor : #fff;
+
+#preloaderBkground{
+	background: white;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 500000;
+	#preloader{
+		z-index: 100000000;
+	    position: fixed;
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    width: 174px;
+	    margin: auto;
+	    display: table;
+
+      svg{
+        width: 56%;
+      }
+	}
+}
+
+//follow me template
+.made-with-love{
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 10px;
+  font-family: arial;
+  color: $primary-color;
+  i{
+    font-style: normal;
+    color: $primary-color;
+    font-size: 14px;
+    position: relative;
+    top: 2px;
+  }
+  a{
+    color: #fff;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}

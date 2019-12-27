@@ -14,7 +14,7 @@
 
 
 	
-	<script src="/js/app_admin.js"></script>
+	<script src="<?php echo asset("/js/app_admin.js") ?>"></script>
 	@yield('scripts')
 </body>
 </html>

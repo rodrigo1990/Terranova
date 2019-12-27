@@ -19,11 +19,13 @@
 		<img src="<?php echo asset('/storage/img/icon-fixed-btn.svg') ?>" class="center-block red" alt="">
 		<img src="<?php echo asset('/storage/img/icon-fixed-btn-red.svg') ?>" class="center-block white" alt="">
 	</div>
+
+	@include('inc.preloader')
 	<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkne1gpPfJ0B3KrE4OQURwPi492LDjg8g"></script>
 
 	<script src="/js/app.js"></script>
 
-
+	
 	@yield('scripts')
 </body>
 </html>
