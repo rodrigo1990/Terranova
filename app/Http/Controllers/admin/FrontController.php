@@ -13,7 +13,7 @@ use App\ImgTestimonio;
 use App\Novedad;
 use App\ImgNovedad;
 
-use App\Services\SessionService;
+use App\Services\admin\SessionService;
 
 use Illuminate\Support\Facades\DB;
 

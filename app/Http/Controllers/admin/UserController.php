@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Services\SessionService;
+use App\Services\admin\SessionService;
 use Illuminate\Http\Request;
 use App\User;
 use  App\Http\Controllers\admin\Controller;
