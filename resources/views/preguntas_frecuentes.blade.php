@@ -20,7 +20,7 @@
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq19">
                      01. ¿Puedo pagar en cuotas fijas?
                     </a>
-                     <span class="change_char">-</span>
+                     <span class="change_char">+</span>
                   </h4>
                 </div>
                 <div id="faq19" class="panel-collapse collapse">

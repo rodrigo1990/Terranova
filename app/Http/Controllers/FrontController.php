@@ -13,19 +13,12 @@ use App\ImgTestimonio;
 use App\Novedad;
 use App\ImgNovedad;
 
-use App\Services\SessionService;
-
 use Illuminate\Support\Facades\DB;
 
 
 class FrontController extends Controller
 {
-    protected $sessionService;
-
-
-   function __construct(SessionService $sessionService){
-      $this->sessionService=$sessionService;
-    }
+    
 
     public function testimonios(){
         return view('testimonios',['testimonios' => json_encode(Testimonio::all())]);

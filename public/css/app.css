@@ -3082,22 +3082,25 @@
   right: 0;
   margin: auto;
   z-index: 500000;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 #preloaderBkground #preloader {
   z-index: 100000000;
-  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   width: 174px;
-  margin: auto;
-  display: table;
 }
 
 #preloaderBkground #preloader svg {
   width: 56%;
+  margin: auto;
+  display: block;
 }
 
 .made-with-love {
@@ -3154,6 +3157,16 @@ a i,
 input,
 select {
   transition: all 0.5s ease-out;
+}
+
+select {
+  -webkit-appearance: none !important;
+     -moz-appearance: none !important;
+          appearance: none !important;
+  background: url(/images/select-arrow.svg?46bb8ef9c3db1021ba68c218146bbe96) !important;
+  background-repeat: no-repeat !important;
+  background-size: 12px !important;
+  background-position: right 14px !important;
 }
 
 p {
@@ -4379,6 +4392,7 @@ header #slider .slide > li .slide > li a i,
 #buscador #slider ul.slide li select,
 #slider #buscador ul.slide li select {
   max-width: 92%;
+  font-family: "Montserrat-Regular", "Helvetica";
 }
 
 #buscador ul.flex li h3,
@@ -5489,6 +5503,7 @@ section#buscador-section .buscador-col ul.flex select,
 section#buscador-section .buscador-col #slider ul.slide select,
 #slider section#buscador-section .buscador-col ul.slide select {
   margin: auto;
+  margin-left: 0 !important;
   width: 90%;
 }
 
@@ -5643,6 +5658,11 @@ footer > div.container > ul.flex > li:nth-child(3),
   footer > div.container > ul.flex > li p,
   #slider footer > div.container > ul.slide > li p {
     text-align: center;
+  }
+
+  footer > div.container > ul.flex > li p b,
+  #slider footer > div.container > ul.slide > li p b {
+    display: block;
   }
 
   footer > div.container > ul.flex > li p:nth-child(2),

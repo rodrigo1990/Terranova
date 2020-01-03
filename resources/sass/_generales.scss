@@ -24,6 +24,14 @@ a,a i,input,select{
   transition: all 0.50s ease-out;
 }
 
+select{
+    appearance:none !important;
+    background:url(../img/select-arrow.svg) !important;
+    background-repeat: no-repeat !important;
+    background-size: 12px !important;
+    background-position: right 14px !important;
+}
+
 p{
   font-family: $font-regular;
 

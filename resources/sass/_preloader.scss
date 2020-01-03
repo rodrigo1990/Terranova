@@ -4,29 +4,33 @@ $baseColor : #e74c3c;
 $fontColor : #fff;
 
 #preloaderBkground{
-	background: white;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    z-index: 500000;
+	background:
+  white;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 500000;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 	#preloader{
 		z-index: 100000000;
-	    position: fixed;
 	    top: 0;
 	    bottom: 0;
 	    left: 0;
 	    right: 0;
 	    width: 174px;
-	    margin: auto;
-	    display: table;
 
       svg{
         width: 56%;
+        margin: auto;
+        display: block;
       }
 	}
 }

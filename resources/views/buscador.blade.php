@@ -12,19 +12,19 @@
 					<ul class="flex">
 						<li>
 							<label for="zona">ELIJA UNA ZONA</label>
-							<select name="zona" id="">
+							<select name="zona" id="" class="form-control">
 								<option value="">zona sur</option>
 							</select>
 						</li>
 						<li>
 							<label for="nombre">ELIJA UN PROYECTO</label>
-							<select name="nombre" id="">
+							<select name="nombre" id="" class="form-control">
 								<option value="">Canning</option>
 							</select>
 						</li>
 						<li>
 							<label for="estado">ELIJA UN ESTADO</label>
-							<select name="estado" id="">
+							<select name="estado" id="" class="form-control">
 								<option value="">Desarrollo</option>
 							</select>
 						</li>
