@@ -157,27 +157,42 @@
 
 @media only screen and (min-width: 320px) and (max-width: 850px){
 
- #slider{
-  .slide{
-    .slide__content{
-      a{
-        width: 100%;
+   #slider{
+    .slide{
+      .slide__content{
+        a{
+          width: 100%;
+        }
       }
+        .slide__content.right{
+          margin-left:auto;
+          margin-right:auto;
+          text-align: center;
+        }
+
     }
-      .slide__content.right{
-        margin-left:auto;
-        margin-right:auto;
-        text-align: center;
-      }
+
+    
 
   }
 
-  
+
+
 
 }
 
 
-}
+ @media screen and (min-width: 320px) and (max-width: 850px) and (orientation:portrait) { 
+
+    #owl-1 #slide-1{
+   background-position-x: -190px;
+
+  }
+
+
+
+  }
+
 
 
 

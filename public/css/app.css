@@ -4348,6 +4348,12 @@ header #slider .slide > li .slide > li a i,
   }
 }
 
+@media screen and (min-width: 320px) and (max-width: 850px) and (orientation: portrait) {
+  #owl-1 #slide-1 {
+    background-position-x: -190px;
+  }
+}
+
 #franja-1 .row {
   padding: 0;
   margin: 0;
