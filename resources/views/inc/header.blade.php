@@ -6,12 +6,12 @@
 					<i class="fas fa-times"></i>
 				</a>
 				<li>
-					<a href="">
+					<a id="nosotros-btn" onclick="scrollAnimate('nosotros',this)">
 						NOSOTROS
 					</a>
 				</li>
 				<li>
-					<a href="">
+					<a onclick="scrollAnimate('nuestros-proyectos',this)">
 						NUESTROS BARRIOS
 					</a>
 				</li>
@@ -31,24 +31,24 @@
 					</a>
 				</li>
 				<li>
-					<a href="">
+					<a onclick="scrollAnimate('contacto',this)">
 						CONTACTO
 					</a>
 				</li>
 				<li>
 					<ul class="rrss flex">
 						<li>
-							<a href="" target="_blank" class="btn-icon">
+							<a href="{{$fb}}" target="_blank" class="btn-icon">
 								<i class="fab fa-facebook-f"></i>
 							</a>
 						</li>
 						<li>
-							<a href="" target="_blank" class="btn-icon">
+							<a href="{{$ig}}" target="_blank" class="btn-icon">
 								<i class="fab fa-instagram"></i>
 							</a>
 						</li>
 						<li>
-							<a href="" target="_blank" class="btn-icon">
+							<a href="{{$yt}}" target="_blank" class="btn-icon">
 								<i class="fab fa-youtube"></i>
 							</a>
 						</li>

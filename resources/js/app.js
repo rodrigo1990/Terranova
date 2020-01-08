@@ -8,6 +8,15 @@ require('./scripts/manejoDeMenus');
 
 require('./scripts/preloader');
 
+require('./scripts/scroll-animation');
+
+$(document).ready(function() { 
+    var elem =  window.location.hash.replace('#', '');
+    console.log(elem);
+    if(elem) {
+         scrollAnimate(elem, null);
+    }
+});
 
 
 if(document.getElementById('owl-1') || document.getElementById('owl-2')){

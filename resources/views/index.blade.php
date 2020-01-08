@@ -3,6 +3,7 @@
 
 @section('main')
 @include('inc.header')
+
 	<section id="slider">
 		<div id="owl-1" class="owl-one owl-carousel owl-theme">
 			<div>
@@ -18,6 +19,14 @@
 					<div class="slide__content center">
 						<h1>FINANCIACIÓN HASTA <br> <b>84 CUOTAS CON TU DNI</b></h1>
 						<a class="btn" href=""> CONOCÉ NUESTROS BARRIOS </a>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="slide" id="slide-3">
+					<div class="slide__content right">
+						<h1>UNICOS EN <br> FINANCIACIÓN <br> PROPIA</h1>
+						<a class="btn" href=""> VER + </a>
 					</div>
 				</div>
 			</div>	
@@ -92,41 +101,10 @@
 					<img src="<?php echo asset('/storage/img/icons-home-04.svg') ?>" alt="" width="100px;">
 					<h4>ENTREGAMOS <br>  <b>MAS DE 1500 LOTES</b></h4>
 				</li>
-			</ul>
-		</div>
-	</section>
 
-	<section id="nuestros-proyectos">
-		<h2 class="title primary-color  text-center"><b>NUESTROS PROYECTOS</b></h2>
-		<div class="container">
-			<ul class="flex">
-				<li>
-					<div>
-						<h3>DISPONIBLES Y <br> LANZAMIENTOS</h3>
-						<a href="" class="btn">
-							VER +
-						</a>
-					</div>
-				</li>
-				<li>
-					<ul class="flex">
-						<li>
-							<div>
-								<h3>EN DESARROLLO</h3>
-								<a href="" class="btn">
-									VER +
-								</a>
-							</div>
-						</li>
-						<li>
-							<div>
-								<h3>TERMINADOS</h3>
-								<a href="" class="btn">
-									VER +
-								</a>
-							</div>
-						</li>
-					</ul>
+				<li class="text-center">
+					<img src="<?php echo asset('/storage/img/icons-home-05.svg') ?>" alt="" width="100px;">
+					<h4><b>MÁS DE 19 BARRIOS</b> <br>  DESARROLLADOS</h4>
 				</li>
 			</ul>
 		</div>
@@ -154,9 +132,44 @@
 		</div>
 	</section>
 
-	<section id="??">
-		<h1 class="text-center">????</h1>
+	<section id="nuestros-proyectos">
+		<h2 class="title primary-color  text-center"><b>NUESTROS PROYECTOS</b></h2>
+		<div class="container">
+			<ul class="flex">
+				<li>
+					<div>
+						<h3>DISPONIBLES Y <br> LANZAMIENTOS</h3>
+						<a href="/proyectos" target="_blank" class="btn">
+							VER +
+						</a>
+					</div>
+				</li>
+				<li>
+					<ul class="flex">
+						<li>
+							<div>
+								<h3>EN DESARROLLO</h3>
+								<a href="/proyectos" target="_blank" class="btn">
+									VER +
+								</a>
+							</div>
+						</li>
+						<li>
+							<div>
+								<h3>TERMINADOS</h3>
+								<a href="/proyectos" target="_blank" class="btn">
+									VER +
+								</a>
+							</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 	</section>
+
+
+
 
 	<section id="nuestras-oficinas">
 		<h2 class="title primary-color  text-center"><b>NUESTRAS OFICINAS</b></h2>
