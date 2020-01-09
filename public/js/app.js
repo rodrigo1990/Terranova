@@ -31024,6 +31024,8 @@ __webpack_require__(/*! ./scripts/manejoDeMenus */ "./resources/js/scripts/manej
 __webpack_require__(/*! ./scripts/preloader */ "./resources/js/scripts/preloader.js");
 
 __webpack_require__(/*! ./scripts/scroll-animation */ "./resources/js/scripts/scroll-animation.js");
+/**DETECAR ID EN URL*/
+
 
 $(document).ready(function () {
   var elem = window.location.hash.replace('#', '');

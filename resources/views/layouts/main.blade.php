@@ -23,7 +23,7 @@
 	@include('inc.preloader')
 	<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkne1gpPfJ0B3KrE4OQURwPi492LDjg8g"></script>
 
-	<script src="/js/app.js"></script>
+	<script src="<?php echo asset('/js/app.js')  ?>"></script>
 	
 	
 	@yield('scripts')

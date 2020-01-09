@@ -10,6 +10,7 @@ require('./scripts/preloader');
 
 require('./scripts/scroll-animation');
 
+/**DETECAR ID EN URL*/
 $(document).ready(function() { 
     var elem =  window.location.hash.replace('#', '');
     console.log(elem);

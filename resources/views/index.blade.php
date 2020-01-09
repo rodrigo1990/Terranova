@@ -10,7 +10,7 @@
 				<div class="slide" id="slide-1">
 					<div class="slide__content right">
 						<h1>PRÓXIMOS <br> <b>LANZAMIENTOS</b></h1>
-						<a class="btn" href=""> VER + </a>
+						<a class="btn" onclick="scrollAnimate('nuestros-proyectos',this)"> VER + </a>
 					</div>
 				</div>
 			</div>
@@ -18,7 +18,7 @@
 				<div class="slide" id="slide-2">
 					<div class="slide__content center">
 						<h1>FINANCIACIÓN HASTA <br> <b>84 CUOTAS CON TU DNI</b></h1>
-						<a class="btn" href=""> CONOCÉ NUESTROS BARRIOS </a>
+						<a class="btn" onclick="scrollAnimate('nuestros-proyectos',this)"> CONOCÉ NUESTROS BARRIOS </a>
 					</div>
 				</div>
 			</div>
@@ -26,7 +26,7 @@
 				<div class="slide" id="slide-3">
 					<div class="slide__content right">
 						<h1>ÚNICOS EN <br> <b>FINANCIACIÓN <br> PROPIA</b></h1>
-						<a class="btn" href=""> VER + </a>
+						<a class="btn" onclick="scrollAnimate('nuestros-proyectos',this)"> VER + </a>
 					</div>
 				</div>
 			</div>	
@@ -126,7 +126,7 @@
 			
 			<br>
 
-			<a href="" class="btn center-block" style="">
+			<a onclick="scrollAnimate('nuestros-proyectos',this)" class="btn center-block" style="">
 				CONOCÉ TODOS NUESTROS BARRIOS
 			</a>
 		</div>
