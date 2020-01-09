@@ -28,17 +28,17 @@
 			<li>
 				<ul class="rrss flex">
 					<li>
-						<a href="" target="_blank">
+						<a href="{{$fb}}" target="_blank">
 							<i class="fab fa-facebook-f"></i>
 						</a>
 					</li>
 					<li>
-						<a href="" target="_blank">
+						<a href="{{$ig}}" target="_blank">
 							<i class="fab fa-instagram"></i>
 						</a>
 					</li>
 					<li>
-						<a href="" target="_blank">
+						<a href="{{$yt}}" target="_blank">
 							<i class="fab fa-youtube"></i>
 						</a>
 					</li>

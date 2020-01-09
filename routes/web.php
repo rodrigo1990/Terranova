@@ -12,14 +12,18 @@
 */
 
 
+Route::get('/config-cache', function () {
+    Artisan::call('config:cache', []);
 
-Route::get('/', function () {
-    return view('index');
+    //
 });
+
+
+Route::get('/', 'FrontController@index');
 
 Route::get('/testimonios', 'FrontController@testimonios');
 Route::get('/preguntas-frecuentes', 'FrontController@preguntasFrecuentes');
-Route::get('/buscador', 'FrontController@buscador');
+Route::get('/proyectos', 'FrontController@buscador');
 
 /*ADMIN*/
 

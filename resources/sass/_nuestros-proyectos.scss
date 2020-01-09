@@ -1,6 +1,13 @@
 #nuestros-proyectos{
 	margin-bottom: $margin-bottom-inter-section;
 	.container{
+		.flex{
+			li{
+				background-position: center;
+			    background-size: cover;
+			    background-repeat: no-repeat;
+			}
+		}
 		>.flex{
 			width: 100%;
 			>li{
@@ -17,7 +24,8 @@
 			    }
 			}
 			>li:nth-child(1){
-				background:$gray;
+				//background:$gray;
+				background-image: url(../img/nuestros_proyectos/np1.jpg);
 				height: 400px;
 				
 			}
@@ -38,12 +46,14 @@
 
 					}
 					>li:nth-child(1){
-						background:$gray;
+						background-image: url(../img/nuestros_proyectos/np2.jpg);
+						//background:$gray;
 					}
 
 					>li:nth-child(2){
 						margin-top:20px;
-						background:$gray;
+						background-image: url(../img/nuestros_proyectos/np3.jpg);
+						//background:$gray;
 					}
 				}
 			}

@@ -31023,6 +31023,17 @@ __webpack_require__(/*! ./scripts/manejoDeMenus */ "./resources/js/scripts/manej
 
 __webpack_require__(/*! ./scripts/preloader */ "./resources/js/scripts/preloader.js");
 
+__webpack_require__(/*! ./scripts/scroll-animation */ "./resources/js/scripts/scroll-animation.js");
+
+$(document).ready(function () {
+  var elem = window.location.hash.replace('#', '');
+  console.log(elem);
+
+  if (elem) {
+    scrollAnimate(elem, null);
+  }
+});
+
 if (document.getElementById('owl-1') || document.getElementById('owl-2')) {
   __webpack_require__(/*! ../OwlCarousel2-2.3.4/dist/owl.carousel.min */ "./resources/OwlCarousel2-2.3.4/dist/owl.carousel.min.js");
 
@@ -32155,6 +32166,25 @@ $(window).on('load', function () {
     'overflow-y': 'visible'
   });
 });
+
+/***/ }),
+
+/***/ "./resources/js/scripts/scroll-animation.js":
+/*!**************************************************!*\
+  !*** ./resources/js/scripts/scroll-animation.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.scrollAnimate = function (id, element) {
+  if ($('#' + id + '').length) {
+    $('html,body').animate({
+      scrollTop: $('#' + id + '').offset().top - 150
+    }, 'slow');
+  } else {
+    $(element).attr('href', '/#' + id);
+  }
+};
 
 /***/ }),
 

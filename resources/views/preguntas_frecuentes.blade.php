@@ -18,14 +18,14 @@
 
 
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq19">
-                     01. ¿Puedo pagar en cuotas fijas?
+                     01. ¿Qué requisitos son necesarios para acceder a mi terreno? 
                     </a>
                      <span class="change_char">+</span>
                   </h4>
                 </div>
                 <div id="faq19" class="panel-collapse collapse">
                   <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis lacus a elit maximus viverra. Praesent sed augue vitae diam aliquet rutrum. Nam eu dolor dictum, scelerisque augue sit amet, aliquet augue. Praesent in ullamcorper nulla, eget luctus nibh. Ut nibh diam, eleifend hendrerit nibh ac, pulvinar blandit sem. Proin vel risus tellus. Proin euismod pulvinar diam et venenatis. Fusce porttitor felis eu lorem interdum hendrerit. Sed sapien massa, molestie in eleifend imperdiet, posuere eu massa. Aliquam eu enim blandit, vulputate justo ac, pellentesque est.</p>
+                    <p>Únicamente con tu DNI y un mínimo anticipo podes ser dueño de tu terreno. </p>
                   </div>
                 </div>
               </div>
@@ -35,7 +35,7 @@
                   <h4 class="panel-title">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq20">
                       
-                      02. ¿En dónde estan ubicados los barrios?
+                      02. ¿Tienen terrenos 100% financiados? 
                     </a>
                     <span class="change_char">+</span>
                   </h4>
@@ -43,7 +43,7 @@
                 <div id="faq20" class="panel-collapse collapse">
                   <div class="panel-body">
                     <p>
-                    Quisque at risus id lacus tincidunt malesuada quis sit amet libero. Nullam consectetur varius massa nec mollis. Fusce feugiat accumsan nulla non convallis. Quisque mattis mollis quam in ullamcorper. Vestibulum sem velit, facilisis quis condimentum eget, blandit in orci. Phasellus id mauris lorem. Integer elementum aliquam libero, ac vulputate quam dapibus at.
+                    No, financiamos el 70% de valor de los terrenos. 
                     </p>
                   </div>
                 </div>
@@ -54,7 +54,7 @@
                   <h4 class="panel-title">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq21">
                      
-                      03. ¿Con qué servicios cuentan los proyectos?
+                      03. ¿Las cuotas son en pesos? 
                     </a>
                      <span class="change_char">+</span>
                   </h4>
@@ -62,7 +62,7 @@
                 <div id="faq21" class="panel-collapse collapse">
                   <div class="panel-body">
                     <p>
-                    In massa diam, consectetur ac neque eget, ullamcorper cursus libero. Maecenas ac ultricies felis. Sed scelerisque augue sapien, sit amet iaculis justo ullamcorper quis. Proin tellus nulla, dapibus id condimentum ac, mollis non est. Ut non leo nisl. Aliquam lobortis arcu tellus, in tristique dui tristique eget. Vivamus condimentum pretium aliquet. Duis consequat feugiat finibus.
+                    Si, nuestra financiación es totalmente en pesos. 
                     </p>
                   </div>
                 </div>
@@ -73,7 +73,7 @@
                   <h4 class="panel-title">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq22">
                      
-                      04. ¿En dónde estan ubicados los barrios?
+                      04. ¿Se abonan expensas? 
                     </a>
                      <span class="change_char">+</span>
                   </h4>
@@ -81,7 +81,7 @@
                 <div id="faq22" class="panel-collapse collapse">
                   <div class="panel-body">
                     <p>
-                    Suspendisse eget urna gravida, semper enim ut, placerat ligula. Nunc vulputate laoreet odio, ut posuere magna suscipit eu. Vivamus efficitur massa nisi, nec hendrerit ante condimentum non. Duis eu arcu non diam elementum cursus ac eget augue. Phasellus ex ex, maximus sed quam sed, pretium consequat nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    Todos nuestros barrios son “abiertos”, excepto El Aljibe. Eso quiere decir que no se abonan expensas. 
                     </p>
                   </div>
                 </div>
@@ -92,7 +92,7 @@
                   <h4 class="panel-title">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq23">
                       
-                      05. ¿Con qué servicios cuentan los proyectos?
+                      05.  ¿Hay reglamento de construcción? 
                     </a>
                     <span class="change_char">+</span>
                   </h4>
@@ -100,11 +100,224 @@
                 <div id="faq23" class="panel-collapse collapse">
                   <div class="panel-body">
                     <p>
-                    In massa diam, consectetur ac neque eget, ullamcorper cursus libero. Maecenas ac ultricies felis. Sed scelerisque augue sapien, sit amet iaculis justo ullamcorper quis. Proin tellus nulla, dapibus id condimentum ac, mollis non est. Ut non leo nisl. Aliquam lobortis arcu tellus, in tristique dui tristique eget. Vivamus condimentum pretium aliquet. Duis consequat feugiat finibus.
+                      Únicamente en El Aljibe, en el resto de nuestros barrios las construcciones son libres. 
                     </p>
                   </div>
                 </div>
               </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq24">
+                      
+                      06.    Soy extranjero, ¿puedo acceder a un terreno con Terranova? 
+                    </a>
+                    <span class="change_char">+</span>
+                  </h4>
+                </div>
+                <div id="faq24" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>
+                      Por supuesto, la única documentación necesaria es tu DNI Argentino.  
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq25">
+                      
+                      07.      ¿Necesito recibo de sueldo/garante?  
+                    </a>
+                    <span class="change_char">+</span>
+                  </h4>
+                </div>
+                <div id="faq25" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>
+                      Terranova cuenta con financiación propia, por lo que no hace falta garantía, garante o recibo de sueldo. 
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq26">
+                      
+                      08. ¿En qué fecha tengo que abonar la cuota mensual?
+                    </a>
+                    <span class="change_char">+</span>
+                  </h4>
+                </div>
+                <div id="faq26" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>
+                      La cuota se puede abonar del 1 al 30 de cada mes, por lo cual tenés todo el mes para elegir el momento más cómodo para vos.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq27">
+                      
+                      09. ¿La posesión del terreno es inmediata? 
+                    </a>
+                    <span class="change_char">+</span>
+                  </h4>
+                </div>
+                <div id="faq27" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>
+                      La posesión del terreno depende del barrio, los tiempos de cada desarrollo son diferentes. Podes comunicarte con nosotros para consultar por un barrio específico. 
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+
+
+
+
+
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq28">
+                      
+                      10.  ¿Cuándo puedo acceder a la posesión de mi terreno? 
+                    </a>
+                    <span class="change_char">+</span>
+                  </h4>
+                </div>
+                <div id="faq28" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>
+                      Una vez completado el 50% del valor del terreno, podes acceder a la posesión.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq29">
+                      
+                      11.   ¿Construyen casas o tienen servicios de inmobiliaria? 
+                    </a>
+                    <span class="change_char">+</span>
+                  </h4>
+                </div>
+                <div id="faq29" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>
+                      No, nos dedicamos únicamente a la venta de terrenos.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq30">
+                      
+                      12.   ¿Toman autos en forma de pago?
+                    </a>
+                    <span class="change_char">+</span>
+                  </h4>
+                </div>
+                <div id="faq30" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>
+                      No aceptamos permutas como forma de pago
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq31">
+                      
+                      13.    ¿Los terrenos se pueden escriturar? 
+                    </a>
+                    <span class="change_char">+</span>
+                  </h4>
+                </div>
+                <div id="faq31" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>
+                      Todos nuestros terrenos cuentan con la posibilidad de escriturar. 
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq32">
+                      
+                      14.  ¿Cuánto necesito para señar mi terreno? 
+                    </a>
+                    <span class="change_char">+</span>
+                  </h4>
+                </div>
+                <div id="faq32" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>
+                      Podes reservar tu terreno con una mínima seña desde $3000. 
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
             </div>
 
           </div>
