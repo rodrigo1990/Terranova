@@ -22,7 +22,18 @@
 <script>
 	$(document).ready(function(){
 
-		$(".btn").grtyoutube();
+		//$(".btn").grtyoutube();
+
+		videoLightning({
+			settings: {
+				autoplay: true,
+				bdColor: "#3A0372",
+          bdOpacity: 0.8,
+          glow: 50,
+          glowColor: "#F1D6F5",
+          color: "#fff",
+				 color: "white"
+				}, element: ".video-link"});
 
 	});
 </script>

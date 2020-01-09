@@ -29,7 +29,7 @@ $(function() {
 	          dataHtml += '<li><div class="text-center"> <div> <p class="title primary-color">' + item.titulo +
 
 
-	           '	</p> </div><img src=" https://img.youtube.com/vi/'+item.link_youtube+'/sddefault.jpg " alt="" width="280px"><br><a youtubeid="'+item.link_youtube+'" class="btn"><i class="fab fa-youtube"></i> VER</a></div></li>'; });
+	           '	</p> </div><img src=" https://img.youtube.com/vi/'+item.link_youtube+'/sddefault.jpg " alt="" width="280px"><br><a data-video-id="'+item.link_youtube+'" class="btn video-link"><i class="fab fa-youtube"></i> VER</a></div></li>'; });
 
 
 	            dataHtml += ''; container.prev().html(dataHtml);
@@ -46,8 +46,8 @@ $(function() {
 	    container.addHook('beforePageOnClick', function () {
 	    	$(document).ready(function(){
 
-		$(".btn").grtyoutube();
-
+		//$(".btn").grtyoutube();
+		videoLightning({settings: {autoplay: false, color: "white"}, element: ".video-link"});
 		});
 	      window.console && console.log('beforePageOnClick...');
 

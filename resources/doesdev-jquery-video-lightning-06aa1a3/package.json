@@ -1,0 +1,43 @@
+{
+  "name": "video-lightning",
+  "title": "Video Lightning",
+  "version": "3.0.9",
+  "description": "Turn any element into a lightbox or popover link for Youtube and Vimeo videos.",
+  "scripts": {},
+  "keywords": [
+    "jquery",
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "video",
+    "lightning",
+    "lightbox",
+    "popover",
+    "popup",
+    "youtube",
+    "vimeo",
+    "api",
+    "rick",
+    "roll",
+    "rickroll",
+    "hover",
+    "preview",
+    "iframe"
+  ],
+  "author": "Andrew Carpenter @ Musocrat",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/musocrat/jquery-video-lightning.git"
+  },
+  "bugs": {
+    "url": "https://github.com/musocrat/jquery-video-lightning/issues",
+    "email": "info@musocrat.com"
+  },
+  "homepage": "https://github.com/musocrat/jquery-video-lightning/",
+  "devDependencies": {},
+  "licenses": [
+    {
+      "name": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ]
+}
