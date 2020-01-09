@@ -21,7 +21,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="">
+					<a  onclick="scrollAnimate('index',this)">
 						<img class="logo" src="<?php echo asset('storage/img/logo-user.svg') ?>" alt="">
 					</a>
 				</li>

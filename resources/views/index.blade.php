@@ -9,7 +9,7 @@
 			<div>
 				<div class="slide" id="slide-1">
 					<div class="slide__content right">
-						<h1>PROXIMOS <br> <b>LANZAMIENTOS</b></h1>
+						<h1>PRÓXIMOS <br> <b>LANZAMIENTOS</b></h1>
 						<a class="btn" href=""> VER + </a>
 					</div>
 				</div>
@@ -25,7 +25,7 @@
 			<div>
 				<div class="slide" id="slide-3">
 					<div class="slide__content right">
-						<h1>UNICOS EN <br> FINANCIACIÓN <br> PROPIA</h1>
+						<h1>ÚNICOS EN <br> <b>FINANCIACIÓN <br> PROPIA</b></h1>
 						<a class="btn" href=""> VER + </a>
 					</div>
 				</div>
@@ -241,30 +241,19 @@
 			</div>
 		</div>
 	</section>
-	<section id="contacto">
-		<div class="container">
-		
-			<h2 class="title primary-color text-center"><b>CONTACTANOS</b></h2>
-			<br>
-			
-			<form action="">
-				<input type="text" class="form-control" placeholder="Nombre y apellido">
-				<input type="text" class="form-control" placeholder="E-Mail">
-				<input type="text" class="form-control" placeholder="Teléfono">
-				<input type="text" class="form-control" placeholder="Consulta">
-				<br>
-				<a class="btn float-right">ENVIAR</a>
-			</form>
-		
-		</div>
-		
-	</section>
-
+	
+	@include('inc.contacto')
 	@include('inc.footer')
 
 @stop
 @section('scripts')
 <script>
+	
+	var t =  $('header').height() + parseInt($('header').css('padding-bottom'));
+
+	$("#slider").css('margin-top',t+10);
+	
+
 	$(document).ready(function(){
 		window.centerGlobal = {lat: -34.657852, lng: -58.618505};  
 

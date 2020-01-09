@@ -11,13 +11,15 @@
 
           <div class="row bk-grey panel-cont">
           <div class="container">
+
             <div class="panel-group" id="accordion">
-              <div class="panel panel-default">
+
+              <div class="panel panel-default" href="#faq19" data-toggle="collapse" data-parent="#accordion">
                 <div class="panel-heading">
                   <h4 class="panel-title">
 
 
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq19">
+                    <a class="accordion-toggle">
                      01. ¿Qué requisitos son necesarios para acceder a mi terreno? 
                     </a>
                      <span class="change_char">+</span>
@@ -30,10 +32,10 @@
                 </div>
               </div>
 
-              <div class="panel panel-default">
+              <div class="panel panel-default"  data-toggle="collapse" data-parent="#accordion" href="#faq20">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq20">
+                    <a class="accordion-toggle">
                       
                       02. ¿Tienen terrenos 100% financiados? 
                     </a>
@@ -49,10 +51,10 @@
                 </div>
               </div>
 
-              <div class="panel panel-default">
+              <div class="panel panel-default"  data-toggle="collapse" data-parent="#accordion" href="#faq21">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq21">
+                    <a class="accordion-toggle">
                      
                       03. ¿Las cuotas son en pesos? 
                     </a>
@@ -68,10 +70,10 @@
                 </div>
               </div>
 
-              <div class="panel panel-default">
+              <div class="panel panel-default"  data-toggle="collapse" data-parent="#accordion" href="#faq22">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq22">
+                    <a class="accordion-toggle">
                      
                       04. ¿Se abonan expensas? 
                     </a>
@@ -87,10 +89,10 @@
                 </div>
               </div>
 
-              <div class="panel panel-default">
+              <div class="panel panel-default"  data-toggle="collapse" data-parent="#accordion" href="#faq23">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq23">
+                    <a class="accordion-toggle">
                       
                       05.  ¿Hay reglamento de construcción? 
                     </a>
@@ -106,10 +108,10 @@
                 </div>
               </div>
 
-              <div class="panel panel-default">
+              <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" href="#faq24">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq24">
+                    <a class="accordion-toggle" >
                       
                       06.    Soy extranjero, ¿puedo acceder a un terreno con Terranova? 
                     </a>
@@ -128,10 +130,10 @@
 
 
 
-              <div class="panel panel-default">
+              <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" href="#faq25">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq25">
+                    <a class="accordion-toggle" >
                       
                       07.      ¿Necesito recibo de sueldo/garante?  
                     </a>
@@ -150,10 +152,10 @@
 
 
 
-              <div class="panel panel-default">
+              <div class="panel panel-default" data-toggle="collapse" data-parent="#accordion" href="#faq26">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq26">
+                    <a class="accordion-toggle" >
                       
                       08. ¿En qué fecha tengo que abonar la cuota mensual?
                     </a>
@@ -173,10 +175,10 @@
 
 
 
-              <div class="panel panel-default">
+              <div class="panel panel-default"  data-toggle="collapse" data-parent="#accordion" href="#faq27">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq27">
+                    <a class="accordion-toggle">
                       
                       09. ¿La posesión del terreno es inmediata? 
                     </a>
@@ -198,10 +200,10 @@
 
 
 
-              <div class="panel panel-default">
+              <div class="panel panel-default"  data-toggle="collapse" data-parent="#accordion" href="#faq28">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq28">
+                    <a class="accordion-toggle">
                       
                       10.  ¿Cuándo puedo acceder a la posesión de mi terreno? 
                     </a>
@@ -224,10 +226,10 @@
 
 
 
-              <div class="panel panel-default">
+              <div class="panel panel-default"  data-toggle="collapse" data-parent="#accordion" href="#faq29">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq29">
+                    <a class="accordion-toggle">
                       
                       11.   ¿Construyen casas o tienen servicios de inmobiliaria? 
                     </a>
@@ -247,10 +249,10 @@
 
 
 
-              <div class="panel panel-default">
+              <div class="panel panel-default"  data-toggle="collapse" data-parent="#accordion" href="#faq30">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq30">
+                    <a class="accordion-toggle">
                       
                       12.   ¿Toman autos en forma de pago?
                     </a>
@@ -269,10 +271,10 @@
 
 
 
-              <div class="panel panel-default">
+              <div class="panel panel-default"  data-toggle="collapse" data-parent="#accordion" href="#faq31">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq31">
+                    <a class="accordion-toggle">
                       
                       13.    ¿Los terrenos se pueden escriturar? 
                     </a>
@@ -293,10 +295,10 @@
 
 
 
-              <div class="panel panel-default">
+              <div class="panel panel-default"  data-toggle="collapse" data-parent="#accordion" href="#faq32">
                 <div class="panel-heading">
                   <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#faq32">
+                    <a class="accordion-toggle">
                       
                       14.  ¿Cuánto necesito para señar mi terreno? 
                     </a>
@@ -329,6 +331,8 @@
 	
 </section>
 
+
+  @include('inc.contacto')
 	@include('inc.footer')
 @stop
 @section('scripts')

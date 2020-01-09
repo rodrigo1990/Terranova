@@ -34,15 +34,15 @@
 
 
 			a.btn{
-				border:1px solid $red-color;
+				//border:1px solid $red-color;
 				padding: 0.5em 0.6em;
 				width: 100%;
 				margin-top: 5px;
-				color:$red-color;
+				color:$primary-color;
 			}
 
 			a.btn:hover{
-				background:$red-color;
+				background:$primary-color;
 				color:$third-color;
 
 				

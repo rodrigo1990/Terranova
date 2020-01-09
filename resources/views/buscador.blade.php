@@ -33,7 +33,7 @@
 					
 				
 			</div>
-			<div class="col-sm-12 result">
+			<div class="col-sm-12 result" style="display:none">
 				<ul class="flex">
 						@foreach($testimonios as $testimonio)
 						<li>
@@ -58,6 +58,8 @@
 
 	
 </section>
+
+	@include('inc.contacto')
 
 	@include('inc.footer')
 @stop

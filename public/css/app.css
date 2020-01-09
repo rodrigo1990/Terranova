@@ -24,6 +24,11 @@
   src: url(/fonts/Montserrat-Regular.otf?91696e0984cfab74ff344325e5015da5);
 }
 
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url(/fonts/Montserrat-Light.otf?2321dc98b6f9d0746aacace73b7c81f6);
+}
+
 /*!
  * animate.css -http://daneden.me/animate
  * Version - 3.7.0
@@ -3181,8 +3186,8 @@ p b {
 a.btn {
   color: white;
   border: 3px solid #7d9f45;
-  padding: 1.35em 0.8em;
-  border-radius: 5px;
+  padding: 1.1em 1.7em;
+  border-radius: 26px;
   font-size: 0.5rem;
   color: #7d9f45;
   line-height: 0;
@@ -3636,7 +3641,7 @@ header #slider .slide > li .slide > li a i,
   }
 
   100% {
-    background: rgba(243, 243, 243, 0);
+    background: #f3f3f3;
   }
 }
 
@@ -3646,7 +3651,7 @@ header #slider .slide > li .slide > li a i,
   }
 
   100% {
-    background: rgba(243, 243, 243, 0);
+    background: #f3f3f3;
   }
 }
 
@@ -4207,7 +4212,7 @@ header #slider .slide > li .slide > li a i,
 /*----------------------------------------------*/
 
 #slider .slide:after {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -4217,7 +4222,7 @@ header #slider .slide > li .slide > li a i,
 #slider .slide {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 85vh;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -4234,8 +4239,13 @@ header #slider .slide > li .slide > li a i,
 
 #slider .slide .slide__content h1 {
   color: white;
+  font-family: "Montserrat-Light", "Helvetica" !important;
   font-size: 1.4rem !important;
   margin-bottom: 0.45em;
+}
+
+#slider .slide .slide__content h1 b {
+  font-family: "Montserrat-Bold", "Helvetica";
 }
 
 #slider .slide .slide__content a:hover {
@@ -4250,7 +4260,7 @@ header #slider .slide > li .slide > li a i,
 
 #slider .slide .slide__content.right {
   margin-left: auto;
-  margin-right: 10%;
+  margin-right: 15%;
 }
 
 #slider .slide .slide__content.center {
@@ -4265,14 +4275,20 @@ header #slider .slide > li .slide > li a i,
 
 #slider #owl-1 #slide-1 {
   background-image: url(/images/1.jpg?e01a7e48f4d432895b42cae82f898e29);
+  background-position-y: 1px;
 }
 
 #slider #owl-1 #slide-2 {
   background-image: url(/images/2.jpg?327599316dafe50d9595b10b8ed868c0);
 }
 
+#slider #owl-1 #slide-2 .slide__content a.btn {
+  width: 65%;
+}
+
 #slider #owl-1 #slide-3 {
-  background-image: url(/images/3.jpg?e77fa9053be6b6e29991da93c6e46915);
+  background-image: url(/images/3.jpg?0937a505e827cf50fa45770519827e00);
+  background-position-y: 1px;
 }
 
 #slider .owl-carousel .owl-stage-outer {
@@ -4506,9 +4522,49 @@ header #slider .slide > li .slide > li a i,
 #buscador ul.flex #nuestros-proyectos .container li li,
 #buscador #slider ul.slide #nuestros-proyectos .container li li,
 #slider #buscador ul.slide #nuestros-proyectos .container li li {
+  position: relative;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+#nuestros-proyectos .container .flex li a.btn,
+#nuestros-proyectos .container #slider .slide li a.btn,
+#slider #nuestros-proyectos .container .slide li a.btn,
+#buscador ul.flex #nuestros-proyectos .container li li a.btn,
+#buscador #slider ul.slide #nuestros-proyectos .container li li a.btn,
+#slider #buscador ul.slide #nuestros-proyectos .container li li a.btn {
+  color: white;
+  width: 65%;
+}
+
+#nuestros-proyectos .container .flex li > div,
+#nuestros-proyectos .container #slider .slide li > div,
+#slider #nuestros-proyectos .container .slide li > div,
+#nuestros-proyectos .container #buscador ul.flex li li > div,
+#buscador ul.flex #nuestros-proyectos .container li li > div,
+#nuestros-proyectos .container #buscador #slider ul.slide li li > div,
+#buscador #slider ul.slide #nuestros-proyectos .container li li > div,
+#nuestros-proyectos .container #slider #buscador ul.slide li li > div,
+#slider #buscador ul.slide #nuestros-proyectos .container li li > div {
+  z-index: 3;
+}
+
+#nuestros-proyectos .container .flex li:after,
+#nuestros-proyectos .container #slider .slide li:after,
+#slider #nuestros-proyectos .container .slide li:after,
+#buscador ul.flex #nuestros-proyectos .container li li:after,
+#buscador #slider ul.slide #nuestros-proyectos .container li li:after,
+#slider #buscador ul.slide #nuestros-proyectos .container li li:after {
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 #nuestros-proyectos .container > .flex,
@@ -4562,7 +4618,7 @@ header #slider .slide > li .slide > li a i,
 #buscador #slider ul.slide #nuestros-proyectos .container > li > li:nth-child(1),
 #nuestros-proyectos #slider #buscador ul.slide .container > li > li:nth-child(1),
 #slider #buscador ul.slide #nuestros-proyectos .container > li > li:nth-child(1) {
-  background-image: url(/images/np1.jpg?5e959fce57246bf20a0a5b8eb2237397);
+  background-image: url(/images/np1.jpg?32c1e66acd689164cbd6e9ccba403306);
   height: 400px;
 }
 
@@ -4919,7 +4975,13 @@ header #slider .slide > li .slide > li a i,
 }
 
 #nosotros {
+  padding: 3em 0;
+  background: #eaeaea;
   margin-bottom: 100px;
+}
+
+#nosotros h2.title {
+  margin-top: 0 !important;
 }
 
 #nosotros a {
@@ -5018,17 +5080,16 @@ header #slider .slide > li .slide > li a i,
 #testimonios ul.flex > li a.btn,
 #testimonios #slider ul.slide > li a.btn,
 #slider #testimonios ul.slide > li a.btn {
-  border: 1px solid #FF0000;
   padding: 0.5em 0.6em;
   width: 100%;
   margin-top: 5px;
-  color: #FF0000;
+  color: #7d9f45;
 }
 
 #testimonios ul.flex > li a.btn:hover,
 #testimonios #slider ul.slide > li a.btn:hover,
 #slider #testimonios ul.slide > li a.btn:hover {
-  background: #FF0000;
+  background: #7d9f45;
   color: white;
 }
 
@@ -5067,14 +5128,12 @@ header #slider .slide > li .slide > li a i,
   height: 30px;
   margin: auto !important;
   display: table;
-  width: 93%;
 }
 
 .paginationjs .paginationjs-pages li {
   float: left;
-  border: 2px solid #7d9f45;
+  border: 1px solid #eaeaea;
   list-style: none;
-  width: 20%;
 }
 
 .paginationjs .paginationjs-pages li > a {
@@ -5105,7 +5164,7 @@ header #slider .slide > li .slide > li a i,
 .paginationjs .paginationjs-pages li.active > a {
   height: 30px;
   line-height: 30px;
-  background: #aaa;
+  background: #7d9f45;
   color: #fff;
 }
 
@@ -5126,7 +5185,7 @@ header #slider .slide > li .slide > li a i,
 }
 
 .paginationjs .paginationjs-pages li:last-child {
-  border-right: 1px solid #aaa;
+  border-right: 1px solid #eaeaea;
   border-radius: 0 3px 3px 0;
 }
 
@@ -5145,7 +5204,7 @@ header #slider .slide > li .slide > li a i,
   height: 28px;
   background: #fff;
   border-radius: 3px;
-  border: 1px solid #aaa;
+  border: 1px solid #eaeaea;
   padding: 0;
   font-size: 14px;
   text-align: center;
@@ -5167,7 +5226,7 @@ header #slider .slide > li .slide > li a i,
   line-height: 28px;
   background: #fff;
   border-radius: 3px;
-  border: 1px solid #aaa;
+  border: 1px solid #eaeaea;
   text-align: center;
   padding: 0 8px;
   font-size: 14px;
@@ -5421,8 +5480,8 @@ header #slider .slide > li .slide > li a i,
 /* Hacks for IE 6~9 */
 
 .paginationjs .paginationjs-pages li.paginationjs-next {
-  *border-right: 1px solid #7d9f45;
-  border-right: 3px solid #7d9f45;
+  *border-right: 1px solid #eaeaea;
+  border-right: 1px solid #eaeaea;
 }
 
 .paginationjs .paginationjs-go-input {
@@ -5477,6 +5536,7 @@ header #slider .slide > li .slide > li a i,
   float: right;
   font-size: 1rem;
   line-height: 0;
+  cursor: pointer;
 }
 
 #preguntasFrecuentes .panel-body {

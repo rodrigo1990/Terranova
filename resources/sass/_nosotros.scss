@@ -1,5 +1,10 @@
 #nosotros{
+	padding:3em 0;
+	background:$light-gray;
 	margin-bottom: $margin-bottom-inter-section;
+	h2.title{
+		margin-top: 0 !important;
+	}
 	a{
 		width:40%
 	}

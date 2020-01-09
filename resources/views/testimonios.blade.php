@@ -15,7 +15,7 @@
 				</div>
 			</div>
 </section>
-
+@include('inc.contacto')
 @include('inc.footer')
 @stop
 @section('scripts')
