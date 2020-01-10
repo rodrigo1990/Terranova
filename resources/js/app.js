@@ -30,7 +30,7 @@ if(document.getElementById('owl-1') || document.getElementById('owl-2')){
 
 if(document.getElementById('testimonios')){
 	require('./scripts/pagination');
-	require('../doesdev-jquery-video-lightning-06aa1a3/dist/videoLightning.js');
+	require('../doesdev-jquery-video-lightning-06aa1a3/dist/index.js');
 	
 	require('./scripts/paginationImplementar');
 
