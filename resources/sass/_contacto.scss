@@ -10,6 +10,11 @@
 		input{
 			margin-bottom: 8px;
 		}
+
+		.error{
+			color:$primary-color;
+			display:none;
+		}
 	}
 }
 

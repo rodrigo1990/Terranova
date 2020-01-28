@@ -10,6 +10,8 @@ require('./scripts/preloader');
 
 require('./scripts/scroll-animation');
 
+require('./scripts/validacionesSolicitarPrestamo');
+
 /**DETECAR ID EN URL*/
 $(document).ready(function() { 
     var elem =  window.location.hash.replace('#', '');

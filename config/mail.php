@@ -16,6 +16,14 @@ return [
     |
     */
 
+      'stream' => [
+    'ssl' => [
+        'allow_self_signed' => true,
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+    ],
+    ],
+
     'driver' => env('MAIL_DRIVER', 'smtp'),
 
     /*
@@ -29,7 +37,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +64,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'mcd77.1990@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Terranova'),
     ],
 
     /*
@@ -84,9 +92,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => 'mcd77.1990@gmail.com',
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => 'bxnxycxsfnfwswhn',
 
     /*
     |--------------------------------------------------------------------------

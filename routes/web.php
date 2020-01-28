@@ -24,6 +24,8 @@ Route::get('/', 'FrontController@index');
 Route::get('/testimonios', 'FrontController@testimonios');
 Route::get('/preguntas-frecuentes', 'FrontController@preguntasFrecuentes');
 Route::get('/proyectos', 'FrontController@buscador');
+Route::post('/enviarFormulario', 'MailController@enviarFormulario');
+
 
 /*ADMIN*/
 

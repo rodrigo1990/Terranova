@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<?php header('Set-Cookie: cross-site-cookie=bar; SameSite=None; Secure'); ?>
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<meta charset="UTF-8">
 	<title>TERRANOVA S.A</title>
 	<link rel="stylesheet" href="<?php echo asset("/css/app.css") ?>">

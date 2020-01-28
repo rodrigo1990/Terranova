@@ -195,6 +195,10 @@
 
 						<li>Teléfono: 5275-6360 - Opción 1.</li>
 
+						<li>Whatsapp: 11 6998-5042.</li>
+
+						<li>Mail: <a href="mailTo:ventas@terranova-sa.com.ar">ventas@terranova-sa.com.ar</a></li>
+
 					</ul>
 					
 					<br>
@@ -203,13 +207,11 @@
 
 						<li><p class="primary-color">OFICINA TRISTÁN SUAREZ </p></li>
 
-						<li>Dirección: Juan Galvez y 12 de Octubre – Tristán Suarez.</li>
+						<li>Dirección: Juan Galvez y 12 de Octubre – Tristán Suarez (con entrevista previa).</li>
 
-						<li>Teléfono:5275-6360 – Opción 1.</li>
+						<li>Whatsapp: 11 6577–6361.</li>
 
-						<li>Whatssap: 11 6 577 – 6361.</li>
-
-						<li>E-mail: comercial7@terranova-sa.com.ar</li>
+						<li>E-mail: <a href="mailTo:comercial7@terranova-sa.com.ar">comercial7@terranova-sa.com.ar</a></li>
 
 					</ul>
 					<br>
@@ -218,11 +220,13 @@
 
 						<li><p class="primary-color">ZONA NORTE</p></li>
 
-						<li>Dirección: Edificio Paralelo 50 – Of. 222 – Colectora Panamericana Km 49.5 .</li>
+						<li>Dirección: Edificio Paralelo 50 – Of. 222 – Colectora Panamericana Km 49.5, Pilar .</li>
 
 						<li>Teléfono: 011 5275-6360</li>
 
-						<li>E-mail: comercial@terranova-sa.com.ar</li>
+						<li>E-mail: <a href="mailTo:comercial@terranova-sa.com.ar">comercial@terranova-sa.com.ar</a></li>
+						
+						<li>Lunes a viernes de 9 a 18 hs</li>
 
 					</ul>
 					<br>
@@ -233,6 +237,8 @@
 						<li>Dirección: Macías 627 – Planta Alta, Adrogué.</li>
 
 						<li>Teléfono: 5275-6360 opción 3 o linea directa 4214-3271</li>
+
+						<li>Lunes a viernes de 9 a 18 hs</li>
 
 
 					</ul>

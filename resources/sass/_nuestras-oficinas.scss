@@ -10,6 +10,30 @@
 	ul{
 		li{
 			font-family: $font-regular;
+			a{
+				color:$primary-color;
+			}
+
+			a:hover{
+				color:$gray;
+			}
+			//font-size: 0.38rem;
 		}
 	}
+}
+
+
+
+@media only screen and (min-width: 1200px){
+
+	#nuestras-oficinas{
+		ul{
+			li{
+				//font-family: $font-regular;
+				font-size: 0.38rem;
+			}
+		}
+	}
+
+
 }

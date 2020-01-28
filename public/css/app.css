@@ -5016,6 +5016,20 @@ header #slider .slide > li .slide > li a i,
   font-family: "Montserrat-Regular", "Helvetica";
 }
 
+#nuestras-oficinas ul li a {
+  color: #7d9f45;
+}
+
+#nuestras-oficinas ul li a:hover {
+  color: #606060;
+}
+
+@media only screen and (min-width: 1200px) {
+  #nuestras-oficinas ul li {
+    font-size: 0.38rem;
+  }
+}
+
 #contacto {
   background: #eaeaea;
   padding-top: 2.5em;
@@ -5029,6 +5043,11 @@ header #slider .slide > li .slide > li a i,
 
 #contacto form input {
   margin-bottom: 8px;
+}
+
+#contacto form .error {
+  color: #7d9f45;
+  display: none;
 }
 
 #testimonios {
