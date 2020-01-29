@@ -3,7 +3,7 @@
 
 @section('main')
 @include('inc.header')
-<section id="buscador-section" class="">
+<section id="buscador-section" class="buscador-container">
 	<h2 class="title primary-color text-center"><b>NUESTROS PROYECTOS</b></h2>	
 	<div class="row">
 		<div class="container">
@@ -12,21 +12,20 @@
 					<ul class="flex">
 						<li>
 							<label for="zona">ELIJA UNA ZONA</label>
-							<select name="zona" id="" class="form-control">
-								<option value="">zona sur</option>
+							<select name="" id="zona" class="form-control" onchange="buscarBarrioSegunZona()">
+								<option value="null">Selecciona una zona</option>
+								@foreach($zonas as $zona)
+									<option value="{{$zona->id}}">{{ucfirst(strtolower($zona->descripcion))}}</option>
+								@endforeach
 							</select>
 						</li>
 						<li>
-							<label for="nombre">ELIJA UN PROYECTO</label>
-							<select name="nombre" id="" class="form-control">
-								<option value="">Canning</option>
+							<label for="barrio">ELIJA UN PROYECTO</label>
+							<div>
+							<select name="barrio" id="barrio" class="form-control">
+								<option value="null">Seleccione un proyecto</option>
 							</select>
-						</li>
-						<li>
-							<label for="estado">ELIJA UN ESTADO</label>
-							<select name="estado" id="" class="form-control">
-								<option value="">Desarrollo</option>
-							</select>
+							</div>
 						</li>
 					</ul>
 				</div>

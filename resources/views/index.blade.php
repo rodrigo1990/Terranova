@@ -41,36 +41,26 @@
 		</div>
 	</section>
 
-	<section id="buscador">
+	<section id="buscador" class="buscador-container">
 		<div class="container">
 			<ul class="flex">
 				<li>
 					<h3>¿En que zona buscas?</h3>
 				</li>
 				<li>
-					<select name="" id="" class="form-control">
-						<option value="">informacion</option>
-						<option value="">informacion</option>
-						<option value="">informacion</option>
-						<option value="">informacion</option>
+					<select name="" id="zona" class="form-control" onchange="buscarBarrioSegunZona()">
+						<option value="null">Seleccione una zona</option>
+						@foreach($zonas as $zona)
+							<option value="{{$zona->id}}">{{ucfirst(strtolower($zona->descripcion))}}</option>
+						@endforeach
 					</select>
 				</li>
 				<li>
-					<select name="" id="" class="form-control">
-						<option value="">informacion</option>
-						<option value="">informacion</option>
-						<option value="">informacion</option>
-						<option value="">informacion</option>
+					<select name="" id="barrio" class="form-control">
+						<option value="null">Selecciona un proyecto</option>
 					</select>
 				</li>
-				<li>
-					<select name="" id="" class="form-control">
-						<option value="">informacion</option>
-						<option value="">informacion</option>
-						<option value="">informacion</option>
-						<option value="">informacion</option>
-					</select>
-				</li>
+			
 				<li>
 					<a class="btn" href="">BUSCAR</a>
 				</li>

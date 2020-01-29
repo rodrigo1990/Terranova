@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Proyecto;
 use App\Img;
+use App\Zona;
 
 use App\Testimonio;
 use App\ImgTestimonio;
@@ -28,7 +29,8 @@ class FrontController extends Controller
 		return view('index',[
 							'fb' => $this->fb,
 							'ig' => $this->ig,
-							'yt' => $this->yt
+							'yt' => $this->yt,
+							'zonas' => Zona::all()
 							]);
 	} 
     
@@ -57,7 +59,8 @@ class FrontController extends Controller
 					        	'testimonios' =>Testimonio::limit(6)->offset(6)->get(),
 					        	'fb' => $this->fb,
 								'ig' => $this->ig,
-								'yt' => $this->yt
+								'yt' => $this->yt,
+								'zonas' => Zona::all()
 					        	]);
     }
 

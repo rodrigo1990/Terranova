@@ -31999,6 +31999,10 @@ $(document).ready(function () {
   }
 });
 
+if (document.getElementById('buscador') || document.getElementById('buscador-section')) {
+  __webpack_require__(/*! ./scripts/selectBarrioOnChange */ "./resources/js/scripts/selectBarrioOnChange.js");
+}
+
 if (document.getElementById('owl-1') || document.getElementById('owl-2')) {
   __webpack_require__(/*! ../OwlCarousel2-2.3.4/dist/owl.carousel.min */ "./resources/OwlCarousel2-2.3.4/dist/owl.carousel.min.js");
 
@@ -33156,6 +33160,49 @@ window.scrollAnimate = function (id, element) {
   } else {
     $(element).attr('href', '/#' + id);
   }
+};
+
+/***/ }),
+
+/***/ "./resources/js/scripts/selectBarrioOnChange.js":
+/*!******************************************************!*\
+  !*** ./resources/js/scripts/selectBarrioOnChange.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.buscarBarrioSegunZona = function () {
+  var zonaId = $(".buscador-container #zona").val();
+  console.log(zonaId);
+  $(".buscador-container #barrio").hide();
+  $(".buscador-container #barrio").parent().append('<div class="spinner-sm spinner-sm-1" id="status"> </div>');
+  $.ajax({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    data: {
+      zonaId: zonaId
+    },
+    url: '/buscarBarrioSegunZona',
+    type: 'post',
+    dataType: "json",
+    success: function success(data) {
+      console.log(data);
+      var l = null;
+      $(".buscador-container #barrio").empty();
+
+      for (var i in data) {
+        l = data[i].titulo.slice(1);
+        l = l.toUpperCase();
+        l = l + data[i].titulo;
+        $(".buscador-container #barrio").append("<option value=" + data[i].id + "> " + data[i].titulo + "</option>");
+      }
+
+      $(".buscador-container #barrio").append('<option value="null">Seleccione un proyecto</option>');
+      $(".buscador-container #status").remove();
+      $(".buscador-container #barrio").show();
+    }
+  });
 };
 
 /***/ }),
