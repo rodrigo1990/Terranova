@@ -212,7 +212,22 @@ select:focus,input:focus {
     border-bottom: 1px solid $primary-color !important;
 }
 
+::-webkit-input-placeholder { /* Edge */
+  color: $form-gray;
+}
 
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $form-gray;
+}
+
+::placeholder {
+  color: $form-gray;
+}
+
+
+select{
+  color:$form-gray !important;
+}
 
 
 @media only screen and (min-width: 320px) and (max-width: 850px){

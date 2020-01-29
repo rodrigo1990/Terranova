@@ -3400,6 +3400,32 @@ input:focus {
   border-bottom: 1px solid #7d9f45 !important;
 }
 
+::-webkit-input-placeholder {
+  /* Edge */
+  color: #949494;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #949494;
+}
+
+::-moz-placeholder {
+  color: #949494;
+}
+
+::-ms-input-placeholder {
+  color: #949494;
+}
+
+::placeholder {
+  color: #949494;
+}
+
+select {
+  color: #949494 !important;
+}
+
 @media only screen and (min-width: 320px) and (max-width: 850px) {
   html {
     font-size: 28px !important;
@@ -5103,7 +5129,8 @@ header #slider .slide > li .slide > li a i,
   margin: auto;
 }
 
-#contacto form input {
+#contacto form input,
+#contacto form select {
   margin-bottom: 8px;
 }
 

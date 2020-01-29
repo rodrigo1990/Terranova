@@ -25,12 +25,18 @@ class FrontController extends Controller
 	protected $yt = 'https://www.youtube.com/channel/UCAa8DmWWB_NMjCrpPiKhn9g';
 
 
+  	function __construct(){
+      $this->proyectos=Proyecto::orderBy('titulo')->get();
+    }
+
+
 	public function index(){
 		return view('index',[
 							'fb' => $this->fb,
 							'ig' => $this->ig,
 							'yt' => $this->yt,
-							'zonas' => Zona::all()
+							'zonas' => Zona::all(),
+							'proyectos' => $this->proyectos
 							]);
 	} 
     
@@ -40,7 +46,8 @@ class FrontController extends Controller
         							'testimonios' => json_encode(Testimonio::all()),
         							'fb' => $this->fb,
 									'ig' => $this->ig,
-									'yt' => $this->yt
+									'yt' => $this->yt,
+									'proyectos' => $this->proyectos
         							]);
     }
 
@@ -49,7 +56,8 @@ class FrontController extends Controller
         return view('preguntas_frecuentes',[
         									'fb' => $this->fb,
 											'ig' => $this->ig,
-											'yt' => $this->yt
+											'yt' => $this->yt,
+											'proyectos' => $this->proyectos
         									]);
     }
 
@@ -60,7 +68,8 @@ class FrontController extends Controller
 					        	'fb' => $this->fb,
 								'ig' => $this->ig,
 								'yt' => $this->yt,
-								'zonas' => Zona::all()
+								'zonas' => Zona::all(),
+								'proyectos' => $this->proyectos
 					        	]);
     }
 

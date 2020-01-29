@@ -4,6 +4,7 @@
             var email  = $("#contacto #email").val();
             var telefono  = $("#contacto #telefono").val();
             var consulta = $("#contacto #consulta").val();
+            var proyecto = $("#contacto #proyecto").val();
             
 
 
@@ -14,6 +15,8 @@
             
 
             var telefonoEstaValidado = false;
+
+            var proyectoEstaValidado = false;
 
 
 
@@ -54,6 +57,16 @@
             console.log('telefono '+telefonoEstaValidado);
 
 
+            if(proyecto.length==0){
+                $("#contacto #proyecto-error").fadeIn();
+                proyectoEstaValidado=false;
+            }else{
+                $("#contacto #proyecto-error").fadeOut();
+                proyectoEstaValidado=true;
+            }
+            console.log('proyecto '+proyectoEstaValidado);
+
+
 
 
                 
@@ -63,14 +76,14 @@
             
 
 
-            if(nombreEstaValidado==true&&emailEstaValidado==true&&telefonoEstaValidado==true){
+            if(nombreEstaValidado==true&&emailEstaValidado==true&&telefonoEstaValidado==true&&proyectoEstaValidado==true){
                     $("body").append('<div id="preloaderBkground"> <div id="preloader"> <svg version="1.1" id="L2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"> <circle fill="none" stroke="#7d9f45 " stroke-width="4" stroke-miterlimit="10" cx="50" cy="50" r="48"/> <line fill="none" stroke-linecap="round" stroke="#7d9f45 " stroke-width="4" stroke-miterlimit="10" x1="50" y1="50" x2="85" y2="50.5"> <animateTransform attributeName="transform"dur="2s"type="rotate"from="0 50 50"to="360 50 50"repeatCount="indefinite" /> </line> <line fill="none" stroke-linecap="round" stroke="#7d9f45 " stroke-width="4" stroke-miterlimit="10" x1="50" y1="50" x2="49.5" y2="74"> <animateTransform attributeName="transform"dur="15s"type="rotate"from="0 50 50"to="360 50 50"repeatCount="indefinite" /> </line> </svg> </div> </div>');
                      $.ajax({
                         headers:{
                                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                                 },
                        
-                       data: {nombre:nombre,email:email,telefono:telefono,consulta:consulta},
+                       data: {nombre:nombre,email:email,telefono:telefono,consulta:consulta,proyecto:proyecto},
                        url:'enviarFormulario',
                        type:'post',
                         dataType:"json",

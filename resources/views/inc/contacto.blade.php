@@ -14,6 +14,14 @@
 				
 				<input type="text" id="telefono" name="telefono" class="form-control" placeholder="Teléfono">
 				<p class="error" id="telefono-error">Ingrese un teléfono valido </p>
+
+				<select name="proyecto" id="proyecto" class="form-control">
+					<option value="">Seleccione un barrio de su interes</option>
+					@foreach($proyectos as $proyecto)
+						<option value="{{$proyecto->titulo}}">{{$proyecto->titulo}}</option>
+					@endforeach
+				</select>
+				<p class="error" id="proyecto-error">Ingrese un proyecto</p>
 				
 				<input type="text" id="consulta" name="consulta" class="form-control" placeholder="Consulta">
 				<br>
