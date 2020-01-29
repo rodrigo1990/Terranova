@@ -20,7 +20,7 @@ class ProyectoController extends Controller
 
 		 	$proyecto->titulo = $request->titulo;
 
-		 	$proyecto->estado = $request->estado;
+		 	$proyecto->zona_id = $request->zona;
 
 		 	$proyecto->save();
 
@@ -91,7 +91,7 @@ class ProyectoController extends Controller
 
 		 	$proyecto->titulo = $request->titulo;
 
-		 	$proyecto->estado = $request->estado;
+		 	$proyecto->zona_id = $request->zona;
 
 		 	$proyecto->save();
 

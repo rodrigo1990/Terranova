@@ -14,11 +14,11 @@
 					</p>
 					<br>
 					<br>
-					<label for="estado">Estado del proyecto</label>
-					<select name="estado" class="form-control" id="">
-						<option value="1">PRÓXIMOS DESARROLLOS</option>
-						<option value="2">PROYECTOS EN DESARROLLO</option>
-						<option value="3">PROYECTOS TERMINADOS</option>
+					<label for="zona">ZONA</label>
+					<select name="zona" class="form-control" id="">
+						@foreach($zonas as $zona)
+							<option value="{{$zona->id}}">{{$zona->descripcion}}</option>
+						@endforeach
 					</select>
 					<br>
 					<br>

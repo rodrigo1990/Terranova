@@ -15,5 +15,14 @@ class DatabaseSeeder extends Seeder
             'email' => 'mcd77.1990@gmail.com',
             'password' => md5('123'),
         ]);
+
+
+         DB::table('zonas')->insert([
+            'descripcion' => 'ZONA NORTE',
+        ]);
+
+         DB::table('zonas')->insert([
+            'descripcion' => 'ZONA SUR',
+        ]);
     }
 }

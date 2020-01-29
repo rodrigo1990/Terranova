@@ -15,22 +15,22 @@
 					</p>
 					<br>
 					<br>
-					<label for="estado">Estado del proyecto</label>
-					<select name="estado" class="form-control" id="">
+					<label for="zona">Zona</label>
+					<select name="zona" class="form-control" id="">
 
-						@if($proyecto->estado == 1)
-							<option value="1" selected>PRÓXIMOS DESARROLLOS</option>
-							<option value="2">PROYECTOS EN DESARROLLO</option>
-							<option value="3">PROYECTOS TERMINADOS</option>
-						@elseif($proyecto->estado == 2)
-							<option value="1" >PRÓXIMOS DESARROLLOS</option>
-							<option value="2" selected>PROYECTOS EN DESARROLLO</option>
-							<option value="3">PROYECTOS TERMINADOS</option>
-						@else
-							<option value="1" >PRÓXIMOS DESARROLLOS</option>
-							<option value="2" >PROYECTOS EN DESARROLLO</option>
-							<option value="3"selected>PROYECTOS TERMINADOS</option>
-						@endif
+						@foreach($zonas as $zona)
+							
+							@if($zona->id == $proyecto->zona->id)
+
+								<option value="{{$zona->id}}" selected>{{$zona->descripcion}}</option>
+
+							@else
+							
+								<option value="{{$zona->id}}">{{$zona->descripcion}}</option>
+
+							@endif
+
+						@endforeach
 
 					</select>
 					<br>

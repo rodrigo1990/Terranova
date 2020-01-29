@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Proyecto;
 use App\Img;
+use App\Zona;
 
 use App\Testimonio;
 use App\ImgTestimonio;
@@ -38,7 +39,7 @@ class FrontController extends Controller
    public function viewCreateProyecto(){
 
         if($this->sessionService->accessSessionData()=="true"){
-        	return view('admin.proyecto.createProyecto');
+        	return view('admin.proyecto.createProyecto',['zonas' => Zona::all()]);
         }else{
             return view('Admin/login');
         }
@@ -59,10 +60,11 @@ class FrontController extends Controller
 
      public function viewUpdateProyecto(Request $request){
         if($this->sessionService->accessSessionData()=="true"){
-         	$proyecto = Proyecto::find($request->id);
+         	$proyecto = Proyecto::with('zona')->find($request->id);
             $imagenes = Img::where('proyecto_id',$request->id)->orderBy('order','asc')->get(); 
+            $zonas = Zona::all();
 
-        	return view('admin.proyecto.updateProyecto', compact('proyecto','imagenes'));
+        	return view('admin.proyecto.updateProyecto', compact('proyecto','imagenes','zonas'));
         }else{
             return view('Admin/login');
         }

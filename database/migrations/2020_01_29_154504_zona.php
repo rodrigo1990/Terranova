@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Proyectos extends Migration
+class Zona extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class Proyectos extends Migration
      */
     public function up()
     {
-        Schema::create('proyectos', function (Blueprint $table) {
+        Schema::create('zonas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('descripcion');
-            $table->string('titulo',200);
-            $table->unsignedBigInteger('zona_id');
-
-            $table->foreign('zona_id')->references('id')->on('zonas');
+            $table->string('descripcion',200);
          
         });
     }
@@ -31,6 +27,6 @@ class Proyectos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('proyectos');
+        Schema::dropIfExists('zonas');
     }
 }

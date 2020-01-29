@@ -14,4 +14,8 @@ class Proyecto extends Model
     public function img(){
     	return $this->hasMany('App\Img');
     }
+
+    public function zona(){
+    	return $this->belongsTo('App\Zona');	
+    }
 }
