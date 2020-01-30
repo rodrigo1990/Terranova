@@ -45,7 +45,7 @@
 		<div class="container">
 			<ul class="flex">
 				<li>
-					<h3>¿En que zona buscas?</h3>
+					<h3>¿Qué zona buscas?</h3>
 				</li>
 				<li>
 					<select name="" id="zona" class="form-control" onchange="buscarBarrioSegunZona()">
@@ -110,7 +110,7 @@
 			<br>
 			<p class="text-center">
 				<span>
-				Más de 1500 familias disfrutan hoy de ser dueños de su propio terreno, muchos de los cuales hoy ya 	tienen su vivienda terminada y su escritura pública correspondiente.
+				Más de 3800 familias  hoy son dueñas de su propio terreno.
 				</span>
 			</p>
 			
@@ -128,7 +128,7 @@
 			<ul class="flex">
 				<li>
 					<div>
-						<h3>DISPONIBLES Y <br> LANZAMIENTOS</h3>
+						<h3>PRÓXIMOS  <br> LANZAMIENTOS</h3>
 						<a href="/proyectos" target="_blank" class="btn">
 							VER +
 						</a>
@@ -172,8 +172,8 @@
 				</div>
 				<div class="col-md-6 col-sm-12 col-xs-12">
 					
-					<h3 class="primary-color"><b>OFICINAS DE VENTA</b></h3>
-					<p><b>Horario de atención: Lunes a Sábados de 10 a 19 HS.</b></p>
+					<h3 class="primary-color"><b>OFICINAS COMERCIALES</b></h3>
+					<p><b>Horario de atención: Lunes a Sábados de 10 a 18 HS.</b></p>
 					
 					<br>
 
@@ -181,7 +181,7 @@
 
 						<li><p class="primary-color">OFICINA PILAR</p></li>
 
-						<li>Dirección: Tratado del Pilar 259 P.B (Pilar).</li>
+						<li>Dirección: Av. Tratado del Pilar 259 P.B (Pilar).</li>
 
 						<li>Teléfono: 5275-6360 - Opción 1.</li>
 
@@ -212,7 +212,7 @@
 
 						<li>Dirección: Edificio Paralelo 50 – Of. 222 – Colectora Panamericana Km 49.5, Pilar .</li>
 
-						<li>Teléfono: 011 5275-6360</li>
+						<li>Teléfono: 011 5275-6360 (opción 2)</li>
 
 						<li>E-mail: <a href="mailTo:comercial@terranova-sa.com.ar">comercial@terranova-sa.com.ar</a></li>
 						
