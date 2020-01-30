@@ -29,6 +29,10 @@
   src: url(/fonts/Montserrat-Light.otf?2321dc98b6f9d0746aacace73b7c81f6);
 }
 
+html {
+  color: #464646;
+}
+
 .bk-green {
   background: #7d9f45 !important;
   border: none !important;
