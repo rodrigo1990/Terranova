@@ -1,7 +1,6 @@
 
-$green:#05ab05;
 
-$dark-green:#048804;
+
 
 
 @mixin transitions{
@@ -14,7 +13,7 @@ $dark-green:#048804;
 
 
 .bk-green{
-  background: $green !important;
+  background: $primary-color !important;
   border:none !important;
 }
 
@@ -30,7 +29,7 @@ body.main{
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: $font-regular !important;
   height: 100vh;
   overflow-x:hidden;
 }
@@ -38,7 +37,7 @@ iframe{
 	overflow-y: scroll;
 }
 h1,h2,h4{
-    font-family: RobotoBold;
+    font-family: $font-black !important;
 }
 a {
   color: #92badd;
@@ -57,6 +56,16 @@ h1{
 }
 
 
+.btn-primary{
+  background:$primary-color !important;
+  cursor: pointer;
+  border-color:$primary-color !important;
+}
+
+.btn-primary:hover{
+  background:$dark-green !important;
+}
+
 h2 {
   text-align: center;
   font-size: 16px;
@@ -65,6 +74,7 @@ h2 {
   display:inline-block;
   margin: 40px 8px 10px 8px; 
   color: #cccccc;
+  font-family: $font-black;
 }
 
 #content{
@@ -241,13 +251,6 @@ ul#file-input-cont li,ul#file-input-cont li{
   margin-bottom:50px;
 }
 
-.blue{
-   background: #39ace7;
-}
-
-.red{
-  background:#c70707;
-}
 
 
 .small-btn{
@@ -314,7 +317,7 @@ div#buttons{
  }
 
  .closeSession a:hover{
-  color:#39ace7;
+  color:$primary-color;
  }
 
 iframe:not(#videoObject){
@@ -331,8 +334,8 @@ iframe:not(#videoObject){
   transition: all 0.75s ease-in-out;
 }
 
-.side-bar div h1 a:hover{
-	color:#39ace7;
+.side-bar ul  li a:hover{
+	color:white;
 	text-decoration: none;
 }
 
@@ -406,6 +409,11 @@ iframe:not(#videoObject){
   text-align: center;
   -webkit-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
+}
+
+
+#formFooter  a{
+  color:$primary-color;
 }
 
 
@@ -497,7 +505,7 @@ h2.active {
 
 input[type=button], input[type=submit], input[type=reset],a.form-btn  {
 	cursor:pointer;
-  background-color: #56baed;
+  background-color: $primary-color;
   border: none;
   color: white;
   padding: 15px 80px;
@@ -519,10 +527,12 @@ input[type=button], input[type=submit], input[type=reset],a.form-btn  {
 }
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover,a.form-btn:hover   {
-  background-color: #39ace7;
+  background-color: $primary-color;
+  color:white;
 }
 
-input[type=button]:active, input[type=submit]:active, input[type=reset]:active,a.form-btn:active  {
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active,a.form-btn:active,
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover,a.form-btn:hover  {
   -moz-transform: scale(0.95);
   -webkit-transform: scale(0.95);
   -o-transform: scale(0.95);
@@ -551,10 +561,18 @@ input[type=text], input[type=password] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text]:focus,, input[type=password]:focus {
-  background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+.form-control:focus{
+  background-color: #fff !important;
+   border-color: $primary-color !important;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $primary-color !important;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $primary-color !important;
 }
+
+input[type=text]:focus,, input[type=password]:focus, select {
+  
+}
+
 
 input[type=text]:placeholder, input[type=password]:placeholder {
   color: #cccccc;
@@ -651,7 +669,7 @@ input[type=text]:placeholder, input[type=password]:placeholder {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  background-color: $primary-color;
   content: "";
   transition: width 0.2s;
 }
@@ -727,13 +745,20 @@ input[type=text]:placeholder, input[type=password]:placeholder {
     text-align: center;
     border-bottom: 2px solid #d6d6d6;
     position: relative;
+    @include transitions;
 }
 
 
 .side-bar ul li:hover{
-    background:black;
+    background:$primary-color;
+    color:white;
 }
-  
+
+
+ .side-bar ul li:hover  a{
+  color:white;
+ }
+
 
   .side-bar ul li a{
      position: absolute;
@@ -743,6 +768,7 @@ input[type=text]:placeholder, input[type=password]:placeholder {
     left: 0;
     margin: auto;
     height: fit-content;
+    color:$primary-color;
 }
   
 

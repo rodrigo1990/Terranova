@@ -1,10 +1,41 @@
+/*---------------------------------------------*/
+
+/*FUENTES*/
+
+/*----------------------------------------------*/
+
+@font-face {
+  font-family: "Montserrat-Black";
+  src: url(/fonts/Montserrat-Black.otf?7c44b75654ac14a016cdb9a6be2469bb);
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url(/fonts/Montserrat-Bold.otf?b1bc919c743e73d2b1925fcbe24d60c0);
+}
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url(/fonts/Montserrat-Medium.otf?8193d2621f9394d8503bf7669a6b95b2);
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url(/fonts/Montserrat-Regular.otf?91696e0984cfab74ff344325e5015da5);
+}
+
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url(/fonts/Montserrat-Light.otf?2321dc98b6f9d0746aacace73b7c81f6);
+}
+
 .bk-green {
-  background: #05ab05 !important;
+  background: #7d9f45 !important;
   border: none !important;
 }
 
 .bk-green:hover {
-  background: #048804 !important;
+  background: #718e40 !important;
   border: none !important;
   transition: all 0.1s ease-in-out;
 }
@@ -14,7 +45,7 @@ body.main {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat-Regular", "Helvetica" !important;
   height: 100vh;
   overflow-x: hidden;
 }
@@ -26,7 +57,7 @@ iframe {
 h1,
 h2,
 h4 {
-  font-family: RobotoBold;
+  font-family: "Montserrat-Black", "Helvetica" !important;
 }
 
 a {
@@ -44,6 +75,16 @@ h1 {
   color: black;
 }
 
+.btn-primary {
+  background: #7d9f45 !important;
+  cursor: pointer;
+  border-color: #7d9f45 !important;
+}
+
+.btn-primary:hover {
+  background: #718e40 !important;
+}
+
 h2 {
   text-align: center;
   font-size: 16px;
@@ -52,6 +93,7 @@ h2 {
   display: inline-block;
   margin: 40px 8px 10px 8px;
   color: #cccccc;
+  font-family: "Montserrat-Black", "Helvetica";
 }
 
 #content {
@@ -215,14 +257,6 @@ ul#file-input-cont li {
   margin-bottom: 50px;
 }
 
-.blue {
-  background: #39ace7;
-}
-
-.red {
-  background: #c70707;
-}
-
 .small-btn {
   color: white;
   width: 70px;
@@ -276,7 +310,7 @@ div#buttons {
 }
 
 .closeSession a:hover {
-  color: #39ace7;
+  color: #7d9f45;
 }
 
 iframe:not(#videoObject) {
@@ -289,8 +323,8 @@ iframe:not(#videoObject) {
   transition: all 0.75s ease-in-out;
 }
 
-.side-bar div h1 a:hover {
-  color: #39ace7;
+.side-bar ul li a:hover {
+  color: white;
   text-decoration: none;
 }
 
@@ -361,6 +395,10 @@ iframe:not(#videoObject) {
   padding: 25px;
   text-align: center;
   border-radius: 0 0 10px 10px;
+}
+
+#formFooter a {
+  color: #7d9f45;
 }
 
 /* TABS */
@@ -450,7 +488,7 @@ input[type=submit],
 input[type=reset],
 a.form-btn {
   cursor: pointer;
-  background-color: #56baed;
+  background-color: #7d9f45;
   border: none;
   color: white;
   padding: 15px 80px;
@@ -469,13 +507,18 @@ input[type=button]:hover,
 input[type=submit]:hover,
 input[type=reset]:hover,
 a.form-btn:hover {
-  background-color: #39ace7;
+  background-color: #7d9f45;
+  color: white;
 }
 
 input[type=button]:active,
 input[type=submit]:active,
 input[type=reset]:active,
-a.form-btn:active {
+a.form-btn:active,
+input[type=button]:hover,
+input[type=submit]:hover,
+input[type=reset]:hover,
+a.form-btn:hover {
   transform: scale(0.95);
 }
 
@@ -496,10 +539,11 @@ input[type=password] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text]:focus,
-input[type=password]:focus {
-  background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+.form-control:focus {
+  background-color: #fff !important;
+  border-color: #7d9f45 !important;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #7d9f45 !important;
 }
 
 input[type=text]:placeholder,
@@ -604,7 +648,7 @@ input[type=password]:placeholder {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  background-color: #7d9f45;
   content: "";
   transition: width 0.2s;
 }
@@ -673,10 +717,16 @@ input[type=password]:placeholder {
   text-align: center;
   border-bottom: 2px solid #d6d6d6;
   position: relative;
+  transition: all 0.1s ease-in-out;
 }
 
 .side-bar ul li:hover {
-  background: black;
+  background: #7d9f45;
+  color: white;
+}
+
+.side-bar ul li:hover a {
+  color: white;
 }
 
 .side-bar ul li a {
@@ -689,6 +739,7 @@ input[type=password]:placeholder {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  color: #7d9f45;
 }
 
 .img-presentacion-input-cont {
