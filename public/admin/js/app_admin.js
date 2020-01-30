@@ -29868,6 +29868,8 @@ __webpack_require__(/*! ./scripts/readURL */ "./resources/js/admin/scripts/readU
 
 __webpack_require__(/*! ./scripts/resetInputFile */ "./resources/js/admin/scripts/resetInputFile.js");
 
+__webpack_require__(/*! ./scripts/deleteItem */ "./resources/js/admin/scripts/deleteItem.js");
+
 if (document.getElementById('proyectos')) {
   __webpack_require__(/*! ./scripts/updateSortable_CreateProject */ "./resources/js/admin/scripts/updateSortable_CreateProject.js");
 
@@ -29969,6 +29971,23 @@ window.deleteImg = function (id, tipo, seccion) {
 
 /***/ }),
 
+/***/ "./resources/js/admin/scripts/deleteItem.js":
+/*!**************************************************!*\
+  !*** ./resources/js/admin/scripts/deleteItem.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.deleteItem = function (url) {
+  var c = confirm('¿Desea eliminar este proyecto?');
+
+  if (c == true) {
+    window.location.href = url;
+  }
+};
+
+/***/ }),
+
 /***/ "./resources/js/admin/scripts/eliminarImagenes.js":
 /*!********************************************************!*\
   !*** ./resources/js/admin/scripts/eliminarImagenes.js ***!
@@ -30005,7 +30024,7 @@ $(document).on('change', 'input[type=file]', function () {
   var file_size = $(this)[0].files[0].size;
   format = file.split('.').pop();
 
-  if (format == "jpg" || format == "png") {
+  if (format == "jpg" || format == "jpeg" || format == "png") {
     if (file_size > 2097152) {
       alert("El archivo NO puede ser superior a 2MB");
     } else {

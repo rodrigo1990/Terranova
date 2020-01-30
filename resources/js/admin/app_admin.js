@@ -18,6 +18,8 @@ require('./scripts/inputFileChange');
 require('./scripts/readURL');
 require('./scripts/resetInputFile');
 
+require('./scripts/deleteItem');
+
 
 if(document.getElementById('proyectos')){
 require('./scripts/updateSortable_CreateProject');

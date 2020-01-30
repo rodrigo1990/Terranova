@@ -9,7 +9,6 @@
 					<thead>
 						<tr>
 							<th class="text-center">Titulo</th>
-							<th class="text-center">Estado</th>
 							<th class="text-center">Acción</th>
 						</tr>
 					</thead>
@@ -18,11 +17,10 @@
 							@foreach($proyectos as $proyecto)
 							<tr>
 								<td class="text-center">{{$proyecto->titulo}}</td>
-								<td class="text-center">{{$proyecto->estado}}</td>
 								<td class="text-center">
 									<a href="/admin/viewUpdateProyecto/{{$proyecto->id}}">Actualizar</a>
 									<br>
-									<a href="/admin/destroyProyecto/{{$proyecto->id}}">Eliminar</a>
+									<a onclick="deleteItem('/admin/destroyProyecto/{{$proyecto->id}}')">Eliminar</a>
 								</td>
 							</tr>
 

@@ -15,7 +15,7 @@
 
             format = file.split('.').pop();
 
-            if(format == "jpg" || format == "png"){
+            if(format == "jpg" || format == "jpeg" || format == "png"){
 
             if(file_size>2097152) {
 
