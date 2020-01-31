@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Proyecto;
 use App\Img;
+use App\ProyectoVideo;
 use Illuminate\Support\Facades\Storage;
 use  App\Http\Controllers\admin\Controller;
 
@@ -23,6 +24,19 @@ class ProyectoController extends Controller
 		 	$proyecto->zona_id = $request->zona;
 
 		 	$proyecto->save();
+
+		 	if($request->video_1 != null){
+		 		$video1 = new ProyectoVideo();
+		 		$video1->url = $request->video_1;
+		 		$proyecto->video()->save($video1);
+		 	}
+
+
+		 	if($request->video_2 != null){
+		 		$video2 = new ProyectoVideo();
+		 		$video2->url = $request->video_2;
+		 		$proyecto->video()->save($video2);
+		 	}
 
 		 	if($request->img_presentacion){
 

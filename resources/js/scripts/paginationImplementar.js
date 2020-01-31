@@ -26,7 +26,7 @@ $(function() {
 
 	        $.each(response, function (index, item) {
 	    		console.log(item);
-	          dataHtml += '<li><div class="text-center"> <div> <p class="title primary-color">' + item.titulo +
+	          dataHtml += '<li><div class="text-center"> <div> <p class="title primary-color">' + item.titulo.toUpperCase()  +
 
 
 	           '	</p> </div><img src=" https://img.youtube.com/vi/'+item.link_youtube+'/sddefault.jpg " alt="" width="280px"><br><a data-video-id="'+item.link_youtube+'" class="btn video-link"><i class="fab fa-youtube"></i> VER</a></div></li>'; });

@@ -14,10 +14,10 @@ class Proyectos extends Migration
     public function up()
     {
         Schema::create('proyectos', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->text('descripcion');
             $table->string('titulo',200);
-            $table->unsignedBigInteger('zona_id');
+            $table->unsignedInteger('zona_id');
 
             $table->foreign('zona_id')->references('id')->on('zonas');
          

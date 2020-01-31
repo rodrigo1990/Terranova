@@ -14,10 +14,10 @@ class ImgNovedad extends Migration
     public function up()
     {
         Schema::create('img_novedad', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('ruta',200);
             $table->string('nombre',200);
-            $table->unsignedBigInteger('novedad_id');
+            $table->unsignedInteger('novedad_id');
 
              $table->foreign('novedad_id')->references('id')->on('novedades');
          

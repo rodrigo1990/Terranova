@@ -173,7 +173,7 @@
 				<div class="col-md-6 col-sm-12 col-xs-12">
 					
 					<h3 class="primary-color"><b>OFICINAS COMERCIALES</b></h3>
-					<p><b>Horario de atención: Lunes a Sábados de 10 a 18 HS.</b></p>
+					<p><b>Horario de atención: Lunes a Sábados de 10 a 18 HS. (con entrevista previa)</b></p>
 					
 					<br>
 
@@ -197,7 +197,7 @@
 
 						<li><p class="primary-color">OFICINA TRISTÁN SUAREZ </p></li>
 
-						<li>Dirección: Juan Galvez y 12 de Octubre – Tristán Suarez (con entrevista previa).</li>
+						<li>Dirección: Juan Galvez y 12 de Octubre – Tristán Suarez.</li>
 
 						<li>Whatsapp: 11 6577–6361.</li>
 

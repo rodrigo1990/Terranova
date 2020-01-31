@@ -7,44 +7,87 @@
 		<form action="/admin/createProyecto" method="POST" enctype="multipart/form-data">
 			@csrf
 			<div class="container">
+					
+					<div class="row">
 					<label for="titulo">Titulo</label>
 					<input type="text" class="form-control" name="titulo">
 					<p class="error" id="tituloError">
 						Ingrese un titulo
 					</p>
+					</div>
+
 					<br>
 					<br>
+					
+					<div class="row">
 					<label for="zona">ZONA</label>
 					<select name="zona" class="form-control" id="">
 						@foreach($zonas as $zona)
 							<option value="{{$zona->id}}">{{$zona->descripcion}}</option>
 						@endforeach
 					</select>
+					</div>
+					
+
 					<br>
 					<br>
-					<label for="descripcion">Descripción</label>
-					<textarea  name="descripcion" id="" cols="30" rows="10"></textarea>
-					<p class="error" id="descripcionError">
-						Ingrese una descripción
-					</p>
+
+					<div class="row">
+					
+						<label for="descripcion">Descripción</label>
+						<textarea  name="descripcion" id="" cols="30" rows="10"></textarea>
+						
+						<p class="error" id="descripcionError">
+							Ingrese una descripción
+						</p>
+					
+
+					</div>
 					<br><br>
-					<div  id="presentacion" class="row">
-						<h2>IMAGEN DE PRESENTACIÓN</h2>
 
-						<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion">
-							<span  class="btn btn-primary btn-file border-btn blue float-right" >
-		                        IMAGEN DE PRESENTACIÓN 
-		                     	<input name="img_presentacion" type="file" id="presentacion">
-		                     </span>
-		                     <div id="file-result-presentacion" class="text-center">
-	                            <span id="file-img-presentacion"></span>
-            					</div>
 
-            			
+					
+					<div class="row">
+						<h2 class="text-left" style="display:block;">VIDEOS</h2>
+						<br>
+						<div class="col-sm-12">
+						
+							<label for="video_1">VIDEO 1 </label>
+							<input type="text" name="video_1" class="form-control" onKeyUp="insertVideoOnIframe(1)">
+							<div class="error" id="video1Error">Ingrese un video valido</div>
+
+							<iframe id="video-preview-1" class="video-preview" type="text/html" height="0px" frameborder="0"  allowfullscreen></iframe>
+
 						</div>
-						<p class="error text-center" id="imgPresentacion-error">
-        					Ingrese una imagen
-        				</p>
+						<div class="col-sm-12">
+							
+							<label for="video_2">VIDEO 2 </label>
+							<input type="text" name="video_2" class="form-control" onKeyUp="insertVideoOnIframe(2)">
+							<div class="error" id="video2Error">Ingrese un video valido</div>
+
+							<iframe id="video-preview-2" class="video-preview" height="0px" type="text/html" frameborder="0"  allowfullscreen></iframe>
+						</div>
+					</div>
+					<br><br>
+					<div class="row">
+						<div  id="presentacion" class="row">
+							<h2>IMAGEN DE PRESENTACIÓN</h2>
+
+							<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion">
+								<span  class="btn btn-primary btn-file border-btn blue float-right" >
+			                        IMAGEN DE PRESENTACIÓN 
+			                     	<input name="img_presentacion" type="file" id="presentacion">
+			                     </span>
+			                     <div id="file-result-presentacion" class="text-center">
+		                            <span id="file-img-presentacion"></span>
+	            					</div>
+
+	            			
+							</div>
+							<p class="error text-center" id="imgPresentacion-error">
+	        					Ingrese una imagen
+	        				</p>
+						</div>
 					</div>
 					<br><br>
 		 		<div class="row">
@@ -102,9 +145,14 @@
 						
 					</div>
 				</div>
-				<br><br>
-				<a onclick="createProjectValidate()" class="btn btn-primary btn-file border-btn bk-green float-right"><h3>ENVIAR</h3></a>
+				
 
+			</div>
+
+			<div class="row">
+				<div class="container">
+					<a onclick="createProjectValidate()" class="btn btn-primary btn-file border-btn bk-green float-right"><h3>ENVIAR</h3></a>	
+				</div>
 			</div>
 
 
@@ -125,21 +173,73 @@
 		window.count=1;
 	</script>
 	<script>
+		 function insertVideoOnIframe(id){
+
+		
+
+			var linkYoutube = $("input[name=video_"+id+"]").val();
+			match = validateYoutubeLink(linkYoutube); 
+			if ( match != false) {        
+		       
+		                
+	            $('#video-preview-'+id).attr('src', 'https://www.youtube.com/embed/' + match[2] + '?autoplay=1&enablejsapi=1');
+
+	            $('#video-preview-'+id).attr('height', '500px');
+	        
+	            $('#video-preview-'+id).attr('width', '100%');
+
+	            $('#video-preview-'+id).css('margin-bottom', '42px');
+	        
+	            $("#video"+id+"Error").fadeOut();
+			
+				imgPresentacionValidated = true;
+		        
+		         
+	    	}else{
+	            $('#videoObject').attr('src', '');
+	            $('#videoObject').attr('height', '0px');
+	            $('#videoObject').attr('width', '0px');
+	            $('#video-preview-'+id).css('margin-bottom', '0');
+	    	}
+		};
+	</script>
+	<script>
 		function createProjectValidate(){
 
 			tinyMCE.triggerSave();
 
 			var titulo = $("input[name=titulo]").val();
+			
 			var descripcion = $("#descripcion").val();
+			
 			var imgPresentacion = $("input[name=img_presentacion]").val();
+			
 			var imgSlide1 = $("input#file-input-1").val();
 			var imgSlide2 = $("input#file-input-2").val();
 
+			var video1 = $("input[name=video_1]").val();
+			var video2 = $("input[name=video_2]").val();
+
+			
+
+
 			var tituloValidated = false;
+			
 			var descripcionValidated = false;
+			
 			var imgPresentacionValidated = false;
+
+
+			
 			var imgSlide1Validated = false;
+			
 			var imgSlide2Validated = false;
+
+
+			var video1Validated = false; 
+
+			var video2Validated = false;
+
 
 
 			if(titulo.length == 0){

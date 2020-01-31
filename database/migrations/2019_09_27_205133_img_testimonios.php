@@ -14,10 +14,10 @@ class ImgTestimonios extends Migration
     public function up()
     {
         Schema::create('img_testimonio', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('ruta',200);
             $table->string('nombre',200);
-            $table->unsignedBigInteger('testimonio_id');
+            $table->unsignedInteger('testimonio_id');
 
              $table->foreign('testimonio_id')->references('id')->on('testimonios');
          

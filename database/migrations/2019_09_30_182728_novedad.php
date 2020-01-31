@@ -14,7 +14,7 @@ class Novedad extends Migration
     public function up()
     {
          Schema::create('novedades', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->text('descripcion'); 
             $table->string('titulo',200);
              

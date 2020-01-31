@@ -29876,7 +29876,7 @@ if (document.getElementById('proyectos')) {
   __webpack_require__(/*! ./scripts/updateSortable_UpdateProject */ "./resources/js/admin/scripts/updateSortable_UpdateProject.js");
 }
 
-if (document.getElementById('testimonios')) {
+if (document.getElementById('testimonios') || document.getElementById('proyectos')) {
   __webpack_require__(/*! ./scripts/validateYoutubeLink */ "./resources/js/admin/scripts/validateYoutubeLink.js");
 }
 

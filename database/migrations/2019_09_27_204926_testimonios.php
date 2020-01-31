@@ -14,7 +14,7 @@ class Testimonios extends Migration
     public function up()
     {
         Schema::create('testimonios', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('link_youtube',200); 
             $table->string('titulo',200); 
         });

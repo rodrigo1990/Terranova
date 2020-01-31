@@ -108,5 +108,25 @@ class DatabaseSeeder extends Seeder
             'link_youtube' => 'xGCQ9DI_IkM',
             'titulo' => 'LLEGAR AL TERRENO PROPIO: 1500 SUEÑOS CUMPLIDOS',
         ]);
+
+
+
+
+         DB::table('testimonios')->insert([
+            'link_youtube' => 'wSpX8ePQ0Jg',
+            'titulo' => 'Barrio Parque Los Robles - Testimonio Marcela y Ariel',
+        ]);
+
+
+         DB::table('testimonios')->insert([
+            'link_youtube' => 'o8epUj4R9No',
+            'titulo' => 'Barrio Parque Derqui - Testimonio Alejandro',
+        ]);
+
+
+         DB::table('testimonios')->insert([
+            'link_youtube' => '4gSPgbR_L7k',
+            'titulo' => 'Barrio Parque Sakura III - Testimonio Maria y Marcelo',
+        ]);
     }
 }
