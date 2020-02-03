@@ -2,6 +2,7 @@
 	@section('main')
 	<section id="proyectos">
 		<h1>PROYECTOS</h1>
+		<p><i><span>*</span>Indica campos obligatorios</i></p>
 		
 		<br><br>
 		<form action="/admin/createProyecto" method="POST" enctype="multipart/form-data">
@@ -9,7 +10,7 @@
 			<div class="container">
 					
 					<div class="row">
-					<label for="titulo">Titulo</label>
+					<label for="titulo">Titulo <span>*</span></label>
 					<input type="text" class="form-control" name="titulo">
 					<p class="error" id="tituloError">
 						Ingrese un titulo
@@ -31,10 +32,10 @@
 
 					<br>
 					<br>
-
+					
 					<div class="row">
 					
-						<label for="descripcion">Descripción</label>
+						<label for="descripcion">Descripción <span>*</span></label>
 						<textarea  name="descripcion" id="" cols="30" rows="10"></textarea>
 						
 						<p class="error" id="descripcionError">
@@ -42,6 +43,137 @@
 						</p>
 					
 
+					</div>
+					
+					<br><br>
+
+					<div class="row">
+					
+						<label for="masterplan">Masterplan <span>*</span></label>
+						<input type="file" name="masterplan" id="masterplan" class="form-control">
+						
+						<p class="error" id="masterplanError">
+							Ingrese un masterplan
+						</p>
+					
+
+					</div>
+				
+					<br><br>
+
+					<div class="row" id="como-llegar">
+						<h2 class="text-left" style="display:block;">COMO LLEGAR</h2>
+						<br>	
+						
+						<div class="col-sm-12">
+							<h3>¿Cerca de que estación?</h3>
+							<input type="text" name="estacion" id="estacion" class="form-control" placeholder="Ej: Estacion del tren B. Mitre">
+						</div>
+						<div id="lineas-colectivo" class="col-sm-12" style="margin-top:20px;">
+							<h3>Lineas de colectivo</h3>
+							<ul>
+								<li>
+									<label for="lineasColectivos[]">Linea de colectivo 1 </label>
+									<input type="text" name="lineasColectivos[]" class="lineasColectivos form-control" placeholder="501 Astolfi - Pilar">
+									
+									<p class="error" id="lineasColectivosError">
+										Ingrese una caracteristica
+									</p>
+								</li>
+							</ul>
+
+
+							<div class="col-lg-6 col-md-6 col-sm-6">
+							
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6">
+									
+								<a style="display:none" id="remove-lc-btn" onClick="eliminarLineasColectivo()" class="small-btn red float-right" ><i class="fas fa-minus"></i></a>
+
+
+								<a onClick="agregarLineasColectivo()" class="small-btn blue float-right margin-right-15"><i class="fas fa-plus"></i></a>
+								
+							</div>
+
+
+						</div>
+							
+					
+					</div>
+
+					<br><br>
+
+					<div class="row" id="caracteristicas">
+						<h2 class="text-left" style="display:block;">CARACTERISTICAS</h2>
+						<br>	
+						<ul>
+							<li>
+								<label for="caracteristicas[]">Caracteristica 1 </label>
+								<input type="text" name="caracteristicas[]" class="caracteristicas form-control">
+								
+								<p class="error" id="caracteristicaError">
+									Ingrese una caracteristica
+								</p>
+							</li>
+						</ul>
+							
+						
+
+						<div class="col-lg-6 col-md-6 col-sm-6">
+						
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6">
+								
+							<a style="display:none" id="remove-carac-btn" onClick="eliminarCaracteristicas()" class="small-btn red float-right" ><i class="fas fa-minus"></i></a>
+
+
+							<a onClick="agregarCaracteristicas()" class="small-btn blue float-right margin-right-15"><i class="fas fa-plus"></i></a>
+							
+						</div>
+
+					</div>
+					<br><br>
+					<div class="row" id="servicios">
+						<h2 class="text-left" style="display:block;">SERVICIOS</h2>
+						<br>	
+						<ul>
+							<li>
+								<label for="servicios[]">Servicio 1 </label>
+								<input type="text" name="servicios[]" class="servicios form-control">
+								
+								<p class="error" id="servicioError">
+									Ingrese un servicio
+								</p>
+							</li>
+						</ul>
+							
+						
+
+						<div class="col-lg-6 col-md-6 col-sm-6">
+						
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6">
+								
+							<a style="display:none" id="remove-serv-btn" onClick="eliminarServicios()" class="small-btn red float-right" ><i class="fas fa-minus"></i></a>
+
+
+							<a onClick="agregarServicios()" class="small-btn blue float-right margin-right-15"><i class="fas fa-plus"></i></a>
+							
+						</div>
+
+					</div>
+					<br><br>
+					<div class="row">
+						<h2 class="text-left" style="display:block;">UBICACION <span>*</span></h2>
+						<br>
+						<div class="col-sm-12 map-cont">
+							<input type="hidden" id="latitud" name="latitud">
+							<input type="hidden" id="longitud" name="longitud">
+							<input id="search-box" type="text" class="form-control" placeholder="Escribí la dirección exacta">
+							<div id="map" style="height:400px;width:100%"></div>
+							<div class="error" id="coordenadas-error">Ingrese una ubicación en el mapa</div>
+
+						</div>
 					</div>
 					<br><br>
 
@@ -53,7 +185,7 @@
 						<div class="col-sm-12">
 						
 							<label for="video_1">VIDEO 1 </label>
-							<input type="text" name="video_1" class="form-control" onKeyUp="insertVideoOnIframe(1)">
+							<input type="text" name="video_1" class="form-control" onchange="insertVideoOnIframe(1)">
 							<div class="error" id="video1Error">Ingrese un video valido</div>
 
 							<iframe id="video-preview-1" class="video-preview" type="text/html" height="0px" frameborder="0"  allowfullscreen></iframe>
@@ -62,16 +194,15 @@
 						<div class="col-sm-12">
 							
 							<label for="video_2">VIDEO 2 </label>
-							<input type="text" name="video_2" class="form-control" onKeyUp="insertVideoOnIframe(2)">
+							<input type="text" name="video_2" class="form-control" onchange="insertVideoOnIframe(2)">
 							<div class="error" id="video2Error">Ingrese un video valido</div>
 
 							<iframe id="video-preview-2" class="video-preview" height="0px" type="text/html" frameborder="0"  allowfullscreen></iframe>
 						</div>
 					</div>
-					<br><br>
 					<div class="row">
 						<div  id="presentacion" class="row">
-							<h2>IMAGEN DE PRESENTACIÓN</h2>
+							<h2>IMAGEN DE PRESENTACIÓN <span>*</span></h2>
 
 							<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion">
 								<span  class="btn btn-primary btn-file border-btn blue float-right" >
@@ -91,7 +222,7 @@
 					</div>
 					<br><br>
 		 		<div class="row">
-		 			<h2>SLIDER</h2>
+		 			<h2>SLIDER <span>*</span></h2>
 					<ul class="flex" id="file-input-cont">
 
 						<li id="item_1" class="li-file-input">
@@ -167,11 +298,277 @@
 	
 
 	@section('scripts')
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 	  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkne1gpPfJ0B3KrE4OQURwPi492LDjg8g&libraries=places"
+  type="text/javascript"></script>
+ 	 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<!-- CUENTA ITEMS AGREGADO E ELIMINADOS EN SUS RESPECTOS ARCHIVOS -->
 	<script>
 		window.count=1;
+		window.markers = [];//array que tendra todos los marker de todos los mapas
+		window.serv = 1 ; 
+		window.carac = 1 ; 
+		window.lc = 1 ; 
+
 	</script>
+	<script>
+		$(document).ready(function(){
+
+			initMap(0,0,0);
+
+		});
+	</script>
+	<script>
+		function eliminarLineasColectivo(){
+			
+			
+			$('#lc-li-'+lc+'').fadeOut(function(){
+				$('#lc-li-'+lc+'').remove();
+
+				lc--;
+
+				if(lc==1){
+					$("#remove-lc-btn").fadeOut();
+				}
+			});
+
+			
+		}
+
+		function agregarLineasColectivo(){
+			lc++;
+			if(lc>1){
+				$("#remove-lc-btn").fadeIn();
+			}
+			$("#lineas-colectivo ul ").append('<li id="lc-li-'+lc+'"> <label for="lineasColectivos[]">Linea de coelctivo '+lc+' </label> <input type="text" name="lineasColectivos[]" class="caracteristicas form-control"> <p class="error" id="caracteristicaError"> Ingrese una caracteristica </p> </li>');
+
+
+		}
+	</script>
+	<script>
+		function eliminarCaracteristicas(){
+			
+			
+			$('#carac-li-'+carac+'').fadeOut(function(){
+				$('#carac-li-'+carac+'').remove();
+
+				carac--;
+
+				if(carac==1){
+					$("#remove-carac-btn").fadeOut();
+				}
+			});
+
+			
+		}
+
+		function agregarCaracteristicas(){
+			carac++;
+			if(carac>1){
+				$("#remove-carac-btn").fadeIn();
+			}
+			$("#caracteristicas ul ").append('<li id="carac-li-'+carac+'"> <label for="servicios[]">Caracteristica '+carac+' </label> <input type="text" name="caracteristicas[]" class="caracteristicas form-control"> <p class="error" id="caracteristicaError"> Ingrese una caracteristica </p> </li>');
+
+
+		}
+	</script>
+	<script>
+		function eliminarServicios(){
+			
+			
+			$('#serv-li-'+serv+'').fadeOut(function(){
+				$('#serv-li-'+serv+'').remove();
+
+				serv--;
+
+				if(serv==1){
+					$("#remove-serv-btn").fadeOut();
+				}
+			});
+
+			
+		}
+
+		function agregarServicios(){
+			serv++;
+			if(serv>1){
+				$("#remove-serv-btn").fadeIn();
+			}
+			$("#servicios ul ").append('<li id="serv-li-'+serv+'"> <label for="servicios[]">Servicio '+serv+' </label> <input type="text" name="servicios[]" class="servicios form-control"> <p class="error" id="servicioError"> Ingrese un servicio </p> </li>');
+
+
+		}
+	</script>
+	<script>
+      	function initMap(mapa_id='map',latitud,longitud) {
+
+
+
+		  	// La locacion iniciliada
+		  	var locacion = {lat: -34.491485, lng: -58.511086};
+		  	// El mapa centrado en las coordenadas de inicializacion
+		  	var map = new google.maps.Map(
+			      document.getElementById('map'), {
+			      	zoom: 10,
+		      	 	center: locacion,
+		      	 	streetViewControl:false,
+		      	 	mapTypeControl:false
+		      	 	});
+		  	// The marker, positioned at Uluru
+		  	//var marker = new google.maps.Marker({position: locacion, map: map});
+
+		  	//agrego un nuevo marquer a su mapa correspondiente con su id
+			//markers.push(marker);
+
+
+
+
+
+  			//evento para elegir lugares
+	 		google.maps.event.addListener(map, 'click', function(event) {
+	 			console.log(map);
+	    		placeMarker(map,event.latLng,mapa_id);
+		  	});
+
+		  	/******************CREACION DE INPUT PARA BUSCAR LUGARES***************************/
+		 // Create the search box and link it to the UI element.
+        var input = document.getElementById('search-box');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+
+
+		
+
+
+		 // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+         deleteMarkers(mapa_id);
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+             placeMarker(map,place.geometry.location,mapa_id)
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+
+            getCoordinates(map,mapa_id);
+
+          });
+          map.fitBounds(bounds);
+        });
+
+        //getCoordinates(map,mapa_id);
+			
+		}//function init maps 
+
+
+			//tomo las coordenadas de cada posicion de cada mapa
+			function getCoordinates(map){
+				$("#latitud").val(map.getCenter().lat());
+				$("#longitud").val(map.getCenter().lng());
+				/*alert();
+	      	  	alert();*/
+
+
+	      	  	/*console.log(map.getCenter().lat());
+
+	      	  	console.log(map.getCenter().lng());*/
+			}
+
+			//funcion para fijar marcadores
+		  	function placeMarker(map,location,mapa_id) {
+		  		 
+		  		 console.log('map');
+		  		 
+		  		//creo un nuevo marker 	
+				var marker = new google.maps.Marker({
+				  position: location, //posicion del marker pasado como parametro 
+				  map: map // ese marker tendra el mapa pasado como parametro
+				});
+
+
+				//establezco un id al marker, este sera el id del mapa pasado como parametro
+		  		marker.set("id", map.get("id"));
+				console.log(map.get("id"));
+		  		//centrar el mapa en la posicion
+				map.setCenter(location);
+
+				//tomo las coordenadas del mapa
+				getCoordinates(map,mapa_id);
+
+				//borro todos los marker con x id (que seran los marker del mapa x)
+				deleteMarkers(marker.get("id"));
+
+				//agrego un nuevo marquer a su mapa correspondiente con su id
+				markers.push(marker);
+
+				  
+
+			}
+
+
+
+
+	      // Deletes all markers in the array by removing references to them.
+	      function deleteMarkers(id) {
+	      	//recorro el array markers el cual tendra todos los markers de todos los mapas
+	        for (var i = 0; i <markers.length; i++) {
+
+	        	//busco los marker a eliminar
+				if(markers[i]['id']==id){
+					markers[i].setMap(null);
+				}
+
+
+	        }//for
+	        
+	      }//function delete marker
+
+
+
+
+		
+
+		//id_locacion lo usaremos para borrar la locacion de la base de datos
+		/*function eliminarLocacion(id_locacion,mapa_id){
+		$("#locacion"+mapa_id+"").remove();
+
+		
+
+		console.log(y);
+	}*/
+    </script>
 	<script>
 		 function insertVideoOnIframe(id){
 
@@ -196,9 +593,9 @@
 		        
 		         
 	    	}else{
-	            $('#videoObject').attr('src', '');
-	            $('#videoObject').attr('height', '0px');
-	            $('#videoObject').attr('width', '0px');
+	            $('#video-preview-'+id).attr('src', '');
+	            $('#video-preview-'+id).attr('height', '0px');
+	            $('#video-preview-'+id).attr('width', '0px');
 	            $('#video-preview-'+id).css('margin-bottom', '0');
 	    	}
 		};
@@ -220,7 +617,9 @@
 			var video1 = $("input[name=video_1]").val();
 			var video2 = $("input[name=video_2]").val();
 
-			
+			var latitud = $("input[name=latitud]").val();
+			var longitud = $("input[name=longitud]").val();
+
 
 
 			var tituloValidated = false;
@@ -239,6 +638,9 @@
 			var video1Validated = false; 
 
 			var video2Validated = false;
+
+
+			var coordenadasValidated = false;
 
 
 
@@ -277,6 +679,14 @@
 			}else{
 				$("#imgSlide2-error").fadeOut();
 				imgSlide2Validated=true;
+			}
+
+
+			if(latitud.length == 0 || longitud.length == 0){
+				$("#coordenadas-error").fadeIn();
+			}else{
+				$("#coordenadas").fadeOut();
+				coordenadasValidated=true;
 			}
 
 			var k = $('.li-file-input').not('.li-file-input.ui-sortable-handle').length;

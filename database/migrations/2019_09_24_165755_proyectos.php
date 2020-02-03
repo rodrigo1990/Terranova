@@ -18,6 +18,9 @@ class Proyectos extends Migration
             $table->text('descripcion');
             $table->string('titulo',200);
             $table->unsignedInteger('zona_id');
+            $table->string('latitud');
+            $table->string('longitud');
+            $table->string('estacion')->nullable();
 
             $table->foreign('zona_id')->references('id')->on('zonas');
          

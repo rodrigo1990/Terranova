@@ -67,7 +67,7 @@
 	<script>
 
 
-		$("input[name=linkYoutube]").keyup(function() {
+		$("input[name=linkYoutube]").change(function() {
 
 			var linkYoutube = $("input[name=linkYoutube]").val();
 			match = validateYoutubeLink(linkYoutube); 

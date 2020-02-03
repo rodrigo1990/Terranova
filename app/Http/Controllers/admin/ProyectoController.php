@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Proyecto;
 use App\Img;
 use App\ProyectoVideo;
+use App\Servicio;
+use App\Caracteristica;
+use App\LineaColectivo;
+use App\Masterplan;
 use Illuminate\Support\Facades\Storage;
 use  App\Http\Controllers\admin\Controller;
 
@@ -23,7 +27,56 @@ class ProyectoController extends Controller
 
 		 	$proyecto->zona_id = $request->zona;
 
+		 	$proyecto->latitud = $request->latitud;
+
+		 	$proyecto->longitud = $request->longitud;
+
+		 	if($request->estacion != null){
+		 		$proyecto->estacion = $request->estacion;
+		 	}
+
 		 	$proyecto->save();
+
+
+		 	if($request->masterplan){
+
+ 			 	//IMAGEN PRESENTACION
+ 			 	$masterplan = new Masterplan();
+ 	
+ 			 	$name = rand(0,99999999);
+ 	
+ 			 	$format = $request->masterplan->extension();
+ 	
+ 			 	$masterplan->ruta = "".$name.".".$format."";
+ 	
+ 			 	$masterplan->nombre = $request->masterplan->getClientOriginalName(); 
+ 	
+ 			 	$path = $request->masterplan->storeAs('/archivos/proyectos/masterplans/',$masterplan->ruta,'public');
+ 	
+ 	 	
+ 			 	$proyecto->masterplan()->save($masterplan);
+ 			 		
+		 	}
+
+
+		 	if($request->lineasColectivos != null){
+		 		
+		 		foreach ($request->lineasColectivos as $lineaColectivo) {
+		 			
+		 			if($lineaColectivo != null){
+		 			
+			 			$lineaColectivoObj = new LineaColectivo();
+			 			$lineaColectivoObj->descripcion = $lineaColectivo; 
+			 			$proyecto->lineaColectivo()->save($lineaColectivoObj);
+
+		 			}
+
+		 		}
+		 	}
+
+
+
+
 
 		 	if($request->video_1 != null){
 		 		$video1 = new ProyectoVideo();
@@ -36,6 +89,41 @@ class ProyectoController extends Controller
 		 		$video2 = new ProyectoVideo();
 		 		$video2->url = $request->video_2;
 		 		$proyecto->video()->save($video2);
+		 	}
+
+		 	if($request->caracteristicas != null){
+		 		
+		 		foreach ($request->caracteristicas as $caracteristica) {
+		 			
+		 			if($caracteristica != null){
+		 			
+			 			$caracteristicaObj = new Caracteristica();
+			 			$caracteristicaObj->descripcion = $caracteristica; 
+			 			$proyecto->caracteristica()->save($caracteristicaObj);
+
+		 			}
+
+		 		}
+		 	}
+
+
+
+
+
+
+		 	if($request->servicios != null){
+		 		
+		 		foreach ($request->servicios as $servicio) {
+		 			
+		 			if($servicio != null){
+		 			
+			 			$servicioObj = new Servicio();
+			 			$servicioObj->descripcion = $servicio; 
+			 			$proyecto->servicio()->save($servicioObj);
+
+		 			}
+
+		 		}
 		 	}
 
 		 	if($request->img_presentacion){
@@ -51,7 +139,7 @@ class ProyectoController extends Controller
  	
  			 	$img_presentacion->nombre = $request->img_presentacion->getClientOriginalName(); 
  	
- 			 	$path = $request->img_presentacion->storeAs('proyectos/',$img_presentacion->ruta,'public');
+ 			 	$path = $request->img_presentacion->storeAs('/img/proyectos/',$img_presentacion->ruta,'public');
  	
  	
  			 	$img_presentacion->tipo='PRESENTACION';
@@ -72,7 +160,7 @@ class ProyectoController extends Controller
 
 			 	$img->nombre = $request->img[$i]->getClientOriginalName(); 
 
-			 	$path = $request->img[$i]->storeAs('proyectos/',$img->ruta,'public');
+			 	$path = $request->img[$i]->storeAs('/img/proyectos/',$img->ruta,'public');
 
 			 	$img->order = $i;
 

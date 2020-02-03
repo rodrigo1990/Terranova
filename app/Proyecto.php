@@ -22,4 +22,22 @@ class Proyecto extends Model
     public function video(){
     	return $this->hasMany('App\ProyectoVideo');	
     }
+
+
+    public function servicio(){
+        return $this->hasMany('App\Servicio'); 
+    }
+
+
+    public function caracteristica(){
+        return $this->hasMany('App\Caracteristica'); 
+    }
+
+    public function lineaColectivo(){
+        return $this->hasMany('App\LineaColectivo'); 
+    }
+
+    public function masterplan(){
+        return $this->hasMany('App\Masterplan'); 
+    }
 }

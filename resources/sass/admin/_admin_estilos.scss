@@ -15,6 +15,11 @@ html{
   color:$black;
 }
 
+label, h2, i{
+  span{
+    color:red;
+  }
+}
 
 .bk-green{
   background: $primary-color !important;
@@ -258,7 +263,7 @@ ul#file-input-cont li,ul#file-input-cont li{
 
 
 .small-btn{
-     
+     background:$primary-color;
     color: white;
         width: 70px;
     padding: 5px;
@@ -274,6 +279,8 @@ ul#file-input-cont li,ul#file-input-cont li{
 }
 
 .small-btn:hover{
+  background:$light-gray;
+  color:$primary-color;
   -webkit-box-shadow: inset 0px 2px 10px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: inset 0px 2px 10px 0px rgba(0,0,0,0.75);
     box-shadow: inset 0px 2px 10px 0px rgba(0,0,0,0.75);
