@@ -47,30 +47,10 @@
 					<div class="row">
 					
 						<label for="masterplan">Masterplan</label>
-						
-						@if(isset($proyecto->masterplan[0]))
-						<div id="masterplanExist" class="flex center-vertically" style="border:1px solid #ccc;border-radius:5px;height: 100px;padding:7px;width: 50%;position:relative;">
-
-							<a onClick="eliminarMasterplan({{$proyecto->id}})" style="position: absolute;right:5px;top:5px;">
-								<i class="fas fa-times-circle"></i>
-							</a>
-							
-							<label id="fileLabel" class="text-center" style="">
-								{{$proyecto->masterplan[0]->nombre}}
-							</label>
-						
+						<div style="border:1px solid #ccc;border-radius:5px;height: 40px;padding:7px">
+						<input type="file"  name="masterplan" id="masterplan" class="" value="" placeholder="Ingresa el archivo bo" style="color:transparent  !important;float:left;    width: 150px;" onChange="$(this).css('color','black');$(this).css('width','100%');$('#fileLabel').remove()">
+						<label id="fileLabel" style="float:left;">{{$proyecto->masterplan[0]->nombre}}</label>
 						</div>
-
-						<div id="masterplanInput"></div>
-						@else
-							<label for="masterplan">Masterplan</label>
-							<input type="file" name="masterplan" id="masterplan" class="form-control">
-							
-							<p class="error" id="masterplanError">
-								Ingrese un masterplan
-							</p>
-					
-						@endif
 						
 						<p class="error" id="masterplanError">
 							Ingrese un masterplan
@@ -103,15 +83,26 @@
 								@foreach($proyecto->lineaColectivo as $lineaColectivo)
 									<?php $counterLc++ ?>
 								
-									<li>
-										<label for="lineasColectivos[]">Linea de colectivo {{$counterLc}} </label>
-										<input type="text" name="lineasColectivosExistentes[{{$lineaColectivo->id}}]" class="lineasColectivos form-control" placeholder="501 Astolfi - Pilar" value="{{$lineaColectivo->descripcion}}">
+									<li id="lc-li-{{$counterLc}}">
+										<label for="lineasColectivos[]" style="display:block !important;width: 100% !important;">Linea de colectivo {{$counterLc}} </label>
+
+										<div style="height: 50px;">
+										
+											<input type="text" name="lineasColectivos[{{$lineaColectivo->id}}]" class="lineasColectivos form-control" placeholder="501 Astolfi - Pilar" value="{{$lineaColectivo->descripcion}}" style="float:left;width: 98% !important;">
+											
+											<a  style="float:left;width: 1%;height: 100%;" onClick="eliminarLineasColectivo({{$lineaColectivo->id}})">
+												<i class="fas fa-times-circle" style="line-height: 3;"></i>
+											</a>
+
+										</div>
 										
 							
 										<p class="error" id="lineasColectivosError">
 											Ingrese una caracteristica
 										</p>
 
+
+										<input type="hidden" id="lineasColectivoId{{$lineaColectivo->id}}" value="{{$lineaColectivo->id}}">
 							
 									</li>
 
@@ -124,8 +115,24 @@
 							
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6">
-									
-								<a style="display:none" id="remove-lc-btn" onClick="eliminarLineasColectivo()" class="small-btn red float-right" ><i class="fas fa-minus"></i></a>
+								
+								 	
+								<a
+ 
+										style="display:none"
+								
+					
+
+								 id="remove-lc-btn"
+
+								  onClick="eliminarLineasColectivo()"
+
+								   class="small-btn red float-right" >
+
+
+								 <i class="fas fa-minus"></i>
+
+								</a>
 
 
 								<a onClick="agregarLineasColectivo()" class="small-btn blue float-right margin-right-15"><i class="fas fa-plus"></i></a>
@@ -153,7 +160,7 @@
 							
 								<li>
 									<label for="caracteristicas[]">Caracteristica {{$counterCaracteristica}} </label>
-									<input type="text" name="caracteristicasExistentes[{{$caracteristica->id}}]" class="caracteristicas form-control" value="{{$caracteristica->descripcion}}">
+									<input type="text" name="caracteristicas[]" class="caracteristicas form-control" value="{{$caracteristica->descripcion}}">
 									
 									<p class="error" id="caracteristicaError">
 										Ingrese una caracteristica
@@ -190,7 +197,7 @@
 
 								<li>
 									<label for="servicios[]">Servicio 1 </label>
-									<input type="text" name="serviciosExistentes[{{$servicio->id}}]" class="servicios form-control" value="{{$servicio->descripcion}}">
+									<input type="text" name="servicios[]" class="servicios form-control" value="{{$servicio->descripcion}}">
 									
 									<p class="error" id="servicioError">
 										Ingrese un servicio
@@ -206,7 +213,7 @@
 						
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6">
-								
+							
 							<a style="display:none" id="remove-serv-btn" onClick="eliminarServicios()" class="small-btn red float-right" ><i class="fas fa-minus"></i></a>
 
 
@@ -430,18 +437,10 @@
 	<script>
 			window.count={{$count}};
 			window.markers = [];//array que tendra todos los marker de todos los mapas
-			
-			window.serv = 1 ;
-			window.servLimit = {{$counterServicios}} ; 
-			
-			window.carac = {{$counterCaracteristica}} ;
-			window.caracLimit = {{$counterCaracteristica}} ; 
-			
-			window.lc = {{$counterLc}};
-			window.lcLimit = {{$counterLc}}; 
-
+			window.serv = 1 ; 
+			window.carac = {{$counterCaracteristica}} ; 
+			window.lc = {{$counterLc}} ; 
 			console.log("count"+count);	
-			console.log("carac"+carac);
 	</script>
 	<script>
 		$(document).ready(function(){
@@ -454,25 +453,49 @@
 		});
 	</script>
 	<script>
-		function eliminarLineasColectivo(){
+		function eliminarLineasColectivo(idParameter){
 			
+			var c = confirm('¿Desea eliminar esta linea de colectivo?');
+
+			if(c == true){
+
+		
+	    	 id = $("#lineasColectivoId"+idParameter).val();
+
+
+	    	 $.ajax({
+            headers:{
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+		        data:{id:id},
+		        url:"/eliminarImagen",
+		        type:'post',
+		        dataType:"json",
+		        success:function(response){
+		          
+		        	$('#lc-li-'+lc+'').fadeOut(function(){
+						$('#lc-li-'+lc+'').remove();
+
+						lc--;
+
+						if(lc==1){
+							$("#remove-lc-btn").fadeOut();
+						}
+					});
+
+
+		        }
+		        });
 			
-			$('#lc-li-'+lc+'').fadeOut(function(){
-				$('#lc-li-'+lc+'').remove();
+				
 
-				lc--;
-
-				if(lc==lcLimit){
-					$("#remove-lc-btn").fadeOut();
-				}
-			});
+			}
 
 			
 		}
 
 		function agregarLineasColectivo(){
 			lc++;
-			if(lc>lcLimit){
+			if(lc>1){
 				$("#remove-lc-btn").fadeIn();
 			}
 			$("#lineas-colectivo ul ").append('<li id="lc-li-'+lc+'"> <label for="lineasColectivos[]">Linea de coelctivo '+lc+' </label> <input type="text" name="lineasColectivos[]" class="caracteristicas form-control"> <p class="error" id="caracteristicaError"> Ingrese una caracteristica </p> </li>');
@@ -489,7 +512,7 @@
 
 				carac--;
 
-				if(carac==caracLimit){
+				if(carac==1){
 					$("#remove-carac-btn").fadeOut();
 				}
 			});
@@ -499,7 +522,7 @@
 
 		function agregarCaracteristicas(){
 			carac++;
-			if(carac>caracLimit){
+			if(carac>1){
 				$("#remove-carac-btn").fadeIn();
 			}
 			$("#caracteristicas ul ").append('<li id="carac-li-'+carac+'"> <label for="servicios[]">Caracteristica '+carac+' </label> <input type="text" name="caracteristicas[]" class="caracteristicas form-control"> <p class="error" id="caracteristicaError"> Ingrese una caracteristica </p> </li>');
@@ -516,7 +539,7 @@
 
 				serv--;
 
-				if(serv==servLimit){
+				if(serv==1){
 					$("#remove-serv-btn").fadeOut();
 				}
 			});
@@ -526,44 +549,12 @@
 
 		function agregarServicios(){
 			serv++;
-			if(serv>servLimit){
+			if(serv>1){
 				$("#remove-serv-btn").fadeIn();
 			}
 			$("#servicios ul ").append('<li id="serv-li-'+serv+'"> <label for="servicios[]">Servicio '+serv+' </label> <input type="text" name="servicios[]" class="servicios form-control"> <p class="error" id="servicioError"> Ingrese un servicio </p> </li>');
 
 
-		}
-	</script>
-	<script>
-		function eliminarMasterplan(proyectoId){
-			var c =  confirm('¿Desea eliminar el masterplan?');
-
-			if(c == true){
-				
-				$.ajax({
-        		    headers:{
-             			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-        			data:{id:proyectoId},
-        			url:'/admin/destroyMasterplan',
-        			type:'post',
-        			dataType:"json",
-        			success:function(response){
-
-        					console.log(response);
-         				
-         					alert(' ¡ Eliminado exitosamente ! ')
-
-         					$('#masterplanExist').fadeOut(function(){
-								$('#masterplanExist').remove();
-
-
-								$("#masterplanInput").append('<div class="row"> <input type="file" name="masterplan" id="masterplan" class="form-control"> <p class="error" id="masterplanError"> Ingrese un masterplan </p> </div>' );
-							});
-         					
-        				}
-        			});
-
-			}
 		}
 	</script>
 	<script>

@@ -99,7 +99,7 @@ h2 {
   margin-top:45px;
 }
 
- ul.flex,#especialidadesExistentes ul.flex{
+ .flex,#especialidadesExistentes .flex{
       display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -107,6 +107,11 @@ h2 {
     margin: auto;
     padding: 0;
 
+}
+
+
+.flex.center-vertically{
+  align-content:center;
 }
 
 a{

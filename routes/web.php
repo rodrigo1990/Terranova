@@ -74,6 +74,9 @@ Route::post('/admin/updateNovedad', 'admin\NovedadController@updateNovedad');
 Route::post('/admin/destroyImgNovedad/', 'admin\NovedadController@destroyImg');
 
 
+Route::post('/admin/destroyMasterplan', 'admin\ProyectoController@destroyMasterplan');
+
+
 
 
 

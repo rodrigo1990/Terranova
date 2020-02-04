@@ -49,7 +49,7 @@
 
 					<div class="row">
 					
-						<label for="masterplan">Masterplan <span>*</span></label>
+						<label for="masterplan">Masterplan</label>
 						<input type="file" name="masterplan" id="masterplan" class="form-control">
 						
 						<p class="error" id="masterplanError">

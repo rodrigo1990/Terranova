@@ -60,8 +60,16 @@ class FrontController extends Controller
 
      public function viewUpdateProyecto(Request $request){
         if($this->sessionService->accessSessionData()=="true"){
-         	$proyecto = Proyecto::with('zona')->find($request->id);
+
+         	$proyecto = Proyecto::with('zona')
+                                ->with('lineaColectivo')
+                                ->with('caracteristica')
+                                ->with('video')
+                                ->with('masterplan')
+                                ->find($request->id);
+            
             $imagenes = Img::where('proyecto_id',$request->id)->orderBy('order','asc')->get(); 
+            
             $zonas = Zona::all();
 
         	return view('admin.proyecto.updateProyecto', compact('proyecto','imagenes','zonas'));
