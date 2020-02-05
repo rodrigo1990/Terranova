@@ -29864,6 +29864,8 @@ __webpack_require__(/*! ./scripts/eliminarImagenes */ "./resources/js/admin/scri
 
 __webpack_require__(/*! ./scripts/inputFileChange */ "./resources/js/admin/scripts/inputFileChange.js");
 
+__webpack_require__(/*! ./scripts/masterplanChange */ "./resources/js/admin/scripts/masterplanChange.js");
+
 __webpack_require__(/*! ./scripts/readURL */ "./resources/js/admin/scripts/readURL.js");
 
 __webpack_require__(/*! ./scripts/resetInputFile */ "./resources/js/admin/scripts/resetInputFile.js");
@@ -29898,7 +29900,7 @@ window.agregarImagenes = function (operacion) {
     $("#remove-esp-btn").fadeIn();
   }
 
-  if (operacion == 'create') $("#file-input-cont").append('<li id="item_' + (count + 1) + '" class="li-file-input"> <div class="preview" id="preview-' + (count + 1) + '"> <a onclick="eliminarImagenes()" class="removeBtn text-center center-block"> <i class="fas fa-times-circle"></i> </a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE ' + (count + 1) + '<input name="img[' + count + ']" type="file" id="file-input-' + (count + 1) + '" class="added"> </span> <div id="file-result-' + (count + 1) + '" class="file-result text-center"> <span id="file-img-' + (count + 1) + '"></span> </div> </div> </li>');else $("#file-input-cont").append('<li id="item_' + (count + 1) + '" class="li-file-input"> <div class="preview" id="preview-' + (count + 1) + '"> <a onclick="eliminarImagenes()" class="removeBtn text-center center-block"> <i class="fas fa-times-circle"></i> </a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE ' + (count + 1) + '<input name="img[' + (count + 1) + ']" type="file" id="file-input-' + (count + 1) + '" class="added"> </span> <div id="file-result-' + (count + 1) + '" class="file-result text-center"> <span id="file-img-' + (count + 1) + '"></span> </div> </div> </li>');
+  if (operacion == 'create') $("#file-input-cont").append('<li id="item_' + (count + 1) + '" class="li-file-input"> <div class="preview" id="preview-' + (count + 1) + '"> <a onclick="eliminarImagenes()" class="removeBtn text-center center-block"> <i class="fas fa-times-circle"></i> </a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE ' + (count + 1) + '<input name="img[' + count + ']"  class="img" type="file" id="file-input-' + (count + 1) + '" class="added"> </span> <div id="file-result-' + (count + 1) + '" class="file-result text-center"> <span id="file-img-' + (count + 1) + '"></span> </div> </div> </li>');else $("#file-input-cont").append('<li id="item_' + (count + 1) + '" class="li-file-input"> <div class="preview" id="preview-' + (count + 1) + '"> <a onclick="eliminarImagenes()" class="removeBtn text-center center-block"> <i class="fas fa-times-circle"></i> </a> <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE ' + (count + 1) + '<input name="img[' + (count + 1) + ']" class="img"  type="file" id="file-input-' + (count + 1) + '" class="added"> </span> <div id="file-result-' + (count + 1) + '" class="file-result text-center"> <span id="file-img-' + (count + 1) + '"></span> </div> </div> </li>');
 };
 
 /***/ }),
@@ -29950,7 +29952,7 @@ window.deleteImg = function (id, tipo, seccion) {
 
             if (tipo == 'presentacion') {
               $("#newImgPresentacion").hide();
-              $("#newImgPresentacion").html('<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion"> <span  class="btn btn-primary btn-file border-btn blue float-right" > IMAGEN DE PRESENTACIÓN <input name="img_presentacion" type="file" id="presentacion" class="added"> </span> <div id="file-result-presentacion" class="text-center"> <span id="file-img-presentacion"></span> </div> </div><p class="error text-center" id="imgPresentacion-error"> Ingrese una imagen </p>');
+              $("#newImgPresentacion").html('<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion"> <span  class="btn btn-primary btn-file border-btn blue float-right" > IMAGEN DE PRESENTACIÓN <input name="img_presentacion" type="file" id="presentacion" class="img added"> </span> <div id="file-result-presentacion" class="text-center"> <span id="file-img-presentacion"></span> </div> </div><p class="error text-center" id="imgPresentacion-error"> Ingrese una imagen </p>');
             }
 
             $("#newImgPresentacion").fadeIn();
@@ -29958,9 +29960,9 @@ window.deleteImg = function (id, tipo, seccion) {
 
           if (seccion == 'proyecto' && operacion == 'update' && count == -1) {
             count++;
-            $("#file-input-cont").append('<li id="item_' + count + '" class="li-file-input"> <div class="preview" id="preview-' + count + '">  <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE 1<input name="img[' + count + ']" type="file" id="file-input-' + count + '" class="added"> </span> <div id="file-result-' + count + '" class="file-result text-center"> <span id="file-img-' + count + '"></span> </div> </div><p class="error text-center" id="imgSlide1-error">Ingrese una imagen</p> </li>');
+            $("#file-input-cont").append('<li id="item_' + count + '" class="li-file-input"> <div class="preview" id="preview-' + count + '">  <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE 1<input name="img[' + count + ']" type="file" id="file-input-' + count + '" class="img added"> </span> <div id="file-result-' + count + '" class="file-result text-center"> <span id="file-img-' + count + '"></span> </div> </div><p class="error text-center" id="imgSlide1-error">Ingrese una imagen</p> </li>');
             count++;
-            $("#file-input-cont").append('<li id="item_' + count + '" class="li-file-input"> <div class="preview" id="preview-' + count + '">  <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE 2<input name="img[' + count + ']" type="file" id="file-input-' + count + '" class="added"> </span> <div id="file-result-' + count + '" class="file-result text-center"> <span id="file-img-' + count + '"></span> </div> </div><p class="error text-center" id="imgSlide2-error">Ingrese una imagen</p></li>');
+            $("#file-input-cont").append('<li id="item_' + count + '" class="li-file-input"> <div class="preview" id="preview-' + count + '">  <span  class="btn btn-primary btn-file border-btn blue float-right" > SLIDE 2<input name="img[' + count + ']" type="file" id="file-input-' + count + '" class="img added"> </span> <div id="file-result-' + count + '" class="file-result text-center"> <span id="file-img-' + count + '"></span> </div> </div><p class="error text-center" id="imgSlide2-error">Ingrese una imagen</p></li>');
           }
         } //if
 
@@ -30016,7 +30018,7 @@ window.eliminarImagenes = function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$(document).on('change', 'input[type=file]', function () {
+$(document).on('change', '.img', function () {
   var id = $(this).attr('id') == 'presentacion' ? 'presentacion' : $(this).attr('id').match(/\d+/);
   var file = $(this).val();
   var name = file.replace(/^.*[\\\/]/, '');
@@ -30027,6 +30029,7 @@ $(document).on('change', 'input[type=file]', function () {
   if (format == "jpg" || format == "jpeg" || format == "png") {
     if (file_size > 2097152) {
       alert("El archivo NO puede ser superior a 2MB");
+      $(this).val(null);
     } else {
       if (id == 'presentacion') {
         $("#file-img-presentacion").html(name);
@@ -30040,6 +30043,7 @@ $(document).on('change', 'input[type=file]', function () {
     }
   } else {
     alert("El archivo debe ser .jpg o .png");
+    $(this).val(null);
   }
 });
 
@@ -30112,6 +30116,29 @@ window.logout = function () {
 
   }); //ajax
 };
+
+/***/ }),
+
+/***/ "./resources/js/admin/scripts/masterplanChange.js":
+/*!********************************************************!*\
+  !*** ./resources/js/admin/scripts/masterplanChange.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).on('change', '.masterplan', function () {
+  var id = $(this).attr('id') == 'presentacion' ? 'presentacion' : $(this).attr('id').match(/\d+/);
+  var file = $(this).val();
+  var name = file.replace(/^.*[\\\/]/, '');
+  console.log(name);
+  var file_size = $(this)[0].files[0].size;
+  format = file.split('.').pop();
+
+  if (format == "pdf") {} else {
+    alert("El archivo debe ser .pdf");
+    $(this).val(null);
+  }
+});
 
 /***/ }),
 

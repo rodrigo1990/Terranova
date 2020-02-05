@@ -50,7 +50,7 @@
 					<div class="row">
 					
 						<label for="masterplan">Masterplan</label>
-						<input type="file" name="masterplan" id="masterplan" class="form-control">
+						<input type="file" name="masterplan" id="masterplan" class="masterplan form-control">
 						
 						<p class="error" id="masterplanError">
 							Ingrese un masterplan
@@ -186,6 +186,7 @@
 						
 							<label for="video_1">VIDEO 1 </label>
 							<input type="text" name="video_1" class="form-control" onchange="insertVideoOnIframe(1)">
+							<input type="hidden" class="form-control" name="youTubeCode_1">
 							<div class="error" id="video1Error">Ingrese un video valido</div>
 
 							<iframe id="video-preview-1" class="video-preview" type="text/html" height="0px" frameborder="0"  allowfullscreen></iframe>
@@ -195,6 +196,7 @@
 							
 							<label for="video_2">VIDEO 2 </label>
 							<input type="text" name="video_2" class="form-control" onchange="insertVideoOnIframe(2)">
+							<input type="hidden" class="form-control" name="youTubeCode_2">
 							<div class="error" id="video2Error">Ingrese un video valido</div>
 
 							<iframe id="video-preview-2" class="video-preview" height="0px" type="text/html" frameborder="0"  allowfullscreen></iframe>
@@ -207,7 +209,7 @@
 							<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion">
 								<span  class="btn btn-primary btn-file border-btn blue float-right" >
 			                        IMAGEN DE PRESENTACIÓN 
-			                     	<input name="img_presentacion" type="file" id="presentacion">
+			                     	<input name="img_presentacion" class="img" type="file" id="presentacion">
 			                     </span>
 			                     <div id="file-result-presentacion" class="text-center">
 		                            <span id="file-img-presentacion"></span>
@@ -231,7 +233,7 @@
 	                    	
 								<span  class="btn btn-primary btn-file border-btn blue float-right" >
 			                        SLIDE 1 
-			                     	<input name="img[0]" type="file" id="file-input-1">
+			                     	<input name="img[0]" class="img" type="file" id="file-input-1">
 			                     </span>
 			                     <div id="file-result-1" class="file-result text-center">
 			                            <span id="file-img-1"></span>
@@ -250,7 +252,7 @@
 	                    	
 								<span  class="btn btn-primary btn-file border-btn blue float-right" >
 			                        SLIDE 2
-			                      <input name="img[1]" type="file" id="file-input-2">
+			                      <input name="img[1]" class="img" type="file" id="file-input-2">
 			                    </span>
 			                     <div id="file-result-2" class="file-result text-center">
 			                          <span id="file-img-2"></span>
@@ -590,6 +592,8 @@
 	            $("#video"+id+"Error").fadeOut();
 			
 				imgPresentacionValidated = true;
+
+				$("input[name=youTubeCode_"+id+"]").val(match[2]);
 		        
 		         
 	    	}else{

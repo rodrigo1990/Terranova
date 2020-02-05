@@ -67,6 +67,19 @@ a:hover i{
 	display:flex;
 }
 
+.flex.align-vertically{
+  align-content: center;
+  align-items: center;
+}
+
+.flex.align-horizontally{
+  justify-content: center;
+}
+
+.flex.align-left{
+  justify-content: left;
+}
+
 ul{
 	padding:0;
   margin:0 !important;

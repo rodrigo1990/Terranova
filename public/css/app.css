@@ -3253,7 +3253,7 @@ a.btn:hover {
 }
 
 a:hover i {
-  color: #606060 !important;
+  color: #606161 !important;
 }
 
 .flex,
@@ -3262,6 +3262,31 @@ a:hover i {
 #slider #buscador ul.slide li,
 #slider .slide {
   display: flex;
+}
+
+.flex.align-vertically,
+#buscador ul.flex li.align-vertically,
+#buscador #slider ul.slide li.align-vertically,
+#slider #buscador ul.slide li.align-vertically,
+#slider .align-vertically.slide {
+  align-content: center;
+  align-items: center;
+}
+
+.flex.align-horizontally,
+#buscador ul.flex li.align-horizontally,
+#buscador #slider ul.slide li.align-horizontally,
+#slider #buscador ul.slide li.align-horizontally,
+#slider .align-horizontally.slide {
+  justify-content: center;
+}
+
+.flex.align-left,
+#buscador ul.flex li.align-left,
+#buscador #slider ul.slide li.align-left,
+#slider #buscador ul.slide li.align-left,
+#slider .align-left.slide {
+  justify-content: left;
 }
 
 ul {
@@ -3384,7 +3409,7 @@ input {
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;
-  border-bottom: 1px solid #606060 !important;
+  border-bottom: 1px solid #606161 !important;
   border-radius: 0px !important;
   padding-left: 0 !important;
   outline: 0;
@@ -3516,7 +3541,7 @@ header #slider #buscador ul.slide li > li > a:hover,
 #slider #buscador ul.slide header li > li > a:hover,
 header #slider .slide > li > a:hover,
 #slider header .slide > li > a:hover {
-  color: #606060;
+  color: #606161;
 }
 
 header .flex > li .logo,
@@ -5109,7 +5134,7 @@ header #slider .slide > li .slide > li a i,
 }
 
 #nuestras-oficinas ul li a:hover {
-  color: #606060;
+  color: #606161;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -5798,6 +5823,283 @@ section#buscador-section .result #slider ul.slide > li a.btn:hover i,
   #slider section#buscador-section .buscador-col ul.slide label {
     margin-bottom: 5px;
   }
+}
+
+section#detalle-proyecto .main-img {
+  width: 100%;
+  height: 35vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section#detalle-proyecto .main-img h1 {
+  font-size: 1.3rem;
+  color: white;
+  font-family: "Montserrat-Light", "Helvetica" !important;
+}
+
+section#detalle-proyecto .main-img h1 b {
+  font-family: "Montserrat-Black", "Helvetica" !important;
+}
+
+section#detalle-proyecto .content {
+  margin-bottom: 50px;
+  background: white;
+}
+
+section#detalle-proyecto .content > .row:nth-child(1) {
+  display: inline-flex;
+}
+
+section#detalle-proyecto .content > .row:nth-child(1) > .container-fluid:before {
+  display: none !important;
+}
+
+section#detalle-proyecto .content > .row:before {
+  display: none !important;
+}
+
+section#detalle-proyecto .content .info {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically,
+section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide,
+#slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide {
+  margin: 50px 50px !important;
+}
+
+section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li,
+section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li,
+#slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li {
+  flex-basis: 266px;
+}
+
+section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li img,
+section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li img,
+#slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li img {
+  display: block;
+  margin: auto;
+}
+
+section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li a,
+section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li a,
+#slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li a {
+  border-radius: 17px;
+  margin-top: 10px;
+}
+
+section#detalle-proyecto .content .proyecto-description p,
+section#detalle-proyecto .content .proyecto-description h1,
+section#detalle-proyecto .content .proyecto-description h2,
+section#detalle-proyecto .content .proyecto-description h3,
+section#detalle-proyecto .content .proyecto-description h4,
+section#detalle-proyecto .content .proyecto-description b,
+section#detalle-proyecto .content .proyecto-description i {
+  color: #606161 !important;
+}
+
+section#detalle-proyecto .content .como-llegar {
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+}
+
+section#detalle-proyecto .content .como-llegar ul.flex li p,
+section#detalle-proyecto .content .como-llegar #slider ul.slide li p,
+#slider section#detalle-proyecto .content .como-llegar ul.slide li p {
+  color: #606161;
+}
+
+section#detalle-proyecto .content .como-llegar ul.flex li .line-vert,
+section#detalle-proyecto .content .como-llegar #slider ul.slide li .line-vert,
+#slider section#detalle-proyecto .content .como-llegar ul.slide li .line-vert {
+  width: 1px;
+  height: 70px;
+  background: #606161;
+}
+
+section#detalle-proyecto .content .como-llegar ul.flex li > div,
+section#detalle-proyecto .content .como-llegar #slider ul.slide li > div,
+#slider section#detalle-proyecto .content .como-llegar ul.slide li > div {
+  margin-left: 10px;
+}
+
+section#detalle-proyecto .content .como-llegar ul.flex li:nth-child(1),
+section#detalle-proyecto .content .como-llegar #slider ul.slide li:nth-child(1),
+#slider section#detalle-proyecto .content .como-llegar ul.slide li:nth-child(1) {
+  flex-basis: 220px;
+}
+
+section#detalle-proyecto .content .como-llegar ul.flex li:nth-child(2),
+section#detalle-proyecto .content .como-llegar #slider ul.slide li:nth-child(2),
+#slider section#detalle-proyecto .content .como-llegar ul.slide li:nth-child(2) {
+  flex-basis: 67px;
+}
+
+section#detalle-proyecto .content .como-llegar ul.flex li:nth-child(3),
+section#detalle-proyecto .content .como-llegar #slider ul.slide li:nth-child(3),
+#slider section#detalle-proyecto .content .como-llegar ul.slide li:nth-child(3) {
+  flex-basis: 270px;
+}
+
+section#detalle-proyecto .content .como-llegar ul.flex li:nth-child(3) p,
+section#detalle-proyecto .content .como-llegar #slider ul.slide li:nth-child(3) p,
+#slider section#detalle-proyecto .content .como-llegar ul.slide li:nth-child(3) p {
+  margin-bottom: 0;
+}
+
+section#detalle-proyecto .content .caracteristicas {
+  margin-bottom: 0;
+  border: 3px solid rgba(96, 97, 97, 0.2);
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+section#detalle-proyecto .content .caracteristicas ul {
+  margin-left: 20px !important;
+}
+
+section#detalle-proyecto .content .caracteristicas ul li h1 {
+  color: #7d9f45;
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+section#detalle-proyecto .content .caracteristicas ul li:last-child h1 {
+  margin-bottom: 0rem !important;
+}
+
+section#detalle-proyecto .content .videos {
+  background: #eaeaea;
+}
+
+section#detalle-proyecto .content .videos ul.flex,
+section#detalle-proyecto .content .videos #slider ul.slide,
+#slider section#detalle-proyecto .content .videos ul.slide {
+  margin-top: 5% !important;
+  flex-direction: column;
+  width: 300px;
+  margin: auto !important;
+}
+
+section#detalle-proyecto .content .videos ul.flex li,
+section#detalle-proyecto .content .videos #slider ul.slide li,
+#slider section#detalle-proyecto .content .videos ul.slide li {
+  margin-top: 10%;
+  width: 300px;
+}
+
+section#detalle-proyecto .content .videos ul.flex li iframe,
+section#detalle-proyecto .content .videos #slider ul.slide li iframe,
+#slider section#detalle-proyecto .content .videos ul.slide li iframe {
+  height: 200px;
+}
+
+section#detalle-proyecto .servicios {
+  background: #7d9f45;
+  padding: 2rem 0;
+}
+
+section#detalle-proyecto .servicios h1 {
+  margin-top: 0;
+  color: white;
+  margin-bottom: 0.79rem;
+}
+
+section#detalle-proyecto .servicios ul.flex,
+section#detalle-proyecto .servicios #slider ul.slide,
+#slider section#detalle-proyecto .servicios ul.slide {
+  flex-wrap: wrap;
+  max-width: 80%;
+  margin: auto !important;
+}
+
+section#detalle-proyecto .servicios ul.flex li,
+section#detalle-proyecto .servicios #slider ul.slide li,
+#slider section#detalle-proyecto .servicios ul.slide li {
+  background: #eaeaea;
+  padding: 18px 57px;
+}
+
+section#detalle-proyecto .servicios ul.flex li h3,
+section#detalle-proyecto .servicios #slider ul.slide li h3,
+#slider section#detalle-proyecto .servicios ul.slide li h3 {
+  color: #7d9f45;
+  margin: 0;
+}
+
+section#detalle-proyecto #imagenes {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+section#detalle-proyecto #imagenes .galeria .slider .overlay,
+section#detalle-proyecto #imagenes #salones .overlay {
+  background: black;
+  position: absolute;
+  top: 0%;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  opacity: 0;
+  transition: 0.2s opacity;
+  transition-delay: 0.2s;
+}
+
+section#detalle-proyecto #imagenes .galeria .slider:hover .overlay {
+  transition-delay: 0s;
+  opacity: 0.8;
+}
+
+section#detalle-proyecto #imagenes .galeria .slider .overlay a:hover i {
+  border-color: white !important;
+}
+
+section#detalle-proyecto #imagenes .galeria .slider .overlay a:hover i {
+  color: #7d9f45 !important;
+}
+
+section#detalle-proyecto #imagenes .galeria .slider .overlay .search-cont {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+}
+
+section#detalle-proyecto #imagenes .galeria .slider .overlay .search-cont .content {
+  background: transparent;
+}
+
+@-moz-document url-prefix()  {
+  section#detalle-proyecto #imagenes .galeria .slider .overlay .search-cont {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40%;
+    bottom: 0;
+    margin: auto;
+    display: table;
+    width: 50px;
+  }
+}
+
+section#detalle-proyecto #imagenes .galeria .slider .overlay .fa-search {
+  color: white;
+  border: 2px solid #7d9f45;
+  border-radius: 50%;
+  padding: 15px;
+}
+
+section#detalle-proyecto #ubicacion #map {
+  width: 100%;
+  height: 70vh;
 }
 
 footer {

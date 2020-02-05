@@ -64,7 +64,7 @@
 						<div id="masterplanInput"></div>
 						@else
 							<label for="masterplan">Masterplan</label>
-							<input type="file" name="masterplan" id="masterplan" class="form-control">
+							<input type="file" name="masterplan" id="masterplan" class="masterplan form-control">
 							
 							<p class="error" id="masterplanError">
 								Ingrese un masterplan
@@ -238,9 +238,13 @@
 						<div class="col-sm-12">
 						
 							<label for="video_1">VIDEO 1 </label>
+							
 							<input type="hidden" name="video_1_id" value="@if(isset($proyecto->video[0])){{$proyecto->video[0]->id}}@endif">
-							<input type="text" name="video_1" class="form-control" onchange="insertVideoOnIframe(1)" value="@if(isset($proyecto->video[0])){{$proyecto->video[0]->url}}@endif">
-							<div class="error" id="video1Error">Ingrese un video valido</div>
+
+							<input type="text" name="video_1" class="form-control" onchange="insertVideoOnIframe(1)" value="@if(isset($proyecto->video[0]))<?php echo  'https://www.youtube.com/watch?v='.$proyecto->video[0]->url ?>@endif"> <div class="error" id="video1Error">Ingrese un video valido</div>
+
+
+							<input type="hidden" class="form-control" name="youTubeCode_1">
 
 							<iframe id="video-preview-1" class="video-preview" type="text/html" height="0px" frameborder="0"  allowfullscreen></iframe>
 
@@ -249,7 +253,13 @@
 							
 							<label for="video_2">VIDEO 2 </label>
 							<input type="hidden" name="video_2_id" value="@if(isset($proyecto->video[1])){{$proyecto->video[1]->id}}@endif">
-							<input type="text" name="video_2" class="form-control" onchange="insertVideoOnIframe(2)" value="@if(isset($proyecto->video[1])){{$proyecto->video[1]->url}}@endif">
+
+							<input type="text" name="video_2" class="form-control" onchange="insertVideoOnIframe(2)" value="@if(isset($proyecto->video[1]))<?php echo  'https://www.youtube.com/watch?v='.$proyecto->video[1]->url ?>@endif">
+
+							
+							<input type="hidden" class="form-control" name="youTubeCode_2">
+
+
 							<div class="error" id="video2Error">Ingrese un video valido</div>
 
 							<iframe id="video-preview-2" class="video-preview" height="0px" type="text/html" frameborder="0"  allowfullscreen></iframe>
@@ -279,7 +289,7 @@
 							<div class="img-presentacion-input-cont center-block preview" id="preview-presentacion">
 							<span  class="btn btn-primary btn-file border-btn blue float-right" >
 		                        IMAGEN DE PRESENTACIÓN 
-		                     	<input name="img_presentacion" type="file" id="presentacion">
+		                     	<input name="img_presentacion" class="img" type="file" id="presentacion">
 		                     </span>
 		                     <div id="file-result-presentacion" class="text-center">
 	                            <span id="file-img-presentacion"></span>
@@ -338,7 +348,7 @@
 	                    	
 								<span  class="btn btn-primary btn-file border-btn blue float-right" >
 			                        SLIDE 1 
-			                     	<input name="img[0]" type="file" id="file-input-1">
+			                     	<input name="img[0]" class="img" type="file" id="file-input-1">
 			                     </span>
 			                     <div id="file-result-1" class="file-result text-center">
 			                            <span id="file-img-1"></span>
@@ -357,7 +367,7 @@
 	                    	
 								<span  class="btn btn-primary btn-file border-btn blue float-right" >
 			                        SLIDE 2
-			                      <input name="img[1]" type="file" id="file-input-2">
+			                      <input name="img[1]" class="img" type="file" id="file-input-2">
 			                    </span>
 			                     <div id="file-result-2" class="file-result text-center">
 			                          <span id="file-img-2"></span>
@@ -557,7 +567,7 @@
 								$('#masterplanExist').remove();
 
 
-								$("#masterplanInput").append('<div class="row"> <input type="file" name="masterplan" id="masterplan" class="form-control"> <p class="error" id="masterplanError"> Ingrese un masterplan </p> </div>' );
+								$("#masterplanInput").append('<div class="row"> <input type="file" name="masterplan" id="masterplan" class="masterplan form-control"> <p class="error" id="masterplanError"> Ingrese un masterplan </p> </div>' );
 							});
          					
         				}
@@ -745,6 +755,7 @@
 
 			var linkYoutube = $("input[name=video_"+id+"]").val();
 			match = validateYoutubeLink(linkYoutube); 
+			console.log(match);
 			if ( match != false) {        
 		       
 		                
@@ -779,12 +790,17 @@
 			var imgPresentacion = $("input[name=img_presentacion]").val();
 			var imgSlide1 = $("input#file-input-1").val();
 			var imgSlide2 = $("input#file-input-2").val();
+			var linkYoutube1 = $("input[name=video_1]").val();
+			var linkYoutube2 = $("input[name=video_2]").val();
+
 
 			var tituloValidated = false;
 			var descripcionValidated = false;
 			var imgPresentacionValidated = false;
 			var imgSlide1Validated = false;
 			var imgSlide2Validated = false;
+			var linkYoutube1Validated = false;
+			var linkYoutube2Validated = false;
 
 			console.log($(document).find(("input[name=img_presentacion]")));
 
@@ -806,7 +822,6 @@
 			}
 
 			if($("input[name=img_presentacion]").length){
-				alert('imgPresentacion');
 				if(imgPresentacion.length == 0){
 					$("#imgPresentacion-error").fadeIn();
 					console.log('ERROR');
@@ -846,8 +861,61 @@
 			}
 
 
+			if(linkYoutube1.length != 0){
 
-			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true){
+
+				match1 = validateYoutubeLink(linkYoutube1); 
+				
+					if ( match1 != false) {        
+				       
+				                
+			         	console.log('true');
+			        
+			            $("#linkYoutubeError1").fadeOut();
+					
+						linkYoutube1Validated = true;
+
+						$("input[name=youTubeCode_1]").val(match1[2]);
+				        
+				         
+			    	}else{
+			    		console.log('false');
+		    			$("#linkYoutubeError1").fadeIn();
+			      
+			    	}
+
+		    }else{
+		    	linkYoutube1Validated=true;
+		    }
+
+
+		    if(linkYoutube2.length != 0){
+
+			    match2 = validateYoutubeLink(linkYoutube2); 
+					
+					if ( match2 != false) {        
+				       
+				                
+			         	console.log('true');
+			        
+			            $("#linkYoutubeError2").fadeOut();
+					
+						linkYoutube2Validated = true;
+
+						$("input[name=youTubeCode_2]").val(match2[2]);
+				        
+				         
+			    	}else{
+			    		console.log('false');
+		    			$("#linkYoutubeError2").fadeIn();
+			      
+			    	}
+
+		    }else{
+		    	linkYoutube2Validated=true;	
+		    }
+
+			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true&&linkYoutube1Validated==true&&linkYoutube2Validated==true){
 				//alert("enviado");
 				setTimeout(function(){
 					$('form').submit();

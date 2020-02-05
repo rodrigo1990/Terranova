@@ -1,4 +1,4 @@
-	$(document).on('change','input[type=file]', function(){
+	$(document).on('change','.img', function(){
 
 			var id = ($(this).attr('id')=='presentacion') ? 'presentacion' : $(this).attr('id').match(/\d+/);
             
@@ -20,6 +20,8 @@
             if(file_size>2097152) {
 
                 alert("El archivo NO puede ser superior a 2MB");
+
+                $(this).val(null);
 
             }else{
 
@@ -46,5 +48,7 @@
 
         }else{
             alert("El archivo debe ser .jpg o .png");
+
+            $(this).val(null);
         }
         });

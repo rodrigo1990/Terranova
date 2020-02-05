@@ -74,4 +74,28 @@ class FrontController extends Controller
     }
 
 
+    public function detalleProyecto(Request $request){
+
+    	$proyecto = Proyecto::with('zona')->
+    						  with('video')->
+    						  with('servicio')->
+    						  with('caracteristica')->
+    						  with('lineaColectivo')->
+    						  with('masterplan')->
+							  find($request->id);
+
+		$imagenes = Img::where('proyecto_id',$request->id)->orderBy('order','asc')->get(); 
+
+        return view('detalleProyecto',[
+					        	'proyecto' => $proyecto,
+					        	'imagenes' => $imagenes,
+					        	'fb' => $this->fb,
+								'ig' => $this->ig,
+								'yt' => $this->yt,
+								'zonas' => Zona::all(),
+								'proyectos' => $this->proyectos
+					        	]);
+    }
+
+
 }

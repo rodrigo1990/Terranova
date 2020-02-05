@@ -1,0 +1,280 @@
+$margin-inter-section:50px;
+section#detalle-proyecto{
+
+	.main-img{
+		width: 100%;
+		height: 35vh;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		h1{
+			font-size: 1.3rem;
+			color:$third-color;
+			font-family: $font-light !important;
+
+			b{
+				font-family: $font-black !important;
+			}
+		}
+
+	}
+
+	.content{
+		margin-bottom:$margin-inter-section;
+		>.row:nth-child(1){
+			display:inline-flex;
+				>.container-fluid:before{
+					display:none !important;
+				}
+		}
+
+
+		>.row:before{
+			display:none !important;
+		}
+		
+		
+		.info{
+			padding-left: 3%;
+    		padding-right: 3%;
+		}
+
+
+		background:$third-color;
+		ul.flex.align-horizontally.align-vertically{
+			margin:$margin-inter-section $margin-inter-section !important;
+				li{
+					flex-basis: 266px;
+
+					img{
+						display:block;
+						margin:auto;
+					}
+
+					a{
+						border-radius:17px;
+						margin-top:10px;
+					}
+
+
+				}
+			}
+
+		.proyecto-description{
+			p,h1,h2,h3,h4,b,i{
+				color:$gray !important;
+			}
+		}
+
+		.como-llegar{
+			margin-top:$margin-inter-section !important;
+			margin-bottom:$margin-inter-section !important;
+			ul.flex{
+				li{
+					p{
+						color:$gray;
+					}
+
+
+					.line-vert{
+						width: 1px;
+						height: 70px;
+						background:$gray;
+					}
+
+				>div{
+					margin-left:10px;
+				}
+				}
+
+				li:nth-child(1){
+					flex-basis:220px;
+				}
+
+				li:nth-child(2){
+					flex-basis:67px;
+				}
+
+				li:nth-child(3){
+					flex-basis:270px;
+					p{
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+
+		.caracteristicas{
+			margin-bottom:0;
+			border:3px solid $gray-opacity;
+			padding-left:0.5rem;
+			padding-top:1rem;
+			padding-bottom:1rem;
+			ul{
+				margin-left:20px !important;
+
+				li{
+					h1{
+						color:$primary-color;
+						margin-top:0;
+						margin-bottom:0.6rem;
+					}
+				}
+
+				li:last-child{
+					h1{
+						margin-bottom:0rem !important;
+					}
+				}
+			}
+		}
+
+
+		.videos{
+			background:$light-gray;
+			ul.flex{
+				margin-top:5% !important;
+				flex-direction: column;
+				width: 300px;
+				margin:auto !important;
+
+				li{
+					margin-top:10%;
+					width: 300px;
+
+					iframe{
+						height: 200px;
+					}
+				}
+			}
+		}
+	}
+	
+	.servicios{
+		background:$primary-color;
+		padding:2rem 0 ;
+
+		h1{
+			margin-top:0;
+			color:$third-color;
+			margin-bottom:0.79rem;
+		}
+
+		ul.flex{
+			flex-wrap: wrap;
+			max-width: 80%;
+			margin:auto !important;
+			li{
+
+				background:$light-gray;
+				padding:18px 57px;
+
+				h3{
+					color:$primary-color;
+					margin:0;
+				}
+			}
+		}
+	}
+
+	
+
+	#imagenes{
+		margin-top:$margin-inter-section;
+		margin-bottom:$margin-inter-section;
+			.galeria .slider .overlay, #salones .overlay{
+				background: black;
+			    position: absolute;
+			    top: 0%;
+			    left: 0px;
+			    right: 0px;
+			    bottom: 0px;
+			    opacity: 0;
+			    -webkit-transition: 0.2s opacity;
+			    transition: 0.2s opacity;
+			    -webkit-transition-delay: 0.2s;
+			    transition-delay: 0.2s;
+			}
+
+
+
+			.galeria .slider:hover .overlay {
+			    -webkit-transition-delay: 0s;
+			    transition-delay: 0s;
+			    opacity: 0.8;
+			}
+
+
+			.galeria .slider .overlay a:hover i{
+			    
+			    	border-color:white !important;
+			    
+			}
+
+			.galeria .slider .overlay a:hover i{
+			    
+			    	color:$primary-color !important;
+			    
+			}
+
+
+
+
+
+
+			.galeria .slider .overlay .search-cont{
+			        position: absolute;
+			    left: 0;
+			    right: 0;
+			    top: 0;
+			    bottom: 0;
+			    margin: auto;
+			    width: 50px;
+			    height: 50px;
+
+			    .content{
+			    	background:transparent;
+			    }
+			}
+
+
+
+
+			@-moz-document url-prefix() {
+			  .galeria .slider .overlay .search-cont {
+
+			    position: absolute;
+			    left: 0;
+			    right: 0;
+			    top: 40%;
+			    bottom: 0;
+			    margin: auto;
+			    display: table;
+			    width: 50px;
+
+			}
+			}
+
+
+			.galeria .slider .overlay .fa-search{
+			    color:white;
+			    border:2px solid $primary-color;
+			    border-radius:50%;
+			    padding:15px;
+			}
+
+	}
+
+
+
+
+
+	#ubicacion{
+		#map{
+			width: 100%;
+			height: 70vh;
+		}
+	}
+}

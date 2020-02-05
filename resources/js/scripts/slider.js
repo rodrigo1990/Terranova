@@ -16,3 +16,25 @@
     }
 });
 
+
+$('#owl-2').owlCarousel({
+    loop:true,
+    margin:50,
+    autoplay:false,
+    autoplayTimeout:2000,
+    nav:false,
+    dots:false,
+    items:3,
+    responsive:{
+        0:{
+            items:2
+        },
+        850:{
+            items:2
+        },
+        1200:{
+            items:3
+        }
+    }
+});
+

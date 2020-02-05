@@ -15,6 +15,7 @@ require('./scripts/deleteImg');
 require('./scripts/eliminarImagenes');
 //require('./scripts/inputDinamicFileInput');
 require('./scripts/inputFileChange');
+require('./scripts/masterplanChange');
 require('./scripts/readURL');
 require('./scripts/resetInputFile');
 

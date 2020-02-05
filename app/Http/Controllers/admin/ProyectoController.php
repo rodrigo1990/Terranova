@@ -80,14 +80,14 @@ class ProyectoController extends Controller
 
 		 	if($request->video_1 != null){
 		 		$video1 = new ProyectoVideo();
-		 		$video1->url = $request->video_1;
+		 		$video1->url = $request->youTubeCode_1;
 		 		$proyecto->video()->save($video1);
 		 	}
 
 
 		 	if($request->video_2 != null){
 		 		$video2 = new ProyectoVideo();
-		 		$video2->url = $request->video_2;
+		 		$video2->url = $request->youTubeCode_2;
 		 		$proyecto->video()->save($video2);
 		 	}
 
@@ -207,18 +207,18 @@ class ProyectoController extends Controller
 		 	$proyecto->save();
 
 
-		 	if($request->video_1 != null){
+		 	if($request->youTubeCode_1 != null){
 		 		
 		 		$video1 = ProyectoVideo::find($request->video_1_id);
 		 		
 		 		if(isset($video1)){
 		 		
-		 			$video1->url = $request->video_1;
+		 			$video1->url = $request->youTubeCode_1;
 		 		
 		 		}else{
 
 		 			$video1 = new ProyectoVideo();
-		 			$video1->url = $request->video_1;
+		 			$video1->url = $request->youTubeCode_1;
 
 		 		}
 		 		
@@ -231,18 +231,18 @@ class ProyectoController extends Controller
 		 	}
 
 
- 		 	if($request->video_2 != null){
+ 		 	if($request->youTubeCode_2 != null){
 		 		
 		 		$video2 = ProyectoVideo::find($request->video_2_id);
 		 		
 		 		if(isset($video2)){
 		 		
-		 			$video2->url = $request->video_2;
+		 			$video2->url = $request->youTubeCode_2;
 		 		
 		 		}else{
 
 		 			$video2 = new ProyectoVideo();
-		 			$video2->url = $request->video_2;
+		 			$video2->url = $request->youTubeCode_2;
 
 		 		}
 		 		
@@ -414,7 +414,7 @@ class ProyectoController extends Controller
 
 			 	$img->nombre = $request->img_presentacion->getClientOriginalName(); 
 
-			 	$path = $request->img_presentacion->storeAs('proyectos/',$img->ruta,'public');
+			 	$path = $request->img_presentacion->storeAs('/img/proyectos/',$img->ruta,'public');
 
 
 			 	$img->tipo = 'PRESENTACION';
@@ -464,7 +464,7 @@ class ProyectoController extends Controller
 	 	 	
 	 	 				 	$img->nombre = $request->img[$i]->getClientOriginalName(); 
 	 	 	
-	 	 				 	$path = $request->img[$i]->storeAs('proyectos/',$img->ruta,'public');
+	 	 				 	$path = $request->img[$i]->storeAs('/img/proyectos/',$img->ruta,'public');
 	 	 	
 	 	 				 	$img->tipo = 'SLIDE';
 
@@ -508,13 +508,21 @@ class ProyectoController extends Controller
 
 	 		$imgs = Img::where('proyecto_id',$request->id)->get();
 
+
 	 		foreach($imgs as $img){
-	 			Storage::disk('public')->delete("proyectos/".$img->ruta."");
+	 			Storage::disk('public')->delete("/img/proyectos/".$img->ruta."");
 	 		}
+
+	 		
 
 
 	 		Img::where('proyecto_id',$request->id)->delete();
 
+	 		Caracteristica::where('proyecto_id',$request->id)->delete();
+	 		Servicio::where('proyecto_id',$request->id)->delete();
+	 		LineaColectivo::where('proyecto_id',$request->id)->delete();
+	 		ProyectoVideo::where('proyecto_id',$request->id)->delete();
+	 		$this->destroyMasterplan($request);
 	 		Proyecto::find($request->id)->delete();
 
 			
