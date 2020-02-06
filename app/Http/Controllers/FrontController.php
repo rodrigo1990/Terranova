@@ -14,6 +14,8 @@ use App\ImgTestimonio;
 use App\Novedad;
 use App\ImgNovedad;
 
+use App\Estado;
+
 use Illuminate\Support\Facades\DB;
 
 
@@ -63,13 +65,17 @@ class FrontController extends Controller
 
 
     public function buscador(Request $request){
+    	if(isset($request->estado_id)){
+    		$this->proyectos = Proyecto::where('estado_id',$request->estado_id)->get();
+    	}
         return view('buscador',[
-					        	'testimonios' =>Testimonio::limit(6)->offset(6)->get(),
 					        	'fb' => $this->fb,
 								'ig' => $this->ig,
 								'yt' => $this->yt,
 								'zonas' => Zona::all(),
-								'proyectos' => $this->proyectos
+								'proyectos' => $this->proyectos,
+								'estados' => Estado::all(),
+								'estado_id' => $request->estado_id
 					        	]);
     }
 

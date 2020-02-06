@@ -17,7 +17,7 @@ h1,h2,h3,h4{
 }
 
 
-a,a i,input,select{
+a,a i,input,select,button{
 	-webkit-transition: all 0.50s ease-out;
   -moz-transition: all 0.50s ease-out;
   -o-transition: all 0.50s ease-out;
@@ -41,7 +41,7 @@ p{
   }
 }
 
-a.btn{
+a.btn,button.btn{
      color:$third-color;
       border:3px solid $primary-color;
       padding: 1.1em 1.7em;
@@ -53,13 +53,16 @@ a.btn{
       font-family: $font-regular;
 }
 
-a.btn:hover{
+a.btn:hover,
+button.btn:hover{
 	text-decoration: none !important;
   background-color:$primary-color;
   color:$third-color;
 }
 
-a:hover i{
+a:hover i,
+button:hover i,
+{
   color:$gray !important;
 }
 

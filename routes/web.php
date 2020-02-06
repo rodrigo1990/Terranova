@@ -23,11 +23,16 @@ Route::get('/', 'FrontController@index');
 
 Route::get('/testimonios', 'FrontController@testimonios');
 Route::get('/preguntas-frecuentes', 'FrontController@preguntasFrecuentes');
-Route::get('/proyectos', 'FrontController@buscador');
+Route::get('/proyectos/{estado_id?}', 'FrontController@buscador');
 Route::post('/enviarFormulario', 'MailController@enviarFormulario');
 Route::get('/proyecto/{id}', 'FrontController@detalleProyecto');
 
 Route::post('/buscarBarrioSegunZona', 'BuscadorController@buscarBarrioSegunZona');
+
+
+
+Route::post('/buscarProyectos/', 'BuscadorController@buscarProyectos');
+
 
 
 

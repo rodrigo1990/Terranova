@@ -9,44 +9,78 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 buscador-col">
-					<ul class="flex">
-						<li>
-							<label for="zona">ELIJA UNA ZONA</label>
-							<select name="" id="zona" class="form-control" onchange="buscarBarrioSegunZona()">
-								<option value="null">Selecciona una zona</option>
-								@foreach($zonas as $zona)
-									<option value="{{$zona->id}}">{{ucfirst(strtolower($zona->descripcion))}}</option>
-								@endforeach
-							</select>
-						</li>
-						<li>
-							<label for="barrio">ELIJA UN PROYECTO</label>
-							<div>
-							<select name="barrio" id="barrio" class="form-control">
-								<option value="null">Seleccione un proyecto</option>
-							</select>
-							</div>
-						</li>
-					</ul>
+					<form action="/buscarProyectos" method="POST">
+						@csrf
+						<ul class="flex">
+							<li>
+								<label for="zona">ELIJA UNA ZONA</label>
+								<select name="zona" id="zona" class="form-control" onchange="buscarBarrioSegunZona()">
+									<option value="null">Selecciona una zona</option>
+									@foreach($zonas as $zona)
+										<option value="{{$zona->id}}">{{ucfirst(strtolower($zona->descripcion))}}</option>
+									@endforeach
+								</select>
+							</li>
+							<li>
+								<label for="barrio">ELIJA UN PROYECTO</label>
+								<div>
+								<select name="barrio" id="barrio" class="form-control">
+									<option value="null">Seleccione un proyecto</option>
+									@foreach($proyectos as $proyecto)
+									<option value="{{$proyecto->id}}">{{$proyecto->titulo}}</option>
+									@endforeach
+								</select>
+								</div>
+							</li>
+
+							<li>
+								<label for="barrio">ELIJA UN ESTADO</label>
+								<div>
+								<select name="estado" id="estado" class="form-control">
+									<option value="null">Seleccione un estado</option>
+									@foreach($estados as $estado)
+										@if(isset($estado_id))
+											@if($estado_id== $estado->id)
+												<option value="{{$estado->id}}" selected>{{$estado->descripcion}}</option>
+											@else
+												<option value="{{$estado->id}}">{{$estado->descripcion}}</option>
+											@endif
+										@else
+											<option value="{{$estado->id}}">{{$estado->descripcion}}</option>
+										@endif
+									@endforeach
+								</select>
+								</div>
+							</li>
+
+							<li>
+								<button class="btn">BUSCAR</button>
+							</li>
+							
+						</ul>
+					</form>
 				</div>
 					
 				
 			</div>
-			<div class="col-sm-12 result" style="display:none">
+			<div class="col-sm-12 result" style="">
 				<ul class="flex">
-						@foreach($testimonios as $testimonio)
+						@foreach($proyectos as $proyecto)
 						<li>
 							<div class="text-center">
 								
 								<div>
-									<p class="title primary-color">
-										{{$testimonio->titulo}}
+									<p class="title primary-color text-center">
+										{{ucfirst($proyecto->titulo)}}
 									</p>
 								</div>
-
-								<img src=" https://img.youtube.com/vi/{{$testimonio->link_youtube}}/sddefault.jpg " alt="" width="280px">
+								@foreach($proyecto->img as $img)
+									@if($img->tipo == 'PRESENTACION')
+									<img src="<?php echo asset('/storage/img/proyectos/'.$img->ruta) ?>" alt="" width="280px">
+									@endif
+								@endforeach
 								<br>
-								<a href="" youtubeid="{{$testimonio->link_youtube}}" class="btn"><i class="fab fa-youtube"></i> VER</a>
+								<a href="/proyecto/{{$proyecto->id}}" target="_blank" class="btn"> VER</a>
 							</div>
 						</li>
 						@endforeach
@@ -68,5 +102,7 @@
 <script>
 	$("#buscador-section").css('margin-top',$('header').height()+90);
 </script>
+
+
 
 @stop

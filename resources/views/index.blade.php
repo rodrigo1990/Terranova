@@ -129,7 +129,7 @@
 				<li>
 					<div>
 						<h3>PRÓXIMOS  <br> LANZAMIENTOS</h3>
-						<a href="/proyectos" target="_blank" class="btn">
+						<a href="/proyectos/1" target="_blank" class="btn">
 							VER +
 						</a>
 					</div>
@@ -139,7 +139,7 @@
 						<li>
 							<div>
 								<h3>EN DESARROLLO</h3>
-								<a href="/proyectos" target="_blank" class="btn">
+								<a href="/proyectos/2" target="_blank" class="btn">
 									VER +
 								</a>
 							</div>
@@ -147,7 +147,7 @@
 						<li>
 							<div>
 								<h3>TERMINADOS</h3>
-								<a href="/proyectos" target="_blank" class="btn">
+								<a href="/proyectos/3" target="_blank" class="btn">
 									VER +
 								</a>
 							</div>

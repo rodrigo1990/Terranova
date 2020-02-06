@@ -21,8 +21,10 @@ class Proyectos extends Migration
             $table->string('latitud');
             $table->string('longitud');
             $table->string('estacion')->nullable();
+            $table->unsignedInteger('estado_id');
 
             $table->foreign('zona_id')->references('id')->on('zonas');
+            $table->foreign('estado_id')->references('id')->on('estados');
          
         });
     }

@@ -137,7 +137,7 @@
 
 
 <div id="imagenes">
-	<div class="container-fluid">
+	<div class="">
 		<div class="owl-carousel galeria" id="owl-2">
 			@foreach($imagenes as $img)
 				@if($img->tipo=='SLIDE')
@@ -187,7 +187,12 @@
 
 	$(document).ready(function(){
 
-			//$(".videos").css('height',$(".content").height());
+			$(".videos").css('height',$(".info").height() + 46 );
+
+
+			console.log($(".info").height());
+
+			console.log($(".content .caracteristicas").css('padding-bottom'));
 
 
 			initMap(0,0,0);

@@ -19,6 +19,10 @@ class Proyecto extends Model
     	return $this->belongsTo('App\Zona');	
     }
 
+    public function estado(){
+        return $this->belongsTo('App\Estado');    
+    }
+
     public function video(){
     	return $this->hasMany('App\ProyectoVideo');	
     }

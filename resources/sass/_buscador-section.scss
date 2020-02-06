@@ -8,9 +8,14 @@ section#buscador-section{
 			flex-direction:row;
 			justify-content:center;
 			flex-wrap:wrap;
+			align-items:center;
+			
+			li:nth-child(4){
+				flex-basis:0 !important;
+			}
 
 			li{
-				flex-basis:300px;
+				flex-basis:263px;
 			}
 		
 			select{
@@ -55,34 +60,27 @@ section#buscador-section{
 					display: flex;
 				    align-items: center;
 				    flex-wrap: wrap;
-				    height: 90px;
+				    height: 45px;
 				    margin:auto;
+				    justify-content:center;
+
+				    p{
+				    	font-size: 0.5rem;
+				    }
 				}
 
 				>img{
 					border-radius:4px;
-				}				
-			}
-
-
-			a.btn{
-				border:1px solid $red-color;
-				padding: 0.5em 0.6em;
-				width: 100%;
-				margin-top: 5px;
-				color:$red-color;
-			}
-
-			a.btn:hover{
-				background:$red-color;
-				color:$third-color;
-
-				
-			}
-
-			a.btn:hover i{
-					color:$third-color !important;
+					margin-bottom:20px;
 				}
+
+				>a{
+					width: 100%;
+				}			
+			}
+
+
+			
 		}
 	}
 	}

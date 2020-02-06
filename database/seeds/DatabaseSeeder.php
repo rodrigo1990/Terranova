@@ -25,6 +25,27 @@ class DatabaseSeeder extends Seeder
             'descripcion' => 'ZONA SUR',
         ]);
 
+          DB::table('estados')->insert([
+            'id' => '1',
+            'descripcion' => 'PRÓXIMOS LANZAMIENTOS',
+        ]);
+
+
+          DB::table('estados')->insert([
+            'id' => '2',
+            'descripcion' => 'TERMINADOS',
+        ]);
+
+
+          DB::table('estados')->insert([
+            'id' => '3',
+            'descripcion' => 'TERMINADOS',
+        ]);
+
+
+
+
+
 
          DB::table('testimonios')->insert([
             'link_youtube' => 'JqZXJPbT2x8',
