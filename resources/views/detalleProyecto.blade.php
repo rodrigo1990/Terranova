@@ -22,25 +22,25 @@
 	<div class="content">
 		<div class="row">
 			<div class="container-fluid">
-				<div class="col-sm-8 info">
+				<div class="col-sm-12 col-md-12 col-lg-8 info">
 					<ul class="flex align-horizontally align-vertically">
 			<li class="text-center">
-				<img src="<?php echo asset('storage/img/detalle_proyecto/geoloc.svg') ?>" height="68px" alt="">
-				<a href="" class="btn">
+				<img src="<?php echo asset('storage/img/detalle_proyecto/geoloc.svg') ?>"  alt="">
+				<a onclick="scrollAnimate('ubicacion',this)" class="btn">
 					VER UBICACIÓN
 				</a>
 			</li>
 			@if(isset($proyecto->masterplan[0]))
 			<li class="text-center">
-				<img src="<?php echo asset('storage/img/detalle_proyecto/masterplan.svg') ?>" height="68px" alt="">
-				<a href="" class="btn">
+				<img src="<?php echo asset('storage/img/detalle_proyecto/masterplan.svg') ?>"  alt="">
+				<a target="_blank" href="<?php echo asset('/storage/archivos/proyectos/masterplans/'.$proyecto->masterplan[0]->ruta) ?>" class="btn">
 					VER MASTERPLAN
 				</a>
 			</li>
 			@endif
 			<li class="text-center">
-				<img src="<?php echo asset('storage/img/detalle_proyecto/fotos.svg') ?>" height="68px" alt="">
-				<a href="" class="btn">
+				<img src="<?php echo asset('storage/img/detalle_proyecto/fotos.svg') ?>"  alt="">
+				<a onclick="scrollAnimate('imagenes',this)" class="btn">
 					VER FOTOS
 				</a>
 			</li>
@@ -96,7 +96,7 @@
 		@endif
 
 				</div>
-				<div class="col-sm-4 videos">
+				<div class=" col-sm-12 col-md-12 col-lg-4  videos">
 					<ul class="flex align-horizontally">
 						@foreach($proyecto->video as $video)
 							<li>
@@ -137,7 +137,7 @@
 
 
 <div id="imagenes">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="owl-carousel galeria" id="owl-2">
 			@foreach($imagenes as $img)
 				@if($img->tipo=='SLIDE')
@@ -187,7 +187,8 @@
 
 	$(document).ready(function(){
 
-			$(".videos").css('height',$(".info").height());
+			//$(".videos").css('height',$(".content").height());
+
 
 			initMap(0,0,0);
 

@@ -5869,6 +5869,13 @@ section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically,
 section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide,
 #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide {
   margin: 50px 50px !important;
+  flex-wrap: wrap;
+}
+
+section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li:nth-child(1) img,
+section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li:nth-child(1) img,
+#slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li:nth-child(1) img {
+  width: 40px;
 }
 
 section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li,
@@ -5882,6 +5889,7 @@ section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically
 #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li img {
   display: block;
   margin: auto;
+  width: 50px;
 }
 
 section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li a,
@@ -5904,6 +5912,12 @@ section#detalle-proyecto .content .proyecto-description i {
 section#detalle-proyecto .content .como-llegar {
   margin-top: 50px !important;
   margin-bottom: 50px !important;
+}
+
+section#detalle-proyecto .content .como-llegar ul.flex,
+section#detalle-proyecto .content .como-llegar #slider ul.slide,
+#slider section#detalle-proyecto .content .como-llegar ul.slide {
+  flex-wrap: wrap;
 }
 
 section#detalle-proyecto .content .como-llegar ul.flex li p,
@@ -5974,6 +5988,7 @@ section#detalle-proyecto .content .caracteristicas ul li:last-child h1 {
 
 section#detalle-proyecto .content .videos {
   background: #eaeaea;
+  height: 100% !important;
 }
 
 section#detalle-proyecto .content .videos ul.flex,
@@ -5996,6 +6011,12 @@ section#detalle-proyecto .content .videos ul.flex li iframe,
 section#detalle-proyecto .content .videos #slider ul.slide li iframe,
 #slider section#detalle-proyecto .content .videos ul.slide li iframe {
   height: 200px;
+}
+
+section#detalle-proyecto .content .videos ul.flex li:last-child,
+section#detalle-proyecto .content .videos #slider ul.slide li:last-child,
+#slider section#detalle-proyecto .content .videos ul.slide li:last-child {
+  margin-bottom: 10%;
 }
 
 section#detalle-proyecto .servicios {
@@ -6022,6 +6043,8 @@ section#detalle-proyecto .servicios #slider ul.slide li,
 #slider section#detalle-proyecto .servicios ul.slide li {
   background: #eaeaea;
   padding: 18px 57px;
+  border-left: 1px solid rgba(96, 97, 97, 0.2);
+  border-right: 1px solid rgba(96, 97, 97, 0.2);
 }
 
 section#detalle-proyecto .servicios ul.flex li h3,
@@ -6100,6 +6123,170 @@ section#detalle-proyecto #imagenes .galeria .slider .overlay .fa-search {
 section#detalle-proyecto #ubicacion #map {
   width: 100%;
   height: 70vh;
+}
+
+@media only screen and (min-width: 1024px) {
+  section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically,
+  section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide,
+  #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide {
+    margin: 25px 25px !important;
+  }
+
+  section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li a,
+  section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li a,
+  #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li a {
+    width: 80%;
+  }
+
+  section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li:nth-child(1) img,
+  section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li:nth-child(1) img,
+  #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li:nth-child(1) img {
+    width: 30px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically,
+  section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide,
+  #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide {
+    margin: 25px 25px !important;
+  }
+
+  section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li a,
+  section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li a,
+  #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li a {
+    width: 80%;
+  }
+
+  section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li:nth-child(1) img,
+  section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li:nth-child(1) img,
+  #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li:nth-child(1) img {
+    width: 30px;
+  }
+
+  section#detalle-proyecto .content .como-llegar {
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+  }
+
+  section#detalle-proyecto .content .como-llegar ul {
+    justify-content: center;
+  }
+
+  section#detalle-proyecto .content .como-llegar ul li img {
+    float: unset !important;
+  }
+
+  section#detalle-proyecto .content .como-llegar ul li div {
+    float: unset !important;
+    justify-content: center;
+  }
+
+  section#detalle-proyecto .content .como-llegar ul li.flex.align-horizontally,
+  section#detalle-proyecto .content .como-llegar ul #slider li.align-horizontally.slide,
+  #slider section#detalle-proyecto .content .como-llegar ul li.align-horizontally.slide,
+  section#detalle-proyecto .content .como-llegar #buscador ul.flex li.align-horizontally,
+  #buscador section#detalle-proyecto .content .como-llegar ul.flex li.align-horizontally,
+  section#detalle-proyecto .content .como-llegar #buscador #slider ul.slide li.align-horizontally,
+  #buscador #slider section#detalle-proyecto .content .como-llegar ul.slide li.align-horizontally,
+  section#detalle-proyecto .content .como-llegar #slider #buscador ul.slide li.align-horizontally,
+  #slider #buscador section#detalle-proyecto .content .como-llegar ul.slide li.align-horizontally {
+    display: none !important;
+  }
+
+  section#detalle-proyecto .col-md-12.videos {
+    margin-top: 30px;
+    height: auto !important;
+  }
+}
+
+@media only screen and (min-width: 1px) and (max-width: 768px) {
+  section#detalle-proyecto .row {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li,
+  section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li,
+  #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li {
+    margin-bottom: 24px;
+  }
+
+  section#detalle-proyecto .content .como-llegar {
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+  }
+
+  section#detalle-proyecto .content .como-llegar ul {
+    justify-content: center;
+  }
+
+  section#detalle-proyecto .content .como-llegar ul li img {
+    float: unset !important;
+  }
+
+  section#detalle-proyecto .content .como-llegar ul li div {
+    float: unset !important;
+    justify-content: center;
+  }
+
+  section#detalle-proyecto .content .como-llegar ul li.flex.align-horizontally,
+  section#detalle-proyecto .content .como-llegar ul #slider li.align-horizontally.slide,
+  #slider section#detalle-proyecto .content .como-llegar ul li.align-horizontally.slide,
+  section#detalle-proyecto .content .como-llegar #buscador ul.flex li.align-horizontally,
+  #buscador section#detalle-proyecto .content .como-llegar ul.flex li.align-horizontally,
+  section#detalle-proyecto .content .como-llegar #buscador #slider ul.slide li.align-horizontally,
+  #buscador #slider section#detalle-proyecto .content .como-llegar ul.slide li.align-horizontally,
+  section#detalle-proyecto .content .como-llegar #slider #buscador ul.slide li.align-horizontally,
+  #slider #buscador section#detalle-proyecto .content .como-llegar ul.slide li.align-horizontally {
+    display: none !important;
+  }
+
+  section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically,
+  section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide,
+  #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide {
+    margin: 25px 25px !important;
+  }
+
+  section#detalle-proyecto .content .caracteristicas {
+    padding-left: 0 !important;
+  }
+
+  section#detalle-proyecto .content .caracteristicas ul {
+    margin-left: 0 !important;
+  }
+
+  section#detalle-proyecto .col-md-12.videos {
+    margin-top: 30px;
+    height: auto !important;
+  }
+
+  section#detalle-proyecto .servicios ul.flex li,
+  section#detalle-proyecto .servicios #slider ul.slide li,
+  #slider section#detalle-proyecto .servicios ul.slide li {
+    width: 100%;
+    margin-bottom: 15px !important;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  section#detalle-proyecto .container-fluid {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  section#detalle-proyecto .col-sm-12 {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  section#detalle-proyecto .col-md-12.videos {
+    margin-top: 30px !important;
+  }
+
+  section#detalle-proyecto .col-md-12.videos iframe {
+    width: 200px !important;
+  }
 }
 
 footer {
