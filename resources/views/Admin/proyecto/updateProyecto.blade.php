@@ -17,6 +17,33 @@
 					</p>
 					<br>
 					<br>
+
+					
+					<br>
+					<br>
+
+					
+					<label for="estado">ESTADO</label>
+					<select name="estado" class="form-control" id="">
+						@foreach($estados as $estado)
+
+							@if($proyecto->estado_id == $estado->id)
+								<option value="{{$estado->id}}" selected>{{$estado->descripcion}}</option>
+							@else
+								<option value="{{$estado->id}}">{{$estado->descripcion}}</option>
+							@endif
+
+
+						@endforeach
+					</select>
+					
+
+					<br>
+					<br>					
+					
+
+
+
 					<label for="zona">Zona</label>
 					<select name="zona" class="form-control" id="">
 

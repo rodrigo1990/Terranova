@@ -24,6 +24,7 @@ $(document).ready(function() {
 
 if(document.getElementById('buscador') || document.getElementById('buscador-section') ){
 	require('./scripts/selectBarrioOnChange');	
+	require('./scripts/buscarProyectos');	
 }
 
 

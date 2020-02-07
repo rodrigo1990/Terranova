@@ -5796,9 +5796,14 @@ section#buscador-section .result #slider ul.slide > li > div > div p,
   font-size: 0.5rem;
 }
 
-section#buscador-section .result ul.flex > li > div > img,
-section#buscador-section .result #slider ul.slide > li > div > img,
-#slider section#buscador-section .result ul.slide > li > div > img {
+section#buscador-section .result ul.flex > li > div > .img,
+section#buscador-section .result #slider ul.slide > li > div > .img,
+#slider section#buscador-section .result ul.slide > li > div > .img {
+  height: 211px;
+  width: 282px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 4px;
   margin-bottom: 20px;
 }
@@ -5879,7 +5884,7 @@ section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically
 section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li,
 section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li,
 #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li {
-  flex-basis: 266px;
+  flex-basis: 240px;
 }
 
 section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li img,
@@ -5893,8 +5898,10 @@ section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically
 section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li a,
 section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li a,
 #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li a {
+  border: 2px solid #7d9f45;
   border-radius: 17px;
   margin-top: 10px;
+  font-size: 0.4rem;
 }
 
 section#detalle-proyecto .content .proyecto-description p,
@@ -5936,6 +5943,7 @@ section#detalle-proyecto .content .como-llegar ul.flex li > div,
 section#detalle-proyecto .content .como-llegar #slider ul.slide li > div,
 #slider section#detalle-proyecto .content .como-llegar ul.slide li > div {
   margin-left: 10px;
+  width: 70%;
 }
 
 section#detalle-proyecto .content .como-llegar ul.flex li:nth-child(1),

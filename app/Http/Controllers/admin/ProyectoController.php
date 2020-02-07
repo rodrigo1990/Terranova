@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Proyecto;
 use App\Img;
 use App\ProyectoVideo;
+use App\Estado;
 use App\Servicio;
 use App\Caracteristica;
 use App\LineaColectivo;
@@ -30,6 +31,8 @@ class ProyectoController extends Controller
 		 	$proyecto->latitud = $request->latitud;
 
 		 	$proyecto->longitud = $request->longitud;
+
+		 	$proyecto->estado_id = $request->estado;
 
 		 	if($request->estacion != null){
 		 		$proyecto->estacion = $request->estacion;
@@ -198,6 +201,8 @@ class ProyectoController extends Controller
 		 	$proyecto->latitud = $request->latitud;
 
 		 	$proyecto->longitud = $request->longitud;
+
+		 	$proyecto->estado_id = $request->estado;
 
 		 	if($request->estacion == null){
 		 		$proyecto->estacion = null;

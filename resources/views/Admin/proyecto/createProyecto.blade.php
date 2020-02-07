@@ -19,6 +19,20 @@
 
 					<br>
 					<br>
+
+					
+					<div class="row">
+					<label for="estado">ESTADO</label>
+					<select name="estado" class="form-control" id="">
+						@foreach($estados as $estado)
+							<option value="{{$estado->id}}">{{$estado->descripcion}}</option>
+						@endforeach
+					</select>
+					</div>
+					
+
+					<br>
+					<br>					
 					
 					<div class="row">
 					<label for="zona">ZONA</label>

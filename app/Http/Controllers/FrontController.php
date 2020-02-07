@@ -38,7 +38,8 @@ class FrontController extends Controller
 							'ig' => $this->ig,
 							'yt' => $this->yt,
 							'zonas' => Zona::all(),
-							'proyectos' => $this->proyectos
+							'proyectos' => $this->proyectos,
+							'estados' => Estado::all()
 							]);
 	} 
     
@@ -65,9 +66,28 @@ class FrontController extends Controller
 
 
     public function buscador(Request $request){
-    	if(isset($request->estado_id)){
-    		$this->proyectos = Proyecto::where('estado_id',$request->estado_id)->get();
-    	}
+
+    		$zona_id = (int)$request->zona_id;
+    		$proyecto_id = (int)$request->proyecto_id;
+    		$estado_id= (int)$request->estado_id;
+    	
+    		$this->proyectos = Proyecto::when($estado_id,function($query,$estado_id){
+                               return $query->where('estado_id',$estado_id,);  
+                            })
+    						->when($zona_id,function($query,$zona_id){
+                               return $query->where('zona_id',$zona_id,);  
+                            })
+                            ->when($proyecto_id,function($query,$proyecto_id){
+                               return $query->where('id',$proyecto_id,);  
+                            })
+
+
+                            ->get();
+
+
+    	
+
+  
         return view('buscador',[
 					        	'fb' => $this->fb,
 								'ig' => $this->ig,
@@ -75,9 +95,14 @@ class FrontController extends Controller
 								'zonas' => Zona::all(),
 								'proyectos' => $this->proyectos,
 								'estados' => Estado::all(),
-								'estado_id' => $request->estado_id
+								'estado_id' => $estado_id,
+								'proyecto_id' => $proyecto_id,
+								'zona_id' => $zona_id
 					        	]);
     }
+
+
+
 
 
     public function detalleProyecto(Request $request){

@@ -32001,6 +32001,8 @@ $(document).ready(function () {
 
 if (document.getElementById('buscador') || document.getElementById('buscador-section')) {
   __webpack_require__(/*! ./scripts/selectBarrioOnChange */ "./resources/js/scripts/selectBarrioOnChange.js");
+
+  __webpack_require__(/*! ./scripts/buscarProyectos */ "./resources/js/scripts/buscarProyectos.js");
 }
 
 if (document.getElementById('owl-1') || document.getElementById('owl-2')) {
@@ -32048,6 +32050,46 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/scripts/buscarProyectos.js":
+/*!*************************************************!*\
+  !*** ./resources/js/scripts/buscarProyectos.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.buscarProyectos = function () {
+  var zonaId = $(".buscador-container #zona").val();
+  var estadoId = $(".buscador-container #estado").val();
+  var proyectoId = $(".buscador-container #proyecto").val();
+  console.log(zonaId);
+  console.log(estadoId);
+  console.log(proyectoId);
+  $(".buscador-container #barrio").hide();
+  $(".buscador-container #barrio").parent().append('<div class="spinner-sm spinner-sm-1" id="status"> </div>');
+  $.ajax({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    data: {
+      zonaId: zonaId,
+      estadoId: estadoId,
+      proyectoId: proyectoId
+    },
+    url: '/buscarProyectos',
+    type: 'post',
+    dataType: "json",
+    success: function success(data) {
+      console.log(data);
+      var l = null;
+      $(".buscador-container #result").empty();
+
+      for (var i in data) {}
+    }
+  });
+};
 
 /***/ }),
 
@@ -33171,36 +33213,39 @@ window.scrollAnimate = function (id, element) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-window.buscarBarrioSegunZona = function () {
+window.buscarProyectoSegunZona = function () {
   var zonaId = $(".buscador-container #zona").val();
+  var estadoId = $(".buscador-container #estado").val();
   console.log(zonaId);
-  $(".buscador-container #barrio").hide();
-  $(".buscador-container #barrio").parent().append('<div class="spinner-sm spinner-sm-1" id="status"> </div>');
+  console.log(estadoId);
+  $(".buscador-container #proyecto").hide();
+  $(".buscador-container #proyecto").parent().append('<div class="spinner-sm spinner-sm-1" id="status"> </div>');
   $.ajax({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     },
     data: {
-      zonaId: zonaId
+      zonaId: zonaId,
+      estadoId: estadoId
     },
-    url: '/buscarBarrioSegunZona',
+    url: '/buscarBarrioSegunZonaEstado',
     type: 'post',
     dataType: "json",
     success: function success(data) {
       console.log(data);
       var l = null;
-      $(".buscador-container #barrio").empty();
+      $(".buscador-container #proyecto").empty();
 
       for (var i in data) {
         l = data[i].titulo.slice(1);
         l = l.toUpperCase();
         l = l + data[i].titulo;
-        $(".buscador-container #barrio").append("<option value=" + data[i].id + "> " + data[i].titulo + "</option>");
+        $(".buscador-container #proyecto").append("<option value=" + data[i].id + "> " + data[i].titulo + "</option>");
       }
 
-      $(".buscador-container #barrio").append('<option value="null">Seleccione un proyecto</option>');
+      $(".buscador-container #proyecto").append('<option value="null">Seleccione un proyecto</option>');
       $(".buscador-container #status").remove();
-      $(".buscador-container #barrio").show();
+      $(".buscador-container #proyecto").show();
     }
   });
 };

@@ -51,7 +51,7 @@ section#detalle-proyecto{
 					}				
 			}
 				li{
-					flex-basis: 266px;
+					flex-basis: 240px;
 
 					img{
 						display:block;
@@ -60,8 +60,10 @@ section#detalle-proyecto{
 					}
 
 					a{
+					    border: 2px solid $primary-color;
 						border-radius:17px;
 						margin-top:10px;
+					    font-size: 0.4rem;
 					}
 
 
@@ -93,6 +95,7 @@ section#detalle-proyecto{
 
 				>div{
 					margin-left:10px;
+				    width: 70%;
 
 				}
 				}

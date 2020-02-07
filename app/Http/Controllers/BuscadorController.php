@@ -19,14 +19,36 @@ use App\Estado;
 class BuscadorController extends Controller
 {
 
-	public function buscarBarrioSegunZona(Request $request){
+  protected $fb = 'https://www.facebook.com/Terranovadesarrollos';
+  protected $ig = 'https://www.instagram.com/terranovadesarrollos/';
+  protected $yt = 'https://www.youtube.com/channel/UCAa8DmWWB_NMjCrpPiKhn9g';
+
+	public function buscarBarrioSegunZonaEstado(Request $request){
+
+        
+        $zona_id = (int)$request->zonaId;
+        
+        $estado_id = (int)$request->estadoId;
+        
 
         $proyectos=DB::table('proyectos')
                      
                       ->select('id','titulo')
-                      ->where('zona_id','=',$request->zonaId)
+
+                      ->when($zona_id,function($query,$zona_id){
+                               return $query->where('proyectos.zona_id',$zona_id);  
+                            })
+
+
+                      ->when($estado_id,function($query,$estado_id){
+                               return $query->where('proyectos.estado_id',$estado_id);  
+                            })
+                      
                       ->orderBy('titulo', 'asc')
+
                       ->get();
+
+
 
 
         return $proyectos;
@@ -37,33 +59,48 @@ class BuscadorController extends Controller
 
   	public function buscarProyectos(Request $request){
 
-  			$zona_id = $request->zona_id;
+  			$zona_id = (int)$request->zona;
 
-  			$proyecto_id = $request->proyecto_id;
+  			$proyecto_id = (int)$request->proyecto;
 
-  			$estado_id = $request->estado_id;
+  			$estado_id = (int)$request->estado;
 
   		  	$proyectos = DB::table('proyectos')
-                            ->join('zonas','zonas.id','proyectos.zona_id')
-                            ->join('estados','estados.id','proyectos.estado_id')
-                            
-                            ->when($provincia_id,function($query,$zona_id){
-                               return $query->where('zonas.id',$zona_id);  
+                            ->join('img_proyecto','img_proyecto.proyecto_id','proyectos.id')                       
+                            ->where('img_proyecto.tipo','PRESENTACION')
+                            ->when($zona_id,function($query,$zona_id){
+                               return $query->where('proyectos.zona_id',$zona_id);  
                             })
 
-                            ->when($ciudad_id,function($query,$proyecto_id){
+                            ->when($proyecto_id,function($query,$proyecto_id){
                                return $query->where('proyectos.id',$proyecto_id);  
                             })
 
-                            ->when($especialidad_id,function($query,$estado_id){
-                               return $query->where('estados.id',$estado_id);
-                                  });
-                            })
-
-
+                            ->when($estado_id,function($query,$estado_id){
+                               return $query->where('proyectos.estado_id',$estado_id);
+                              })
+                            ->distinct()
                             ->get();
 
-            return $proyectos;
+
+
+
+
+
+
+
+            //return $proyectos;
+
+             return view('buscador',[
+                    'fb' => $this->fb,
+                'ig' => $this->ig,
+                'yt' => $this->yt,
+                'zonas' => Zona::all(),
+                'proyectos' => $proyectos,
+                'estados' => Estado::all()
+                    ]);
+
+            
   	} 
     
 
