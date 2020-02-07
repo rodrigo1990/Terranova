@@ -11,7 +11,7 @@
 			
 			<div class="main-img flex align-vertically align-horizontally" style="background-image: url(<?php echo asset('storage/img/proyectos/'.$img->ruta) ?>)">
 
-					<h1 class="text-center">BARRIO PARQUE <br> <b>{{$proyecto->titulo}}</b></h1>
+					<h1 class="text-center"> <b>{{ucFirst($proyecto->titulo)}}</b></h1>
 			
 
 			</div>	
