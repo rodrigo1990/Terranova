@@ -65,7 +65,7 @@
 					<br>
 					<br>
 					<label for="descripcion">Descripción <span>*</span></label>
-					<textarea  name="descripcion" id="" cols="30" rows="10">{{$proyecto->descripcion}}</textarea>
+					<textarea class="tinyMCE" name="descripcion" id="" cols="30" rows="10">{{$proyecto->descripcion}}</textarea>
 					<p class="error" id="descripcionError">
 						Ingrese una descripción
 					</p>
@@ -262,21 +262,30 @@
 					<div class="row">
 						<h2 class="text-left" style="display:block;">VIDEOS</h2>
 						<br>
-						<div class="col-sm-12">
+						<div class="col-sm-12 video-group">
 						
 							<label for="video_1">VIDEO 1 </label>
 							
 							<input type="hidden" name="video_1_id" value="@if(isset($proyecto->video[0])){{$proyecto->video[0]->id}}@endif">
 
-							<input type="text" name="video_1" class="form-control" onchange="insertVideoOnIframe(1)" value="@if(isset($proyecto->video[0]))<?php echo  'https://www.youtube.com/watch?v='.$proyecto->video[0]->url ?>@endif"> <div class="error" id="video1Error">Ingrese un video valido</div>
+							<input type="text" name="video_1" class="form-control" onchange="insertVideoOnIframe(1)" value="@if(isset($proyecto->video[0]))<?php echo  'https://www.youtube.com/watch?v='.$proyecto->video[0]->url ?>@endif"> <div class="error" id="linkYoutubeError1">Ingrese un video valido</div>
 
 
 							<input type="hidden" class="form-control" name="youTubeCode_1">
 
 							<iframe id="video-preview-1" class="video-preview" type="text/html" height="0px" frameborder="0"  allowfullscreen></iframe>
 
+							<label for="titulo_video_1">Titulo video 1 </label>
+							<input type="text" name="titulo_video_1" class="form-control" value="@if(isset($proyecto->video[0])){{$proyecto->video[0]->titulo}}@endif">
+							<div class="error" id="tituloVideo1Error">Ingrese un titulo</div>
+							
+
+							<label for="descripcion_video_1">Descripcion video 1 </label>
+							<textarea name="descripcion_video_1" class="form-control" rows="4" cols="100">@if(isset($proyecto->video[0])){{$proyecto->video[0]->descripcion}}@endif</textarea>
+							<div class="error" id="descripcionVideo1Error">Ingrese una descripción</div>
+
 						</div>
-						<div class="col-sm-12">
+						<div class="col-sm-12 video-group" >
 							
 							<label for="video_2">VIDEO 2 </label>
 							<input type="hidden" name="video_2_id" value="@if(isset($proyecto->video[1])){{$proyecto->video[1]->id}}@endif">
@@ -287,9 +296,17 @@
 							<input type="hidden" class="form-control" name="youTubeCode_2">
 
 
-							<div class="error" id="video2Error">Ingrese un video valido</div>
+							<div class="error" id="linkYoutubeError2">Ingrese un video valido</div>
 
 							<iframe id="video-preview-2" class="video-preview" height="0px" type="text/html" frameborder="0"  allowfullscreen></iframe>
+
+							<label for="titulo_video_2">Titulo video 2 </label>
+							<input type="text" name="titulo_video_2" class="form-control" value="@if(isset($proyecto->video[1])){{$proyecto->video[1]->titulo}}@endif">
+							<div class="error" id="tituloVideo2Error">Ingrese un titulo</div>
+
+							<label for="descripcion_video_2">Descripcion video 2 </label>
+							<textarea name="descripcion_video_2" class="form-control" rows="4" cols="100">@if(isset($proyecto->video[1])){{$proyecto->video[1]->descripcion}}@endif</textarea>
+							<div class="error" id="descripcionVideo2Error">Ingrese una descripción</div>
 						</div>
 					</div>
 					<div id="presentacion" class="row">
@@ -817,8 +834,14 @@
 			var imgPresentacion = $("input[name=img_presentacion]").val();
 			var imgSlide1 = $("input#file-input-1").val();
 			var imgSlide2 = $("input#file-input-2").val();
+
 			var linkYoutube1 = $("input[name=video_1]").val();
+			var tituloYoutube1 = $("input[name=titulo_video_1]").val();
+			var descripcionYoutube1 = $("textarea[name=descripcion_video_1]").val();
+
 			var linkYoutube2 = $("input[name=video_2]").val();
+			var tituloYoutube2 = $("input[name=titulo_video_2]").val();
+			var descripcionYoutube2 = $("textarea[name=descripcion_video_2]").val();
 
 
 			var tituloValidated = false;
@@ -828,6 +851,10 @@
 			var imgSlide2Validated = false;
 			var linkYoutube1Validated = false;
 			var linkYoutube2Validated = false;
+			var tituloVideo1Validated = false;
+			var descripcionVideo1Validated = false; 
+			var tituloVideo2Validated = false;
+			var descripcionVideo2Validated = false;
 
 			console.log($(document).find(("input[name=img_presentacion]")));
 
@@ -911,8 +938,27 @@
 			      
 			    	}
 
+	    	 	if(tituloYoutube1.length == 0){
+					$("#tituloVideo1Error").fadeIn();
+					tituloVideo1Validated = false;
+				}else{
+					$("#tituloVideo1Error").fadeOut();
+					tituloVideo1Validated = true;
+				}
+
+
+				if(descripcionYoutube1.length == 0){
+					$("#descripcionVideo1Error").fadeIn();
+					descripcionVideo1Validated = false;
+				}else{
+					$("#descripcionVideo1Error").fadeOut();
+					descripcionVideo1Validated = true;
+				}
+
 		    }else{
 		    	linkYoutube1Validated=true;
+		    	tituloVideo1Validated = true;
+		    	descripcionVideo1Validated = true;
 		    }
 
 
@@ -938,11 +984,41 @@
 			      
 			    	}
 
+		    	 	if(tituloYoutube2.length == 0){
+						$("#tituloVideo2Error").fadeIn();
+						tituloVideo2Validated = false;
+					}else{
+						$("#tituloVideo2Error").fadeOut();
+						tituloVideo2Validated = true;
+					}
+
+					if(descripcionYoutube2.length == 0){
+						$("#descripcionVideo2Error").fadeIn();
+						descripcionVideo2Validated = false;
+					}else{
+						$("#descripcionVideo2Error").fadeOut();
+						descripcionVideo2Validated = true;
+					}
+
 		    }else{
-		    	linkYoutube2Validated=true;	
+		    	linkYoutube2Validated=true;
+		    	tituloVideo2Validated = true;
+		    	descripcionVideo2Validated = true;		
 		    }
 
-			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true&&linkYoutube1Validated==true&&linkYoutube2Validated==true){
+		    console.log(tituloValidated);
+			console.log(descripcionValidated);
+			console.log(imgPresentacionValidated);
+			console.log(imgSlide1Validated);
+			console.log(imgSlide2Validated);
+			console.log(linkYoutube1Validated);
+			console.log(linkYoutube2Validated);
+			console.log(tituloVideo1Validated);
+			console.log(descripcionVideo1Validated);
+			console.log(tituloVideo2Validated);
+			console.log(descripcionVideo2Validated);
+
+			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true&&linkYoutube1Validated==true&&linkYoutube2Validated==true&&tituloVideo1Validated==true&&descripcionVideo1Validated==true&&tituloVideo2Validated==true&&descripcionVideo2Validated==true){
 				//alert("enviado");
 				setTimeout(function(){
 					$('form').submit();

@@ -37901,9 +37901,9 @@ $('#owl-2').owlCarousel({
   margin: 50,
   autoplay: true,
   autoplayTimeout: 2000,
-  nav: true,
-  dots: true,
-  items: 1,
+  nav: false,
+  dots: false,
+  items: 4,
   responsive: {
     0: {
       items: 2
@@ -37912,7 +37912,7 @@ $('#owl-2').owlCarousel({
       items: 2
     },
     1200: {
-      items: 3
+      items: 4
     }
   }
 });

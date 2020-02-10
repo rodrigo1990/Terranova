@@ -1,4 +1,4 @@
-$margin-inter-section:50px;
+$margin-inter-section:40px;
 section#detalle-proyecto{
 
 	.main-img{
@@ -22,6 +22,10 @@ section#detalle-proyecto{
 
 	.content{
 		margin-bottom:$margin-inter-section;
+		>.row>.container-fluid>.info>.row{
+			margin-left:0 !important;
+			margin-right: 0 !important;
+		}
 		>.row:nth-child(1){
 			//display:inline-flex;
 				>.container-fluid:before{
@@ -36,22 +40,23 @@ section#detalle-proyecto{
 		
 		
 		.info{
-			padding-left: 3%;
-    		padding-right: 3%;
+			padding-left: 7%;
+   			 padding-right: 7%;
+   			 padding-top:3%;
 		}
 
 
 		background:$third-color;
-		ul.flex.align-horizontally.align-vertically{
-			margin:$margin-inter-section $margin-inter-section !important;
-			flex-wrap: wrap;
+		ul.flex.align-left.align-vertically{
+			margin:$margin-inter-section/2 $margin-inter-section/2 $margin-inter-section 0 !important;
+			flex-wrap: nowrap;
 			li:nth-child(1){
 				img{
-						width: 40px;
+						width: 30px;
 					}				
-			}
+				}
 				li{
-					flex-basis: 240px;
+				    margin-right: 31px;
 
 					img{
 						display:block;
@@ -60,6 +65,7 @@ section#detalle-proyecto{
 					}
 
 					a{
+						width: auto !important;
 					    border: 2px solid $primary-color;
 						border-radius:17px;
 						margin-top:10px;
@@ -71,19 +77,30 @@ section#detalle-proyecto{
 			}
 
 		.proyecto-description{
+		
+			p, p span{
+				font-family: $font-regular !important;
+			}
+			h1 span, h2 span, h3 span, h4 span{
+				font-family: $font-black !important;
+			}
 			p,h1,h2,h3,h4,b,i{
 				color:$gray !important;
+			}
+
+			p:last-child, h1:last-child, h2:last-child, h3:last-child, h4:last-child{
+				margin-bottom: 0 !important;
 			}
 		}
 
 		.como-llegar{
 			margin-top:$margin-inter-section !important;
-			margin-bottom:$margin-inter-section !important;
 			ul.flex{
 				flex-wrap:wrap;
 				li{
 					p{
 						color:$gray;
+						margin-bottom: 0 !important;
 					}
 
 
@@ -119,6 +136,8 @@ section#detalle-proyecto{
 
 
 		.caracteristicas{
+			margin-top:$margin-inter-section !important;
+
 			margin-bottom:0;
 			border:3px solid $gray-opacity;
 			padding-left:0.5rem;
@@ -131,7 +150,9 @@ section#detalle-proyecto{
 					h1{
 						color:$primary-color;
 						margin-top:0;
-						margin-bottom:0.6rem;
+						margin-bottom:0.2rem;
+						font-family: $font-black !important;
+
 					}
 				}
 
@@ -190,8 +211,9 @@ section#detalle-proyecto{
 				padding:18px 57px;
 			    border-left: 1px solid $gray-opacity;
 				border-right: 1px solid $gray-opacity;
+				margin-bottom:15px !important;
 
-				h3{
+				h4{
 					text-align: center;
 					color:$primary-color;
 					margin:0;
@@ -289,6 +311,18 @@ section#detalle-proyecto{
 	}
 
 
+	.row-btn{
+		margin-top: $margin-inter-section;
+		margin-bottom: $margin-inter-section;
+
+		a{
+			width: auto;
+		    width: 417px;
+
+		}
+	}
+
+
 
 
 
@@ -300,7 +334,29 @@ section#detalle-proyecto{
 	}
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (width: 1024px) {
+	section#detalle-proyecto{
+	
+		.col-md-12.videos{
+			margin-top:30px;
+			height: auto !important;
+		}
+
+	}
+
+}
+
+@media only screen and  (max-width: 1024px) {
+
+
+	.row-btn{
+			a{
+				width: 100% !important;
+			}
+		}
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
 
 
 	$margin-inter-section:25px;
@@ -330,11 +386,25 @@ section#detalle-proyecto{
 
 	}
 .col-md-12.videos{
-		margin-top:30px;
-		height: auto !important;
+		/*margin-top:30px;*/
+		/*height: auto !important;*/
 	}
 
 }
+
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
+
+	section#detalle-proyecto{
+
+
+	.col-md-12.videos{
+			margin-top:30px;
+			height: auto !important;
+		}
+
+	}
 
 }
 
@@ -419,10 +489,17 @@ section#detalle-proyecto{
 	
 	.content{
 
-		ul.flex.align-horizontally.align-vertically{
-
+		ul.flex.align-left.align-vertically{
+		flex-wrap:wrap;
+		justify-content:center;
 			li{
 				margin-bottom: 24px;
+				margin-right: 0 !important;
+				flex-basis:200px;
+
+				a{
+					width:100%;
+				}
 			}
 		}
 		
@@ -482,7 +559,7 @@ section#detalle-proyecto{
 		ul.flex{
 			li{
 				width: 100%;
-				margin-bottom:15px !important;
+				
 			
 			}
 		}

@@ -33,6 +33,10 @@ html {
   color: #464646;
 }
 
+label {
+  display: block !important;
+}
+
 label span,
 h2 span,
 i span {
@@ -462,6 +466,13 @@ h2.active {
 .gm-search-input {
   background-color: white !important;
   padding: 6px !important;
+}
+
+.video-group {
+  padding: 37px 22px;
+  border: 1px solid #b9b9b9;
+  border-radius: 13px;
+  margin-bottom: 20px;
 }
 
 .form-control {

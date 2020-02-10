@@ -17,6 +17,8 @@ class ProyectoVideo extends Migration
             $table->increments('id');
             $table->string('url',200);
             $table->unsignedInteger('proyecto_id');
+            $table->string('titulo',200);
+            $table->text('descripcion',200);
 
             $table->foreign('proyecto_id')->references('id')->on('proyectos');
          

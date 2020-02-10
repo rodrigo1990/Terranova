@@ -84,6 +84,8 @@ class ProyectoController extends Controller
 		 	if($request->video_1 != null){
 		 		$video1 = new ProyectoVideo();
 		 		$video1->url = $request->youTubeCode_1;
+		 		$video1->titulo = $request->titulo_video_1;
+		 		$video1->descripcion = $request->descripcion_video_1;
 		 		$proyecto->video()->save($video1);
 		 	}
 
@@ -91,6 +93,8 @@ class ProyectoController extends Controller
 		 	if($request->video_2 != null){
 		 		$video2 = new ProyectoVideo();
 		 		$video2->url = $request->youTubeCode_2;
+		 		$video2->titulo = $request->titulo_video_2;
+		 		$video2->descripcion = $request->descripcion_video_2;
 		 		$proyecto->video()->save($video2);
 		 	}
 
@@ -219,11 +223,16 @@ class ProyectoController extends Controller
 		 		if(isset($video1)){
 		 		
 		 			$video1->url = $request->youTubeCode_1;
+		 			$video1->titulo = $request->titulo_video_1;
+		 			$video1->descripcion = $request->descripcion_video_1;
+
 		 		
 		 		}else{
 
 		 			$video1 = new ProyectoVideo();
 		 			$video1->url = $request->youTubeCode_1;
+		 			$video1->titulo = $request->titulo_video_1;
+		 			$video1->descripcion = $request->descripcion_video_1;
 
 		 		}
 		 		
@@ -231,7 +240,11 @@ class ProyectoController extends Controller
 		 	
 		 	}else{
 
-		 		ProyectoVideo::find($request->video_1_id)->delete();
+		 		$pFind = ProyectoVideo::find($request->video_1_id);
+
+		 		if(isset($pfind)){
+			 		ProyectoVideo::find($request->video_1_id)->delete();
+		 		}
 		 	
 		 	}
 
@@ -243,11 +256,15 @@ class ProyectoController extends Controller
 		 		if(isset($video2)){
 		 		
 		 			$video2->url = $request->youTubeCode_2;
+		 			$video2->titulo = $request->titulo_video_2;
+		 			$video2->descripcion = $request->descripcion_video_2;
 		 		
 		 		}else{
 
 		 			$video2 = new ProyectoVideo();
 		 			$video2->url = $request->youTubeCode_2;
+		 			$video2->titulo = $request->titulo_video_2;
+		 			$video2->descripcion = $request->descripcion_video_2;
 
 		 		}
 		 		
@@ -255,7 +272,12 @@ class ProyectoController extends Controller
 		 	
 		 	}else{
 
-		 		ProyectoVideo::find($request->video_2_id)->delete();
+		 		$pFind = ProyectoVideo::find($request->video_2_id);
+
+		 		if(isset($pfind)){
+			 		ProyectoVideo::find($request->video_2_id)->delete();
+		 		}
+
 		 	
 		 	}
 

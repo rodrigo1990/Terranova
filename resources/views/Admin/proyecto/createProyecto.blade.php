@@ -50,7 +50,7 @@
 					<div class="row">
 					
 						<label for="descripcion">Descripción <span>*</span></label>
-						<textarea  name="descripcion" id="" cols="30" rows="10"></textarea>
+						<textarea class="tinyMCE"  name="descripcion" id="" cols="30" rows="10"></textarea>
 						
 						<p class="error" id="descripcionError">
 							Ingrese una descripción
@@ -196,24 +196,43 @@
 					<div class="row">
 						<h2 class="text-left" style="display:block;">VIDEOS</h2>
 						<br>
-						<div class="col-sm-12">
+						<div class="col-sm-12 video-group">
 						
 							<label for="video_1">VIDEO 1 </label>
 							<input type="text" name="video_1" class="form-control" onchange="insertVideoOnIframe(1)">
 							<input type="hidden" class="form-control" name="youTubeCode_1">
-							<div class="error" id="video1Error">Ingrese un video valido</div>
+							<div class="error" id="linkYoutubeError1">Ingrese un video valido</div>
 
 							<iframe id="video-preview-1" class="video-preview" type="text/html" height="0px" frameborder="0"  allowfullscreen></iframe>
 
+
+							<label for="titulo_video_1">Titulo video 1 </label>
+							<input type="text" name="titulo_video_1" class="form-control">
+							<div class="error" id="tituloVideo1Error">Ingrese un titulo</div>
+							
+
+							<label for="descripcion_video_1">Descripcion video 1 </label>
+							<textarea name="descripcion_video_1" class="form-control" rows="4" cols="100"></textarea>
+							<div class="error" id="descripcionVideo1Error">Ingrese una descripción</div>
+					
+
 						</div>
-						<div class="col-sm-12">
+						<div class="col-sm-12 video-group">
 							
 							<label for="video_2">VIDEO 2 </label>
 							<input type="text" name="video_2" class="form-control" onchange="insertVideoOnIframe(2)">
 							<input type="hidden" class="form-control" name="youTubeCode_2">
-							<div class="error" id="video2Error">Ingrese un video valido</div>
+							<div class="error" id="linkYoutubeError2">Ingrese un video valido</div>
 
 							<iframe id="video-preview-2" class="video-preview" height="0px" type="text/html" frameborder="0"  allowfullscreen></iframe>
+
+							<label for="titulo_video_2">Titulo video 2 </label>
+							<input type="text" name="titulo_video_2" class="form-control">
+							<div class="error" id="tituloVideo2Error">Ingrese un titulo</div>
+
+							<label for="descripcion_video_2">Descripcion video 2 </label>
+							<textarea name="descripcion_video_2" class="form-control" rows="4" cols="100"></textarea>
+							<div class="error" id="descripcionVideo2Error">Ingrese una descripción</div>
 						</div>
 					</div>
 					<div class="row">
@@ -632,8 +651,15 @@
 			var imgSlide1 = $("input#file-input-1").val();
 			var imgSlide2 = $("input#file-input-2").val();
 
-			var video1 = $("input[name=video_1]").val();
-			var video2 = $("input[name=video_2]").val();
+			var linkYoutube1 = $("input[name=video_1]").val();
+			var tituloYoutube1 = $("input[name=titulo_video_1]").val();
+			var descripcionYoutube1 = $("textarea[name=descripcion_video_1]").val();
+
+
+
+			var linkYoutube2 = $("input[name=video_2]").val();
+			var tituloYoutube2 = $("input[name=titulo_video_2]").val();
+			var descripcionYoutube2 = $("textarea[name=descripcion_video_2]").val();
 
 			var latitud = $("input[name=latitud]").val();
 			var longitud = $("input[name=longitud]").val();
@@ -653,9 +679,13 @@
 			var imgSlide2Validated = false;
 
 
-			var video1Validated = false; 
+			var video1Validated = false;
+			var tituloVideo1Validated = false;
+			var descripcionVideo1Validated = false; 
 
 			var video2Validated = false;
+			var tituloVideo2Validated = false;
+			var descripcionVideo2Validated = false;
 
 
 			var coordenadasValidated = false;
@@ -707,6 +737,101 @@
 				coordenadasValidated=true;
 			}
 
+			if(linkYoutube1.length != 0){
+
+
+				match1 = validateYoutubeLink(linkYoutube1); 
+				
+					if ( match1 != false) {        
+				       
+				                
+			         	console.log('true');
+			        
+			            $("#linkYoutubeError1").fadeOut();
+					
+						video1Validated = true;
+
+						$("input[name=youTubeCode_1]").val(match1[2]);
+				        
+				         
+			    	}else{
+			    		console.log('false');
+		    			$("#linkYoutubeError1").fadeIn();
+			      
+			    	}
+
+
+			   if(tituloYoutube1.length == 0){
+					$("#tituloVideo1Error").fadeIn();
+					tituloVideo1Validated = false;
+				}else{
+					$("#tituloVideo1Error").fadeOut();
+					tituloVideo1Validated = true;
+				}
+
+
+				if(descripcionYoutube1.length == 0){
+					$("#descripcionVideo1Error").fadeIn();
+					descripcionVideo1Validated = false;
+				}else{
+					$("#descripcionVideo1Error").fadeOut();
+					descripcionVideo1Validated = true;
+				}
+
+
+				
+
+		    }else{
+		    	video1Validated=true;
+		    	tituloVideo1Validated = true;
+		    	descripcionVideo1Validated = true;
+		    }
+
+
+		    if(linkYoutube2.length != 0){
+
+			    match2 = validateYoutubeLink(linkYoutube2); 
+					
+					if ( match2 != false) {        
+				       
+				                
+			         	console.log('true');
+			        
+			            $("#linkYoutubeError2").fadeOut();
+					
+						video2Validated = true;
+
+						$("input[name=youTubeCode_2]").val(match2[2]);
+				        
+				         
+			    	}else{
+			    		console.log('false');
+		    			$("#linkYoutubeError2").fadeIn();
+			      
+			    	}
+
+			    if(tituloYoutube2.length == 0){
+					$("#tituloVideo2Error").fadeIn();
+					tituloVideo2Validated = false;
+				}else{
+					$("#tituloVideo2Error").fadeOut();
+					tituloVideo2Validated = true;
+				}
+
+				if(descripcionYoutube2.length == 0){
+					$("#descripcionVideo2Error").fadeIn();
+					descripcionVideo2Validated = false;
+				}else{
+					$("#descripcionVideo2Error").fadeOut();
+					descripcionVideo2Validated = true;
+				}
+
+		    }else{
+		    	video2Validated=true;
+		    	tituloVideo2Validated = true;
+		    	descripcionVideo2Validated = true;	
+		    }
+
 			var k = $('.li-file-input').not('.li-file-input.ui-sortable-handle').length;
 			var y = 0;
 			var state = 0;
@@ -735,8 +860,19 @@
 				}
 			},1000);
 			
+			console.log(tituloValidated);
+			console.log(descripcionValidated);
+			console.log(imgSlide1Validated);
+			console.log(imgSlide2Validated);
+			console.log(imgPresentacionValidated);
+			console.log(video1Validated);
+			console.log(tituloVideo1Validated);
+			console.log(descripcionVideo1Validated);
+			console.log(video2Validated);
+			console.log(tituloVideo2Validated);
+			console.log(descripcionVideo2Validated);
 
-			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true){
+			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true&&video1Validated==true&&tituloVideo1Validated==true&&descripcionVideo1Validated==true&&video2Validated==true&&tituloVideo2Validated==true&&descripcionVideo2Validated==true){
 			
 			setTimeout(function(){
 				$('form').submit();

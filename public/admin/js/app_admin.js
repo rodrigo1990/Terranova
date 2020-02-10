@@ -48108,11 +48108,30 @@ tinymce.baseURL = "https://cdn.tiny.cloud/1/4du36rgs2w5s3lyfrmifk85266w9h8vcodmj
 /***/ (function(module, exports) {
 
 tinymce.init({
-  selector: "textarea",
+  selector: ".tinyMCE",
   // change this value according to your HTML
   plugins: "link",
   menubar: "insert edit align",
-  language: 'es'
+  language: 'es',
+  style_formats: [{
+    title: 'Headers',
+    items: [{
+      title: 'Heading 2',
+      block: 'h2'
+    }, {
+      title: 'Heading 3',
+      block: 'h3'
+    }, {
+      title: 'Heading 4',
+      block: 'h4'
+    }, {
+      title: 'Heading 5',
+      block: 'h5'
+    }, {
+      title: 'Heading 6',
+      block: 'h6'
+    }]
+  }]
 });
 
 /***/ }),

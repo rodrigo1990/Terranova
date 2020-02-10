@@ -4351,7 +4351,7 @@ select {
   color: #949494 !important;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 850px) {
+@media only screen and (min-width: 1px) and (max-width: 850px) {
   html {
     font-size: 28px !important;
   }
@@ -4364,6 +4364,7 @@ select {
     display: block;
     margin: auto;
     width: 100%;
+    font-size: 0.45rem;
   }
 }
 
@@ -4658,7 +4659,7 @@ header #slider .slide > li .slide > li a i,
   }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 1200px) {
+@media only screen and (min-width: 1px) and (max-width: 1200px) {
   header .col-xs-12 .flex,
   header .col-xs-12 #buscador ul.flex li,
   #buscador ul.flex header .col-xs-12 li,
@@ -6747,8 +6748,13 @@ section#detalle-proyecto .main-img h1 b {
 }
 
 section#detalle-proyecto .content {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   background: white;
+}
+
+section#detalle-proyecto .content > .row > .container-fluid > .info > .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 section#detalle-proyecto .content > .row:nth-child(1) > .container-fluid:before {
@@ -6760,44 +6766,58 @@ section#detalle-proyecto .content > .row:before {
 }
 
 section#detalle-proyecto .content .info {
-  padding-left: 3%;
-  padding-right: 3%;
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-top: 3%;
 }
 
-section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically,
-section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide,
-#slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide {
-  margin: 50px 50px !important;
-  flex-wrap: wrap;
+section#detalle-proyecto .content ul.flex.align-left.align-vertically,
+section#detalle-proyecto .content #slider ul.align-left.align-vertically.slide,
+#slider section#detalle-proyecto .content ul.align-left.align-vertically.slide {
+  margin: 20px 20px 40px 0 !important;
+  flex-wrap: nowrap;
 }
 
-section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li:nth-child(1) img,
-section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li:nth-child(1) img,
-#slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li:nth-child(1) img {
-  width: 40px;
+section#detalle-proyecto .content ul.flex.align-left.align-vertically li:nth-child(1) img,
+section#detalle-proyecto .content #slider ul.align-left.align-vertically.slide li:nth-child(1) img,
+#slider section#detalle-proyecto .content ul.align-left.align-vertically.slide li:nth-child(1) img {
+  width: 30px;
 }
 
-section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li,
-section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li,
-#slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li {
-  flex-basis: 240px;
+section#detalle-proyecto .content ul.flex.align-left.align-vertically li,
+section#detalle-proyecto .content #slider ul.align-left.align-vertically.slide li,
+#slider section#detalle-proyecto .content ul.align-left.align-vertically.slide li {
+  margin-right: 31px;
 }
 
-section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li img,
-section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li img,
-#slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li img {
+section#detalle-proyecto .content ul.flex.align-left.align-vertically li img,
+section#detalle-proyecto .content #slider ul.align-left.align-vertically.slide li img,
+#slider section#detalle-proyecto .content ul.align-left.align-vertically.slide li img {
   display: block;
   margin: auto;
   width: 50px;
 }
 
-section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li a,
-section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li a,
-#slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li a {
+section#detalle-proyecto .content ul.flex.align-left.align-vertically li a,
+section#detalle-proyecto .content #slider ul.align-left.align-vertically.slide li a,
+#slider section#detalle-proyecto .content ul.align-left.align-vertically.slide li a {
+  width: auto !important;
   border: 2px solid #7d9f45;
   border-radius: 17px;
   margin-top: 10px;
   font-size: 0.4rem;
+}
+
+section#detalle-proyecto .content .proyecto-description p,
+section#detalle-proyecto .content .proyecto-description p span {
+  font-family: "Montserrat-Regular", "Helvetica" !important;
+}
+
+section#detalle-proyecto .content .proyecto-description h1 span,
+section#detalle-proyecto .content .proyecto-description h2 span,
+section#detalle-proyecto .content .proyecto-description h3 span,
+section#detalle-proyecto .content .proyecto-description h4 span {
+  font-family: "Montserrat-Black", "Helvetica" !important;
 }
 
 section#detalle-proyecto .content .proyecto-description p,
@@ -6810,9 +6830,16 @@ section#detalle-proyecto .content .proyecto-description i {
   color: #606161 !important;
 }
 
+section#detalle-proyecto .content .proyecto-description p:last-child,
+section#detalle-proyecto .content .proyecto-description h1:last-child,
+section#detalle-proyecto .content .proyecto-description h2:last-child,
+section#detalle-proyecto .content .proyecto-description h3:last-child,
+section#detalle-proyecto .content .proyecto-description h4:last-child {
+  margin-bottom: 0 !important;
+}
+
 section#detalle-proyecto .content .como-llegar {
-  margin-top: 50px !important;
-  margin-bottom: 50px !important;
+  margin-top: 40px !important;
 }
 
 section#detalle-proyecto .content .como-llegar ul.flex,
@@ -6825,6 +6852,7 @@ section#detalle-proyecto .content .como-llegar ul.flex li p,
 section#detalle-proyecto .content .como-llegar #slider ul.slide li p,
 #slider section#detalle-proyecto .content .como-llegar ul.slide li p {
   color: #606161;
+  margin-bottom: 0 !important;
 }
 
 section#detalle-proyecto .content .como-llegar ul.flex li .line-vert,
@@ -6867,6 +6895,7 @@ section#detalle-proyecto .content .como-llegar #slider ul.slide li:nth-child(3) 
 }
 
 section#detalle-proyecto .content .caracteristicas {
+  margin-top: 40px !important;
   margin-bottom: 0;
   border: 3px solid rgba(96, 97, 97, 0.2);
   padding-left: 0.5rem;
@@ -6881,7 +6910,8 @@ section#detalle-proyecto .content .caracteristicas ul {
 section#detalle-proyecto .content .caracteristicas ul li h1 {
   color: #7d9f45;
   margin-top: 0;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.2rem;
+  font-family: "Montserrat-Black", "Helvetica" !important;
 }
 
 section#detalle-proyecto .content .caracteristicas ul li:last-child h1 {
@@ -6947,19 +6977,20 @@ section#detalle-proyecto .servicios #slider ul.slide li,
   padding: 18px 57px;
   border-left: 1px solid rgba(96, 97, 97, 0.2);
   border-right: 1px solid rgba(96, 97, 97, 0.2);
+  margin-bottom: 15px !important;
 }
 
-section#detalle-proyecto .servicios ul.flex li h3,
-section#detalle-proyecto .servicios #slider ul.slide li h3,
-#slider section#detalle-proyecto .servicios ul.slide li h3 {
+section#detalle-proyecto .servicios ul.flex li h4,
+section#detalle-proyecto .servicios #slider ul.slide li h4,
+#slider section#detalle-proyecto .servicios ul.slide li h4 {
   text-align: center;
   color: #7d9f45;
   margin: 0;
 }
 
 section#detalle-proyecto #imagenes {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 section#detalle-proyecto #imagenes .galeria .slider .overlay,
@@ -7023,12 +7054,35 @@ section#detalle-proyecto #imagenes .galeria .slider .overlay .fa-search {
   padding: 15px;
 }
 
+section#detalle-proyecto .row-btn {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+section#detalle-proyecto .row-btn a {
+  width: auto;
+  width: 417px;
+}
+
 section#detalle-proyecto #ubicacion #map {
   width: 100%;
   height: 70vh;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (width: 1024px) {
+  section#detalle-proyecto .col-md-12.videos {
+    margin-top: 30px;
+    height: auto !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .row-btn a {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
   section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically,
   section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide,
   #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide {
@@ -7047,6 +7101,13 @@ section#detalle-proyecto #ubicacion #map {
     width: 30px;
   }
 
+  section#detalle-proyecto .col-md-12.videos {
+    /*margin-top:30px;*/
+    /*height: auto !important;*/
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1199px) {
   section#detalle-proyecto .col-md-12.videos {
     margin-top: 30px;
     height: auto !important;
@@ -7114,10 +7175,25 @@ section#detalle-proyecto #ubicacion #map {
     margin-right: auto !important;
   }
 
-  section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li,
-  section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li,
-  #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li {
+  section#detalle-proyecto .content ul.flex.align-left.align-vertically,
+  section#detalle-proyecto .content #slider ul.align-left.align-vertically.slide,
+  #slider section#detalle-proyecto .content ul.align-left.align-vertically.slide {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  section#detalle-proyecto .content ul.flex.align-left.align-vertically li,
+  section#detalle-proyecto .content #slider ul.align-left.align-vertically.slide li,
+  #slider section#detalle-proyecto .content ul.align-left.align-vertically.slide li {
     margin-bottom: 24px;
+    margin-right: 0 !important;
+    flex-basis: 200px;
+  }
+
+  section#detalle-proyecto .content ul.flex.align-left.align-vertically li a,
+  section#detalle-proyecto .content #slider ul.align-left.align-vertically.slide li a,
+  #slider section#detalle-proyecto .content ul.align-left.align-vertically.slide li a {
+    width: 100%;
   }
 
   section#detalle-proyecto .content .como-llegar {
@@ -7173,7 +7249,6 @@ section#detalle-proyecto #ubicacion #map {
   section#detalle-proyecto .servicios #slider ul.slide li,
   #slider section#detalle-proyecto .servicios ul.slide li {
     width: 100%;
-    margin-bottom: 15px !important;
   }
 }
 

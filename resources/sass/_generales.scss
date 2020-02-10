@@ -246,7 +246,7 @@ select{
 }
 
 
-@media only screen and (min-width: 320px) and (max-width: 850px){
+@media only screen and (min-width: 1px) and (max-width: 850px){
 
 html{
   font-size: 28px !important;
@@ -261,6 +261,7 @@ a.btn{
      display:block;
      margin:auto;
      width: 100%;
+     font-size: 0.45rem;
 }
 
 

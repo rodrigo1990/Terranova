@@ -10,8 +10,8 @@
 		@if($img->tipo=='PRESENTACION')
 			
 			<div class="main-img flex align-vertically align-horizontally" style="background-image: url(<?php echo asset('storage/img/proyectos/'.$img->ruta) ?>)">
-
-					<h1 class="text-center"> <b>{{ucFirst($proyecto->titulo)}}</b></h1>
+				
+					<h1 class="text-center"> BARRIO PARQUE <br>  <b>{{strtoupper($proyecto->titulo)}}</b></h1>
 			
 
 			</div>	
@@ -21,16 +21,36 @@
 
 	<div class="content">
 		<div class="row">
-			<div class="container-fluid">
-				<div class="col-sm-12 col-md-12 col-lg-8 info">
-					<ul class="flex align-horizontally align-vertically">
+				<?php $cols = 0; ?>
+				@if(count($proyecto->video)>0)
+					<?php 
+						
+						$cols = 8;
+
+						$containerClass = 'container-fluid';
+
+					 ?>
+
+				@else
+					<?php
+					 
+					 $cols = 12; 
+					 $containerClass = 'container';
+
+					 ?>
+				@endif
+			<div class="{{$containerClass}}">
+
+			
+				<div class="col-sm-12 col-md-12 col-lg-{{$cols}} info">
+					<ul class="flex align-left align-vertically">
 			<li class="text-center">
 				<img src="<?php echo asset('storage/img/detalle_proyecto/geoloc.svg') ?>"  alt="">
 				<a onclick="scrollAnimate('ubicacion',this)" class="btn">
 					VER UBICACIÓN
 				</a>
 			</li>
-			@if(isset($proyecto->masterplan[0]))
+			@if(count($proyecto->masterplan)>0)
 			<li class="text-center">
 				<img src="<?php echo asset('storage/img/detalle_proyecto/masterplan.svg') ?>"  alt="">
 				<a target="_blank" href="<?php echo asset('/storage/archivos/proyectos/masterplans/'.$proyecto->masterplan[0]->ruta) ?>" class="btn">
@@ -50,42 +70,44 @@
 			<?php echo $proyecto->descripcion ?>
 		</div>
 		
-		<div class="row como-llegar">
-			<ul class="flex align-left">
-				
-				@if(isset($proyecto->estacion))
-					<li>
-						<img src="<?php echo asset('storage/img/detalle_proyecto/tren.svg') ?> " alt="" height="68px" class="float-left">
-						<div class="float-left flex align-vertically" style="height: 68px;">
-							<p>A pocas cuadras de la <br> <b>{{$proyecto->estacion}}</b></p>
-						</div>
-					</li>
-				@endif
-
-				@if(isset($proyecto->estacion) && isset($proyecto->lineaColectivo))
-					<li class="flex align-horizontally">
-						<div class="line-vert"></div>
-					</li>
-				@endif
-				
-
-				@if(isset($proyecto->lineaColectivo))
-					<li>
-						<img src="<?php echo asset('storage/img/detalle_proyecto/bus.svg') ?> " alt="" height="68px" class="float-left">
-						<div class="float-left flex align-vertically" style="height: 68px;">
-							<div>
-								<p>Líneas de lineaColectivo</p>
-								@foreach($proyecto->lineaColectivo as $lineaColectivo)
-									<p><b>{{$lineaColectivo->descripcion}}</b></p>
-								@endforeach
+		@if(isset($proyecto->estacion) && count($proyecto->lineaColectivo)>0)
+			<div class="row como-llegar">
+				<ul class="flex align-left">
+					
+					@if(isset($proyecto->estacion))
+						<li class="flex align-vertically">
+							<img src="<?php echo asset('storage/img/detalle_proyecto/tren.svg') ?> " alt="" width="45px" class="float-left">
+							<div class="float-left flex align-vertically" style="height: 68px;">
+								<p>A pocas cuadras de la <br> <b>{{$proyecto->estacion}}</b></p>
 							</div>
-						</div>
-					</li>
-				@endif
-			</ul>
-		</div>
+						</li>
+					@endif
+
+					@if(isset($proyecto->estacion) && count($proyecto->lineaColectivo)>0)
+						<li class="flex align-horizontally">
+							<div class="line-vert"></div>
+						</li>
+					@endif
+					
+
+					@if(count($proyecto->lineaColectivo)>0)
+						<li class="flex align-vertically">
+							<img src="<?php echo asset('storage/img/detalle_proyecto/bus.svg') ?> " alt="" width="50px" class="float-left">
+							<div class="float-left flex align-vertically" style="height: 68px;">
+								<div>
+									<p>Líneas de lineaColectivo</p>
+									@foreach($proyecto->lineaColectivo as $lineaColectivo)
+										<p><b>{{$lineaColectivo->descripcion}}</b></p>
+									@endforeach
+								</div>
+							</div>
+						</li>
+					@endif
+				</ul>
+			</div>
+		@endif
 		
-		@if(isset($proyecto->caracteristica))
+		@if(count($proyecto->caracteristica)>0)
 		<div class="row caracteristicas">
 			<ul>
 				@foreach($proyecto->caracteristica as $caracteristica)
@@ -95,16 +117,25 @@
 		</div>
 		@endif
 
-				</div>
-				<div class=" col-sm-12 col-md-12 col-lg-4  videos">
-					<ul class="flex align-horizontally">
-						@foreach($proyecto->video as $video)
-							<li>
-								<iframe id="videoObject" src="https://www.youtube.com/embed/{{$video->url}}?autoplay=1&enablejsapi=1" type="text/html" frameborder="0"  allowfullscreen height="150px"></iframe>
-							</li>
-						@endforeach
-					</ul>
-				</div>
+
+
+		</div>
+				
+		@if(count($proyecto->video )> 0)
+		
+		<div class=" col-sm-12 col-md-12 col-lg-4  videos">
+			<ul class="flex align-horizontally">
+				@foreach($proyecto->video as $video)
+					<li>
+						<iframe id="videoObject" src="https://www.youtube.com/embed/{{$video->url}}?autoplay=1&enablejsapi=1" type="text/html" frameborder="0"  allowfullscreen height="150px"></iframe>
+					</li>
+				@endforeach
+			</ul>
+		</div>
+		@endif
+
+
+
 			</div>
 		</div>
 		<div class="container">
@@ -116,13 +147,13 @@
 
 
 
-	@if(isset($proyecto->servicio))
+	@if(count($proyecto->servicio)>0)
 		<div class="row servicios flex align-vertically align-horizontally">
 			<div>
 				<h1 class="text-center"><b>SERVICIOS</b></h1>
 				<ul class="flex align-horizontally">
 					@foreach($proyecto->servicio as $servicio)
-						<li><h3>{{ucfirst($servicio->descripcion)}}</h3></li>
+						<li><h4>{{ucfirst($servicio->descripcion)}}</h4></li>
 					@endforeach
 				</ul>
 			</div>
@@ -163,6 +194,13 @@
 	</div>
 </div>
 
+	<div class="row row-btn">
+		<div class="container">
+			<a href="/proyectos" class="btn center-block">CONOCÉ TODOS NUESTROS BARRIOS</a>
+		</div>
+	</div>
+
+
 
 <div id="ubicacion">
 	<input type="hidden" id="latitud" value="{{$proyecto->latitud}}">
@@ -187,7 +225,8 @@
 
 	$(document).ready(function(){
 
-			$(".videos").css('height',$(".info").height() + 46 );
+
+			$(".videos").css('height',$(".info").height() + 87 );
 
 
 			console.log($(".info").height());
@@ -196,8 +235,9 @@
 
 
 			initMap(0,0,0);
+		
 
-		});
+	});
 </script>
 <script>
 	

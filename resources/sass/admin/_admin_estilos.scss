@@ -15,6 +15,10 @@ html{
   color:$black;
 }
 
+label{
+  display:block !important;
+}
+
 label, h2, i{
   span{
     color:red;
@@ -481,6 +485,13 @@ h2.active {
   padding:6px !important;
 }
 
+
+.video-group{
+  padding: 37px 22px;
+    border: 1px solid #b9b9b9;
+    border-radius: 13px;
+    margin-bottom: 20px;
+}
 
 .form-control{
   width: 100% !important;
