@@ -6106,6 +6106,12 @@ header #slider .slide > li .slide > li a i,
   margin: auto;
 }
 
+#testimonios ul.flex > li > div > div p,
+#testimonios #slider ul.slide > li > div > div p,
+#slider #testimonios ul.slide > li > div > div p {
+  margin: auto;
+}
+
 #testimonios ul.flex > li > div > img,
 #testimonios #slider ul.slide > li > div > img,
 #slider #testimonios ul.slide > li > div > img {
