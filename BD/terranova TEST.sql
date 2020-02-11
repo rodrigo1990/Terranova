@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-02-2020 a las 23:10:11
+-- Tiempo de generación: 11-02-2020 a las 23:42:59
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.11
 
@@ -406,6 +406,21 @@ CREATE TABLE `proyecto_masterplan` (
   `proyecto_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `proyecto_masterplan`
+--
+
+INSERT INTO `proyecto_masterplan` (`id`, `ruta`, `nombre`, `proyecto_id`) VALUES
+(12, '93327451.jpeg', 'Master plan Irizar.jpg', 14),
+(13, '159458.jpeg', 'MASTEr-DERQUI.jpg', 18),
+(14, '53457800.jpeg', 'master-el-aljibe.jpg', 11),
+(15, '64985616.jpeg', 'Masterplan Del Viso ok.jpg', 19),
+(16, '52154474.jpeg', 'Masterplan Sakura II y III.jpg', 12),
+(17, '56521132.jpeg', 'Masterplan Sakura II y III.jpg', 13),
+(18, '61651084.jpeg', 'Masterplan Tortuguitas.jpg', 15),
+(19, '65497880.jpeg', 'MP Astolfi II - A3.jpg', 20),
+(20, '46545188.jpeg', 'MP Parque Los Robles - A3.jpg', 16);
+
 -- --------------------------------------------------------
 
 --
@@ -726,7 +741,7 @@ ALTER TABLE `proyectos`
 -- AUTO_INCREMENT de la tabla `proyecto_masterplan`
 --
 ALTER TABLE `proyecto_masterplan`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `proyecto_video`

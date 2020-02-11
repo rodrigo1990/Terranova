@@ -12,7 +12,7 @@
 			<div class="main-img flex align-vertically align-horizontally" style="background-image: url(<?php echo asset('storage/img/proyectos/'.$img->ruta) ?>)">
 				<div class="overlay"></div>
 				
-				<h2 class="estado">{{ucfirst(mb_strtolower($proyecto->estado->descripcion))}}</h2>
+				<h2 class="estado">{{mb_convert_case($proyecto->estado->descripcion,MB_CASE_TITLE,'UTF-8')}}</h2>
 
 					<h1 class="text-center"> BARRIO PARQUE <br>  <b>{{mb_strtoupper($proyecto->titulo)}}</b></h1>
 			

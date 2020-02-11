@@ -6789,6 +6789,7 @@ section#detalle-proyecto .main-img .estado {
   font-family: "Montserrat-Black", "Helvetica" !important;
   margin: 0;
   font-size: 0.8rem;
+  z-index: 2;
 }
 
 section#detalle-proyecto .main-img h1 {

@@ -73,7 +73,6 @@
 
 					<div class="row">
 					
-						<label for="masterplan">Masterplan</label>
 						
 						@if(isset($proyecto->masterplan[0]))
 						<div id="masterplanExist" class="flex center-vertically" style="border:1px solid #ccc;border-radius:5px;height: 100px;padding:7px;width: 50%;position:relative;">

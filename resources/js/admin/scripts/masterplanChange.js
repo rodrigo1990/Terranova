@@ -15,7 +15,7 @@ $(document).on('change','.masterplan', function(){
 
             format = file.split('.').pop();
 
-            if(format == "pdf"){
+            if(format == "jpg" || format == "png" ||format == "JPG" || format == "PNG"){
 
           
 
