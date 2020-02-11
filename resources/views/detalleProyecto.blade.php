@@ -10,10 +10,11 @@
 		@if($img->tipo=='PRESENTACION')
 			
 			<div class="main-img flex align-vertically align-horizontally" style="background-image: url(<?php echo asset('storage/img/proyectos/'.$img->ruta) ?>)">
+				<div class="overlay"></div>
 				
 				<h2 class="estado">{{ucfirst(mb_strtolower($proyecto->estado->descripcion))}}</h2>
 
-					<h1 class="text-center"> BARRIO PARQUE <br>  <b>{{strtoupper($proyecto->titulo)}}</b></h1>
+					<h1 class="text-center"> BARRIO PARQUE <br>  <b>{{mb_strtoupper($proyecto->titulo)}}</b></h1>
 			
 
 			</div>	
@@ -264,7 +265,7 @@
 		  	// El mapa centrado en las coordenadas de inicializacion
 		  	var map = new google.maps.Map(
 			      document.getElementById('map'), {
-			      	zoom: 10,
+			      	zoom: 15,
 		      	 	center: locacion,
 		      	 	streetViewControl:false,
 		      	 	mapTypeControl:false

@@ -6765,6 +6765,14 @@ section#detalle-proyecto .main-img {
   position: relative;
 }
 
+section#detalle-proyecto .main-img .overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
 section#detalle-proyecto .main-img .estado {
   position: absolute;
   top: 20px;
@@ -6781,6 +6789,7 @@ section#detalle-proyecto .main-img h1 {
   font-size: 1.3rem;
   color: white;
   font-family: "Montserrat-Light", "Helvetica" !important;
+  z-index: 2;
 }
 
 section#detalle-proyecto .main-img h1 b {
