@@ -112,7 +112,7 @@
 				</li>
 				<li class="text-center">
 					<img src="<?php echo asset('/storage/img/icons-home-04.svg') ?>" alt="" width="100px;">
-					<h4>ENTREGAMOS <br>  <b>MAS DE 1500 LOTES</b></h4>
+					<h4>ENTREGAMOS <br>  <b>MAS DE 3800 LOTES</b></h4>
 				</li>
 
 				<li class="text-center">
@@ -196,7 +196,7 @@
 				<div class="col-md-6 col-sm-12 col-xs-12">
 					
 					<h3 class="primary-color"><b>OFICINAS COMERCIALES</b></h3>
-					<p><b>Horario de atención: Lunes a Sábados de 10 a 18 HS. (con entrevista previa)</b></p>
+					<p><b>Horario de atención: Lunes a Sábados de 10 a 18 HS, con entrevista previa.</b></p>
 					
 					<br>
 
@@ -233,7 +233,7 @@
 
 						<li><p class="primary-color">ZONA NORTE</p></li>
 
-						<li>Dirección: Edificio Paralelo 50 – Of. 222 – Colectora Panamericana Km 49.5, Pilar .</li>
+						<li>Dirección: Edificio Paralelo 50 – Of. 222 – Colectora Panamericana Km 49.5, Pilar.</li>
 
 						<li>Teléfono: 011 5275-6360 (opción 2)</li>
 

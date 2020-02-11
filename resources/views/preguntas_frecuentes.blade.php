@@ -317,6 +317,52 @@
 
 
 
+               <div class="panel panel-default"  data-toggle="collapse" data-parent="#accordion" href="#faq33">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="accordion-toggle">
+                      
+                      15.  ¿Donde me puedo acercar para asesorarme sobre los terrenos en zona norte? 
+                    </a>
+                    <span class="change_char">+</span>
+                  </h4>
+                </div>
+                <div id="faq33" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>
+                      Para obtener más información sobre desarrollos en zona norte podes acercarte a Tratado del Pilar 259 o solicitar tu entrevista vía Whatsapp al 11-6998-5051.  
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="panel panel-default"  data-toggle="collapse" data-parent="#accordion" href="#faq34">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a class="accordion-toggle">
+                      
+                      16.    ¿Donde me puedo acercar para asesorarme sobre los terrenos en zona sur?
+                    </a>
+                    <span class="change_char">+</span>
+                  </h4>
+                </div>
+                <div id="faq34" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>
+                      Para obtener más información sobre los terrenos de zona sur podes solicitar tu entrevista al 6577-6361, la oficina esta ubicada en Juan Galvez y 12 de Octubre – Tristán Suárez.
+                    </p>
+                    <p>
+                      
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+
+
 
 
 

@@ -11,6 +11,8 @@
 			
 			<div class="main-img flex align-vertically align-horizontally" style="background-image: url(<?php echo asset('storage/img/proyectos/'.$img->ruta) ?>)">
 				
+				<h2 class="estado">{{ucfirst(mb_strtolower($proyecto->estado->descripcion))}}</h2>
+
 					<h1 class="text-center"> BARRIO PARQUE <br>  <b>{{strtoupper($proyecto->titulo)}}</b></h1>
 			
 
@@ -127,7 +129,11 @@
 			<ul class="flex align-horizontally">
 				@foreach($proyecto->video as $video)
 					<li>
-						<iframe id="videoObject" src="https://www.youtube.com/embed/{{$video->url}}?autoplay=1&enablejsapi=1" type="text/html" frameborder="0"  allowfullscreen height="150px"></iframe>
+						<iframe id="videoObject" src="https://www.youtube.com/embed/{{$video->url}}?autoplay=1&controls=0&enablejsapi=1" type="text/html" frameborder="0"  allowfullscreen height="150px"></iframe>
+						<div class="infoVideo">
+							<h3>{{$video->titulo}}</h3>
+							<p>{{$video->descripcion}}</p>
+						</div>
 					</li>
 				@endforeach
 			</ul>

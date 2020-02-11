@@ -19,7 +19,7 @@
 				<p>
 					
 					<b>Zona Sur</b>
-					Macías 627 - Planta Alta, Adrogué / Tel 4293-8725			
+					  Tel 4214-3271 / E-mail: info@terranova-sa.com.ar			
 
 
 				</p>

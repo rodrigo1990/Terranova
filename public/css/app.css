@@ -4141,6 +4141,7 @@ button.btn {
   font-size: 0.5rem;
   color: #7d9f45;
   line-height: 0;
+  background: transparent;
   font-family: "Montserrat-Regular", "Helvetica";
 }
 
@@ -5358,7 +5359,7 @@ header #slider .slide > li .slide > li a i,
 
 @media only screen and (min-width: 320px) and (max-width: 850px) {
   #slider .slide .slide__content a {
-    width: 100%;
+    width: 100% !important;
   }
 
   #slider .slide .slide__content.right {
@@ -6591,10 +6592,15 @@ header #slider .slide > li .slide > li a i,
 
   #preguntasFrecuentes .panel-heading h4.panel-title {
     line-height: 1.5;
+    text-align: left;
   }
 
   #preguntasFrecuentes .panel-heading h4.panel-title span.change_char {
     display: none;
+  }
+
+  #preguntasFrecuentes .panel-body {
+    text-align: left;
   }
 }
 
@@ -6603,7 +6609,6 @@ section#buscador-section {
 }
 
 section#buscador-section .buscador-col {
-  background: #eaeaea;
   padding: 2.8em 0em;
   border-radius: 5px;
 }
@@ -6626,7 +6631,7 @@ section#buscador-section .buscador-col #slider ul.slide li:nth-child(4),
 section#buscador-section .buscador-col ul.flex li,
 section#buscador-section .buscador-col #slider ul.slide li,
 #slider section#buscador-section .buscador-col ul.slide li {
-  flex-basis: 263px;
+  flex-basis: 306px;
 }
 
 section#buscador-section .buscador-col ul.flex select,
@@ -6691,6 +6696,7 @@ section#buscador-section .result ul.flex > li > div > div p,
 section#buscador-section .result #slider ul.slide > li > div > div p,
 #slider section#buscador-section .result ul.slide > li > div > div p {
   font-size: 0.5rem;
+  margin-bottom: 0;
 }
 
 section#buscador-section .result ul.flex > li > div > .img,
@@ -6702,7 +6708,6 @@ section#buscador-section .result #slider ul.slide > li > div > .img,
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 4px;
-  margin-bottom: 20px;
 }
 
 section#buscador-section .result ul.flex > li > div > a,
@@ -6716,10 +6721,32 @@ section#buscador-section .result #slider ul.slide > li > div > a,
     padding: 2em 0em;
   }
 
+  section#buscador-section .buscador-col ul.flex,
+  section#buscador-section .buscador-col #slider ul.slide,
+  #slider section#buscador-section .buscador-col ul.slide {
+    flex-direction: column !important;
+  }
+
   section#buscador-section .buscador-col ul.flex li,
   section#buscador-section .buscador-col #slider ul.slide li,
   #slider section#buscador-section .buscador-col ul.slide li {
-    margin-bottom: 20px;
+    margin-bottom: 33px;
+    flex-basis: auto;
+    width: 53%;
+  }
+
+  section#buscador-section .buscador-col ul.flex li select,
+  section#buscador-section .buscador-col #slider ul.slide li select,
+  #slider section#buscador-section .buscador-col ul.slide li select {
+    text-align: center;
+    -moz-text-align-last: center;
+         text-align-last: center;
+  }
+
+  section#buscador-section .buscador-col ul.flex li button,
+  section#buscador-section .buscador-col #slider ul.slide li button,
+  #slider section#buscador-section .buscador-col ul.slide li button {
+    width: 100%;
   }
 
   section#buscador-section .buscador-col ul.flex label,
@@ -6735,6 +6762,19 @@ section#detalle-proyecto .main-img {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+}
+
+section#detalle-proyecto .main-img .estado {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #7d9f45;
+  color: white;
+  padding: 10px 40px;
+  font-family: "Montserrat-Black", "Helvetica" !important;
+  margin: 0;
+  font-size: 0.8rem;
 }
 
 section#detalle-proyecto .main-img h1 {
@@ -6778,12 +6818,6 @@ section#detalle-proyecto .content #slider ul.align-left.align-vertically.slide,
   flex-wrap: nowrap;
 }
 
-section#detalle-proyecto .content ul.flex.align-left.align-vertically li:nth-child(1) img,
-section#detalle-proyecto .content #slider ul.align-left.align-vertically.slide li:nth-child(1) img,
-#slider section#detalle-proyecto .content ul.align-left.align-vertically.slide li:nth-child(1) img {
-  width: 30px;
-}
-
 section#detalle-proyecto .content ul.flex.align-left.align-vertically li,
 section#detalle-proyecto .content #slider ul.align-left.align-vertically.slide li,
 #slider section#detalle-proyecto .content ul.align-left.align-vertically.slide li {
@@ -6801,7 +6835,6 @@ section#detalle-proyecto .content #slider ul.align-left.align-vertically.slide l
 section#detalle-proyecto .content ul.flex.align-left.align-vertically li a,
 section#detalle-proyecto .content #slider ul.align-left.align-vertically.slide li a,
 #slider section#detalle-proyecto .content ul.align-left.align-vertically.slide li a {
-  width: auto !important;
   border: 2px solid #7d9f45;
   border-radius: 17px;
   margin-top: 10px;
@@ -6943,6 +6976,30 @@ section#detalle-proyecto .content .videos ul.flex li iframe,
 section#detalle-proyecto .content .videos #slider ul.slide li iframe,
 #slider section#detalle-proyecto .content .videos ul.slide li iframe {
   height: 200px;
+}
+
+section#detalle-proyecto .content .videos ul.flex li .infoVideo,
+section#detalle-proyecto .content .videos #slider ul.slide li .infoVideo,
+#slider section#detalle-proyecto .content .videos ul.slide li .infoVideo {
+  background: white;
+  padding: 12px;
+  margin-top: -5px;
+}
+
+section#detalle-proyecto .content .videos ul.flex li .infoVideo h3,
+section#detalle-proyecto .content .videos #slider ul.slide li .infoVideo h3,
+#slider section#detalle-proyecto .content .videos ul.slide li .infoVideo h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 0.5rem;
+}
+
+section#detalle-proyecto .content .videos ul.flex li .infoVideo p,
+section#detalle-proyecto .content .videos #slider ul.slide li .infoVideo p,
+#slider section#detalle-proyecto .content .videos ul.slide li .infoVideo p {
+  font-size: 0.37rem;
+  color: #606161;
+  font-family: "Montserrat-Light", "Helvetica";
 }
 
 section#detalle-proyecto .content .videos ul.flex li:last-child,
@@ -7112,6 +7169,22 @@ section#detalle-proyecto #ubicacion #map {
     margin-top: 30px;
     height: auto !important;
   }
+
+  section#detalle-proyecto .col-md-12.videos ul.flex,
+  section#detalle-proyecto .col-md-12.videos #slider ul.slide,
+  #slider section#detalle-proyecto .col-md-12.videos ul.slide {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100% !important;
+    margin: unset;
+  }
+
+  section#detalle-proyecto .col-md-12.videos ul.flex li,
+  section#detalle-proyecto .col-md-12.videos #slider ul.slide li,
+  #slider section#detalle-proyecto .col-md-12.videos ul.slide li {
+    margin-left: 28px;
+    margin-right: 28px;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -7124,13 +7197,7 @@ section#detalle-proyecto #ubicacion #map {
   section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li a,
   section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li a,
   #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li a {
-    width: 80%;
-  }
-
-  section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically li:nth-child(1) img,
-  section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide li:nth-child(1) img,
-  #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide li:nth-child(1) img {
-    width: 30px;
+    width: 80% !important;
   }
 
   section#detalle-proyecto .content .como-llegar {
@@ -7167,9 +7234,34 @@ section#detalle-proyecto #ubicacion #map {
     margin-top: 30px;
     height: auto !important;
   }
+
+  section#detalle-proyecto .col-md-12.videos ul.flex,
+  section#detalle-proyecto .col-md-12.videos #slider ul.slide,
+  #slider section#detalle-proyecto .col-md-12.videos ul.slide {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100% !important;
+    margin: unset;
+  }
+
+  section#detalle-proyecto .col-md-12.videos ul.flex li,
+  section#detalle-proyecto .col-md-12.videos #slider ul.slide li,
+  #slider section#detalle-proyecto .col-md-12.videos ul.slide li {
+    margin-left: 28px;
+    margin-right: 28px;
+  }
 }
 
-@media only screen and (min-width: 1px) and (max-width: 768px) {
+@media only screen and (min-width: 1px) and (max-width: 767px) {
+  section#detalle-proyecto .main-img .estado {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    font-size: 0.5rem;
+  }
+
   section#detalle-proyecto .row {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -7226,6 +7318,19 @@ section#detalle-proyecto #ubicacion #map {
     display: none !important;
   }
 
+  section#detalle-proyecto .content .como-llegar ul li.flex,
+  section#detalle-proyecto .content .como-llegar ul #slider li.slide,
+  #slider section#detalle-proyecto .content .como-llegar ul li.slide,
+  section#detalle-proyecto .content .como-llegar #buscador ul.flex li,
+  #buscador section#detalle-proyecto .content .como-llegar ul.flex li,
+  section#detalle-proyecto .content .como-llegar #buscador #slider ul.slide li,
+  #buscador #slider section#detalle-proyecto .content .como-llegar ul.slide li,
+  section#detalle-proyecto .content .como-llegar #slider #buscador ul.slide li,
+  #slider #buscador section#detalle-proyecto .content .como-llegar ul.slide li {
+    flex-direction: column !important;
+    margin-bottom: 10px;
+  }
+
   section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically,
   section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide,
   #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide {
@@ -7243,6 +7348,11 @@ section#detalle-proyecto #ubicacion #map {
   section#detalle-proyecto .col-md-12.videos {
     margin-top: 30px;
     height: auto !important;
+  }
+
+  section#detalle-proyecto .col-md-12.videos .infoVideo {
+    margin: auto;
+    width: 100%;
   }
 
   section#detalle-proyecto .servicios ul.flex li,
@@ -7265,6 +7375,10 @@ section#detalle-proyecto #ubicacion #map {
 
   section#detalle-proyecto .col-md-12.videos {
     margin-top: 30px !important;
+  }
+
+  section#detalle-proyecto .col-md-12.videos .infoVideo {
+    width: 200px;
   }
 
   section#detalle-proyecto .col-md-12.videos iframe {

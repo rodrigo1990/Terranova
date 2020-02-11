@@ -40,6 +40,7 @@
 		.panel-heading{
 			h4.panel-title{
 				line-height: 1.5;
+				text-align: left;
 
 				span.change_char{
 					display: none;
@@ -49,6 +50,10 @@
 			}
 
 
+		}
+
+		.panel-body{
+			text-align: left;
 		}
 
 		

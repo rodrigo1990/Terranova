@@ -93,11 +93,6 @@
 						<li>
 							<div class="text-center">
 								
-								<div>
-									<p class="title primary-color text-center">
-										{{ucfirst($proyecto->titulo)}}
-									</p>
-								</div>
 								@if(isset($proyecto->img))
 									@foreach($proyecto->img as $img)
 										@if($img->tipo == 'PRESENTACION')
@@ -107,11 +102,16 @@
 									@else
 										<div class="img" style="background-image:url(<?php echo asset('/storage/img/proyectos/'.$proyecto->ruta) ?>)"></div>
 									@endif
-								<br>
+
+								<div>
+									<p class="title primary-color text-center">
+										{{ucfirst($proyecto->titulo)}}
+									</p>
+								</div>
 								@if(isset($proyecto->proyecto_id))
-								<a href="/proyecto/{{$proyecto->proyecto_id}}" target="_blank" class="btn"> VER</a>
+								<a href="/proyecto/{{$proyecto->proyecto_id}}" target="_blank" class="btn"> VER + </a>
 								@else
-								<a href="/proyecto/{{$proyecto->id}}" target="_blank" class="btn"> VER</a>
+								<a href="/proyecto/{{$proyecto->id}}" target="_blank" class="btn"> VER +</a>
 								@endif
 							</div>
 						</li>
