@@ -14,7 +14,7 @@
 				
 				<h2 class="estado">{{mb_convert_case($proyecto->estado->descripcion,MB_CASE_TITLE,'UTF-8')}}</h2>
 
-					<h1 class="text-center"> BARRIO PARQUE <br>  <b>{{mb_strtoupper($proyecto->titulo)}}</b></h1>
+					<h1 class="text-center"> BARRIO PARQUE <br>  <b>{{mb_convert_case($proyecto->titulo,MB_CASE_UPPER,'UTF-8')}}</b></h1>
 			
 
 			</div>	
@@ -81,7 +81,7 @@
 						<li class="flex align-vertically">
 							<img src="<?php echo asset('storage/img/detalle_proyecto/tren.svg') ?> " alt="" width="45px" class="float-left">
 							<div class="float-left flex align-vertically" style="height: 68px;">
-								<p>A pocas cuadras de la <br> <b>{{$proyecto->estacion}}</b></p>
+								<p>A pocas cuadras de la <br> <b>{{mb_convert_case($proyecto->estacion,MB_CASE_TITLE,'UTF-8')}}</b></p>
 							</div>
 						</li>
 					@endif
@@ -98,15 +98,24 @@
 							<img src="<?php echo asset('storage/img/detalle_proyecto/bus.svg') ?> " alt="" width="50px" class="float-left">
 							<div class="float-left flex align-vertically" style="height: 68px;">
 								<div>
-									<p>Líneas de lineaColectivo</p>
+									<p>Líneas de colectivo</p>
 									@foreach($proyecto->lineaColectivo as $lineaColectivo)
-										<p><b>{{$lineaColectivo->descripcion}}</b></p>
+										<p><b>{{mb_convert_case($lineaColectivo->descripcion,MB_CASE_TITLE,'UTF-8')}}</b></p>
+										@break
 									@endforeach
+									@if(count($proyecto->lineaColectivo)>1)
+										<a data-toggle="modal" data-target="#lineasColectivoVerMas">VER MÁS</a>
+									@endif
 								</div>
 							</div>
+
 						</li>
 					@endif
+					
+					
+
 				</ul>
+
 			</div>
 		@endif
 		
@@ -124,16 +133,16 @@
 
 		</div>
 				
-		@if(count($proyecto->video )> 0)
+		@if(count($proyecto->video)> 0)
 		
 		<div class=" col-sm-12 col-md-12 col-lg-4  videos">
 			<ul class="flex align-horizontally">
 				@foreach($proyecto->video as $video)
 					<li>
-						<iframe id="videoObject" src="https://www.youtube.com/embed/{{$video->url}}?autoplay=1&controls=0&enablejsapi=1" type="text/html" frameborder="0"  allowfullscreen height="150px"></iframe>
+						<iframe id="videoObject" src="https://www.youtube.com/embed/{{$video->url}}?autoplay=0&controls=0&enablejsapi=1" type="text/html" frameborder="0"  allowfullscreen height="150px"></iframe>
 						<div class="infoVideo">
-							<h3>{{$video->titulo}}</h3>
-							<p>{{$video->descripcion}}</p>
+							<h3>{{mb_convert_case($video->titulo,MB_CASE_TITLE,'UTF-8')}}</h3>
+							<p>{{mb_convert_case($video->descripcion,MB_CASE_TITLE,'UTF-8')}}</p>
 						</div>
 					</li>
 				@endforeach
@@ -160,7 +169,7 @@
 				<h1 class="text-center"><b>SERVICIOS</b></h1>
 				<ul class="flex align-horizontally">
 					@foreach($proyecto->servicio as $servicio)
-						<li><h4>{{ucfirst($servicio->descripcion)}}</h4></li>
+						<li><h4>{{mb_convert_case($servicio->descripcion,MB_CASE_TITLE,'UTF-8')}}</h4></li>
 					@endforeach
 				</ul>
 			</div>
@@ -214,6 +223,33 @@
 	<input type="hidden" id="longitud" value="{{$proyecto->longitud}}">
 	<div id="map"></div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="lineasColectivoVerMas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog" role="document" style=" z-index: 20;">
+    <div class="modal-content">
+        <div class="modal-header">
+        	 <h1 class="text-left float-left">LÍNEAS DE COLECTIVO</h1>
+	        <a type="button" class="close" data-dismiss="modal" aria-label="Close">
+	         	<i class="fas fa-times-circle float-right"></i>
+        	</a>
+
+        	<hr>
+      </div>
+      <div class="modal-body center-block">
+       @if(count($proyecto->lineaColectivo)>1)
+       <ul>
+			@foreach($proyecto->lineaColectivo as $lineaColectivo)
+				<li><h3>{{mb_convert_case($lineaColectivo->descripcion,MB_CASE_TITLE,'UTF-8')}}</h3></li>
+			@endforeach
+
+       </ul>
+       @endif
+      </div>
+      
+    </div>
+  </div>
+</div>
 	
 
 
@@ -226,7 +262,7 @@
 
 @stop
 @section('scripts')
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
 	window.markers = [];//array que tendra todos los marker de todos los mapas
 

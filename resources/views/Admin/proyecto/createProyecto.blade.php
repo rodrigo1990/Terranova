@@ -374,7 +374,7 @@
 			if(lc>1){
 				$("#remove-lc-btn").fadeIn();
 			}
-			$("#lineas-colectivo ul ").append('<li id="lc-li-'+lc+'"> <label for="lineasColectivos[]">Linea de coelctivo '+lc+' </label> <input type="text" name="lineasColectivos[]" class="caracteristicas form-control"> <p class="error" id="caracteristicaError"> Ingrese una caracteristica </p> </li>');
+			$("#lineas-colectivo ul ").append('<li id="lc-li-'+lc+'"> <label for="lineasColectivos[]">Linea de colectivo '+lc+' </label> <input type="text" name="lineasColectivos[]" class="caracteristicas form-control"> <p class="error" id="caracteristicaError"> Ingrese una caracteristica </p> </li>');
 
 
 		}
@@ -872,7 +872,7 @@
 			console.log(tituloVideo2Validated);
 			console.log(descripcionVideo2Validated);
 
-			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true&&video1Validated==true&&tituloVideo1Validated==true&&descripcionVideo1Validated==true&&video2Validated==true&&tituloVideo2Validated==true&&descripcionVideo2Validated==true){
+			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true&&video1Validated==true&&tituloVideo1Validated==true&&descripcionVideo1Validated==true&&video2Validated==true&&tituloVideo2Validated==true&&descripcionVideo2Validated==true&&coordenadasValidated==true){
 			
 			setTimeout(function(){
 				$('form').submit();

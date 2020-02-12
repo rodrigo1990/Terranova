@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-02-2020 a las 23:42:59
--- Versión del servidor: 10.4.8-MariaDB
--- Versión de PHP: 7.3.11
+-- Tiempo de generación: 12-02-2020 a las 22:06:25
+-- Versión del servidor: 10.1.40-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -76,7 +76,10 @@ INSERT INTO `caracteristicas` (`id`, `proyecto_id`, `descripcion`) VALUES
 (47, 20, 'Barrio abierto'),
 (48, 21, 'Cantidad de lotes: 220 lotes'),
 (49, 21, 'Superficie promedio: 200 mts'),
-(50, 21, 'Barrio abierto');
+(50, 21, 'Barrio abierto'),
+(52, 24, 'Cantidad de lotes: 98 lotes'),
+(53, 24, 'Superficie promedio: 1500 mts'),
+(54, 24, 'Barrio abierto');
 
 -- --------------------------------------------------------
 
@@ -273,7 +276,18 @@ INSERT INTO `img_proyecto` (`id`, `ruta`, `nombre`, `proyecto_id`, `tipo`, `orde
 (178, '21556326.jpeg', 'DJI_0067.jpg', 21, 'SLIDE', 12),
 (179, '37159812.jpeg', 'DJI_0072.jpg', 21, 'SLIDE', 13),
 (180, '99063706.jpeg', 'DJI_0074.jpg', 21, 'SLIDE', 14),
-(181, '16328379.jpeg', 'DJI_0075.jpg', 21, 'SLIDE', 15);
+(181, '16328379.jpeg', 'DJI_0075.jpg', 21, 'SLIDE', 15),
+(188, '26516869.jpeg', 'Zelaya-2.jpg', 24, 'PRESENTACION', NULL),
+(189, '63969518.jpeg', 'Zelaya-1.jpg', 24, 'SLIDE', 0),
+(190, '82483604.jpeg', 'Zelaya-2.jpg', 24, 'SLIDE', 1),
+(191, '51738256.jpeg', 'Zelaya-3.jpg', 24, 'SLIDE', 3),
+(192, '43656167.jpeg', 'Zelaya-4.jpg', 24, 'SLIDE', 4),
+(193, '54253702.jpeg', 'Zelaya-5.jpg', 24, 'SLIDE', 5),
+(194, '79815298.jpeg', 'Zelaya-6.jpg', 24, 'SLIDE', 6),
+(195, '71064627.jpeg', 'Zelaya-7.jpg', 24, 'SLIDE', 7),
+(196, '49539585.jpeg', 'Zelaya-8.jpg', 24, 'SLIDE', 8),
+(197, '10525400.jpeg', 'Zelaya-9.jpg', 24, 'SLIDE', 9),
+(198, '41447117.jpeg', 'Zelaya-10.jpg', 24, 'SLIDE', 10);
 
 -- --------------------------------------------------------
 
@@ -308,11 +322,30 @@ INSERT INTO `lineas_colectivo` (`id`, `proyecto_id`, `descripcion`) VALUES
 (9, 10, '276 Escobar - Pilar'),
 (10, 15, '228 - Puente Saavedra - Tortuguitas - Del Viso'),
 (11, 16, '350 - Pilar - Robles'),
-(12, 17, '306 - Spegazzini - Tristan Suares- Ezeiza - Monte Grande - Lomas de Zamora - Puente 12 - La Tablada - San Justo'),
+(12, 17, '306 - Spegazzini - San Justo'),
 (13, 18, '520 Est. Derqui - Zelaya - Villa Rosa'),
 (14, 19, '510 - Del Viso - Pilar'),
 (15, 20, '501 Astolfi - Pilar'),
-(16, 21, '501 Astolfi - Pilar');
+(16, 21, '501 Astolfi - Pilar'),
+(21, 10, 'Sobre ruta 25 líneas: 520 y 276'),
+(22, 20, '365 – Cuartel V – Puente Saavedra'),
+(23, 20, '509 – Derqui – El Triangulo'),
+(24, 18, '365 – Cuartel V – Puente Saavedra'),
+(25, 18, '509 – Derqui – El Triangulo'),
+(26, 16, '57 expreso a Plaza Italia'),
+(27, 16, '501 RAMAL B: Capilla del Señor-P. Orlando-Pavón -Sakura -El Remanso -Parada Robles'),
+(28, 16, '501 RAMAL C: Capilla del Señor- Arroyo de la Cruz -Parada Robles-Bº A. Mateo'),
+(29, 17, '306 - Spegazzini - Tristan Suares- Ezeiza - Monte Grande - Lomas de Zamora - Puente 12 - La Tablada - San Justo'),
+(30, 17, 'Servicio de combis hasta CABA'),
+(31, 19, '291 – Del Viso – Pilar – Savio – Escobar'),
+(32, 19, '520 – Derqui – Pilar'),
+(33, 19, '228 – Puente Saavedra – Tortuguitas – Del Viso'),
+(34, 19, '203 – Savedra – Del Viso'),
+(35, 19, '176 – Del Viso – Escobar'),
+(36, 15, '203 – Savedra – Del Viso'),
+(37, 15, '176 Tortuguitas – Del Viso – Escobar'),
+(38, 24, '276  Escobar – Pilar'),
+(39, 24, '520 Zelaya – Villa Rosa');
 
 -- --------------------------------------------------------
 
@@ -391,7 +424,8 @@ INSERT INTO `proyectos` (`id`, `descripcion`, `titulo`, `zona_id`, `latitud`, `l
 (18, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Derqui, partido de Pilar, a 200 metros de la Ruta 234 y a tan s&oacute;lo 8 km de Jose C Paz. Cuenta acceso asfaltado desde la calle Entre R&iacute;os. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Derqui un pueblo tranquilo, donde podr&aacute;s encontrar una escuela p&uacute;blica, un hospital, un club y una plaza, ideal para proyectar tu casa junto a tu familia. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas y no tendr&aacute; reglamento de construcci&oacute;n. </span></p>', 'Derqui', 1, '-34.4988527', '-58.82809889999999', 'Estación del tren San Martin', 1),
 (19, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Del Viso partido de Pilar, tiene una excelente ubicaci&oacute;n a 600 metros de Ruta Nacional 8 y est&aacute; a 100 mts de la Av.Lisandro de La Torre,<span style=\"mso-spacerun: yes;\">&nbsp; </span>avenida con muy buenos accesos a l&iacute;neas de transporte, adem&aacute;s cuenta con todos sus accesos asfaltados.</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Del Viso, un pueblo tranquilo y urbanizado, donde podr&aacute;s encontrar una escuela p&uacute;blica, una sala de primeros auxilios y una plaza que podr&aacute;s disfrutar con los m&aacute;s peque&ntilde;os. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">&iexcl;An&iacute;mate a cumplir tu sue&ntilde;o! M&aacute;s de 30 familias ya se encuentran viviendo en el barrio y las dem&aacute;s ya se encuentran planificando su casa. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas y no tendr&aacute; reglamento de construcci&oacute;n. </span></p>', 'Del Viso', 1, '-34.4693022', '-58.7856564', 'Estación del tren Belgrano', 2),
 (20, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Astolfi, partido de Pilar, en un entorno muy tranquilo, rodeado de casas quintas. Tiene una excelente ubicaci&oacute;n a tan s&oacute;lo 50 mts de la Av. Lagomarsino, avenida con muy buenos accesos a l&iacute;neas de transporte.</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Astolfi, un pueblo tranquilo, donde podr&aacute;s encontrar una escuela p&uacute;blica y una plaza. Es un barrio ideal para proyectar tu hogar junto con tu familia. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas y no tendr&aacute; reglamento de construcci&oacute;n. </span></p>', 'Astolfi 2', 1, '-34.48638539999999', '-58.8838689', 'Estación del tren San Martin', 1),
-(21, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Astolfi, partido de Pilar, en un entorno muy tranquilo. Tiene una excelente ubicaci&oacute;n a tan tres cuadras de la estaci&oacute;n del tren San Martin</span></p>\r\n<p class=\"MsoNormal\"><a name=\"_gjdgxs\"></a><span lang=\"ES\">El desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Astolfi, un pueblo tranquilo, donde podr&aacute;s encontrar una escuela p&uacute;blica y una plaza. Es un barrio ideal para proyectar tu hogar junto con tu familia. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas y no tendr&aacute; reglamento de construcci&oacute;n. </span></p>', 'Astolfi', 1, '-34.477403', '-58.88160809999999', 'Estación del tren San Martin', 2);
+(21, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Astolfi, partido de Pilar, en un entorno muy tranquilo. Tiene una excelente ubicaci&oacute;n a tan tres cuadras de la estaci&oacute;n del tren San Martin</span></p>\r\n<p class=\"MsoNormal\"><a name=\"_gjdgxs\"></a><span lang=\"ES\">El desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Astolfi, un pueblo tranquilo, donde podr&aacute;s encontrar una escuela p&uacute;blica y una plaza. Es un barrio ideal para proyectar tu hogar junto con tu familia. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas y no tendr&aacute; reglamento de construcci&oacute;n. </span></p>', 'Astolfi', 1, '-34.477403', '-58.88160809999999', 'Estación del tren San Martin', 2),
+(24, '<p dir=\"ltr\" style=\"line-height: 1.295; margin-top: 0pt; margin-bottom: 8pt;\"><span style=\"font-size: 11pt; font-family: Calibri,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;\">El barrio se encuentra ubicado en Zelaya, partido de Pilar, en un entorno residencial, rodeado de barrios privados. Ideal para casas de fin de semana, para descansar, alejarte de la ciudad y conectarte con la naturaleza a tan&nbsp; s&oacute;lo 50 km de Capital y a 7 km de Matheu, partido de Escobar.&nbsp;</span></p>\r\n<p dir=\"ltr\" style=\"line-height: 1.295; margin-top: 0pt; margin-bottom: 8pt;\"><span style=\"font-size: 11pt; font-family: Calibri,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;\">El desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Zelaya, un pueblo tranquilo, donde podr&aacute;s encontrar una plaza y una sala de primeros auxilios.&nbsp;</span></p>\r\n<p>&nbsp;</p>\r\n<p dir=\"ltr\" style=\"line-height: 1.295; margin-top: 0pt; margin-bottom: 8pt;\"><span style=\"font-size: 11pt; font-family: Calibri,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;\">Ser&aacute; un barrio abierto por lo que no se abonar&aacute;n expensas y no tendr&aacute; reglamento de construcci&oacute;n. </span></p>', 'Haras de Glenmore', 1, '-34.3791976', '-58.88319199999999', 'Estación del tren B.Mitre', 1);
 
 -- --------------------------------------------------------
 
@@ -494,7 +528,9 @@ INSERT INTO `servicios` (`id`, `proyecto_id`, `descripcion`) VALUES
 (54, 20, 'Alumbrado público'),
 (55, 21, 'Agua de red'),
 (56, 21, 'Red de cloaca'),
-(57, 21, 'Alumbrado público');
+(57, 21, 'Alumbrado público'),
+(59, 24, 'Calles con fresado'),
+(60, 24, 'Alumbrado público');
 
 -- --------------------------------------------------------
 
@@ -687,7 +723,7 @@ ALTER TABLE `zonas`
 -- AUTO_INCREMENT de la tabla `caracteristicas`
 --
 ALTER TABLE `caracteristicas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT de la tabla `estados`
@@ -705,7 +741,7 @@ ALTER TABLE `img_novedad`
 -- AUTO_INCREMENT de la tabla `img_proyecto`
 --
 ALTER TABLE `img_proyecto`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=182;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=199;
 
 --
 -- AUTO_INCREMENT de la tabla `img_testimonio`
@@ -717,7 +753,7 @@ ALTER TABLE `img_testimonio`
 -- AUTO_INCREMENT de la tabla `lineas_colectivo`
 --
 ALTER TABLE `lineas_colectivo`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `migrations`
@@ -735,7 +771,7 @@ ALTER TABLE `novedades`
 -- AUTO_INCREMENT de la tabla `proyectos`
 --
 ALTER TABLE `proyectos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `proyecto_masterplan`
@@ -747,13 +783,13 @@ ALTER TABLE `proyecto_masterplan`
 -- AUTO_INCREMENT de la tabla `proyecto_video`
 --
 ALTER TABLE `proyecto_video`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `servicios`
 --
 ALTER TABLE `servicios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de la tabla `testimonios`

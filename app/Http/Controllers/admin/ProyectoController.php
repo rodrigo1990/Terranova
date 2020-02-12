@@ -549,7 +549,14 @@ class ProyectoController extends Controller
 	 		Servicio::where('proyecto_id',$request->id)->delete();
 	 		LineaColectivo::where('proyecto_id',$request->id)->delete();
 	 		ProyectoVideo::where('proyecto_id',$request->id)->delete();
-	 		$this->destroyMasterplan($request);
+
+	 		$masterplanExists =Masterplan::where('proyecto_id',$request->id)->first();
+	 		 
+	 		if(isset($masterplanExists)){
+	 			$this->destroyMasterplan($request);
+	 		}
+	 		
+
 	 		Proyecto::find($request->id)->delete();
 
 			

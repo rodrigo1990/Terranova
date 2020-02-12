@@ -8,17 +8,17 @@
 				
 					switch(msg){
 						case 'create':
-							alert('¡Producto creado con exito!');
+							alert('¡Proyecto creado con exito!');
 
 						break;
 
 						case 'destroy':
-							alert('¡Producto eliminado con exito!');
+							alert('¡Proyecto eliminado con exito!');
 
 						break;
 
 						case 'update':
-							alert('¡Producto actualizado con exito!');
+							alert('¡Proyecto actualizado con exito!');
 
 						break;
 					}

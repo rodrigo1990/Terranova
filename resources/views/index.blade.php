@@ -96,28 +96,32 @@
 	</section>
 
 	<section id="home-icons">
-		<div class="container">
+		<div class="container-fluid">
 			<ul class="flex">
 				<li class="text-center">
-					<img src="<?php echo asset('/storage/img/icons-home-01.svg') ?>" alt="" width="100px;">
+					<img src="<?php echo asset('/storage/img/icons-home-01.svg') ?>" alt="">
 					<h4>CUOTAS EN <b>PESOS</b></h4>
 				</li>
 				<li class="text-center">
-					<img src="<?php echo asset('/storage/img/icons-home-02.svg') ?>" alt="" width="100px;">
+					<img src="<?php echo asset('/storage/img/icons-home-02.svg') ?>" alt="">
 					<h4>FINANCIACIÓN <br> <b>HASTA 84 CUOTAS</b></h4>
 				</li>
 				<li class="text-center">
-					<img src="<?php echo asset('/storage/img/icons-home-03.svg') ?>" alt="" width="100px;">
+					<img src="<?php echo asset('/storage/img/icons-home-03.svg') ?>" alt="">
 					<h4>SOLO CON TU <b>DNI</b></h4>
 				</li>
 				<li class="text-center">
-					<img src="<?php echo asset('/storage/img/icons-home-04.svg') ?>" alt="" width="100px;">
+					<img src="<?php echo asset('/storage/img/icons-home-04.svg') ?>" alt="">
 					<h4>ENTREGAMOS <br>  <b>MAS DE 3800 LOTES</b></h4>
 				</li>
 
 				<li class="text-center">
-					<img src="<?php echo asset('/storage/img/icons-home-05.svg') ?>" alt="" width="100px;">
+					<img src="<?php echo asset('/storage/img/icons-home-05.svg') ?>" alt="">
 					<h4><b>MÁS DE 19 BARRIOS</b> <br>  DESARROLLADOS</h4>
+				</li>
+				<li class="text-center">
+					<img src="<?php echo asset('/storage/img/icons-home-06.svg') ?>" alt="">
+					<h4>CON <br>  <b>ESCRITURA</b></h4>
 				</li>
 			</ul>
 		</div>

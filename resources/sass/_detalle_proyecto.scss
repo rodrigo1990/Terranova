@@ -98,6 +98,7 @@ section#detalle-proyecto{
 		
 			p, p span{
 				font-family: $font-regular !important;
+				font-size: 14px !important;
 			}
 			h1 span, h2 span, h3 span, h4 span{
 				font-family: $font-black !important;
@@ -147,6 +148,21 @@ section#detalle-proyecto{
 					flex-basis:270px;
 					p{
 						margin-bottom: 0;
+					}
+
+					>div{
+						>div{
+							position:relative;
+
+							a{
+								color:$primary-color;
+								position: absolute;
+								font-family: $font-regular;
+							    right: 0;
+							    top: 100%;
+							    font-size: 0.30rem;
+							}
+						}
 					}
 				}
 			}
@@ -365,6 +381,52 @@ section#detalle-proyecto{
 		#map{
 			width: 100%;
 			height: 70vh;
+		}
+	}
+
+	#lineasColectivoVerMas{
+		padding-right:0 !important;
+		.modal-header{
+			border:none;
+			.close{
+			    position: absolute;
+			    top: unset;
+			    top: 11px;
+			    right: 8px;
+			}
+			h1{
+				font-family: $font-black;
+				color:$primary-color;
+			    margin-top: 0;
+			}
+
+			hr{
+			    height: 2px;
+			    background: $primary-color;
+			    width: 83%;
+			    margin-left: 0;
+
+			    margin-bottom: 0;
+			}
+
+		}
+
+		.modal-content{
+		    padding: 20px 20px !important;
+		}
+
+		.modal-body{
+			ul{
+				margin-left:15px !important;
+
+				li{
+					list-style: disc;
+					text-align: left;
+					h3{
+						color:$gray;
+					}
+				}
+			}
 		}
 	}
 }
@@ -591,6 +653,20 @@ section#detalle-proyecto{
 					}
 				}
 
+				li:nth-child(3){
+					>div{
+						>div{
+
+							a{
+							    right: 0;
+							    left:0;
+							    top: 47px;
+    							font-size: 0.4rem;
+							}
+						}
+					}
+				}
+
 				li.flex.align-horizontally{
 					display:none !important;
 				}
@@ -614,6 +690,13 @@ section#detalle-proyecto{
 			padding-left:0 !important;
 			ul{
 				margin-left:0 !important;
+
+				li{
+					margin-bottom:20px;
+					h1{
+						font-size: 1rem;
+					}
+				}
 			}
 		}
 

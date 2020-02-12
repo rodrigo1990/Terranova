@@ -138,7 +138,7 @@
 											Ingrese una caracteristica
 										</p>
 
-							
+									
 									</li>
 
 								@endforeach
@@ -215,7 +215,7 @@
 							<?php $counterServicios++ ?>
 
 								<li>
-									<label for="servicios[]">Servicio 1 </label>
+									<label for="servicios[]">Servicio {{$counterServicios}} </label>
 									<input type="text" name="serviciosExistentes[{{$servicio->id}}]" class="servicios form-control" value="{{$servicio->descripcion}}">
 									
 									<p class="error" id="servicioError">
@@ -484,7 +484,7 @@
 			window.count={{$count}};
 			window.markers = [];//array que tendra todos los marker de todos los mapas
 			
-			window.serv = 1 ;
+			window.serv = {{$counterServicios}} ;
 			window.servLimit = {{$counterServicios}} ; 
 			
 			window.carac = {{$counterCaracteristica}} ;
@@ -528,7 +528,7 @@
 			if(lc>lcLimit){
 				$("#remove-lc-btn").fadeIn();
 			}
-			$("#lineas-colectivo ul ").append('<li id="lc-li-'+lc+'"> <label for="lineasColectivos[]">Linea de coelctivo '+lc+' </label> <input type="text" name="lineasColectivos[]" class="caracteristicas form-control"> <p class="error" id="caracteristicaError"> Ingrese una caracteristica </p> </li>');
+			$("#lineas-colectivo ul ").append('<li id="lc-li-'+lc+'"> <label for="lineasColectivos[]">Linea de colectivo '+lc+' </label> <input type="text" name="lineasColectivos[]" class="caracteristicas form-control"> <p class="error" id="caracteristicaError"> Ingrese una caracteristica </p> </li>');
 
 
 		}
@@ -630,7 +630,7 @@
 		  	// El mapa centrado en las coordenadas de inicializacion
 		  	var map = new google.maps.Map(
 			      document.getElementById('map'), {
-			      	zoom: 10,
+			      	zoom: 15,
 		      	 	center: locacion,
 		      	 	streetViewControl:false,
 		      	 	mapTypeControl:false
@@ -842,6 +842,9 @@
 			var tituloYoutube2 = $("input[name=titulo_video_2]").val();
 			var descripcionYoutube2 = $("textarea[name=descripcion_video_2]").val();
 
+			var latitud = $("input[name=latitud]").val();
+			var longitud = $("input[name=longitud]").val();
+
 
 			var tituloValidated = false;
 			var descripcionValidated = false;
@@ -854,6 +857,8 @@
 			var descripcionVideo1Validated = false; 
 			var tituloVideo2Validated = false;
 			var descripcionVideo2Validated = false;
+
+			var coordenadasValidated = false;
 
 			console.log($(document).find(("input[name=img_presentacion]")));
 
@@ -911,6 +916,14 @@
 
 			}else{
 				imgSlide2Validated = true;
+			}
+
+
+			if(latitud.length == 0 || longitud.length == 0){
+				$("#coordenadas-error").fadeIn();
+			}else{
+				$("#coordenadas").fadeOut();
+				coordenadasValidated=true;
 			}
 
 
@@ -1017,7 +1030,7 @@
 			console.log(tituloVideo2Validated);
 			console.log(descripcionVideo2Validated);
 
-			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true&&linkYoutube1Validated==true&&linkYoutube2Validated==true&&tituloVideo1Validated==true&&descripcionVideo1Validated==true&&tituloVideo2Validated==true&&descripcionVideo2Validated==true){
+			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true&&linkYoutube1Validated==true&&linkYoutube2Validated==true&&tituloVideo1Validated==true&&descripcionVideo1Validated==true&&tituloVideo2Validated==true&&descripcionVideo2Validated==true&&coordenadasValidated==true){
 				//alert("enviado");
 				setTimeout(function(){
 					$('form').submit();

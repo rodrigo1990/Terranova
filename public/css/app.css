@@ -5477,11 +5477,15 @@ header #slider .slide > li .slide > li a i,
 }
 
 #home-icons ul {
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 #home-icons ul li {
-  flex-basis: 100%;
+  flex-basis: 217px;
+}
+
+#home-icons ul li img {
+  width: 90px;
 }
 
 #home-icons ul li h4 {
@@ -5510,6 +5514,7 @@ header #slider .slide > li .slide > li a i,
   #buscador #slider ul.slide #home-icons li li,
   #slider #buscador ul.slide #home-icons li li {
     margin-bottom: 50px;
+    flex-basis: auto;
   }
 }
 
@@ -5524,6 +5529,16 @@ header #slider .slide > li .slide > li a i,
   #home-icons #slider #buscador ul.slide li,
   #slider #buscador ul.slide #home-icons li {
     wrap: wrap;
+  }
+
+  #home-icons .flex li,
+  #home-icons #slider .slide li,
+  #slider #home-icons .slide li,
+  #home-icons #buscador ul.flex li li,
+  #buscador ul.flex #home-icons li li,
+  #buscador #slider ul.slide #home-icons li li,
+  #slider #buscador ul.slide #home-icons li li {
+    flex-basis: auto;
   }
 }
 
@@ -6860,6 +6875,7 @@ section#detalle-proyecto .content #slider ul.align-left.align-vertically.slide l
 section#detalle-proyecto .content .proyecto-description p,
 section#detalle-proyecto .content .proyecto-description p span {
   font-family: "Montserrat-Regular", "Helvetica" !important;
+  font-size: 14px !important;
 }
 
 section#detalle-proyecto .content .proyecto-description h1 span,
@@ -6941,6 +6957,23 @@ section#detalle-proyecto .content .como-llegar ul.flex li:nth-child(3) p,
 section#detalle-proyecto .content .como-llegar #slider ul.slide li:nth-child(3) p,
 #slider section#detalle-proyecto .content .como-llegar ul.slide li:nth-child(3) p {
   margin-bottom: 0;
+}
+
+section#detalle-proyecto .content .como-llegar ul.flex li:nth-child(3) > div > div,
+section#detalle-proyecto .content .como-llegar #slider ul.slide li:nth-child(3) > div > div,
+#slider section#detalle-proyecto .content .como-llegar ul.slide li:nth-child(3) > div > div {
+  position: relative;
+}
+
+section#detalle-proyecto .content .como-llegar ul.flex li:nth-child(3) > div > div a,
+section#detalle-proyecto .content .como-llegar #slider ul.slide li:nth-child(3) > div > div a,
+#slider section#detalle-proyecto .content .como-llegar ul.slide li:nth-child(3) > div > div a {
+  color: #7d9f45;
+  position: absolute;
+  font-family: "Montserrat-Regular", "Helvetica";
+  right: 0;
+  top: 100%;
+  font-size: 0.3rem;
 }
 
 section#detalle-proyecto .content .caracteristicas {
@@ -7142,6 +7175,52 @@ section#detalle-proyecto #ubicacion #map {
   height: 70vh;
 }
 
+section#detalle-proyecto #lineasColectivoVerMas {
+  padding-right: 0 !important;
+}
+
+section#detalle-proyecto #lineasColectivoVerMas .modal-header {
+  border: none;
+}
+
+section#detalle-proyecto #lineasColectivoVerMas .modal-header .close {
+  position: absolute;
+  top: unset;
+  top: 11px;
+  right: 8px;
+}
+
+section#detalle-proyecto #lineasColectivoVerMas .modal-header h1 {
+  font-family: "Montserrat-Black", "Helvetica";
+  color: #7d9f45;
+  margin-top: 0;
+}
+
+section#detalle-proyecto #lineasColectivoVerMas .modal-header hr {
+  height: 2px;
+  background: #7d9f45;
+  width: 83%;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+section#detalle-proyecto #lineasColectivoVerMas .modal-content {
+  padding: 20px 20px !important;
+}
+
+section#detalle-proyecto #lineasColectivoVerMas .modal-body ul {
+  margin-left: 15px !important;
+}
+
+section#detalle-proyecto #lineasColectivoVerMas .modal-body ul li {
+  list-style: disc;
+  text-align: left;
+}
+
+section#detalle-proyecto #lineasColectivoVerMas .modal-body ul li h3 {
+  color: #606161;
+}
+
 @media only screen and (width: 1024px) {
   section#detalle-proyecto .col-md-12.videos {
     margin-top: 30px;
@@ -7322,6 +7401,13 @@ section#detalle-proyecto #ubicacion #map {
     justify-content: center;
   }
 
+  section#detalle-proyecto .content .como-llegar ul li:nth-child(3) > div > div a {
+    right: 0;
+    left: 0;
+    top: 47px;
+    font-size: 0.4rem;
+  }
+
   section#detalle-proyecto .content .como-llegar ul li.flex.align-horizontally,
   section#detalle-proyecto .content .como-llegar ul #slider li.align-horizontally.slide,
   #slider section#detalle-proyecto .content .como-llegar ul li.align-horizontally.slide,
@@ -7359,6 +7445,14 @@ section#detalle-proyecto #ubicacion #map {
 
   section#detalle-proyecto .content .caracteristicas ul {
     margin-left: 0 !important;
+  }
+
+  section#detalle-proyecto .content .caracteristicas ul li {
+    margin-bottom: 20px;
+  }
+
+  section#detalle-proyecto .content .caracteristicas ul li h1 {
+    font-size: 1rem;
   }
 
   section#detalle-proyecto .col-md-12.videos {
