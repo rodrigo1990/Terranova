@@ -46,7 +46,7 @@ class FrontController extends Controller
 
     public function testimonios(){
         return view('testimonios',[
-        							'testimonios' => json_encode(Testimonio::all()),
+        							'testimonios' => json_encode(Testimonio::orderBy('id','DESC')->get()),
         							'fb' => $this->fb,
 									'ig' => $this->ig,
 									'yt' => $this->yt,

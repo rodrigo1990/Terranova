@@ -34,6 +34,8 @@ class ProyectoController extends Controller
 
 		 	$proyecto->estado_id = $request->estado;
 
+		 	$proyecto->es_barrio_parque = $request->barrio_parque;
+
 		 	if($request->estacion != null){
 		 		$proyecto->estacion = $request->estacion;
 		 	}
@@ -206,6 +208,8 @@ class ProyectoController extends Controller
 
 		 	$proyecto->longitud = $request->longitud;
 
+		 	$proyecto->es_barrio_parque = $request->barrio_parque;
+		 	
 		 	$proyecto->estado_id = $request->estado;
 
 		 	if($request->estacion == null){

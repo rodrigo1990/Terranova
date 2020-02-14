@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
 
           DB::table('estados')->insert([
             'id' => '2',
-            'descripcion' => 'TERMINADOS',
+            'descripcion' => 'EN DESARROLLO',
         ]);
 
 

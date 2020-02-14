@@ -20,6 +20,7 @@ class Proyectos extends Migration
             $table->unsignedInteger('zona_id');
             $table->string('latitud');
             $table->string('longitud');
+            $table->integer('es_barrio_parque');
             $table->string('estacion')->nullable();
             $table->unsignedInteger('estado_id');
 

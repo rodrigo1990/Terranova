@@ -50,21 +50,6 @@
 						<h3>¿Qué zona buscas?</h3>
 					</li>
 					<li>
-						<select name="zona_id" id="zona" class="form-control" onchange="buscarProyectoSegunZona()">
-							<option value="null">Seleccione una zona</option>
-							@foreach($zonas as $zona)
-								<option value="{{$zona->id}}">{{ucfirst(strtolower($zona->descripcion))}}</option>
-							@endforeach
-						</select>
-					</li>
-					<li>
-						<select name="proyecto_id" id="proyecto" class="form-control">
-							<option value="null">Selecciona un proyecto</option>
-						</select>
-					</li>
-
-
-					<li>
 		
 						<select name="estado_id" id="estado" class="form-control" onchange="buscarProyectoSegunZona()"  >
 							<option value="null">Seleccione un estado</option>
@@ -82,6 +67,23 @@
 						</select>
 					
 					</li>
+					
+					<li>
+						<select name="zona_id" id="zona" class="form-control" onchange="buscarProyectoSegunZona()">
+							<option value="null">Seleccione una zona</option>
+							@foreach($zonas as $zona)
+								<option value="{{$zona->id}}">{{ucfirst(strtolower($zona->descripcion))}}</option>
+							@endforeach
+						</select>
+					</li>
+					<li>
+						<select name="proyecto_id" id="proyecto" class="form-control">
+							<option value="null">Selecciona un proyecto</option>
+						</select>
+					</li>
+
+
+					
 
 				
 					<li>
@@ -155,20 +157,21 @@
 			<ul class="flex">
 				<li>
 					<div>
-						<h3>PRÓXIMOS  <br> LANZAMIENTOS</h3>
-						<a href="/proyectos/null/null/1" target="_blank" class="btn">
-							VER +
-						</a>
+						<h3>EN DESARROLLO</h3>
+								<a href="/proyectos/null/null/2" target="_blank" class="btn">
+									VER +
+								</a>
+						
 					</div>
 				</li>
 				<li>
 					<ul class="flex">
 						<li>
 							<div>
-								<h3>EN DESARROLLO</h3>
-								<a href="/proyectos/null/null/2" target="_blank" class="btn">
-									VER +
-								</a>
+								<h3>PRÓXIMOS  <br> LANZAMIENTOS</h3>
+						<a href="/proyectos/null/null/1" target="_blank" class="btn">
+							VER +
+						</a>
 							</div>
 						</li>
 						<li>

@@ -6969,11 +6969,8 @@ section#detalle-proyecto .content .como-llegar ul.flex li:nth-child(3) > div > d
 section#detalle-proyecto .content .como-llegar #slider ul.slide li:nth-child(3) > div > div a,
 #slider section#detalle-proyecto .content .como-llegar ul.slide li:nth-child(3) > div > div a {
   color: #7d9f45;
-  position: absolute;
   font-family: "Montserrat-Regular", "Helvetica";
-  right: 0;
-  top: 100%;
-  font-size: 0.3rem;
+  font-size: 0.4rem;
 }
 
 section#detalle-proyecto .content .caracteristicas {

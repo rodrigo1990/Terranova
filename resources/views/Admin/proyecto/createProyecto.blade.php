@@ -19,7 +19,17 @@
 
 					<br>
 					<br>
+					
+					<div class="row">
+					<label for="barrio_parque">¿ ES BARRIO PARQUE ? </label>
+					<select name="barrio_parque" class="form-control" id="">
+						<option value="1">SI</option>
+						<option value="0">NO</option>
+					</select>
+					</div>
 
+					<br>
+					<br>
 					
 					<div class="row">
 					<label for="estado">ESTADO</label>

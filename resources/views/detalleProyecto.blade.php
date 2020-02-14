@@ -14,7 +14,14 @@
 				
 				<h2 class="estado">{{mb_convert_case($proyecto->estado->descripcion,MB_CASE_TITLE,'UTF-8')}}</h2>
 
-					<h1 class="text-center"> BARRIO PARQUE <br>  <b>{{mb_convert_case($proyecto->titulo,MB_CASE_UPPER,'UTF-8')}}</b></h1>
+					<h1 class="text-center"> 
+						
+					@if($proyecto->es_barrio_parque==1)
+						BARRIO PARQUE <br>
+					@endif
+
+					  <b>{{mb_convert_case($proyecto->titulo,MB_CASE_UPPER,'UTF-8')}}</b>
+				</h1>
 			
 
 			</div>	
@@ -96,16 +103,9 @@
 					@if(count($proyecto->lineaColectivo)>0)
 						<li class="flex align-vertically">
 							<img src="<?php echo asset('storage/img/detalle_proyecto/bus.svg') ?> " alt="" width="50px" class="float-left">
-							<div class="float-left flex align-vertically" style="height: 68px;">
+							<div class="float-left flex align-vertically" style="">
 								<div>
-									<p>Líneas de colectivo</p>
-									@foreach($proyecto->lineaColectivo as $lineaColectivo)
-										<p><b>{{mb_convert_case($lineaColectivo->descripcion,MB_CASE_TITLE,'UTF-8')}}</b></p>
-										@break
-									@endforeach
-									@if(count($proyecto->lineaColectivo)>1)
-										<a data-toggle="modal" data-target="#lineasColectivoVerMas">VER MÁS</a>
-									@endif
+									<a data-toggle="modal" data-target="#lineasColectivoVerMas">VER  LÍNEAS DE COLECTIVO</a>
 								</div>
 							</div>
 

@@ -19,6 +19,17 @@
 					<br>
 
 					
+					<label for="barrio_parque">¿ ES BARRIO PARQUE ? </label>
+					<select name="barrio_parque" class="form-control" id="">
+						@if($proyecto->es_barrio_parque == 1)
+							<option value="1" selected>SI</option>
+							<option value="0" >NO</option>
+						@else
+							<option value="0" selected>NO</option>
+							<option value="1" >SI</option>
+						@endif
+					</select>
+
 					<br>
 					<br>
 

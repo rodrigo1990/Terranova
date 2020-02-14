@@ -12,6 +12,25 @@
 					<form action="/buscarProyectos" method="POST">
 						@csrf
 						<ul class="flex">
+								<li>
+								<label for="barrio">ELIJA UN ESTADO</label>
+								<div>
+								<select name="estado" id="estado" class="form-control" onchange="buscarProyectoSegunZona()">
+									<option value="null">Seleccione un estado</option>
+									@foreach($estados as $estado)
+										@if(isset($estado_id))
+											@if($estado_id== $estado->id)
+												<option value="{{$estado->id}}" selected>{{$estado->descripcion}}</option>
+											@else
+												<option value="{{$estado->id}}">{{$estado->descripcion}}</option>
+											@endif
+										@else
+											<option value="{{$estado->id}}">{{$estado->descripcion}}</option>
+										@endif
+									@endforeach
+								</select>
+								</div>
+							</li>
 							<li>
 								<label for="zona">ELIJA UNA ZONA</label>
 								<select name="zona" id="zona" class="form-control" onchange="buscarProyectoSegunZona()">
@@ -57,25 +76,7 @@
 								</div>
 							</li>
 
-							<li>
-								<label for="barrio">ELIJA UN ESTADO</label>
-								<div>
-								<select name="estado" id="estado" class="form-control" onchange="buscarProyectoSegunZona()">
-									<option value="null">Seleccione un estado</option>
-									@foreach($estados as $estado)
-										@if(isset($estado_id))
-											@if($estado_id== $estado->id)
-												<option value="{{$estado->id}}" selected>{{$estado->descripcion}}</option>
-											@else
-												<option value="{{$estado->id}}">{{$estado->descripcion}}</option>
-											@endif
-										@else
-											<option value="{{$estado->id}}">{{$estado->descripcion}}</option>
-										@endif
-									@endforeach
-								</select>
-								</div>
-							</li>
+						
 
 							<li>
 								<button class="btn">BUSCAR</button>
