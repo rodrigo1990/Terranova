@@ -32,6 +32,20 @@
 
 					<br>
 					<br>
+					
+					<label for="formulario">¿ APARECE EN EL FORMULARIO DE CONTACTO ? </label>
+					<select name="formulario" class="form-control" id="">
+						@if($proyecto->aparece_en_formulario == 1)
+							<option value="1" selected>SI</option>
+							<option value="0" >NO</option>
+						@else
+							<option value="0" selected>NO</option>
+							<option value="1" >SI</option>
+						@endif
+					</select>
+
+					<br>
+					<br>
 
 					
 					<label for="estado">ESTADO</label>
@@ -890,7 +904,7 @@
 				descripcionValidated=true;
 			}
 
-			if($("input[name=img_presentacion]").length){
+			/*if($("input[name=img_presentacion]").length){
 				if(imgPresentacion.length == 0){
 					$("#imgPresentacion-error").fadeIn();
 					console.log('ERROR');
@@ -927,15 +941,15 @@
 
 			}else{
 				imgSlide2Validated = true;
-			}
+			}*/
 
 
-			if(latitud.length == 0 || longitud.length == 0){
+			/*if(latitud.length == 0 || longitud.length == 0){
 				$("#coordenadas-error").fadeIn();
 			}else{
 				$("#coordenadas").fadeOut();
 				coordenadasValidated=true;
-			}
+			}*/
 
 
 			if(linkYoutube1.length != 0){
@@ -1041,7 +1055,7 @@
 			console.log(tituloVideo2Validated);
 			console.log(descripcionVideo2Validated);
 
-			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true&&linkYoutube1Validated==true&&linkYoutube2Validated==true&&tituloVideo1Validated==true&&descripcionVideo1Validated==true&&tituloVideo2Validated==true&&descripcionVideo2Validated==true&&coordenadasValidated==true){
+			if(tituloValidated==true&&descripcionValidated==true&&/*imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true&&*/linkYoutube1Validated==true&&linkYoutube2Validated==true&&tituloVideo1Validated==true&&descripcionVideo1Validated==true&&tituloVideo2Validated==true&&descripcionVideo2Validated==true/*&&coordenadasValidated==true*/){
 				//alert("enviado");
 				setTimeout(function(){
 					$('form').submit();

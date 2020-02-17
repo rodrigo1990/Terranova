@@ -65,21 +65,17 @@ class BuscadorController extends Controller
 
   			$estado_id = (int)$request->estado;
 
-  		  	$proyectos = DB::table('proyectos')
-                            ->join('img_proyecto','img_proyecto.proyecto_id','proyectos.id')                       
-                            ->where('img_proyecto.tipo','PRESENTACION')
-                            ->when($zona_id,function($query,$zona_id){
-                               return $query->where('proyectos.zona_id',$zona_id);  
+  		  	$proyectos = Proyecto::when($estado_id,function($query,$estado_id){
+                               return $query->where('estado_id',$estado_id,);  
                             })
-
+                ->when($zona_id,function($query,$zona_id){
+                               return $query->where('zona_id',$zona_id,);  
+                            })
                             ->when($proyecto_id,function($query,$proyecto_id){
-                               return $query->where('proyectos.id',$proyecto_id);  
+                               return $query->where('id',$proyecto_id,);  
                             })
 
-                            ->when($estado_id,function($query,$estado_id){
-                               return $query->where('proyectos.estado_id',$estado_id);
-                              })
-                            ->distinct()
+
                             ->get();
 
 

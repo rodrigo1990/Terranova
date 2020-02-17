@@ -18,6 +18,11 @@ Route::get('/config-cache', function () {
     //
 });
 
+/*Route::get('/info/', function () {
+    return view('info_php');
+});*/
+
+
 
 Route::get('/', 'FrontController@index');
 

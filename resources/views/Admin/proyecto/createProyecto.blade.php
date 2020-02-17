@@ -32,6 +32,17 @@
 					<br>
 					
 					<div class="row">
+					<label for="formulario">¿ APARECE EN EL FORMULARIO DE CONTACTO ? </label>
+					<select name="formulario" class="form-control" id="">
+						<option value="1">SI</option>
+						<option value="0">NO</option>
+					</select>
+					</div>
+
+					<br>
+					<br>
+					
+					<div class="row">
 					<label for="estado">ESTADO</label>
 					<select name="estado" class="form-control" id="">
 						@foreach($estados as $estado)
@@ -718,7 +729,7 @@
 			}
 
 
-			if(imgPresentacion.length == 0){
+			/*if(imgPresentacion.length == 0){
 				$("#imgPresentacion-error").fadeIn();
 			}else{
 				$("#imgPresentacion-error").fadeOut();
@@ -737,15 +748,15 @@
 			}else{
 				$("#imgSlide2-error").fadeOut();
 				imgSlide2Validated=true;
-			}
+			}*/
 
 
-			if(latitud.length == 0 || longitud.length == 0){
+			/*if(latitud.length == 0 || longitud.length == 0){
 				$("#coordenadas-error").fadeIn();
 			}else{
 				$("#coordenadas").fadeOut();
 				coordenadasValidated=true;
-			}
+			}*/
 
 			if(linkYoutube1.length != 0){
 
@@ -882,7 +893,7 @@
 			console.log(tituloVideo2Validated);
 			console.log(descripcionVideo2Validated);
 
-			if(tituloValidated==true&&descripcionValidated==true&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true&&video1Validated==true&&tituloVideo1Validated==true&&descripcionVideo1Validated==true&&video2Validated==true&&tituloVideo2Validated==true&&descripcionVideo2Validated==true&&coordenadasValidated==true){
+			if(tituloValidated==true&&descripcionValidated==true&&/*&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true&&*/video1Validated==true&&tituloVideo1Validated==true&&descripcionVideo1Validated==true&&video2Validated==true&&tituloVideo2Validated==true&&descripcionVideo2Validated==true/*coordenadasValidated==true*/){
 			
 			setTimeout(function(){
 				$('form').submit();

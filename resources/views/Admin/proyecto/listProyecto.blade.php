@@ -9,6 +9,7 @@
 					<thead>
 						<tr>
 							<th class="text-center">Titulo</th>
+							<th class="text-center">¿Formulario de contacto? </th>
 							<th class="text-center">Acción</th>
 						</tr>
 					</thead>
@@ -16,7 +17,20 @@
 						@if(isset($proyectos))
 							@foreach($proyectos as $proyecto)
 							<tr>
-								<td class="text-center">{{$proyecto->titulo}}</td>
+								<td class="text-center">
+									@if($proyecto->es_barrio_parque == 1)
+										Barrio Parque
+									@endif
+									
+									{{$proyecto->titulo}}
+								</td>
+								<td class="text-center">
+									@if($proyecto->aparece_en_formulario == 1 )
+										SI
+									@else
+										NO
+									@endif
+								</td>
 								<td class="text-center">
 									<a href="/admin/viewUpdateProyecto/{{$proyecto->id}}">Actualizar</a>
 									<br>

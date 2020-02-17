@@ -6711,6 +6711,8 @@ section#buscador-section .result #slider ul.slide > li > div > div,
   height: 45px;
   margin: auto;
   justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 section#buscador-section .result ul.flex > li > div > div p,
@@ -6805,6 +6807,11 @@ section#detalle-proyecto .main-img .estado {
   margin: 0;
   font-size: 0.8rem;
   z-index: 2;
+}
+
+section#detalle-proyecto .main-img .estado.ultimos_lotes {
+  margin-top: 55px !important;
+  right: 11px;
 }
 
 section#detalle-proyecto .main-img h1 {
@@ -7280,6 +7287,10 @@ section#detalle-proyecto #lineasColectivoVerMas .modal-body ul li h3 {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  section#detalle-proyecto .main-img .estado.ultimos_lotes {
+    margin-top: 40px !important;
+  }
+
   section#detalle-proyecto .content ul.flex.align-horizontally.align-vertically,
   section#detalle-proyecto .content #slider ul.align-horizontally.align-vertically.slide,
   #slider section#detalle-proyecto .content ul.align-horizontally.align-vertically.slide {
@@ -7344,6 +7355,12 @@ section#detalle-proyecto #lineasColectivoVerMas .modal-body ul li h3 {
   }
 }
 
+@media only screen and (min-width: 1px) and (max-width: 900px) and (orientation: landscape) {
+  section#detalle-proyecto .main-img {
+    height: 55vh;
+  }
+}
+
 @media only screen and (min-width: 1px) and (max-width: 767px) {
   section#detalle-proyecto .main-img .estado {
     position: absolute;
@@ -7352,6 +7369,10 @@ section#detalle-proyecto #lineasColectivoVerMas .modal-body ul li h3 {
     left: 0;
     margin: auto;
     font-size: 0.5rem;
+  }
+
+  section#detalle-proyecto .main-img .estado.ultimos_lotes {
+    margin-top: 34px !important;
   }
 
   section#detalle-proyecto .row {

@@ -3,6 +3,7 @@
 
 @section('main')
 @include('inc.header')
+
 <section id="buscador-section" class="buscador-container">
 	<h2 class="title primary-color text-center"><b>NUESTROS PROYECTOS</b></h2>	
 	<div class="row">
@@ -92,7 +93,7 @@
 				<ul class="flex">
 						@foreach($proyectos as $proyecto)
 						<li>
-							<div class="text-center">
+								<div class="text-center">
 								
 								@if(isset($proyecto->img))
 									@foreach($proyecto->img as $img)
@@ -105,14 +106,22 @@
 									@endif
 
 								<div>
-									<p class="title primary-color text-center">
-										{{ucfirst($proyecto->titulo)}}
+									
+								
+									 <p class="title primary-color text-center">
+
+									
+										@if($proyecto->es_barrio_parque ==1)
+											Barrio Parque
+											<br>
+										@endif
+										<b>{{ucfirst($proyecto->titulo)}}</b>
 									</p>
 								</div>
 								@if(isset($proyecto->proyecto_id))
-								<a href="/proyecto/{{$proyecto->proyecto_id}}" target="_blank" class="btn"> VER + </a>
+									<a href="/proyecto/{{$proyecto->proyecto_id}}" target="_blank" class="btn"> VER + </a>
 								@else
-								<a href="/proyecto/{{$proyecto->id}}" target="_blank" class="btn"> VER +</a>
+									<a href="/proyecto/{{$proyecto->id}}" target="_blank" class="btn"> VER +</a>
 								@endif
 							</div>
 						</li>

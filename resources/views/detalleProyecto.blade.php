@@ -6,28 +6,51 @@
 
 <?php // var_dump($proyecto) ?>
 <section id="detalle-proyecto">
-	@foreach($imagenes as $img)
-		@if($img->tipo=='PRESENTACION')
-			
-			<div class="main-img flex align-vertically align-horizontally" style="background-image: url(<?php echo asset('storage/img/proyectos/'.$img->ruta) ?>)">
-				<div class="overlay"></div>
+	@if(count($imagenes)>0)
+		@foreach($imagenes as $img)
+			@if($img->tipo=='PRESENTACION')
 				
-				<h2 class="estado">{{mb_convert_case($proyecto->estado->descripcion,MB_CASE_TITLE,'UTF-8')}}</h2>
+				<div class="main-img flex align-vertically align-horizontally" style="background-image: url(<?php echo asset('storage/img/proyectos/'.$img->ruta) ?>)">
+					<div class="overlay"></div>
+					
+					<h2 class="estado">{{mb_convert_case($proyecto->estado->descripcion,MB_CASE_TITLE,'UTF-8')}}</h2>
 
-					<h1 class="text-center"> 
-						
-					@if($proyecto->es_barrio_parque==1)
-						BARRIO PARQUE <br>
+					@if($proyecto->estado->descripcion == 'EN DESARROLLO')
+						<h2 class="estado ultimos_lotes" style="background:transparent;">¡Últimos Lotes!</h2>
 					@endif
 
-					  <b>{{mb_convert_case($proyecto->titulo,MB_CASE_UPPER,'UTF-8')}}</b>
-				</h1>
-			
+						<h1 class="text-center"> 
+							
+						@if($proyecto->es_barrio_parque==1)
+							BARRIO PARQUE <br>
+						@endif
 
-			</div>	
+						  <b>{{mb_convert_case($proyecto->titulo,MB_CASE_UPPER,'UTF-8')}}</b>
+					</h1>
 				
+
+				</div>	
+					
+			@endif
+		@endforeach
+	@else
+				<div class="main-img flex align-vertically align-horizontally" >
+					<div class="overlay"></div>
+					
+					<h2 class="estado">{{mb_convert_case($proyecto->estado->descripcion,MB_CASE_TITLE,'UTF-8')}}</h2>
+
+						<h1 class="text-center"> 
+							
+						@if($proyecto->es_barrio_parque==1)
+							BARRIO PARQUE <br>
+						@endif
+
+						  <b>{{mb_convert_case($proyecto->titulo,MB_CASE_UPPER,'UTF-8')}}</b>
+					</h1>
+				
+
+				</div>		
 		@endif
-	@endforeach
 
 	<div class="content">
 		<div class="row">
@@ -182,7 +205,7 @@
 
 
 
-
+@if(count($imagenes)>0)
 <div id="imagenes">
 	<div class="">
 		<div class="owl-carousel galeria" id="owl-2">
@@ -209,6 +232,7 @@
 		</div>
 	</div>
 </div>
+@endif
 
 	<div class="row row-btn">
 		<div class="container">
@@ -217,12 +241,13 @@
 	</div>
 
 
-
-<div id="ubicacion">
-	<input type="hidden" id="latitud" value="{{$proyecto->latitud}}">
-	<input type="hidden" id="longitud" value="{{$proyecto->longitud}}">
-	<div id="map"></div>
-</div>
+@if($proyecto->latitud != 0 && $proyecto->longitud != 0)
+	<div id="ubicacion">
+		<input type="hidden" id="latitud" value="{{$proyecto->latitud}}">
+		<input type="hidden" id="longitud" value="{{$proyecto->longitud}}">
+		<div id="map"></div>
+	</div>
+@endif
 
 <!-- Modal -->
 <div class="modal fade" id="lineasColectivoVerMas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >

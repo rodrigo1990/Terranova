@@ -28,13 +28,22 @@ class ProyectoController extends Controller
 
 		 	$proyecto->zona_id = $request->zona;
 
-		 	$proyecto->latitud = $request->latitud;
+		 	if(isset($request->latitud) && isset($request->longitud) ){
+		 		$proyecto->latitud = $request->latitud;
 
-		 	$proyecto->longitud = $request->longitud;
+		 		$proyecto->longitud = $request->longitud;
+
+		 	}else{
+				$proyecto->latitud = 0;
+
+		 		$proyecto->longitud = 0;		 		
+		 	}
 
 		 	$proyecto->estado_id = $request->estado;
 
 		 	$proyecto->es_barrio_parque = $request->barrio_parque;
+
+		 	$proyecto->aparece_en_formulario = $request->formulario;
 
 		 	if($request->estacion != null){
 		 		$proyecto->estacion = $request->estacion;
@@ -135,7 +144,7 @@ class ProyectoController extends Controller
 		 		}
 		 	}
 
-		 	if($request->img_presentacion){
+		 	if($request->img_presentacion != null){
 
  			 	//IMAGEN PRESENTACION
  			 	$img_presentacion = new Img();
@@ -156,27 +165,35 @@ class ProyectoController extends Controller
  			 	$proyecto->img()->save($img_presentacion);
  			 		
 		 	}
-		 	//IMG SLIDER
-		 	for($i=0;$i<=count($request->img)-1;$i++){
-
-			 	$img = new Img();
-
-			 	$name = rand(0,99999999);
-
-			 	$format = $request->img[$i]->extension();
-
-			 	$img->ruta = "".$name.".".$format."";
-
-			 	$img->nombre = $request->img[$i]->getClientOriginalName(); 
-
-			 	$path = $request->img[$i]->storeAs('/img/proyectos/',$img->ruta,'public');
-
-			 	$img->order = $i;
-
-			 	$img->tipo = 'SLIDE';
-
-			 	$proyecto->img()->save($img);	
 		 	
+		 	if(isset($request->img)){
+
+			 	//IMG SLIDER
+			 	for($i=0;$i<=count($request->img)-1;$i++){
+
+			 		
+
+					 	$img = new Img();
+
+					 	$name = rand(0,99999999);
+
+					 	$format = $request->img[$i]->extension();
+
+					 	$img->ruta = "".$name.".".$format."";
+
+					 	$img->nombre = $request->img[$i]->getClientOriginalName(); 
+
+					 	$path = $request->img[$i]->storeAs('/img/proyectos/',$img->ruta,'public');
+
+					 	$img->order = $i;
+
+					 	$img->tipo = 'SLIDE';
+
+					 	$proyecto->img()->save($img);
+
+				 		
+			 	
+			 	}
 		 	}
 
 		 	return redirect('/admin/viewListProyectos/"create"');
@@ -209,6 +226,8 @@ class ProyectoController extends Controller
 		 	$proyecto->longitud = $request->longitud;
 
 		 	$proyecto->es_barrio_parque = $request->barrio_parque;
+
+		 	$proyecto->aparece_en_formulario = $request->formulario;
 		 	
 		 	$proyecto->estado_id = $request->estado;
 
@@ -334,12 +353,14 @@ class ProyectoController extends Controller
 		
 				foreach ($request->lineasColectivos as $lineaColectivo) {
 
+					if($lineaColectivo != null || $lineaColectivo != '' ){
 					
 						$lineaColectivoObj = new LineaColectivo();
 
 						$lineaColectivoObj->descripcion = $lineaColectivo;
 
 						$proyecto->lineaColectivo()->save($lineaColectivoObj);
+					}
 					
 				}
 
@@ -433,7 +454,7 @@ class ProyectoController extends Controller
 
 
 
-		 	if($request->img_presentacion){
+		 	if($request->img_presentacion != null){
 
 	 			$img = new Img();
 
@@ -477,7 +498,7 @@ class ProyectoController extends Controller
 
 
 		 	//IMG SLIDER
-		 	if($request->img){
+		 	if(isset($request->img)){
  			 	if(count($request->img)>0){
  			 		$f = array_key_first($request->img);
  			 		$l = array_key_last($request->img);
@@ -485,23 +506,25 @@ class ProyectoController extends Controller
  	 					
  	 			 		if(isset($request->img[$i])){
 
-	 	 				 	$img = new Img();
-	 	 	
-	 	 				 	$name = rand(0,99999999);
-	 	 	
-	 	 				 	$format = $request->img[$i]->extension();
-	 	 	
-	 	 				 	$img->ruta = "".$name.".".$format."";
-	 	 	
-	 	 				 	$img->nombre = $request->img[$i]->getClientOriginalName(); 
-	 	 	
-	 	 				 	$path = $request->img[$i]->storeAs('/img/proyectos/',$img->ruta,'public');
-	 	 	
-	 	 				 	$img->tipo = 'SLIDE';
+ 	 			 			if($img[$i] != null){
+		 	 				 	$img = new Img();
+		 	 	
+		 	 				 	$name = rand(0,99999999);
+		 	 	
+		 	 				 	$format = $request->img[$i]->extension();
+		 	 	
+		 	 				 	$img->ruta = "".$name.".".$format."";
+		 	 	
+		 	 				 	$img->nombre = $request->img[$i]->getClientOriginalName(); 
+		 	 	
+		 	 				 	$path = $request->img[$i]->storeAs('/img/proyectos/',$img->ruta,'public');
+		 	 	
+		 	 				 	$img->tipo = 'SLIDE';
 
-	 	 				 	$img->order = $i;
-	 	 	
-	 	 				 	$proyecto->img()->save($img);
+		 	 				 	$img->order = $i;
+		 	 	
+		 	 				 	$proyecto->img()->save($img);
+	 	 				 	}
 
  	 				 	}
  	 			 	
@@ -539,9 +562,12 @@ class ProyectoController extends Controller
 
 	 		$imgs = Img::where('proyecto_id',$request->id)->get();
 
+	 		if($imgs != null){
 
-	 		foreach($imgs as $img){
-	 			Storage::disk('public')->delete("/img/proyectos/".$img->ruta."");
+		 		foreach($imgs as $img){
+		 			Storage::disk('public')->delete("/img/proyectos/".$img->ruta."");
+		 		}
+
 	 		}
 
 	 		

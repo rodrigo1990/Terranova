@@ -18,7 +18,9 @@
 				<select name="proyecto" id="proyecto" class="form-control">
 					<option value="">Seleccione un barrio de su interes</option>
 					@foreach($proyectos as $proyecto)
-						<option value="{{$proyecto->titulo}}">{{$proyecto->titulo}}</option>
+						@if($proyecto->aparece_en_formulario==1)
+							<option value="{{$proyecto->titulo}}">{{$proyecto->titulo}}</option>
+						@endif
 					@endforeach
 				</select>
 				<p class="error" id="proyecto-error">Ingrese un proyecto</p>
