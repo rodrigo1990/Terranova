@@ -77,26 +77,30 @@
 			
 				<div class="col-sm-12 col-md-12 col-lg-{{$cols}} info">
 					<ul class="flex align-left align-vertically">
-			<li class="text-center">
-				<img src="<?php echo asset('storage/img/detalle_proyecto/geoloc.svg') ?>"  alt="">
-				<a onclick="scrollAnimate('ubicacion',this)" class="btn">
-					VER UBICACIÓN
-				</a>
-			</li>
-			@if(count($proyecto->masterplan)>0)
-			<li class="text-center">
-				<img src="<?php echo asset('storage/img/detalle_proyecto/masterplan.svg') ?>"  alt="">
-				<a target="_blank" href="<?php echo asset('/storage/archivos/proyectos/masterplans/'.$proyecto->masterplan[0]->ruta) ?>" class="btn">
-					VER MASTERPLAN
-				</a>
-			</li>
+			@if($proyecto->latitud != 0 && $proyecto->longitud != 0 )
+				<li class="text-center">
+					<img src="<?php echo asset('storage/img/detalle_proyecto/geoloc.svg') ?>"  alt="">
+					<a onclick="scrollAnimate('ubicacion',this)" class="btn">
+						VER UBICACIÓN
+					</a>
+				</li>
 			@endif
-			<li class="text-center">
-				<img src="<?php echo asset('storage/img/detalle_proyecto/fotos.svg') ?>"  alt="">
-				<a onclick="scrollAnimate('imagenes',this)" class="btn">
-					VER FOTOS
-				</a>
-			</li>
+			@if(count($proyecto->masterplan)>0)
+				<li class="text-center">
+					<img src="<?php echo asset('storage/img/detalle_proyecto/masterplan.svg') ?>"  alt="">
+					<a target="_blank" href="<?php echo asset('/storage/archivos/proyectos/masterplans/'.$proyecto->masterplan[0]->ruta) ?>" class="btn">
+						VER MASTERPLAN
+					</a>
+				</li>
+			@endif
+			@if(count($imagenes)>1)
+				<li class="text-center">
+					<img src="<?php echo asset('storage/img/detalle_proyecto/fotos.svg') ?>"  alt="">
+					<a onclick="scrollAnimate('imagenes',this)" class="btn">
+						VER FOTOS
+					</a>
+				</li>
+			@endif
 		</ul>
 
 		<div class="row proyecto-description">
@@ -165,7 +169,7 @@
 						<iframe id="videoObject" src="https://www.youtube.com/embed/{{$video->url}}?autoplay=0&controls=0&enablejsapi=1" type="text/html" frameborder="0"  allowfullscreen height="150px"></iframe>
 						<div class="infoVideo">
 							<h3>{{mb_convert_case($video->titulo,MB_CASE_TITLE,'UTF-8')}}</h3>
-							<p>{{mb_convert_case($video->descripcion,MB_CASE_TITLE,'UTF-8')}}</p>
+							<p>{{ucfirst($video->descripcion)}}</p>
 						</div>
 					</li>
 				@endforeach
@@ -204,8 +208,7 @@
 
 
 
-
-@if(count($imagenes)>0)
+@if(count($imagenes)>1)
 <div id="imagenes">
 	<div class="">
 		<div class="owl-carousel galeria" id="owl-2">

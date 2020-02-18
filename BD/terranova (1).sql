@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-02-2020 a las 22:04:35
+-- Tiempo de generación: 18-02-2020 a las 21:08:09
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.11
 
@@ -99,7 +99,10 @@ INSERT INTO `caracteristicas` (`id`, `proyecto_id`, `descripcion`) VALUES
 (74, 33, 'Escriturado'),
 (75, 34, 'Cantidad de lotes: 35 lotes'),
 (76, 34, 'Superficie promedio: 300 a 450 mts'),
-(77, 34, 'Escriturado');
+(77, 34, 'Escriturado'),
+(78, 35, 'Cantidad de lotes: 900 lotes'),
+(79, 35, 'Superficie promedio: 200 y 260 mts'),
+(80, 35, 'Escriturado');
 
 -- --------------------------------------------------------
 
@@ -307,8 +310,13 @@ INSERT INTO `img_proyecto` (`id`, `ruta`, `nombre`, `proyecto_id`, `tipo`, `orde
 (219, '58280542.jpeg', 'la esperanza.jpg', 17, 'PRESENTACION', NULL),
 (220, '63882509.jpeg', 'los sauces.jpg', 10, 'PRESENTACION', NULL),
 (221, '26805673.jpeg', 'rincon de irizar.jpg', 14, 'PRESENTACION', NULL),
-(222, 'null', 'null', 34, 'NULL', NULL),
-(223, 'NULL', 'NULL', 34, 'NULL', NULL);
+(230, '18114651.png', 'terranova-iso.png', 29, 'PRESENTACION', NULL),
+(231, '24389856.png', 'terranova-iso.png', 30, 'PRESENTACION', NULL),
+(232, '79660677.png', 'terranova-iso.png', 31, 'PRESENTACION', NULL),
+(233, '77818767.png', 'terranova-iso.png', 32, 'PRESENTACION', NULL),
+(234, '74996980.png', 'terranova-iso.png', 33, 'PRESENTACION', NULL),
+(235, '85023886.png', 'terranova-iso.png', 34, 'PRESENTACION', NULL),
+(236, '99041039.jpeg', 'casas santa ana.jpg', 35, 'PRESENTACION', NULL);
 
 -- --------------------------------------------------------
 
@@ -437,24 +445,25 @@ CREATE TABLE `proyectos` (
 
 INSERT INTO `proyectos` (`id`, `descripcion`, `titulo`, `zona_id`, `latitud`, `longitud`, `es_barrio_parque`, `aparece_en_formulario`, `estacion`, `estado_id`) VALUES
 (10, '<p class=\"MsoNormal\"><span lang=\"ES\" style=\"font-size: 11pt; line-height: 15.6933px; font-family: Calibri, sans-serif;\">El barrio se encuentra ubicado en San Alejo, partido de Pilar. Tiene una excelente ubicaci&oacute;n a pocas cuadras de Ruta 25, a diez minutos del centro de Pilar y a 15 minutos del Parque&nbsp;</span><span style=\"font-family: Calibri, sans-serif; font-size: 11pt;\">Industrial de Pilar.</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\" style=\"font-size: 11pt; line-height: 15.6933px; font-family: Calibri, sans-serif;\">Se encuentra en una zona tranquila y de f&aacute;cil acceso,<strong> en el barrio podr&aacute;s encontrar una escuela, una sala de primeros auxilios, una cancha de Football y una plaza para que jueguen los m&aacute;s peque&ntilde;os</strong>.<br />Ideal para proyectar tu casa y disfrutarla con tu familia.</span></p>\r\n<p class=\"MsoNormal\">&nbsp;</p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Ser&aacute; un barrio abierto por lo que no se abonar&aacute;n expensas y no tendr&aacute; reglamento de construcci&oacute;n.</span></p>', 'Los Sauces', 1, '-34.43159062460211', '-58.91245998678589', 0, 1, 'Estación del tren Mitre', 1),
-(11, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Manzanares, partido de Pilar, a pocas cuadras de Panamericana, a 55 km de CABA.&nbsp;</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El Aljibe es un barrio ideal para proyectar tu hogar junto a tu familia, cuenta salida al Rio Luj&aacute;n, el mismo contar&aacute; con un paseo ribere&ntilde;o donde podr&aacute;s disfrutar una caminata, sentarte a leer un libro o hacer ejercicio al aire libre ya que contar&aacute; con un eco gimnasio mientras disfrutas del paisaje y la tranquilidad que te ofrecemos.</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">&iexcl;Cumpl&iacute; tu sue&ntilde;o! M&aacute;s de 100 familias ya se encuentran viviendo y disfrutando de la comodidad del barrio.</span></p>', 'El Aljibe', 1, '-34.4453226', '-58.9751816', 0, 1, NULL, 1),
-(12, '<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\">El barrio se encuentra ubicado en Exaltaci&oacute;n de la Cruz, a diez minutos de la ciudad de Pilar. Ubicado en un entorno tranquilo, con acceso asfaltado por el tradicional Parque Sakura, <span style=\"background: white;\">A tan solo 400 mts del Km 68 de la ruta 8.&nbsp;</span></span></p>\r\n<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\">&iexcl;86 familias cumplieron su sue&ntilde;o y hoy disfrutan de su propia casa!</span></p>', 'Barrio Parque Sakura II', 1, '-34.39714', '-59.0459343', 1, 1, NULL, 3),
-(13, '<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\">El barrio se encuentra ubicado en Exaltaci&oacute;n de la Cruz, a diez minutos de la ciudad de Pilar. Ubicado en un entorno tranquilo, con acceso asfaltado por el tradicional Parque Sakura, <span style=\"background: white;\">A tan solo 400 mts del Km 68 de la ruta 8.&nbsp;</span></span></p>\r\n<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\">&iexcl;86 familias cumplieron su sue&ntilde;o y hoy disfrutan de su propia casa!</span></p>', 'Barrio Parque Sakura III', 1, '-34.39714', '-59.0459343', 1, 1, NULL, 3),
+(11, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Manzanares, partido de Pilar, a pocas cuadras de Panamericana, a 55 km de CABA.&nbsp;</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El Aljibe es un barrio ideal para proyectar tu hogar junto a tu familia, cuenta salida al Rio Luj&aacute;n, el mismo contar&aacute; con un paseo ribere&ntilde;o donde podr&aacute;s disfrutar una caminata, sentarte a leer un libro o hacer ejercicio al aire libre ya que contar&aacute; con un eco gimnasio mientras disfrutas del paisaje y la tranquilidad que te ofrecemos.</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">&iexcl;Cumpl&iacute; tu sue&ntilde;o! M&aacute;s de 100 familias ya se encuentran viviendo y disfrutando de la comodidad del barrio.</span></p>', 'El Aljibe', 1, '-34.4453226', '-58.9751816', 0, 1, NULL, 2),
+(12, '<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\">El barrio se encuentra ubicado en Exaltaci&oacute;n de la Cruz, a diez minutos de la ciudad de Pilar. Ubicado en un entorno tranquilo, con acceso asfaltado por el tradicional Parque Sakura, <span style=\"background: white;\">A tan solo 400 mts del Km 68 de la ruta 8.&nbsp;</span></span></p>\r\n<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\">&iexcl;86 familias cumplieron su sue&ntilde;o y hoy disfrutan de su propia casa!</span></p>', 'Sakura II', 1, '-34.39714', '-59.0459343', 1, 1, NULL, 3),
+(13, '<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\">El barrio se encuentra ubicado en Exaltaci&oacute;n de la Cruz, a diez minutos de la ciudad de Pilar. Ubicado en un entorno tranquilo, con acceso asfaltado por el tradicional Parque Sakura, <span style=\"background: white;\">A tan solo 400 mts del Km 68 de la ruta 8.&nbsp;</span></span></p>\r\n<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\">&iexcl;86 familias cumplieron su sue&ntilde;o y hoy disfrutan de su propia casa!</span></p>', 'Sakura III', 1, '-34.39714', '-59.0459343', 1, 1, NULL, 3),
 (14, '<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\">El barrio se encuentra ubicado Irizar, a diez minutos de la ciudad de Pilar. Ubicado en un entorno tranquilo rodeado de casas quintas, con un &uacute;nico acceso por Av.Frondizi.</span></p>\r\n<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\">&iexcl;Hoy m&aacute;s de 30 familias se encuentran viviendo en el barrio y disfrutando su propia casa!</span></p>', 'Rincón de Irizar', 1, '-34.3860319', '-58.97503019999999', 1, 1, NULL, 3),
 (15, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Tortuguitas partido de Malvinas Argentinas, en un exclusivo barrio de hermosas casas quintas, que se caracterizan por su a&ntilde;eja arboleda, cuenta excelente ubicaci&oacute;n a 300 metros de Ruta Nacional 8.</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El desarrollo se encuentra ubicado a muy pocas cuadras del centro comercial de Tortuguitas, un pueblo tranquilo y urbanizado, <strong>donde podr&aacute;s encontrar una escuela p&uacute;blica, y una plaza que podr&aacute;s disfrutar con los m&aacute;s peque&ntilde;os.</strong></span></p>\r\n<p class=\"MsoNormal\">&nbsp;</p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas y no tendr&aacute; reglamento de construcci&oacute;n.</span></p>', 'Tortuguitas', 1, '-34.4870268', '-58.7688785', 1, 1, 'Estación del tren Belgrano', 2),
-(16, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Parada Robles, partido de Exaltaci&oacute;n de La Cruz, a muy pocas cuadras de Panamericana, en un entorno residencial y tranquilo. Ideal para casas de fin de semana, para descansar, alejarte de la ciudad y conectarte con la naturaleza a tan<span style=\"mso-spacerun: yes;\">&nbsp; </span>s&oacute;lo 71 km de Capital, 11 km de Capilla del Se&ntilde;or y 25 km de Pilar.</span></p>\r\n<p class=\"MsoNormal\">&nbsp;</p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El desarrollo se encuentra ubicado a seis cuadras del centro comercial de Parada Robles, un pueblo tranquilo, <strong>donde podr&aacute;s encontrar un jard&iacute;n maternal, un club, la capilla Nuestra Se&ntilde;ora del Rosario de San Nicol&aacute;s y una sala de primeros auxilios.&nbsp;</strong></span></p>\r\n<p class=\"MsoNormal\">&nbsp;</p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas y no tendr&aacute; reglamento de construcci&oacute;n.&nbsp;</span></p>', 'Robles', 1, '-34.3778749', '-59.11839959999999', 1, 1, 'Estación del tren Mitre', 1),
-(17, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Tristan Suarez, partido de Ezeiza, a 50 metros de la Ruta 205 con excelente acceso a l&iacute;neas de colectivos. Se encuentra en un entorno muy tranquilo, rodeado de casas quintas a 4 km de Ezeiza posee acceso asfaltado desde la calle Juan G&aacute;lvez.</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Trist&aacute;n Suarez, donde podr&aacute;s encontrar una plaza y un club, ideal para que jueguen los m&aacute;s peque&ntilde;os de la familia, un barrio ideal para proyectar tu hogar.</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">M&aacute;s de 500 lotes vendidos y 40 familias construyendo &iexcl;An&iacute;mate a vivir tu sue&ntilde;o! </span></p>', 'La Esperanza', 2, '-34.8790667', '-58.55596740000001', 1, 1, 'Estacion del tren Roca', 1),
-(18, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Derqui, partido de Pilar, a 200 metros de la Ruta 234 y a tan s&oacute;lo 8 km de Jose C Paz. Cuenta acceso asfaltado desde la calle Entre R&iacute;os. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Derqui un pueblo tranquilo, <strong>donde podr&aacute;s encontrar una escuela p&uacute;blica, un hospital, un club y una plaza,</strong> ideal para proyectar tu casa junto a tu familia. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas y no tendr&aacute; reglamento de construcci&oacute;n. </span></p>', 'Derqui', 1, '-34.4988527', '-58.82809889999999', 1, 1, 'Estación del tren San Martin', 1),
+(16, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Parada Robles, partido de Exaltaci&oacute;n de La Cruz, a muy pocas cuadras de Panamericana, en un entorno residencial y tranquilo. Ideal para casas de fin de semana, para descansar, alejarte de la ciudad y conectarte con la naturaleza a tan<span style=\"mso-spacerun: yes;\">&nbsp; </span>s&oacute;lo 71 km de Capital, 11 km de Capilla del Se&ntilde;or y 25 km de Pilar.</span></p>\r\n<p class=\"MsoNormal\">&nbsp;</p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El desarrollo se encuentra ubicado a seis cuadras del centro comercial de Parada Robles, un pueblo tranquilo, <strong>donde podr&aacute;s encontrar un jard&iacute;n maternal, un club, la capilla Nuestra Se&ntilde;ora del Rosario de San Nicol&aacute;s y una sala de primeros auxilios.&nbsp;</strong></span></p>\r\n<p class=\"MsoNormal\">&nbsp;</p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas y no tendr&aacute; reglamento de construcci&oacute;n.&nbsp;</span></p>', 'Robles', 1, '-34.3778749', '-59.11839959999999', 1, 1, 'Estación del tren Mitre', 2),
+(17, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Tristan Suarez, partido de Ezeiza, a 50 metros de la Ruta 205 con excelente acceso a l&iacute;neas de colectivos. Se encuentra en un entorno muy tranquilo, rodeado de casas quintas a 4 km de Ezeiza posee acceso asfaltado desde la calle Juan G&aacute;lvez.</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Trist&aacute;n Suarez, donde podr&aacute;s encontrar una plaza y un club, ideal para que jueguen los m&aacute;s peque&ntilde;os de la familia, un barrio ideal para proyectar tu hogar.</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">M&aacute;s de 500 lotes vendidos y 40 familias construyendo &iexcl;An&iacute;mate a vivir tu sue&ntilde;o! </span></p>', 'La Esperanza', 2, '-34.8790667', '-58.55596740000001', 1, 1, 'Estacion del tren Roca', 2),
+(18, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Derqui, partido de Pilar, a 200 metros de la Ruta 234 y a tan s&oacute;lo 8 km de Jose C Paz. Cuenta acceso asfaltado desde la calle Entre R&iacute;os. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Derqui un pueblo tranquilo, <strong>donde podr&aacute;s encontrar una escuela p&uacute;blica, un hospital, un club y una plaza,</strong> ideal para proyectar tu casa junto a tu familia. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas y no tendr&aacute; reglamento de construcci&oacute;n. </span></p>', 'Derqui', 1, '-34.4988527', '-58.82809889999999', 1, 1, 'Estación del tren San Martin', 2),
 (19, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Del Viso partido de Pilar, tiene una excelente ubicaci&oacute;n a 600 metros de Ruta Nacional 8 y est&aacute; a 100 mts de la Av.Lisandro de La Torre,<span style=\"mso-spacerun: yes;\">&nbsp; </span>avenida con muy buenos accesos a l&iacute;neas de transporte, adem&aacute;s cuenta con todos sus accesos asfaltados.</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Del Viso, un pueblo tranquilo y urbanizado, <strong>donde podr&aacute;s encontrar una escuela p&uacute;blica, una sala de primeros auxilios y una plaza que podr&aacute;s disfrutar con los m&aacute;s peque&ntilde;os. </strong></span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">&iexcl;An&iacute;mate a cumplir tu sue&ntilde;o! M&aacute;s de 30 familias ya se encuentran viviendo en el barrio y las dem&aacute;s ya se encuentran planificando su casa. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas y no tendr&aacute; reglamento de construcci&oacute;n. </span></p>', 'Del Viso', 1, '-34.4693022', '-58.7856564', 1, 1, 'Estación del tren Belgrano', 2),
-(20, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Astolfi, partido de Pilar, en un entorno muy tranquilo, rodeado de casas quintas. Tiene una excelente ubicaci&oacute;n a tan s&oacute;lo 50 mts de la Av. Lagomarsino, avenida con muy buenos accesos a l&iacute;neas de transporte.</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Astolfi, un pueblo tranquilo, donde podr&aacute;s encontrar una escuela p&uacute;blica y una plaza. Es un barrio ideal para proyectar tu hogar junto con tu familia. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas y no tendr&aacute; reglamento de construcci&oacute;n. </span></p>', 'Astolfi 2', 1, '-34.48638539999999', '-58.8838689', 1, 1, 'Estación del tren San Martin', 1),
+(20, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Astolfi, partido de Pilar, en un entorno muy tranquilo, rodeado de casas quintas. Tiene una excelente ubicaci&oacute;n a tan s&oacute;lo 50 mts de la Av. Lagomarsino, avenida con muy buenos accesos a l&iacute;neas de transporte.</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Astolfi, un pueblo tranquilo, donde podr&aacute;s encontrar una escuela p&uacute;blica y una plaza. Es un barrio ideal para proyectar tu hogar junto con tu familia. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas y no tendr&aacute; reglamento de construcci&oacute;n. </span></p>', 'Astolfi 2', 1, '-34.48638539999999', '-58.8838689', 1, 1, 'Estación del tren San Martin', 2),
 (21, '<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Astolfi, partido de Pilar, en un entorno muy tranquilo. Tiene una excelente ubicaci&oacute;n a tan tres cuadras de la estaci&oacute;n del tren San Martin</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\" style=\"font-size: 13.5pt; line-height: 115%; font-family: \'Segoe UI\', sans-serif;\">El desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Astolfi, un pueblo tranquil<span style=\"font-family: \'Segoe UI\',\'sans-serif\';\">o,</span><strong><span style=\"font-family: \'Segoe UI\',\'sans-serif\';\"> donde podr&aacute;s encontrar una escuela p&uacute;blica y una plaza. Es un barrio ideal para proyectar tu hogar junto con tu familia.</span></strong></span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">Es un barrio abierto por lo que no se abonan expensas y no tendr&aacute; reglamento de construcci&oacute;n. </span></p>', 'Astolfi', 1, '-34.477403', '-58.88160809999999', 1, 1, 'Estación del tren San Martin', 2),
 (25, '<p class=\"MsoNormal\"><span lang=\"ES\" style=\"mso-ansi-language: ES;\">El barrio se encuentra ubicado en Zelaya, partido de Pilar, en un entorno residencial, rodeado de barrios privados. Ideal para casas de fin de semana, para descansar, alejarte de la ciudad y conectarte con la naturaleza a tan<span style=\"mso-spacerun: yes;\">&nbsp; </span>s&oacute;lo 50 km de Capital y a 7 km de Matheu, partido de Escobar. </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\" style=\"mso-ansi-language: ES;\">El desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Zelaya, un pueblo tranquilo, <strong>donde podr&aacute;s encontrar una plaza y una sala de primeros auxilios.</strong> </span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\" style=\"mso-ansi-language: ES;\">Ser&aacute; un barrio abierto por lo que no se abonar&aacute;n expensas y no tendr&aacute; reglamento de construcci&oacute;n. </span></p>', 'Haras de Glenmore', 1, '-34.3791976', '-58.88319199999999', 0, 1, 'Estacion del tren B. Mitre', 1),
-(29, '<p class=\"MsoNormal\"><span lang=\"ES\" style=\"mso-ansi-language: ES;\">El barrio se encuentra ubicado en Villa Rosa partido de Pilar, cuenta con acceso asfaltado por Ruta 25 y un hermoso boulevard, excelente acceso a transporte y a muy pocos metros de la estaci&oacute;n de tren Belgrano.</span></p>', 'Villa Rosa', 1, '-34.4870268', '-58.7688785', 0, 0, 'Estación del tren Belgrano', 3),
+(29, '<p class=\"MsoNormal\"><span lang=\"ES\" style=\"mso-ansi-language: ES;\">El barrio se encuentra ubicado en Villa Rosa partido de Pilar, cuenta con acceso asfaltado por Ruta 25 y un hermoso boulevard, excelente acceso a transporte y a muy pocos metros de la estaci&oacute;n de tren Belgrano.</span></p>', 'Villa Rosa', 1, '-34.4870268', '-58.7688785', 1, 0, 'Estación del tren Belgrano', 3),
 (30, '<p class=\"MsoNormal\"><span lang=\"ES\" style=\"mso-ansi-language: ES;\">El barrio se encuentra ubicado en Matheu, partido de Escobar, sobre Ruta 25 a pocas cuadras de la estaci&oacute;n del tren Mitre, el desarrollo cuenta con cerco perimetral y un &uacute;nico acceso </span><span style=\"mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-bidi-font-family: Calibri; background: white;\">que conecta panamericana ramal Pilar y ramal&nbsp;<span style=\"font-family: \'Calibri\',\'sans-serif\';\">Escobar</span><strong><span style=\"font-family: \'Calibri\',\'sans-serif\';\">.</span></strong></span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-family: \'Calibri\',\'sans-serif\'; background: white;\">&iexcl;M&aacute;s de 400 familias ya viven en el barrio y disfrutan ser due&ntilde;as de su propio terreno! </span></p>', 'Matheu', 1, '-34.3874462', '-58.83109', 1, 0, 'Estación del tren B. Mitre', 3),
 (31, '<p class=\"MsoNormal\"><span lang=\"ES\" style=\"mso-ansi-language: ES;\">El barrio se encuentra ubicado en Adrogue, </span><span style=\"mso-bidi-font-family: Calibri; mso-bidi-theme-font: minor-latin; background: white;\">en pleno casco urbano, con todos los beneficios y calidad de vida de un&nbsp;<strong><span style=\"font-family: \'Calibri\',\'sans-serif\'; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-theme-font: minor-latin;\">Barrio Privado</span></strong>&nbsp;junto a la comodidad de vivir a pocos pasos del centro de la ciudad, de sus colegios, shoppings, hipermercados, clubes y plazas. &nbsp;La vida que siempre quisiste tener en&nbsp;<strong><span style=\"font-family: \'Calibri\',\'sans-serif\'; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-theme-font: minor-latin;\">Brisas de Adrogue</span></strong>, ahora con seguridad y en un entorno &uacute;nico.</span></p>\r\n<p class=\"MsoNormal\"><strong><span style=\"font-family: \'Calibri\',\'sans-serif\'; background: white;\">&iexcl;M&aacute;s de 400 familias ya viven en el barrio y disfrutan ser due&ntilde;as de su propio terreno! </span></strong></p>', 'Brisas de Adrogue', 2, '-34.8136841', '-58.4029961', 1, 0, NULL, 3),
 (32, '<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\" style=\"mso-ansi-language: ES;\">El barrio se encuentra ubicado en Derqui, partido de Pilar, sobre la Ruta 234, con excelente accesos a transporte.</span></p>\r\n<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\" style=\"mso-ansi-language: ES;\">&iexcl;Hoy m&aacute;s de 100 familias se encuentran viviendo en el barrio y disfrutando su propia casa! </span></p>', 'La Soñada', 1, '-34.4819559', '-58.84400309999999', 1, 0, NULL, 3),
 (33, '<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\" style=\"mso-ansi-language: ES;\">El barrio se encuentra ubicado en Derqui, partido de Pilar, a muy pocos metros de la Ruta 234, donde podr&aacute;s acceder a varias l&iacute;neas de transporte.</span></p>\r\n<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\" style=\"mso-ansi-language: ES;\">&iexcl;Hoy m&aacute;s de 200 familias se encuentran viviendo en el barrio y disfrutando su propia casa! </span></p>', 'La Cautiva', 1, '-34.4767315', '-58.84289279999999', 1, 0, NULL, 3),
-(34, '<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\" style=\"mso-ansi-language: ES;\">El barrio se encuentra ubicado en Matheu, partido de Escobar, sobre la Ruta 234, con excelente accesos a transporte.</span></p>\r\n<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\" style=\"mso-ansi-language: ES;\">&iexcl;35 familias cumplieron su sue&ntilde;o y hoy disfrutan de su propia casa! </span></p>', 'Matheu Chico', 2, '0', '0', 1, 0, NULL, 3);
+(34, '<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\" style=\"mso-ansi-language: ES;\">El barrio se encuentra ubicado en Matheu, partido de Escobar, sobre la Ruta 234, con excelente accesos a transporte.</span></p>\r\n<p class=\"MsoNormal\" style=\"margin-left: 14.2pt;\"><span lang=\"ES\" style=\"mso-ansi-language: ES;\">&iexcl;35 familias cumplieron su sue&ntilde;o y hoy disfrutan de su propia casa! </span></p>', 'Matheu Chico', 2, '0', '0', 1, 0, NULL, 3),
+(35, '<p class=\"MsoNormal\" style=\"margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white;\"><span style=\"font-size: 8.0pt; mso-bidi-font-size: 10.0pt; mso-ascii-font-family: Calibri; mso-fareast-font-family: \'Times New Roman\'; mso-hansi-font-family: Calibri; mso-bidi-font-family: Calibri; color: #333333; mso-fareast-language: ES-AR;\">L</span><span style=\"mso-bidi-font-size: 14.0pt; mso-ascii-font-family: Calibri; mso-fareast-font-family: \'Times New Roman\'; mso-hansi-font-family: Calibri; mso-bidi-font-family: Calibri; color: #333333; mso-fareast-language: ES-AR;\">os&nbsp;<strong>terrenos en venta&nbsp;</strong>cuentan con una ubicaci&oacute;n preferencial a ocho cuadras de la Estaci&oacute;n&nbsp;<strong>Glew</strong>&nbsp;del Ferrocarril Gral. Roca y del centro comercial.</span></p>\r\n<p class=\"MsoNormal\" style=\"margin-bottom: .0001pt; text-align: justify; line-height: normal; background: white;\"><span style=\"mso-bidi-font-size: 14.0pt; mso-ascii-font-family: Calibri; mso-fareast-font-family: \'Times New Roman\'; mso-hansi-font-family: Calibri; mso-bidi-font-family: Calibri; color: #333333; mso-fareast-language: ES-AR;\">El barrio se &nbsp;encuentra a tan solo 15 cuadras del Carrefour de Glew ubicado sobre la Av. Hip&oacute;lito Yrigoyen (ruta 210), la cual &nbsp;conecta todo&nbsp;<strong>zona sur</strong>&nbsp;desde&nbsp;<strong>Lomas de Zamora</strong>&nbsp;hasta&nbsp;<strong>Guernica</strong>. En cualquier de los dos sentidos se toma el giro hacia el nuevo bajo nivel de&nbsp;<strong>Glew</strong>, luego de una curva desemboca en la calle Gervasio M&eacute;ndez se debe doblar a la izquierda y a 100 mts se encuentra la entrada principal del Barrio Casas&nbsp; de Santa Ana. Todo el recorrido es sobre asfalto y por calles bien consolidadas e iluminadas.</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">&nbsp;</span></p>\r\n<p class=\"MsoNormal\"><span lang=\"ES\">El barrio se encuentra ubicado en Glew, a ocho cuadras de la estaci&oacute;n de ferrocarril Gral. Roca y a pocas cuadras del centro comercial. Ubicado sobre la Av. </span><span style=\"mso-bidi-font-size: 14.0pt; line-height: 107%; mso-ascii-font-family: Calibri; mso-fareast-font-family: \'Times New Roman\'; mso-hansi-font-family: Calibri; mso-bidi-font-family: Calibri; color: #333333; mso-fareast-language: ES-AR;\">Av. Hip&oacute;lito Yrigoyen (ruta 210), la cual &nbsp;conecta todo&nbsp;<strong>zona sur</strong>&nbsp;desde&nbsp;<strong>Lomas de Zamora</strong>&nbsp;hasta&nbsp;<strong>Guernica</strong>.</span></p>\r\n<p class=\"MsoNormal\" style=\"margin-bottom: .0001pt; line-height: normal; background: white;\">Actualmente, cuenta con 500 familias viviendo de manera permanente, que se mezclan con m&aacute;s de 300 nuevas casas en construcci&oacute;n, &nbsp;hogares que se van construyendo de a poco con mucho esfuerzo y una gran convicci&oacute;n que es posible ser due&ntilde;os del propio&nbsp;terreno en zona sur.</p>\r\n<p class=\"MsoNormal\" style=\"margin-bottom: .0001pt; line-height: normal; background: white;\">El&nbsp;barrio&nbsp;cuenta con accesos asfaltados y dos plazas nada mejor para garantizar &nbsp;el entretenimiento de los m&aacute;s chicos, que durante la tarde salen a jugar a la calle mientras se convierten en amigos adem&aacute;s de vecinos.</p>\r\n<p class=\"MsoNormal\"><span style=\"mso-bidi-font-size: 14.0pt; line-height: 107%; mso-ascii-font-family: Calibri; mso-fareast-font-family: \'Times New Roman\'; mso-hansi-font-family: Calibri; mso-bidi-font-family: Calibri; color: #333333; mso-fareast-language: ES-AR;\">&nbsp;</span></p>\r\n<p><strong><span style=\"font-size: 11.0pt; line-height: 107%; font-family: \'Calibri\',\'sans-serif\'; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; background: white; mso-ansi-language: ES-AR; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;\">&iexcl;M&aacute;s de 400 familias ya viven en el barrio y disfrutan ser due&ntilde;as de su propio terreno!&nbsp;</span></strong></p>', 'Casas de Santa Ana', 2, '-34.88334999999999', '-58.371606', 0, 1, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -482,7 +491,10 @@ INSERT INTO `proyecto_masterplan` (`id`, `ruta`, `nombre`, `proyecto_id`) VALUES
 (17, '56521132.jpeg', 'Masterplan Sakura II y III.jpg', 13),
 (18, '61651084.jpeg', 'Masterplan Tortuguitas.jpg', 15),
 (19, '65497880.jpeg', 'MP Astolfi II - A3.jpg', 20),
-(20, '46545188.jpeg', 'MP Parque Los Robles - A3.jpg', 16);
+(20, '46545188.jpeg', 'MP Parque Los Robles - A3.jpg', 16),
+(21, '35568609.jpeg', 'santa ana.jpeg', 35),
+(22, '12158493.jpeg', 'Masterplan Matheu.jpg', 30),
+(23, '33741158.jpeg', 'MP Tristan Suarez A3 (2).jpg', 17);
 
 -- --------------------------------------------------------
 
@@ -497,6 +509,26 @@ CREATE TABLE `proyecto_video` (
   `titulo` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   `descripcion` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `proyecto_video`
+--
+
+INSERT INTO `proyecto_video` (`id`, `url`, `proyecto_id`, `titulo`, `descripcion`) VALUES
+(1, 'vRMrxGeLbGY', 18, 'Barrio Parque Derqui', 'El barrio se encuentra ubicado en Derqui, partido de Pilar, a 200 metros de la Ruta 234 y a tan sólo 8 km de Jose C Paz. Cuenta acceso asfaltado desde la calle Entre Ríos. \r\nEl desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Derqui un pueblo tranquilo, donde podrás encontrar una escuela pública, un hospital, un club y una plaza, ideal para proyectar tu casa junto a tu familia. \r\nEs un barrio abierto por lo que no se abonan expensas y no tendrá reglamento de construcción.'),
+(2, 'o8epUj4R9No', 18, 'Barrio Parque Derqui - Testimonio Alejandro', 'El barrio se encuentra ubicado en Derqui, partido de Pilar, a 200 metros de la Ruta 234 y a tan sólo 8 km de Jose C Paz. Cuenta acceso asfaltado desde la calle Entre Ríos. \r\nEl desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Derqui un pueblo tranquilo, donde podrás encontrar una escuela pública, un hospital, un club y una plaza, ideal para proyectar tu casa junto a tu familia. \r\nEs un barrio abierto por lo que no se abonan expensas y no tendrá reglamento de construcción.'),
+(3, 'JKPZGRuKeR4', 16, 'Barrio Parque Los Robles', 'El barrio se encuentra ubicado en Parada Robles, partido de Exaltación de La Cruz, a muy pocas cuadras de Panamericana, en un entorno residencial y tranquilo. Ideal para casas de fin de semana, para descansar, alejarte de la ciudad y conectarte con la naturaleza a tan  sólo 71 km de Capital, 11 km de Capilla del Señor y 25 km de Pilar.'),
+(4, 'wSpX8ePQ0Jg', 16, 'Barrio Parque Los Robles - Testimonio Marcela y Ariel', 'El barrio se encuentra ubicado en Parada Robles, partido de Exaltación de La Cruz, a muy pocas cuadras de Panamericana, en un entorno residencial y tranquilo. Ideal para casas de fin de semana, para descansar, alejarte de la ciudad y conectarte con la naturaleza a tan  sólo 71 km de Capital, 11 km de Capilla del Señor y 25 km de Pilar. \r\nEl desarrollo se encuentra ubicado a seis cuadras del centro comercial de Parada Robles, un pueblo tranquilo, donde podrás encontrar un jardín maternal, un club, la capilla Nuestra Señora del Rosario de San Nicolás y una sala de primeros auxilios.'),
+(5, 'jvHW_HrfhQQ', 20, 'Barrio Parque Astolfi 2', '¡HOY EL SUEÑO DE TU PROPIO TERRENO ES POSIBLE!\r\n Más de 4500 lotes entregados, \r\n  Financiamos tu lote hasta 84 cuotas EN PESOS, sólo con tu DNI.   \r\nPara mas información \r\nEl barrio se encuentra ubicado en Astolfi, partido de Pilar, en un entorno muy tranquilo, rodeado de casas quintas. Tiene una excelente ubicación a tan sólo 50 mts de la Av. Lagomarsino, avenida con muy buenos accesos a líneas de transporte.\r\nEl desarrollo se encuentra ubicado a pocas cuadras del centro comercial de Astolfi, un pueblo tranquilo, donde podrás encontrar una escuela pública y una plaza. Es un barrio ideal para proyectar tu hogar junto con tu familia. \r\nEs un barrio abierto por lo que no se abonan expensas y no tendrá reglamento de construcción.'),
+(6, 'jxQS1GQ4YjU', 10, 'Barrio Parque San Alejo', 'PROXIMO LANZAMIENTO \r\nEl barrio se encuentra ubicado en San Alejo, partido de Pilar. Tiene una excelente ubicación a pocas cuadras de Ruta 25, a diez minutos del centro de Pilar y a 15 minutos del Parque Industrial de Pilar. \r\nSe encuentra en una zona tranquila y de fácil acceso, en el barrio podrás encontrar una escuela, una sala de primeros auxilios, una cancha de Football y una plaza para que jueguen los más pequeños. \r\nIdeal para proyectar tu casa y disfrutarla con tu familia. \r\nSerá un barrio abierto por lo que no se abonarán expensas y no tendrá reglamento de construcción.'),
+(7, 'QSzwvouQNew', 25, 'Haras de Glenmore', 'El barrio se encuentra ubicado en Zelaya, partido de Pilar, en un entorno residencial, rodeado de barrios privados. Ideal para casas de fin de semana, para descansar, alejarte de la ciudad y conectarte con la naturaleza a tan  sólo 50 km de Capital y a 7 km de Matheu, partido de Escobar.'),
+(8, 'X6YSDixZkyE', 11, 'El Aljibe - Barrio privado', 'El barrio se encuentra ubicado en Manzanares, partido de Pilar, a pocas cuadras de Panamericana, a 55 km de CABA.  \r\nEl Aljibe es un barrio ideal para proyectar tu hogar junto a tu familia, cuenta salida al Rio Luján, el mismo contará con un paseo ribereño donde podrás disfrutar una caminata, sentarte a leer un libro o hacer ejercicio al aire libre ya que contará con un eco gimnasio mientras disfrutas del paisaje y la tranquilidad que te ofrecemos.'),
+(9, 'x_bi8CZ5SEA', 17, 'Barrio Parque La Esperanza', 'El barrio se encuentra ubicado en Tristan Suarez, partido de Ezeiza, a 50 metros de la Ruta 205 con excelente acceso a líneas de colectivos. Se encuentra en un entorno muy tranquilo, rodeado de casas quintas a 4 km de Ezeiza posee acceso asfaltado desde la calle Juan Gálvez.'),
+(10, '1gC3HNLqRbI', 17, 'Barrio Parque La Esperanza - Testimonio Claudia', 'El barrio se encuentra ubicado en Tristan Suarez, partido de Ezeiza, a 50 metros de la Ruta 205 con excelente acceso a líneas de colectivos. Se encuentra en un entorno muy tranquilo, rodeado de casas quintas a 4 km de Ezeiza posee acceso asfaltado desde la calle Juan Gálvez.'),
+(11, 'TnzxzOFaHEM', 21, 'Barrio Parque Astolfi - Testimonio de Richard', 'Cumplí el sueño de ser dueño. Accedé a tu lote entregando un mínimo anticipo y financiando el resto en cuotas en pesos.'),
+(12, 'i5DCmnFewUQ', 30, 'Venta de Terrenos en Cuotas', '¡HOY EL SUEÑO DE TU PROPIO TERRENO ES POSIBLE!\r\n Más de 4500 lotes entregados, \r\n  Financiamos tu lote hasta 84 cuotas EN PESOS, sólo con tu DNI.'),
+(13, 'kjB3GDjMCqE', 14, 'Terrenos en Venta con Escritura', '¡Comprá tu terreno con total seguridad! Todos nuestros emprendimientos tienen la posibilidad de escriturar'),
+(14, '6O-qc5ZhEjI', 14, 'LOTES EN VENTA', '¡HOY EL SUEÑO DE TU PROPIO TERRENO ES POSIBLE!\r\n Más de 4500 lotes entregados, \r\n  Financiamos tu lote hasta 84 cuotas EN PESOS, sólo con tu DNI.');
 
 -- --------------------------------------------------------
 
@@ -560,7 +592,7 @@ INSERT INTO `servicios` (`id`, `proyecto_id`, `descripcion`) VALUES
 (57, 21, 'Alumbrado público'),
 (61, 25, 'Calles con fresado'),
 (62, 25, 'Alumbrado público'),
-(63, 29, '-	Alumbrado público'),
+(63, 29, 'Alumbrado público'),
 (64, 30, 'Gas'),
 (65, 30, 'Alumbrado público'),
 (66, 31, 'Cuenta con Vigilancia,  seguridad las 24 hs y control de acceso'),
@@ -582,7 +614,13 @@ INSERT INTO `servicios` (`id`, `proyecto_id`, `descripcion`) VALUES
 (82, 33, 'Gas'),
 (83, 33, 'Alumbrado público'),
 (84, 34, 'Gas'),
-(85, 34, 'Alumbrado público');
+(85, 34, 'Alumbrado público'),
+(86, 35, 'Gas en las manzanas delanteras'),
+(87, 35, 'Alumbrado público'),
+(88, 35, 'Asfalto'),
+(89, 35, 'Accesos asfaltados'),
+(90, 35, 'Agua de red'),
+(91, 35, 'Red de cloaca');
 
 -- --------------------------------------------------------
 
@@ -615,9 +653,14 @@ INSERT INTO `testimonios` (`id`, `link_youtube`, `titulo`) VALUES
 (12, 'Rf5lzgV8lCA', 'ENCONTRAR MUCHO MÁS QUE UN TERRENO – ADRIANA Y NORMA RINCÓN DE IRIZAR'),
 (13, '8JfRaagA1Hg', 'TERRENOS EN EZEIZA – BARRIO PARQUE LA ESPERANZA'),
 (14, 'xGCQ9DI_IkM', 'LLEGAR AL TERRENO PROPIO: 1500 SUEÑOS CUMPLIDOS'),
-(15, 'wSpX8ePQ0Jg', 'Barrio Parque Los Robles - Testimonio Marcela y Ariel'),
-(16, 'o8epUj4R9No', 'Barrio Parque Derqui - Testimonio Alejandro'),
-(17, '4gSPgbR_L7k', 'Barrio Parque Sakura III - Testimonio Maria y Marcelo');
+(18, 'ydlRbV5SQkg', 'Juan Fernández, Director de Terranova.'),
+(19, 'WHxwfmOun8k', 'Barrio Parque La Esperanza - Testimonio Karen'),
+(20, 'rmfU8O2Yzt4', 'Barrio Parque La Esperanza - Testimonio Viviana'),
+(21, '1gC3HNLqRbI', 'Barrio Parque La Esperanza - Testimonio Claudia'),
+(22, 'S2zJDR90r4c', 'Barrio Parque Derqui - Testimonio Martin'),
+(23, 'o8epUj4R9No', 'Barrio Parque Derqui - Testimonio Alejandro'),
+(24, 'wSpX8ePQ0Jg', 'Barrio Parque Los Robles - Testimonio Marcela y Ariel'),
+(25, '4gSPgbR_L7k', 'Barrio Parque Sakura III - Testimonio Maria y Marcelo');
 
 -- --------------------------------------------------------
 
@@ -772,7 +815,7 @@ ALTER TABLE `zonas`
 -- AUTO_INCREMENT de la tabla `caracteristicas`
 --
 ALTER TABLE `caracteristicas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT de la tabla `estados`
@@ -790,7 +833,7 @@ ALTER TABLE `img_novedad`
 -- AUTO_INCREMENT de la tabla `img_proyecto`
 --
 ALTER TABLE `img_proyecto`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=224;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=237;
 
 --
 -- AUTO_INCREMENT de la tabla `img_testimonio`
@@ -820,31 +863,31 @@ ALTER TABLE `novedades`
 -- AUTO_INCREMENT de la tabla `proyectos`
 --
 ALTER TABLE `proyectos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `proyecto_masterplan`
 --
 ALTER TABLE `proyecto_masterplan`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `proyecto_video`
 --
 ALTER TABLE `proyecto_video`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `servicios`
 --
 ALTER TABLE `servicios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT de la tabla `testimonios`
 --
 ALTER TABLE `testimonios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

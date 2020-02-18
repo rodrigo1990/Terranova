@@ -4352,6 +4352,58 @@ select {
   color: #949494 !important;
 }
 
+#popUp {
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2001;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#popUp .window {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 50;
+  width: 53%;
+  height: 500px;
+}
+
+#popUp iframe {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 50;
+  width: 100%;
+  height: 500px;
+}
+
+#popUp a {
+  position: absolute;
+  margin: auto;
+  /* left: 0; */
+  right: -37px;
+  top: -28px;
+  margin-left: 0;
+  margin-right: auto;
+  /* float: left; */
+  z-index: 100;
+}
+
+#popUp a i {
+  font-size: 1rem;
+  color: white;
+}
+
 @media only screen and (min-width: 1px) and (max-width: 850px) {
   html {
     font-size: 28px !important;
@@ -4366,6 +4418,28 @@ select {
     margin: auto;
     width: 100%;
     font-size: 0.45rem;
+  }
+
+  #popUp .window {
+    width: 95%;
+    height: 500px;
+  }
+
+  #popUp iframe {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 50;
+    width: 100%;
+    height: 500px;
+  }
+
+  #popUp a {
+    right: 0px;
+    top: -28px;
   }
 }
 
@@ -7037,6 +7111,8 @@ section#detalle-proyecto .content .videos #slider ul.slide li .infoVideo,
   background: white;
   padding: 12px;
   margin-top: -5px;
+  max-height: 150px;
+  overflow-y: auto;
 }
 
 section#detalle-proyecto .content .videos ul.flex li .infoVideo h3,

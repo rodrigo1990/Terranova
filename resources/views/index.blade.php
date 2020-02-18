@@ -268,6 +268,14 @@
 		</div>
 	</section>
 	
+	<div id="popUp">
+		<div class="window">
+			<a onClick="closePopup()">
+				<i class="fas fa-times-circle"></i>
+			</a>			<iframe src="https://www.youtube.com/embed/ydlRbV5SQkg?autoplay=1&mute=1&enablejsapi=1" frameborder="0" allowFullScreen autoplay="true"></iframe>
+		</div>
+	</div>+
+
 	@include('inc.contacto')
 	@include('inc.footer')
 
@@ -320,7 +328,36 @@
 	});
 
 
+	function closePopup(){
+		$("#popUp").fadeOut();
+		
+		/*setTimeout(function(){
+			if(screen.width>=1024){
+				$("#popUp").css('background','transparent');
 
+				$("#popUp").css('top','unset');
+				$("#popUp").css('left','unset');
+				$("#popUp").css('right','0');
+				$("#popUp").css('bottom','0');
+				$("#popUp").css('width','250px');
+				$("#popUp").css('height','227px');
+
+
+				$("#popUp .window a").hide();
+				$("#popUp .window").css('top','unset');
+				$("#popUp .window").css('left','unset');
+				$("#popUp .window").css('right','18px');
+				$("#popUp .window").css('bottom','24px');
+				$("#popUp .window").css('width','74%');
+				$("#popUp .window").css('height','71%');
+				
+				$("#popUp iframe").css('height','192px');
+				$("#popUp").show();
+			}
+			
+	 	
+	 	}, 1000);*/
+	}
 
 	function initMap() {
  		map = new google.maps.Map(document.getElementById('map'), {

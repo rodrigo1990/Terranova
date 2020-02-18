@@ -23,6 +23,11 @@ window.buscarProyectoSegunZona = function(){
                 $(".buscador-container #proyecto").empty();
                     for(var i in data) {    
                             
+                            if(data[i].es_barrio_parque == 1){
+                                data[i].titulo = "Barrio Parque "+data[i].titulo;
+                            }
+
+
                             l = data[i].titulo.slice(1)
 
                             l = l.toUpperCase();
@@ -42,6 +47,8 @@ window.buscarProyectoSegunZona = function(){
 
 
                 $(".buscador-container #proyecto").show();
+
+                console.log(data);
 
         
 

@@ -33,7 +33,7 @@ class BuscadorController extends Controller
 
         $proyectos=DB::table('proyectos')
                      
-                      ->select('id','titulo')
+                      ->select('id','titulo','es_barrio_parque')
 
                       ->when($zona_id,function($query,$zona_id){
                                return $query->where('proyectos.zona_id',$zona_id);  

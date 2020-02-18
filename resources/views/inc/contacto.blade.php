@@ -19,7 +19,11 @@
 					<option value="">Seleccione un barrio de su interes</option>
 					@foreach($proyectos as $proyecto)
 						@if($proyecto->aparece_en_formulario==1)
-							<option value="{{$proyecto->titulo}}">{{$proyecto->titulo}}</option>
+							@if($proyecto->es_barrio_parque==1)
+								<option value="Barrio Parque {{$proyecto->titulo}}">Barrio Parque {{$proyecto->titulo}}</option>
+							@else
+								<option value="{{$proyecto->titulo}}">{{$proyecto->titulo}}</option>
+							@endif
 						@endif
 					@endforeach
 				</select>

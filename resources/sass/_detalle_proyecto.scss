@@ -223,6 +223,8 @@ section#detalle-proyecto{
 						background:$third-color;
 						padding:12px;
 					    margin-top:-5px;
+					    max-height: 150px;
+    					overflow-y: auto;
 						h3{
 							margin-top:0;
 							margin-bottom:10px;

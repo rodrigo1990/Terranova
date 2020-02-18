@@ -60,15 +60,49 @@
 								<select name="proyecto" id="proyecto" class="form-control">
 									<option value="null">Seleccione un proyecto</option>
 									@foreach($proyectos as $proyecto)
+										
+										@if($proyecto->es_barrio_parque==1)
+										
+
+										@endif
+
+
 										@if(isset($proyecto_id))
 											@if($proyecto_id == $proyecto->id)
-												<option value="{{$proyecto->id}}" selected>{{strtoupper($proyecto->titulo)}}</option>
+												
+												@if($proyecto->es_barrio_parque==1)
+
+													<option value="{{$proyecto->id}}" selected>BARRIO PARQUE {{strtoupper($proyecto->titulo)}}</option>
+												
+												@else
+												
+													<option value="{{$proyecto->id}}" selected>{{strtoupper($proyecto->titulo)}}</option>
+												
+												@endif
+												
 											@else
-												<option value="{{$proyecto->id}}">{{strtoupper($proyecto->titulo)}}</option>
+												@if($proyecto->es_barrio_parque==1)
+
+													<option value="{{$proyecto->id}}">BARRIO PARQUE {{strtoupper($proyecto->titulo)}}</option>
+												
+												@else
+												
+													<option value="{{$proyecto->id}}" >{{strtoupper($proyecto->titulo)}}</option>
+												
+												@endif
 											@endif
 										@else
 											
-											<option value="{{$proyecto->id}}">{{strtoupper($proyecto->titulo)}}</option>
+											@if($proyecto->es_barrio_parque==1)
+
+													<option value="{{$proyecto->id}}">BARRIO PARQUE {{strtoupper($proyecto->titulo)}}</option>
+												
+												@else
+												
+													<option value="{{$proyecto->id}}" >{{strtoupper($proyecto->titulo)}}</option>
+												
+												@endif
+
 
 										@endif
 										
