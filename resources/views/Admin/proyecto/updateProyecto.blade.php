@@ -1057,6 +1057,9 @@
 
 			if(tituloValidated==true&&descripcionValidated==true&&/*imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true&&*/linkYoutube1Validated==true&&linkYoutube2Validated==true&&tituloVideo1Validated==true&&descripcionVideo1Validated==true&&tituloVideo2Validated==true&&descripcionVideo2Validated==true/*&&coordenadasValidated==true*/){
 				//alert("enviado");
+
+				preloader();
+
 				setTimeout(function(){
 					$('form').submit();
 				},1000);

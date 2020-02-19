@@ -1,4 +1,9 @@
 window.$ = window.jQuery = require('jquery');
+
+require('./scripts/preloader');
+
+preloader();
+
 require('../bootstrap');
 
 require('./scripts/login');
@@ -31,3 +36,4 @@ require('./scripts/updateSortable_UpdateProject');
 if(document.getElementById('testimonios') || document.getElementById('proyectos')){
 	require('./scripts/validateYoutubeLink');	
 }
+

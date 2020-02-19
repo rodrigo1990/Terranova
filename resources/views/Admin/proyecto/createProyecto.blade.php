@@ -895,6 +895,7 @@
 
 			if(tituloValidated==true&&descripcionValidated==true&&/*&&imgSlide1Validated==true&&imgSlide2Validated==true&&imgPresentacionValidated==true&&*/video1Validated==true&&tituloVideo1Validated==true&&descripcionVideo1Validated==true&&video2Validated==true&&tituloVideo2Validated==true&&descripcionVideo2Validated==true/*coordenadasValidated==true*/){
 			
+			preloader();
 			setTimeout(function(){
 				$('form').submit();
 			},1000);

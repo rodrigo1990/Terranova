@@ -19,5 +19,6 @@
 	
 	<script src="<?php echo asset("/admin/js/app_admin.js") ?>"></script>
 	@yield('scripts')
+	
 </body>
 </html>

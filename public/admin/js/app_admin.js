@@ -29845,6 +29845,10 @@ module.exports = function(module) {
 
 window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
+__webpack_require__(/*! ./scripts/preloader */ "./resources/js/admin/scripts/preloader.js");
+
+preloader();
+
 __webpack_require__(/*! ../bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./scripts/login */ "./resources/js/admin/scripts/login.js");
@@ -29984,6 +29988,7 @@ window.deleteItem = function (url) {
   var c = confirm('¿Desea eliminar este proyecto?');
 
   if (c == true) {
+    preloader();
     window.location.href = url;
   }
 };
@@ -30139,6 +30144,29 @@ $(document).on('change', '.masterplan', function () {
     $(this).val(null);
   }
 });
+
+/***/ }),
+
+/***/ "./resources/js/admin/scripts/preloader.js":
+/*!*************************************************!*\
+  !*** ./resources/js/admin/scripts/preloader.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.preloader = function () {
+  $("body").prepend('<div id="preloader"> <div class="preloader"> <span></span> <span></span> <span></span> <span></span> </div> </div>');
+  $(window).on('load', function () {
+    // makes sure the whole site is loaded 
+    $('#preloader .preloader').fadeOut(); // will first fade out the loading animation 
+
+    $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+
+    $('body').delay(350).css({
+      'overflow': 'visible'
+    });
+  });
+};
 
 /***/ }),
 
