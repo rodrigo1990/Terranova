@@ -39,7 +39,7 @@ window.buscarProyectoSegunZona = function(){
                                 data[i].titulo+"</option>");             
                         }
 
-                $(".buscador-container #proyecto").append('<option value="null">Seleccione un proyecto</option>');
+                $(".buscador-container #proyecto").append('<option value="null">Seleccioná un proyecto</option>');
 
 
 

@@ -132,11 +132,29 @@
 								@if(isset($proyecto->img))
 									@foreach($proyecto->img as $img)
 										@if($img->tipo == 'PRESENTACION')
-										<div class="img" style="background-image:url(<?php echo asset('/storage/img/proyectos/'.$img->ruta) ?>)"></div>
+										
+										<div class="img" style="background-image:url(<?php echo asset('/storage/img/proyectos/'.$img->ruta) ?>)">
+											
+											@if($proyecto->id == 21 || $proyecto->id == 15  ||  $proyecto->id == 19 )
+												
+												<h3 class="ultimosLotes">¡Últimos lotes!</h3>
+
+												
+											@endif
+											
+
+										</div>
 										@endif
 									@endforeach
 									@else
-										<div class="img" style="background-image:url(<?php echo asset('/storage/img/proyectos/'.$proyecto->ruta) ?>)"></div>
+										<div class="img" style="background-image:url(<?php echo asset('/storage/img/proyectos/'.$proyecto->ruta) ?>)">
+											@if($proyecto->id == 21 || $proyecto->id == 15  ||  $proyecto->id == 19 )
+												
+												<h3>¡Últimos lotes!</h3>
+
+												
+											@endif
+										</div>
 									@endif
 
 								<div>

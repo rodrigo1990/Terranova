@@ -304,9 +304,36 @@ html{
   font-size: 28px !important;
 }
 
-.fixed-btn{
-  display:none;
+.fixed-btn {
+    height: 100px;
+    width: 100px;
+
+    padding-top: 16px;
+    
+    p{
+      font-size: 12px !important;
+    }
 }
+
+
+
+
+.fixed-btn:after{
+    display:none !important;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 a.btn{

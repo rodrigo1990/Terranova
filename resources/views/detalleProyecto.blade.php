@@ -265,7 +265,7 @@
         	<hr>
       </div>
       <div class="modal-body center-block">
-       @if(count($proyecto->lineaColectivo)>1)
+       @if(count($proyecto->lineaColectivo)>0)
        <ul>
 			@foreach($proyecto->lineaColectivo as $lineaColectivo)
 				<li><h3>{{mb_convert_case($lineaColectivo->descripcion,MB_CASE_TITLE,'UTF-8')}}</h3></li>

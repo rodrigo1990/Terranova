@@ -47,12 +47,12 @@
 				@csrf
 				<ul class="flex">
 					<li>
-						<h3>¿Qué zona buscas?</h3>
+						<h3>¿Qué buscás?</h3>
 					</li>
 					<li>
 		
 						<select name="estado_id" id="estado" class="form-control" onchange="buscarProyectoSegunZona()"  >
-							<option value="null">Seleccione un estado</option>
+							<option value="null">Seleccioná un estado</option>
 							@foreach($estados as $estado)
 								@if(isset($estado_id))
 									@if($estado_id== $estado->id)
@@ -70,7 +70,7 @@
 					
 					<li>
 						<select name="zona_id" id="zona" class="form-control" onchange="buscarProyectoSegunZona()">
-							<option value="null">Seleccione una zona</option>
+							<option value="null">Seleccioná una zona</option>
 							@foreach($zonas as $zona)
 								<option value="{{$zona->id}}">{{ucfirst(strtolower($zona->descripcion))}}</option>
 							@endforeach
@@ -78,7 +78,7 @@
 					</li>
 					<li>
 						<select name="proyecto_id" id="proyecto" class="form-control">
-							<option value="null">Selecciona un proyecto</option>
+							<option value="null">Seleccioná un proyecto</option>
 						</select>
 					</li>
 

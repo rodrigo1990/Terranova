@@ -16,7 +16,7 @@
 				<p class="error" id="telefono-error">Ingrese un teléfono valido </p>
 
 				<select name="proyecto" id="proyecto" class="form-control">
-					<option value="">Seleccione un barrio de su interes</option>
+					<option value="">Seleccioná un barrio de su interes</option>
 					@foreach($proyectos as $proyecto)
 						@if($proyecto->aparece_en_formulario==1)
 							@if($proyecto->es_barrio_parque==1)

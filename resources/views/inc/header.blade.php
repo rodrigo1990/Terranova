@@ -52,6 +52,15 @@
 								<i class="fab fa-youtube"></i>
 							</a>
 						</li>
+						<li>
+							<a href="
+
+							https://web.whatsapp.com/send?phone=5491169985042&text=Hola!%20me%20comunico%20desde%20terranova-sa.com.ar
+
+							" target="_blank" class="btn-icon">
+								<i class="fab fa-whatsapp"></i>
+							</a>
+						</li>
 					</ul>
 				</li>
 			</ul>

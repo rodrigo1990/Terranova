@@ -37857,7 +37857,7 @@ window.buscarProyectoSegunZona = function () {
         $(".buscador-container #proyecto").append("<option value=" + data[i].id + "> " + data[i].titulo + "</option>");
       }
 
-      $(".buscador-container #proyecto").append('<option value="null">Seleccione un proyecto</option>');
+      $(".buscador-container #proyecto").append('<option value="null">Seleccioná un proyecto</option>');
       $(".buscador-container #status").remove();
       $(".buscador-container #proyecto").show();
       console.log(data);

@@ -80,6 +80,21 @@ section#buscador-section{
 					background-size: cover;
 					background-repeat: no-repeat;;
 					border-radius:4px;
+					position:relative;
+
+
+					.ultimosLotes{
+						position:absolute;
+						margin:0;
+						top:0px;
+						left:0px;
+						background:$red;
+						color:$third-color;
+						padding:0.35em;
+						font-family: $font-bold !important;
+						font-size: 0.60rem;
+						border-top-left-radius: 4px;
+					}
 				}
 
 				>a{

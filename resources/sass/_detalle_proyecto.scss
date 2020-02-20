@@ -19,7 +19,7 @@ section#detalle-proyecto{
 
 		.estado{
 			position:absolute;
-			top:20px;
+			top:10px;
 			right:20px;
 			background:$primary-color;
 			color:$third-color;
@@ -28,11 +28,16 @@ section#detalle-proyecto{
 			margin:0;
 			font-size: 0.8rem;
 			z-index: 2;
+			margin-top: 20px;
 		}
 
 		.estado.ultimos_lotes{
-			margin-top:55px !important;
 		    right: 11px;
+	        background: $red !important;
+    		color: white;
+		    left: 11px;
+		    right: auto;
+		    top: 10px;
 		}
 
 		h1{
@@ -646,7 +651,14 @@ section#detalle-proyecto{
 
 		.estado.ultimos_lotes{
 			margin-top: 34px !important;
-		    		}
+			left: 0;
+		    right: 0;
+		    bottom: 9px;
+		    top: auto;
+		    width: 100%;
+		}
+
+
 
 		
 

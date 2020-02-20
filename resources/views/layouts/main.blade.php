@@ -31,5 +31,7 @@
 	
 	
 	@yield('scripts')
+	<!-- Código de instalación Cliengo para terranova-sa.com.ar/ --> 
+	<script type="text/javascript">(function () { var ldk = document.createElement('script'); ldk.type = 'text/javascript'; ldk.async = true; ldk.src = 'https://s.cliengo.com/weboptimizer/5880e920e4b044d3a8f6005f/5880e9b3e4b042c597240026.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ldk, s); })();</script>
 </body>
 </html>
